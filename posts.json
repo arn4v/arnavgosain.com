@@ -1,0 +1,780 @@
+[
+  {
+    "id": 507,
+    "date": "2019-08-01T01:47:06",
+    "date_gmt": "2019-07-31T20:17:06",
+    "guid": { "rendered": "http://arnavgosain.com/?p=507" },
+    "modified": "2019-08-01T01:47:06",
+    "modified_gmt": "2019-07-31T20:17:06",
+    "slug": "july-2019-monthly-playlists",
+    "status": "publish",
+    "type": "post",
+    "link": "https://arnavgosain.com/2019/08/01/july-2019-monthly-playlists/",
+    "title": { "rendered": "July 2019 | Monthly Playlists" },
+    "content": {
+      "rendered": "<p><iframe src=\"https://open.spotify.com/embed/user/7rl2lqfp5dg2ar6u8lvsgi80t/playlist/343W6CDEAU7TAOFlAX4krn?si=yR6SB8wNRMaVcR07PGQk6w\" width=\"600\" height=\"940\" frameborder=\"0\"></iframe></p>\n",
+      "protected": false
+    },
+    "excerpt": { "rendered": "", "protected": false },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "open",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": [],
+    "categories": [7],
+    "tags": [],
+    "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v15.4 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>July 2019 | Monthly Playlists - Arnav Gosain</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"http://arnavgosain.com/2019/08/01/july-2019-monthly-playlists/\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"July 2019 | Monthly Playlists - Arnav Gosain\" />\n<meta property=\"og:url\" content=\"http://arnavgosain.com/2019/08/01/july-2019-monthly-playlists/\" />\n<meta property=\"og:site_name\" content=\"Arnav Gosain\" />\n<meta property=\"article:published_time\" content=\"2019-07-31T20:17:06+00:00\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:creator\" content=\"@arn4v\" />\n<meta name=\"twitter:label1\" content=\"Written by\">\n\t<meta name=\"twitter:data1\" content=\"Arnav Gosain\">\n\t<meta name=\"twitter:label2\" content=\"Est. reading time\">\n\t<meta name=\"twitter:data2\" content=\"0 minutes\">\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebSite\",\"@id\":\"https://arnavgosain.com/#website\",\"url\":\"https://arnavgosain.com/\",\"name\":\"Arnav Gosain\",\"description\":\"Live Music / Lifestyle / Documentary Photographer\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":\"https://arnavgosain.com/?s={search_term_string}\",\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"http://arnavgosain.com/2019/08/01/july-2019-monthly-playlists/#webpage\",\"url\":\"http://arnavgosain.com/2019/08/01/july-2019-monthly-playlists/\",\"name\":\"July 2019 | Monthly Playlists - Arnav Gosain\",\"isPartOf\":{\"@id\":\"https://arnavgosain.com/#website\"},\"datePublished\":\"2019-07-31T20:17:06+00:00\",\"dateModified\":\"2019-07-31T20:17:06+00:00\",\"author\":{\"@id\":\"https://arnavgosain.com/#/schema/person/ba62b2acb42d8a931bd351e0d4209f66\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"http://arnavgosain.com/2019/08/01/july-2019-monthly-playlists/\"]}]},{\"@type\":\"Person\",\"@id\":\"https://arnavgosain.com/#/schema/person/ba62b2acb42d8a931bd351e0d4209f66\",\"name\":\"Arnav Gosain\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://arnavgosain.com/#personlogo\",\"inLanguage\":\"en-US\",\"url\":\"https://secure.gravatar.com/avatar/770580872b4a01ae3691c5c555ad1271?s=96&d=mm&r=g\",\"caption\":\"Arnav Gosain\"},\"description\":\"Makes photos, videos and writes blog posts from time to time. Super intrigued by personal growth through social media! Follow me on other platforms to chat/look into other things I create:\",\"sameAs\":[\"https://twitter.com/arn4v\"]}]}</script>\n<!-- / Yoast SEO plugin. -->",
+    "_links": {
+      "self": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/posts/507" }],
+      "collection": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/posts" }],
+      "about": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/types/post" }],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/comments?post=507"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 1,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/posts/507/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 508,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/posts/507/revisions/508"
+        }
+      ],
+      "wp:attachment": [
+        { "href": "https://arnavgosain.com/wp-json/wp/v2/media?parent=507" }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/categories?post=507"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/tags?post=507"
+        }
+      ],
+      "curies": [
+        { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+      ]
+    }
+  },
+  {
+    "id": 504,
+    "date": "2019-08-01T01:46:35",
+    "date_gmt": "2019-07-31T20:16:35",
+    "guid": { "rendered": "http://arnavgosain.com/?p=504" },
+    "modified": "2019-08-01T01:46:35",
+    "modified_gmt": "2019-07-31T20:16:35",
+    "slug": "june-2019-monthly-playlists",
+    "status": "publish",
+    "type": "post",
+    "link": "https://arnavgosain.com/2019/08/01/june-2019-monthly-playlists/",
+    "title": { "rendered": "June 2019 | Monthly Playlists" },
+    "content": {
+      "rendered": "<p><iframe src=\"https://open.spotify.com/embed/user/7rl2lqfp5dg2ar6u8lvsgi80t/playlist/2X1x7QhyPw1eTTI2wVF20A?si=E0Q59llSS8mj6bqowxUjNQ\" width=\"600\" height=\"940\" frameborder=\"0\"></iframe></p>\n",
+      "protected": false
+    },
+    "excerpt": { "rendered": "", "protected": false },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "open",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": [],
+    "categories": [7],
+    "tags": [],
+    "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v15.4 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>June 2019 | Monthly Playlists - Arnav Gosain</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"http://arnavgosain.com/2019/08/01/june-2019-monthly-playlists/\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"June 2019 | Monthly Playlists - Arnav Gosain\" />\n<meta property=\"og:url\" content=\"http://arnavgosain.com/2019/08/01/june-2019-monthly-playlists/\" />\n<meta property=\"og:site_name\" content=\"Arnav Gosain\" />\n<meta property=\"article:published_time\" content=\"2019-07-31T20:16:35+00:00\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:creator\" content=\"@arn4v\" />\n<meta name=\"twitter:label1\" content=\"Written by\">\n\t<meta name=\"twitter:data1\" content=\"Arnav Gosain\">\n\t<meta name=\"twitter:label2\" content=\"Est. reading time\">\n\t<meta name=\"twitter:data2\" content=\"0 minutes\">\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebSite\",\"@id\":\"https://arnavgosain.com/#website\",\"url\":\"https://arnavgosain.com/\",\"name\":\"Arnav Gosain\",\"description\":\"Live Music / Lifestyle / Documentary Photographer\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":\"https://arnavgosain.com/?s={search_term_string}\",\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"http://arnavgosain.com/2019/08/01/june-2019-monthly-playlists/#webpage\",\"url\":\"http://arnavgosain.com/2019/08/01/june-2019-monthly-playlists/\",\"name\":\"June 2019 | Monthly Playlists - Arnav Gosain\",\"isPartOf\":{\"@id\":\"https://arnavgosain.com/#website\"},\"datePublished\":\"2019-07-31T20:16:35+00:00\",\"dateModified\":\"2019-07-31T20:16:35+00:00\",\"author\":{\"@id\":\"https://arnavgosain.com/#/schema/person/ba62b2acb42d8a931bd351e0d4209f66\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"http://arnavgosain.com/2019/08/01/june-2019-monthly-playlists/\"]}]},{\"@type\":\"Person\",\"@id\":\"https://arnavgosain.com/#/schema/person/ba62b2acb42d8a931bd351e0d4209f66\",\"name\":\"Arnav Gosain\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://arnavgosain.com/#personlogo\",\"inLanguage\":\"en-US\",\"url\":\"https://secure.gravatar.com/avatar/770580872b4a01ae3691c5c555ad1271?s=96&d=mm&r=g\",\"caption\":\"Arnav Gosain\"},\"description\":\"Makes photos, videos and writes blog posts from time to time. Super intrigued by personal growth through social media! Follow me on other platforms to chat/look into other things I create:\",\"sameAs\":[\"https://twitter.com/arn4v\"]}]}</script>\n<!-- / Yoast SEO plugin. -->",
+    "_links": {
+      "self": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/posts/504" }],
+      "collection": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/posts" }],
+      "about": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/types/post" }],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/comments?post=504"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 2,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/posts/504/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 506,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/posts/504/revisions/506"
+        }
+      ],
+      "wp:attachment": [
+        { "href": "https://arnavgosain.com/wp-json/wp/v2/media?parent=504" }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/categories?post=504"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/tags?post=504"
+        }
+      ],
+      "curies": [
+        { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+      ]
+    }
+  },
+  {
+    "id": 483,
+    "date": "2019-05-23T02:57:24",
+    "date_gmt": "2019-05-22T21:27:24",
+    "guid": { "rendered": "http://arnavgosain.com/?p=483" },
+    "modified": "2019-05-23T02:58:19",
+    "modified_gmt": "2019-05-22T21:28:19",
+    "slug": "may-2019-monthly-playlists",
+    "status": "publish",
+    "type": "post",
+    "link": "https://arnavgosain.com/2019/05/23/may-2019-monthly-playlists/",
+    "title": { "rendered": "May 2019 | Monthly Playlists" },
+    "content": {
+      "rendered": "<p><iframe src=\"https://open.spotify.com/embed/user/7rl2lqfp5dg2ar6u8lvsgi80t/playlist/0SFPafGOFXXuFNBoL11lNc?si=Q-82Fw81Ta6yh0P4Un7Hgg\" width=\"600\" height=\"940\" frameborder=\"0\"></iframe></p>\n",
+      "protected": false
+    },
+    "excerpt": { "rendered": "", "protected": false },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "open",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": [],
+    "categories": [7],
+    "tags": [],
+    "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v15.4 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>May 2019 | Monthly Playlists - Arnav Gosain</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"http://arnavgosain.com/2019/05/23/may-2019-monthly-playlists/\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"May 2019 | Monthly Playlists - Arnav Gosain\" />\n<meta property=\"og:url\" content=\"http://arnavgosain.com/2019/05/23/may-2019-monthly-playlists/\" />\n<meta property=\"og:site_name\" content=\"Arnav Gosain\" />\n<meta property=\"article:published_time\" content=\"2019-05-22T21:27:24+00:00\" />\n<meta property=\"article:modified_time\" content=\"2019-05-22T21:28:19+00:00\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:creator\" content=\"@arn4v\" />\n<meta name=\"twitter:label1\" content=\"Written by\">\n\t<meta name=\"twitter:data1\" content=\"Arnav Gosain\">\n\t<meta name=\"twitter:label2\" content=\"Est. reading time\">\n\t<meta name=\"twitter:data2\" content=\"0 minutes\">\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebSite\",\"@id\":\"https://arnavgosain.com/#website\",\"url\":\"https://arnavgosain.com/\",\"name\":\"Arnav Gosain\",\"description\":\"Live Music / Lifestyle / Documentary Photographer\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":\"https://arnavgosain.com/?s={search_term_string}\",\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"http://arnavgosain.com/2019/05/23/may-2019-monthly-playlists/#webpage\",\"url\":\"http://arnavgosain.com/2019/05/23/may-2019-monthly-playlists/\",\"name\":\"May 2019 | Monthly Playlists - Arnav Gosain\",\"isPartOf\":{\"@id\":\"https://arnavgosain.com/#website\"},\"datePublished\":\"2019-05-22T21:27:24+00:00\",\"dateModified\":\"2019-05-22T21:28:19+00:00\",\"author\":{\"@id\":\"https://arnavgosain.com/#/schema/person/ba62b2acb42d8a931bd351e0d4209f66\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"http://arnavgosain.com/2019/05/23/may-2019-monthly-playlists/\"]}]},{\"@type\":\"Person\",\"@id\":\"https://arnavgosain.com/#/schema/person/ba62b2acb42d8a931bd351e0d4209f66\",\"name\":\"Arnav Gosain\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://arnavgosain.com/#personlogo\",\"inLanguage\":\"en-US\",\"url\":\"https://secure.gravatar.com/avatar/770580872b4a01ae3691c5c555ad1271?s=96&d=mm&r=g\",\"caption\":\"Arnav Gosain\"},\"description\":\"Makes photos, videos and writes blog posts from time to time. Super intrigued by personal growth through social media! Follow me on other platforms to chat/look into other things I create:\",\"sameAs\":[\"https://twitter.com/arn4v\"]}]}</script>\n<!-- / Yoast SEO plugin. -->",
+    "_links": {
+      "self": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/posts/483" }],
+      "collection": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/posts" }],
+      "about": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/types/post" }],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/comments?post=483"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 2,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/posts/483/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 485,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/posts/483/revisions/485"
+        }
+      ],
+      "wp:attachment": [
+        { "href": "https://arnavgosain.com/wp-json/wp/v2/media?parent=483" }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/categories?post=483"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/tags?post=483"
+        }
+      ],
+      "curies": [
+        { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+      ]
+    }
+  },
+  {
+    "id": 481,
+    "date": "2019-05-23T02:55:08",
+    "date_gmt": "2019-05-22T21:25:08",
+    "guid": { "rendered": "http://arnavgosain.com/?p=481" },
+    "modified": "2019-05-23T02:55:22",
+    "modified_gmt": "2019-05-22T21:25:22",
+    "slug": "april-2019-monthly-playlists",
+    "status": "publish",
+    "type": "post",
+    "link": "https://arnavgosain.com/2019/05/23/april-2019-monthly-playlists/",
+    "title": { "rendered": "April 2019 | Monthly Playlists" },
+    "content": {
+      "rendered": "<p><iframe src=\"https://open.spotify.com/embed/user/7rl2lqfp5dg2ar6u8lvsgi80t/playlist/6YKxb9aHlumAXYe52GpIA0?si=IH2jSfDbQMimO9GqLvaZjQ\" width=\"600\" height=\"940\" frameborder=\"0\"></iframe></p>\n",
+      "protected": false
+    },
+    "excerpt": { "rendered": "", "protected": false },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "open",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": [],
+    "categories": [7],
+    "tags": [],
+    "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v15.4 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>April 2019 | Monthly Playlists - Arnav Gosain</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"http://arnavgosain.com/2019/05/23/april-2019-monthly-playlists/\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"April 2019 | Monthly Playlists - Arnav Gosain\" />\n<meta property=\"og:url\" content=\"http://arnavgosain.com/2019/05/23/april-2019-monthly-playlists/\" />\n<meta property=\"og:site_name\" content=\"Arnav Gosain\" />\n<meta property=\"article:published_time\" content=\"2019-05-22T21:25:08+00:00\" />\n<meta property=\"article:modified_time\" content=\"2019-05-22T21:25:22+00:00\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:creator\" content=\"@arn4v\" />\n<meta name=\"twitter:label1\" content=\"Written by\">\n\t<meta name=\"twitter:data1\" content=\"Arnav Gosain\">\n\t<meta name=\"twitter:label2\" content=\"Est. reading time\">\n\t<meta name=\"twitter:data2\" content=\"0 minutes\">\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebSite\",\"@id\":\"https://arnavgosain.com/#website\",\"url\":\"https://arnavgosain.com/\",\"name\":\"Arnav Gosain\",\"description\":\"Live Music / Lifestyle / Documentary Photographer\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":\"https://arnavgosain.com/?s={search_term_string}\",\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"http://arnavgosain.com/2019/05/23/april-2019-monthly-playlists/#webpage\",\"url\":\"http://arnavgosain.com/2019/05/23/april-2019-monthly-playlists/\",\"name\":\"April 2019 | Monthly Playlists - Arnav Gosain\",\"isPartOf\":{\"@id\":\"https://arnavgosain.com/#website\"},\"datePublished\":\"2019-05-22T21:25:08+00:00\",\"dateModified\":\"2019-05-22T21:25:22+00:00\",\"author\":{\"@id\":\"https://arnavgosain.com/#/schema/person/ba62b2acb42d8a931bd351e0d4209f66\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"http://arnavgosain.com/2019/05/23/april-2019-monthly-playlists/\"]}]},{\"@type\":\"Person\",\"@id\":\"https://arnavgosain.com/#/schema/person/ba62b2acb42d8a931bd351e0d4209f66\",\"name\":\"Arnav Gosain\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://arnavgosain.com/#personlogo\",\"inLanguage\":\"en-US\",\"url\":\"https://secure.gravatar.com/avatar/770580872b4a01ae3691c5c555ad1271?s=96&d=mm&r=g\",\"caption\":\"Arnav Gosain\"},\"description\":\"Makes photos, videos and writes blog posts from time to time. Super intrigued by personal growth through social media! Follow me on other platforms to chat/look into other things I create:\",\"sameAs\":[\"https://twitter.com/arn4v\"]}]}</script>\n<!-- / Yoast SEO plugin. -->",
+    "_links": {
+      "self": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/posts/481" }],
+      "collection": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/posts" }],
+      "about": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/types/post" }],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/comments?post=481"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 1,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/posts/481/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 482,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/posts/481/revisions/482"
+        }
+      ],
+      "wp:attachment": [
+        { "href": "https://arnavgosain.com/wp-json/wp/v2/media?parent=481" }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/categories?post=481"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/tags?post=481"
+        }
+      ],
+      "curies": [
+        { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+      ]
+    }
+  },
+  {
+    "id": 478,
+    "date": "2019-03-31T23:26:01",
+    "date_gmt": "2019-03-31T17:56:01",
+    "guid": { "rendered": "http://arnavgosain.com/?p=478" },
+    "modified": "2019-05-23T02:54:11",
+    "modified_gmt": "2019-05-22T21:24:11",
+    "slug": "march-2019-monthly-playlists",
+    "status": "publish",
+    "type": "post",
+    "link": "https://arnavgosain.com/2019/03/31/march-2019-monthly-playlists/",
+    "title": { "rendered": "March 2019 | Monthly Playlists" },
+    "content": {
+      "rendered": "<p><iframe src=\"https://open.spotify.com/embed/user/7rl2lqfp5dg2ar6u8lvsgi80t/playlist/1EbkQmu24xRhPzp7wMTfXe?si=0G1-Pbh-STiQsHawLiJ3pQ\" width=\"600\" height=\"940\" frameborder=\"0\"></iframe></p>\n",
+      "protected": false
+    },
+    "excerpt": { "rendered": "", "protected": false },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "open",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": [],
+    "categories": [7],
+    "tags": [],
+    "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v15.4 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>March 2019 | Monthly Playlists - Arnav Gosain</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"http://arnavgosain.com/2019/03/31/march-2019-monthly-playlists/\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"March 2019 | Monthly Playlists - Arnav Gosain\" />\n<meta property=\"og:url\" content=\"http://arnavgosain.com/2019/03/31/march-2019-monthly-playlists/\" />\n<meta property=\"og:site_name\" content=\"Arnav Gosain\" />\n<meta property=\"article:published_time\" content=\"2019-03-31T17:56:01+00:00\" />\n<meta property=\"article:modified_time\" content=\"2019-05-22T21:24:11+00:00\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:creator\" content=\"@arn4v\" />\n<meta name=\"twitter:label1\" content=\"Written by\">\n\t<meta name=\"twitter:data1\" content=\"Arnav Gosain\">\n\t<meta name=\"twitter:label2\" content=\"Est. reading time\">\n\t<meta name=\"twitter:data2\" content=\"0 minutes\">\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebSite\",\"@id\":\"https://arnavgosain.com/#website\",\"url\":\"https://arnavgosain.com/\",\"name\":\"Arnav Gosain\",\"description\":\"Live Music / Lifestyle / Documentary Photographer\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":\"https://arnavgosain.com/?s={search_term_string}\",\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"http://arnavgosain.com/2019/03/31/march-2019-monthly-playlists/#webpage\",\"url\":\"http://arnavgosain.com/2019/03/31/march-2019-monthly-playlists/\",\"name\":\"March 2019 | Monthly Playlists - Arnav Gosain\",\"isPartOf\":{\"@id\":\"https://arnavgosain.com/#website\"},\"datePublished\":\"2019-03-31T17:56:01+00:00\",\"dateModified\":\"2019-05-22T21:24:11+00:00\",\"author\":{\"@id\":\"https://arnavgosain.com/#/schema/person/ba62b2acb42d8a931bd351e0d4209f66\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"http://arnavgosain.com/2019/03/31/march-2019-monthly-playlists/\"]}]},{\"@type\":\"Person\",\"@id\":\"https://arnavgosain.com/#/schema/person/ba62b2acb42d8a931bd351e0d4209f66\",\"name\":\"Arnav Gosain\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://arnavgosain.com/#personlogo\",\"inLanguage\":\"en-US\",\"url\":\"https://secure.gravatar.com/avatar/770580872b4a01ae3691c5c555ad1271?s=96&d=mm&r=g\",\"caption\":\"Arnav Gosain\"},\"description\":\"Makes photos, videos and writes blog posts from time to time. Super intrigued by personal growth through social media! Follow me on other platforms to chat/look into other things I create:\",\"sameAs\":[\"https://twitter.com/arn4v\"]}]}</script>\n<!-- / Yoast SEO plugin. -->",
+    "_links": {
+      "self": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/posts/478" }],
+      "collection": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/posts" }],
+      "about": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/types/post" }],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/comments?post=478"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 1,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/posts/478/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 479,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/posts/478/revisions/479"
+        }
+      ],
+      "wp:attachment": [
+        { "href": "https://arnavgosain.com/wp-json/wp/v2/media?parent=478" }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/categories?post=478"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/tags?post=478"
+        }
+      ],
+      "curies": [
+        { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+      ]
+    }
+  },
+  {
+    "id": 474,
+    "date": "2019-03-18T13:42:31",
+    "date_gmt": "2019-03-18T08:12:31",
+    "guid": { "rendered": "http://arnavgosain.com/?p=474" },
+    "modified": "2019-03-18T13:42:31",
+    "modified_gmt": "2019-03-18T08:12:31",
+    "slug": "february-2019-monthly-playlists",
+    "status": "publish",
+    "type": "post",
+    "link": "https://arnavgosain.com/2019/03/18/february-2019-monthly-playlists/",
+    "title": { "rendered": "February 2019 | Monthly Playlists" },
+    "content": {
+      "rendered": "<p>DIVINE&#8217;s Junoon and One Side are absolutely amazing!</p>\n<p><!--more--></p>\n<p><iframe src=\"https://open.spotify.com/embed/user/7rl2lqfp5dg2ar6u8lvsgi80t/playlist/2NkxLMWm0o3lOpeN3B7woY?si=QYN2f8ZSR0aBSKnWxOQWLg\" width=\"600\" height=\"940\" frameborder=\"0\"></iframe></p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>DIVINE&#8217;s Junoon and One Side are absolutely amazing!</p>\n",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "open",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": [],
+    "categories": [7],
+    "tags": [],
+    "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v15.4 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>February 2019 | Monthly Playlists - Arnav Gosain</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://arnavgosain.com/2019/03/18/february-2019-monthly-playlists/\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"February 2019 | Monthly Playlists - Arnav Gosain\" />\n<meta property=\"og:description\" content=\"DIVINE&#8217;s Junoon and One Side are absolutely amazing!\" />\n<meta property=\"og:url\" content=\"https://arnavgosain.com/2019/03/18/february-2019-monthly-playlists/\" />\n<meta property=\"og:site_name\" content=\"Arnav Gosain\" />\n<meta property=\"article:published_time\" content=\"2019-03-18T08:12:31+00:00\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:creator\" content=\"@arn4v\" />\n<meta name=\"twitter:label1\" content=\"Written by\">\n\t<meta name=\"twitter:data1\" content=\"Arnav Gosain\">\n\t<meta name=\"twitter:label2\" content=\"Est. reading time\">\n\t<meta name=\"twitter:data2\" content=\"0 minutes\">\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebSite\",\"@id\":\"https://arnavgosain.com/#website\",\"url\":\"https://arnavgosain.com/\",\"name\":\"Arnav Gosain\",\"description\":\"Live Music / Lifestyle / Documentary Photographer\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":\"https://arnavgosain.com/?s={search_term_string}\",\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https://arnavgosain.com/2019/03/18/february-2019-monthly-playlists/#webpage\",\"url\":\"https://arnavgosain.com/2019/03/18/february-2019-monthly-playlists/\",\"name\":\"February 2019 | Monthly Playlists - Arnav Gosain\",\"isPartOf\":{\"@id\":\"https://arnavgosain.com/#website\"},\"datePublished\":\"2019-03-18T08:12:31+00:00\",\"dateModified\":\"2019-03-18T08:12:31+00:00\",\"author\":{\"@id\":\"https://arnavgosain.com/#/schema/person/ba62b2acb42d8a931bd351e0d4209f66\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https://arnavgosain.com/2019/03/18/february-2019-monthly-playlists/\"]}]},{\"@type\":\"Person\",\"@id\":\"https://arnavgosain.com/#/schema/person/ba62b2acb42d8a931bd351e0d4209f66\",\"name\":\"Arnav Gosain\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://arnavgosain.com/#personlogo\",\"inLanguage\":\"en-US\",\"url\":\"https://secure.gravatar.com/avatar/770580872b4a01ae3691c5c555ad1271?s=96&d=mm&r=g\",\"caption\":\"Arnav Gosain\"},\"description\":\"Makes photos, videos and writes blog posts from time to time. Super intrigued by personal growth through social media! Follow me on other platforms to chat/look into other things I create:\",\"sameAs\":[\"https://twitter.com/arn4v\"]}]}</script>\n<!-- / Yoast SEO plugin. -->",
+    "_links": {
+      "self": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/posts/474" }],
+      "collection": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/posts" }],
+      "about": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/types/post" }],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/comments?post=474"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 1,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/posts/474/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 476,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/posts/474/revisions/476"
+        }
+      ],
+      "wp:attachment": [
+        { "href": "https://arnavgosain.com/wp-json/wp/v2/media?parent=474" }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/categories?post=474"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/tags?post=474"
+        }
+      ],
+      "curies": [
+        { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+      ]
+    }
+  },
+  {
+    "id": 469,
+    "date": "2019-01-31T12:12:37",
+    "date_gmt": "2019-01-31T06:42:37",
+    "guid": { "rendered": "http://arnavgosain.com/?p=469" },
+    "modified": "2019-03-18T13:39:12",
+    "modified_gmt": "2019-03-18T08:09:12",
+    "slug": "january-2019-playlist",
+    "status": "publish",
+    "type": "post",
+    "link": "https://arnavgosain.com/2019/01/31/january-2019-playlist/",
+    "title": { "rendered": "January 2019 | Monthly Playlists" },
+    "content": {
+      "rendered": "<p>Seedhe Maut&#8217;s Debut Album &#8220;Bayaan&#8221; is all I listened to this month, it&#8217;s that good!</p>\n<p><!--more--></p>\n<p><iframe src=\"https://open.spotify.com/embed/user/7rl2lqfp5dg2ar6u8lvsgi80t/playlist/4lUHIAY92sNRWjF4R8x57T?si=QVVfvE8oSS6JzUZuA8oeDQ\" width=\"600\" height=\"940\" frameborder=\"0\"></iframe></p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>Seedhe Maut&#8217;s Debut Album &#8220;Bayaan&#8221; is all I listened to this month, it&#8217;s that good!</p>\n",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "open",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": [],
+    "categories": [7],
+    "tags": [],
+    "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v15.4 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>January 2019 | Monthly Playlists - Arnav Gosain</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://arnavgosain.com/2019/01/31/january-2019-playlist/\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"January 2019 | Monthly Playlists - Arnav Gosain\" />\n<meta property=\"og:description\" content=\"Seedhe Maut&#8217;s Debut Album &#8220;Bayaan&#8221; is all I listened to this month, it&#8217;s that good!\" />\n<meta property=\"og:url\" content=\"https://arnavgosain.com/2019/01/31/january-2019-playlist/\" />\n<meta property=\"og:site_name\" content=\"Arnav Gosain\" />\n<meta property=\"article:published_time\" content=\"2019-01-31T06:42:37+00:00\" />\n<meta property=\"article:modified_time\" content=\"2019-03-18T08:09:12+00:00\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:creator\" content=\"@arn4v\" />\n<meta name=\"twitter:label1\" content=\"Written by\">\n\t<meta name=\"twitter:data1\" content=\"Arnav Gosain\">\n\t<meta name=\"twitter:label2\" content=\"Est. reading time\">\n\t<meta name=\"twitter:data2\" content=\"0 minutes\">\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebSite\",\"@id\":\"https://arnavgosain.com/#website\",\"url\":\"https://arnavgosain.com/\",\"name\":\"Arnav Gosain\",\"description\":\"Live Music / Lifestyle / Documentary Photographer\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":\"https://arnavgosain.com/?s={search_term_string}\",\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https://arnavgosain.com/2019/01/31/january-2019-playlist/#webpage\",\"url\":\"https://arnavgosain.com/2019/01/31/january-2019-playlist/\",\"name\":\"January 2019 | Monthly Playlists - Arnav Gosain\",\"isPartOf\":{\"@id\":\"https://arnavgosain.com/#website\"},\"datePublished\":\"2019-01-31T06:42:37+00:00\",\"dateModified\":\"2019-03-18T08:09:12+00:00\",\"author\":{\"@id\":\"https://arnavgosain.com/#/schema/person/ba62b2acb42d8a931bd351e0d4209f66\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https://arnavgosain.com/2019/01/31/january-2019-playlist/\"]}]},{\"@type\":\"Person\",\"@id\":\"https://arnavgosain.com/#/schema/person/ba62b2acb42d8a931bd351e0d4209f66\",\"name\":\"Arnav Gosain\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://arnavgosain.com/#personlogo\",\"inLanguage\":\"en-US\",\"url\":\"https://secure.gravatar.com/avatar/770580872b4a01ae3691c5c555ad1271?s=96&d=mm&r=g\",\"caption\":\"Arnav Gosain\"},\"description\":\"Makes photos, videos and writes blog posts from time to time. Super intrigued by personal growth through social media! Follow me on other platforms to chat/look into other things I create:\",\"sameAs\":[\"https://twitter.com/arn4v\"]}]}</script>\n<!-- / Yoast SEO plugin. -->",
+    "_links": {
+      "self": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/posts/469" }],
+      "collection": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/posts" }],
+      "about": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/types/post" }],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/comments?post=469"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 2,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/posts/469/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 475,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/posts/469/revisions/475"
+        }
+      ],
+      "wp:attachment": [
+        { "href": "https://arnavgosain.com/wp-json/wp/v2/media?parent=469" }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/categories?post=469"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/tags?post=469"
+        }
+      ],
+      "curies": [
+        { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+      ]
+    }
+  },
+  {
+    "id": 465,
+    "date": "2019-01-23T23:13:02",
+    "date_gmt": "2019-01-23T17:43:02",
+    "guid": { "rendered": "http://arnavgosain.com/?p=465" },
+    "modified": "2019-01-31T11:14:16",
+    "modified_gmt": "2019-01-31T05:44:16",
+    "slug": "curating-music-that-makes-you-happy",
+    "status": "publish",
+    "type": "post",
+    "link": "https://arnavgosain.com/2019/01/23/curating-music-that-makes-you-happy/",
+    "title": { "rendered": "Curating Music That Makes You Happy" },
+    "content": {
+      "rendered": "<div data-embed-media=\"www.redditmedia.com\" data-embed-parent=\"false\" data-embed-live=\"false\" data-embed-uuid=\"e95a4563-61a6-44ec-9d17-3cbfb1eef043\" data-embed-created=\"2019-01-23T16:12:35.182Z\">While reading a post\u00a0called &#8220;<a href=\"https://www.reddit.com/r/AskReddit/comments/aiv6l6/what_is_the_most_effective_psychological_trick/\">What is the most effective psychological\u00a0&#8220;trick&#8221; you use?</a>&#8221; in r/AskReddit, I came across this comment:</div>\n<div data-embed-media=\"www.redditmedia.com\" data-embed-parent=\"false\" data-embed-live=\"false\" data-embed-uuid=\"e95a4563-61a6-44ec-9d17-3cbfb1eef043\" data-embed-created=\"2019-01-23T16:12:35.182Z\"></div>\n<div data-embed-media=\"www.redditmedia.com\" data-embed-parent=\"false\" data-embed-live=\"false\" data-embed-uuid=\"e95a4563-61a6-44ec-9d17-3cbfb1eef043\" data-embed-created=\"2019-01-23T16:12:35.182Z\"></div>\n<div class=\"reddit-embed\" data-embed-media=\"www.redditmedia.com\" data-embed-parent=\"false\" data-embed-live=\"false\" data-embed-uuid=\"e95a4563-61a6-44ec-9d17-3cbfb1eef043\" data-embed-created=\"2019-01-23T16:12:35.182Z\"><a href=\"https://www.reddit.com/r/AskReddit/comments/aiv6l6/what_is_the_most_effective_psychological_trick/eeqtgjx/\">Comment</a> from discussion <a href=\"https://www.reddit.com/r/AskReddit/comments/aiv6l6/what_is_the_most_effective_psychological_trick/\">What is the most effective psychological \u201ctrick\u201d you use?</a>.</div>\n<p><script async src=\"https://www.redditstatic.com/comment-embed.js\"></script></p>\n<p>As someone who had a rough 2018 and curates monthly playlists, I have no idea why I haven&#8217;t put more thought into organizing a solid &#8216;good vibes only&#8217; playlist. And by that, I mean, I already have a playlist but not one I tune into that often.</p>\n<p><iframe src=\"https://open.spotify.com/embed/user/7rl2lqfp5dg2ar6u8lvsgi80t/playlist/42FBTeZZIfmEZSBoiZOlkD\" width=\"300\" height=\"380\" frameborder=\"0\"></iframe></p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>While reading a post\u00a0called &#8220;What is the most effective psychological\u00a0&#8220;trick&#8221; you use?&#8221; in r/AskReddit, I came across this comment: Comment from discussion What is the most effective psychological \u201ctrick\u201d you use?. As someone who had a rough 2018 and curates monthly playlists, I have no idea why I haven&#8217;t put more thought into organizing a [&hellip;]</p>\n",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "open",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": [],
+    "categories": [9, 5],
+    "tags": [14],
+    "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v15.4 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>Curating Music That Makes You Happy - Arnav Gosain</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://arnavgosain.com/2019/01/23/curating-music-that-makes-you-happy/\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"Curating Music That Makes You Happy - Arnav Gosain\" />\n<meta property=\"og:description\" content=\"While reading a post\u00a0called &#8220;What is the most effective psychological\u00a0&#8220;trick&#8221; you use?&#8221; in r/AskReddit, I came across this comment: Comment from discussion What is the most effective psychological \u201ctrick\u201d you use?. As someone who had a rough 2018 and curates monthly playlists, I have no idea why I haven&#8217;t put more thought into organizing a [&hellip;]\" />\n<meta property=\"og:url\" content=\"https://arnavgosain.com/2019/01/23/curating-music-that-makes-you-happy/\" />\n<meta property=\"og:site_name\" content=\"Arnav Gosain\" />\n<meta property=\"article:published_time\" content=\"2019-01-23T17:43:02+00:00\" />\n<meta property=\"article:modified_time\" content=\"2019-01-31T05:44:16+00:00\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:creator\" content=\"@arn4v\" />\n<meta name=\"twitter:label1\" content=\"Written by\">\n\t<meta name=\"twitter:data1\" content=\"Arnav Gosain\">\n\t<meta name=\"twitter:label2\" content=\"Est. reading time\">\n\t<meta name=\"twitter:data2\" content=\"0 minutes\">\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebSite\",\"@id\":\"https://arnavgosain.com/#website\",\"url\":\"https://arnavgosain.com/\",\"name\":\"Arnav Gosain\",\"description\":\"Live Music / Lifestyle / Documentary Photographer\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":\"https://arnavgosain.com/?s={search_term_string}\",\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https://arnavgosain.com/2019/01/23/curating-music-that-makes-you-happy/#webpage\",\"url\":\"https://arnavgosain.com/2019/01/23/curating-music-that-makes-you-happy/\",\"name\":\"Curating Music That Makes You Happy - Arnav Gosain\",\"isPartOf\":{\"@id\":\"https://arnavgosain.com/#website\"},\"datePublished\":\"2019-01-23T17:43:02+00:00\",\"dateModified\":\"2019-01-31T05:44:16+00:00\",\"author\":{\"@id\":\"https://arnavgosain.com/#/schema/person/ba62b2acb42d8a931bd351e0d4209f66\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https://arnavgosain.com/2019/01/23/curating-music-that-makes-you-happy/\"]}]},{\"@type\":\"Person\",\"@id\":\"https://arnavgosain.com/#/schema/person/ba62b2acb42d8a931bd351e0d4209f66\",\"name\":\"Arnav Gosain\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://arnavgosain.com/#personlogo\",\"inLanguage\":\"en-US\",\"url\":\"https://secure.gravatar.com/avatar/770580872b4a01ae3691c5c555ad1271?s=96&d=mm&r=g\",\"caption\":\"Arnav Gosain\"},\"description\":\"Makes photos, videos and writes blog posts from time to time. Super intrigued by personal growth through social media! Follow me on other platforms to chat/look into other things I create:\",\"sameAs\":[\"https://twitter.com/arn4v\"]}]}</script>\n<!-- / Yoast SEO plugin. -->",
+    "_links": {
+      "self": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/posts/465" }],
+      "collection": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/posts" }],
+      "about": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/types/post" }],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/comments?post=465"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 2,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/posts/465/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 467,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/posts/465/revisions/467"
+        }
+      ],
+      "wp:attachment": [
+        { "href": "https://arnavgosain.com/wp-json/wp/v2/media?parent=465" }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/categories?post=465"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/tags?post=465"
+        }
+      ],
+      "curies": [
+        { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+      ]
+    }
+  },
+  {
+    "id": 455,
+    "date": "2019-01-20T16:05:51",
+    "date_gmt": "2019-01-20T10:35:51",
+    "guid": { "rendered": "http://arnavgosain.com/?p=455" },
+    "modified": "2019-01-31T11:14:23",
+    "modified_gmt": "2019-01-31T05:44:23",
+    "slug": "ios-needs-an-easier-way-to-go-back",
+    "status": "publish",
+    "type": "post",
+    "link": "https://arnavgosain.com/2019/01/20/ios-needs-an-easier-way-to-go-back/",
+    "title": { "rendered": "iOS Needs An Easier Way To Go Back" },
+    "content": {
+      "rendered": "<p>I&#8217;ve been an Android user for as long as I&#8217;ve had smart devices, excluding the iPod Touch I had for a few years. Last month, I got a 6th-generation iPad, and I&#8217;ve been using it for a little more than a month now. I love it; it&#8217;s excellent. I&#8217;ve been able to pick up on how to write with both of my hands on a touchscreen and hence, I&#8217;ve been able to replace my laptop with it. I love how big the screen is and how iOS handles split-screen.</p>\n<p>But I dislike a lot of things too. Hate, even.</p>\n<p>iOS needs a dedicated back button. I don&#8217;t care if it&#8217;s optional, it just needs a dedicated back button. You see, I primarily use my iPad to either write blog posts or make notes and I mostly use Google Docs to\u00a0do these tasks.</p>\n<p>Google Docs has the same design across both iOS and Android.</p>\n<p><img loading=\"lazy\" class=\"alignnone wp-image-456 size-large\" src=\"http://arnavgosain.com/wp-content/uploads/2019/01/IMG_0089-768x1024.png\" alt=\"\" width=\"768\" height=\"1024\" srcset=\"https://arnavgosain.com/wp-content/uploads/2019/01/IMG_0089-768x1024.png 768w, https://arnavgosain.com/wp-content/uploads/2019/01/IMG_0089-225x300.png 225w, https://arnavgosain.com/wp-content/uploads/2019/01/IMG_0089-525x700.png 525w, https://arnavgosain.com/wp-content/uploads/2019/01/IMG_0089.png 1536w\" sizes=\"(max-width: 768px) 100vw, 768px\" /><img loading=\"lazy\" class=\"alignnone wp-image-458 size-large\" src=\"http://arnavgosain.com/wp-content/uploads/2019/01/IMG_0090-768x1024.jpg\" alt=\"\" width=\"768\" height=\"1024\" srcset=\"https://arnavgosain.com/wp-content/uploads/2019/01/IMG_0090-768x1024.jpg 768w, https://arnavgosain.com/wp-content/uploads/2019/01/IMG_0090-225x300.jpg 225w, https://arnavgosain.com/wp-content/uploads/2019/01/IMG_0090-525x700.jpg 525w, https://arnavgosain.com/wp-content/uploads/2019/01/IMG_0090.jpg 1536w\" sizes=\"(max-width: 768px) 100vw, 768px\" /></p>\n<p>At times, when I&#8217;m not using both of my hands to time\u00a0and just typing with my thumbs, I have to reach all the way to the top, tap on the tick icon and then tap on the back button. Whereas on Android, I need to touch the back button twice without to reach the top corners of the screen.</p>\n<p><img loading=\"lazy\" class=\"alignnone wp-image-457 size-large\" src=\"http://arnavgosain.com/wp-content/uploads/2019/01/photo_2019-01-20_15-49-56-576x1024.jpg\" alt=\"\" width=\"576\" height=\"1024\" srcset=\"https://arnavgosain.com/wp-content/uploads/2019/01/photo_2019-01-20_15-49-56-576x1024.jpg 576w, https://arnavgosain.com/wp-content/uploads/2019/01/photo_2019-01-20_15-49-56-169x300.jpg 169w, https://arnavgosain.com/wp-content/uploads/2019/01/photo_2019-01-20_15-49-56-394x700.jpg 394w, https://arnavgosain.com/wp-content/uploads/2019/01/photo_2019-01-20_15-49-56.jpg 720w\" sizes=\"(max-width: 576px) 100vw, 576px\" /></p>\n<p>And for those of you who might argue that this happens because\u00a0it&#8217;s a third-party app, it doesn&#8217;t. It also occurs when I&#8217;m trying to send a file through iOS&#8217; Files app to a Telegram contact. To cancel sending a document, I have to reach all the way to the top right corner and tap Cancel.</p>\n<p><img loading=\"lazy\" class=\"alignnone wp-image-459 size-large\" src=\"http://arnavgosain.com/wp-content/uploads/2019/01/IMG_0091-768x1024.png\" alt=\"\" width=\"768\" height=\"1024\" srcset=\"https://arnavgosain.com/wp-content/uploads/2019/01/IMG_0091-768x1024.png 768w, https://arnavgosain.com/wp-content/uploads/2019/01/IMG_0091-225x300.png 225w, https://arnavgosain.com/wp-content/uploads/2019/01/IMG_0091-525x700.png 525w, https://arnavgosain.com/wp-content/uploads/2019/01/IMG_0091.png 1536w\" sizes=\"(max-width: 768px) 100vw, 768px\" /></p>\n<p>I love iOS, I genuinely do. But I can&#8217;t get over how comfortable and straightforward it is to use the same apps I use on iOS, on Android.</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>I&#8217;ve been an Android user for as long as I&#8217;ve had smart devices, excluding the iPod Touch I had for a few years. Last month, I got a 6th-generation iPad, and I&#8217;ve been using it for a little more than a month now. I love it; it&#8217;s excellent. I&#8217;ve been able to pick up on [&hellip;]</p>\n",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "open",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": [],
+    "categories": [9, 5],
+    "tags": [14],
+    "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v15.4 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>iOS Needs An Easier Way To Go Back - Arnav Gosain</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://arnavgosain.com/2019/01/20/ios-needs-an-easier-way-to-go-back/\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"iOS Needs An Easier Way To Go Back - Arnav Gosain\" />\n<meta property=\"og:description\" content=\"I&#8217;ve been an Android user for as long as I&#8217;ve had smart devices, excluding the iPod Touch I had for a few years. Last month, I got a 6th-generation iPad, and I&#8217;ve been using it for a little more than a month now. I love it; it&#8217;s excellent. I&#8217;ve been able to pick up on [&hellip;]\" />\n<meta property=\"og:url\" content=\"https://arnavgosain.com/2019/01/20/ios-needs-an-easier-way-to-go-back/\" />\n<meta property=\"og:site_name\" content=\"Arnav Gosain\" />\n<meta property=\"article:published_time\" content=\"2019-01-20T10:35:51+00:00\" />\n<meta property=\"article:modified_time\" content=\"2019-01-31T05:44:23+00:00\" />\n<meta property=\"og:image\" content=\"http://arnavgosain.com/wp-content/uploads/2019/01/IMG_0089-768x1024.png\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:creator\" content=\"@arn4v\" />\n<meta name=\"twitter:label1\" content=\"Written by\">\n\t<meta name=\"twitter:data1\" content=\"Arnav Gosain\">\n\t<meta name=\"twitter:label2\" content=\"Est. reading time\">\n\t<meta name=\"twitter:data2\" content=\"1 minute\">\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebSite\",\"@id\":\"https://arnavgosain.com/#website\",\"url\":\"https://arnavgosain.com/\",\"name\":\"Arnav Gosain\",\"description\":\"Live Music / Lifestyle / Documentary Photographer\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":\"https://arnavgosain.com/?s={search_term_string}\",\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"en-US\"},{\"@type\":\"ImageObject\",\"@id\":\"https://arnavgosain.com/2019/01/20/ios-needs-an-easier-way-to-go-back/#primaryimage\",\"inLanguage\":\"en-US\",\"url\":\"http://arnavgosain.com/wp-content/uploads/2019/01/IMG_0089-768x1024.png\"},{\"@type\":\"WebPage\",\"@id\":\"https://arnavgosain.com/2019/01/20/ios-needs-an-easier-way-to-go-back/#webpage\",\"url\":\"https://arnavgosain.com/2019/01/20/ios-needs-an-easier-way-to-go-back/\",\"name\":\"iOS Needs An Easier Way To Go Back - Arnav Gosain\",\"isPartOf\":{\"@id\":\"https://arnavgosain.com/#website\"},\"primaryImageOfPage\":{\"@id\":\"https://arnavgosain.com/2019/01/20/ios-needs-an-easier-way-to-go-back/#primaryimage\"},\"datePublished\":\"2019-01-20T10:35:51+00:00\",\"dateModified\":\"2019-01-31T05:44:23+00:00\",\"author\":{\"@id\":\"https://arnavgosain.com/#/schema/person/ba62b2acb42d8a931bd351e0d4209f66\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https://arnavgosain.com/2019/01/20/ios-needs-an-easier-way-to-go-back/\"]}]},{\"@type\":\"Person\",\"@id\":\"https://arnavgosain.com/#/schema/person/ba62b2acb42d8a931bd351e0d4209f66\",\"name\":\"Arnav Gosain\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://arnavgosain.com/#personlogo\",\"inLanguage\":\"en-US\",\"url\":\"https://secure.gravatar.com/avatar/770580872b4a01ae3691c5c555ad1271?s=96&d=mm&r=g\",\"caption\":\"Arnav Gosain\"},\"description\":\"Makes photos, videos and writes blog posts from time to time. Super intrigued by personal growth through social media! Follow me on other platforms to chat/look into other things I create:\",\"sameAs\":[\"https://twitter.com/arn4v\"]}]}</script>\n<!-- / Yoast SEO plugin. -->",
+    "_links": {
+      "self": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/posts/455" }],
+      "collection": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/posts" }],
+      "about": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/types/post" }],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/comments?post=455"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 4,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/posts/455/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 464,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/posts/455/revisions/464"
+        }
+      ],
+      "wp:attachment": [
+        { "href": "https://arnavgosain.com/wp-json/wp/v2/media?parent=455" }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/categories?post=455"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/tags?post=455"
+        }
+      ],
+      "curies": [
+        { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+      ]
+    }
+  },
+  {
+    "id": 451,
+    "date": "2019-01-18T00:38:36",
+    "date_gmt": "2019-01-17T19:08:36",
+    "guid": { "rendered": "http://arnavgosain.com/?p=451" },
+    "modified": "2019-01-20T21:44:01",
+    "modified_gmt": "2019-01-20T16:14:01",
+    "slug": "i-have-learnt-the-importance-of-not-taking-a-break",
+    "status": "publish",
+    "type": "post",
+    "link": "https://arnavgosain.com/2019/01/18/i-have-learnt-the-importance-of-not-taking-a-break/",
+    "title": {
+      "rendered": "I Have Learnt The Importance Of Not Taking A Break"
+    },
+    "content": {
+      "rendered": "<p>The last post I wrote and published was exactly 6 days ago now and during these days, I have realized the importance of not taking a break. Not taking a break is about building momentum, it&#8217;s about riding that wave for as long as you can before it inevitably dies.</p>\n",
+      "protected": false
+    },
+    "excerpt": {
+      "rendered": "<p>The last post I wrote and published was exactly 6 days ago now and during these days, I have realized the importance of not taking a break. Not taking a break is about building momentum, it&#8217;s about riding that wave for as long as you can before it inevitably dies.</p>\n",
+      "protected": false
+    },
+    "author": 1,
+    "featured_media": 0,
+    "comment_status": "open",
+    "ping_status": "open",
+    "sticky": false,
+    "template": "",
+    "format": "standard",
+    "meta": [],
+    "categories": [9, 5],
+    "tags": [14],
+    "yoast_head": "<!-- This site is optimized with the Yoast SEO plugin v15.4 - https://yoast.com/wordpress/plugins/seo/ -->\n<title>I Have Learnt The Importance Of Not Taking A Break - Arnav Gosain</title>\n<meta name=\"robots\" content=\"index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1\" />\n<link rel=\"canonical\" href=\"https://arnavgosain.com/2019/01/18/i-have-learnt-the-importance-of-not-taking-a-break/\" />\n<meta property=\"og:locale\" content=\"en_US\" />\n<meta property=\"og:type\" content=\"article\" />\n<meta property=\"og:title\" content=\"I Have Learnt The Importance Of Not Taking A Break - Arnav Gosain\" />\n<meta property=\"og:description\" content=\"The last post I wrote and published was exactly 6 days ago now and during these days, I have realized the importance of not taking a break. Not taking a break is about building momentum, it&#8217;s about riding that wave for as long as you can before it inevitably dies.\" />\n<meta property=\"og:url\" content=\"https://arnavgosain.com/2019/01/18/i-have-learnt-the-importance-of-not-taking-a-break/\" />\n<meta property=\"og:site_name\" content=\"Arnav Gosain\" />\n<meta property=\"article:published_time\" content=\"2019-01-17T19:08:36+00:00\" />\n<meta property=\"article:modified_time\" content=\"2019-01-20T16:14:01+00:00\" />\n<meta name=\"twitter:card\" content=\"summary_large_image\" />\n<meta name=\"twitter:creator\" content=\"@arn4v\" />\n<meta name=\"twitter:label1\" content=\"Written by\">\n\t<meta name=\"twitter:data1\" content=\"Arnav Gosain\">\n\t<meta name=\"twitter:label2\" content=\"Est. reading time\">\n\t<meta name=\"twitter:data2\" content=\"0 minutes\">\n<script type=\"application/ld+json\" class=\"yoast-schema-graph\">{\"@context\":\"https://schema.org\",\"@graph\":[{\"@type\":\"WebSite\",\"@id\":\"https://arnavgosain.com/#website\",\"url\":\"https://arnavgosain.com/\",\"name\":\"Arnav Gosain\",\"description\":\"Live Music / Lifestyle / Documentary Photographer\",\"potentialAction\":[{\"@type\":\"SearchAction\",\"target\":\"https://arnavgosain.com/?s={search_term_string}\",\"query-input\":\"required name=search_term_string\"}],\"inLanguage\":\"en-US\"},{\"@type\":\"WebPage\",\"@id\":\"https://arnavgosain.com/2019/01/18/i-have-learnt-the-importance-of-not-taking-a-break/#webpage\",\"url\":\"https://arnavgosain.com/2019/01/18/i-have-learnt-the-importance-of-not-taking-a-break/\",\"name\":\"I Have Learnt The Importance Of Not Taking A Break - Arnav Gosain\",\"isPartOf\":{\"@id\":\"https://arnavgosain.com/#website\"},\"datePublished\":\"2019-01-17T19:08:36+00:00\",\"dateModified\":\"2019-01-20T16:14:01+00:00\",\"author\":{\"@id\":\"https://arnavgosain.com/#/schema/person/ba62b2acb42d8a931bd351e0d4209f66\"},\"inLanguage\":\"en-US\",\"potentialAction\":[{\"@type\":\"ReadAction\",\"target\":[\"https://arnavgosain.com/2019/01/18/i-have-learnt-the-importance-of-not-taking-a-break/\"]}]},{\"@type\":\"Person\",\"@id\":\"https://arnavgosain.com/#/schema/person/ba62b2acb42d8a931bd351e0d4209f66\",\"name\":\"Arnav Gosain\",\"image\":{\"@type\":\"ImageObject\",\"@id\":\"https://arnavgosain.com/#personlogo\",\"inLanguage\":\"en-US\",\"url\":\"https://secure.gravatar.com/avatar/770580872b4a01ae3691c5c555ad1271?s=96&d=mm&r=g\",\"caption\":\"Arnav Gosain\"},\"description\":\"Makes photos, videos and writes blog posts from time to time. Super intrigued by personal growth through social media! Follow me on other platforms to chat/look into other things I create:\",\"sameAs\":[\"https://twitter.com/arn4v\"]}]}</script>\n<!-- / Yoast SEO plugin. -->",
+    "_links": {
+      "self": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/posts/451" }],
+      "collection": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/posts" }],
+      "about": [{ "href": "https://arnavgosain.com/wp-json/wp/v2/types/post" }],
+      "author": [
+        {
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/users/1"
+        }
+      ],
+      "replies": [
+        {
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/comments?post=451"
+        }
+      ],
+      "version-history": [
+        {
+          "count": 1,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/posts/451/revisions"
+        }
+      ],
+      "predecessor-version": [
+        {
+          "id": 452,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/posts/451/revisions/452"
+        }
+      ],
+      "wp:attachment": [
+        { "href": "https://arnavgosain.com/wp-json/wp/v2/media?parent=451" }
+      ],
+      "wp:term": [
+        {
+          "taxonomy": "category",
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/categories?post=451"
+        },
+        {
+          "taxonomy": "post_tag",
+          "embeddable": true,
+          "href": "https://arnavgosain.com/wp-json/wp/v2/tags?post=451"
+        }
+      ],
+      "curies": [
+        { "name": "wp", "href": "https://api.w.org/{rel}", "templated": true }
+      ]
+    }
+  }
+]
+
