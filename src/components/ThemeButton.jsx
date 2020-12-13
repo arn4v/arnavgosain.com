@@ -1,16 +1,25 @@
+import { HiMoon, HiSun } from "react-icons/hi";
+
+import clsx from "clsx";
 import { useTheme } from "../contexts/ThemeContext";
-import { HiSun, HiMoon } from "react-icons/hi";
 
 export default function ThemeButton() {
   const { theme, setTheme } = useTheme();
+  const isDarkTheme = theme === "dark";
 
   return (
     <>
       <button
-        className="flex justify-center items-center sm:p-3 lg:p-5"
+        className={clsx([
+          "flex justify-center items-center px-3 h-12 focus:outline-none focus:ring focus:ring-black rounded-md",
+        ])}
         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
       >
-        {theme === "light" ? <HiMoon /> : <HiSun />}
+        {theme === "light" ? (
+          <HiMoon className="h-6 w-6" />
+        ) : (
+          <HiSun className="h-6 w-6" />
+        )}
       </button>
     </>
   );
