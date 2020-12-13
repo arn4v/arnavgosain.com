@@ -1,6 +1,9 @@
-import Nav from "../components/nav";
-import PageLayout from "../../components/PageLayout";
+import PageLayout from "~/components/PageLayout";
 
 export default function IndexPage() {
-  return <PageLayout></PageLayout>;
+  return (
+    <>
+      <PageLayout></PageLayout>
+    </>
+  );
 }

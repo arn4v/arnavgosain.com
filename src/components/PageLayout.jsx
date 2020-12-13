@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import PropTypes from "prop-types";
-import commonPropTypes from "../lib/commonPropTypes";
-import { useTheme } from "../components/contexts/ThemeContext";
+import { useTheme } from "~/contexts/ThemeContext";
+import commonPropTypes from "~/lib/commonPropTypes";
 import NavBar from "./NavBar";
 
 export default function PageLayout({ children, className }) {
