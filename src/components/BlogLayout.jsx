@@ -5,19 +5,30 @@ import commonPropTypes from "~/lib/commonPropTypes";
 export default function BlogLayout({ children, metadata }) {
   return (
     <>
-      {/* <BlogSeo metadata={metadata}/> */}
-      <PageLayout>
-        <article className="max-w-2xl mx-auto">
+      {/* <BlogSeo metadata={metadata} /> */}
+      <PageLayout
+        breadcrumb={{
+          Blog: "/blog",
+          [metadata.title]: `/blog/${metadata.slug}`,
+        }}
+      >
+        <article className="max-w-3xl mx-auto">
           <div className="flex flex-col space-y-4 items-start justify-center mb-4">
-            <h1 className="text-3xl font-bold">{metadata.title}</h1>
+            <h1 className="text-3xl font-bold dark:text-white">
+              {metadata.title}
+            </h1>
             <div className="w-full flex flex-row justify-between">
               <div className="flex flex-row space-x-4">
-                <p className="text-gray-600 text-lg">{metadata.author}</p>
+                <p className="text-gray-600 dark:text-white antialiased text-lg">
+                  {metadata.author}
+                </p>
               </div>
               <div className=""></div>
             </div>
           </div>
-          <div className="prose text-justify dark:prose-dark">{children}</div>
+          <div className="prose max-w-3xl text-justify dark:prose-dark">
+            {children}
+          </div>
         </article>
       </PageLayout>
     </>

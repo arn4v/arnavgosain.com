@@ -75,12 +75,12 @@ export async function getPostContent(slug) {
   };
 }
 
-export async function getAllFilesMetadata(type) {
-  const files = fs.readdirSync(path.join(root, "data", type));
+export function getAllFilesMetadata(type) {
+  const files = fs.readdirSync(path.join(root, "src/data", type));
 
   return files.reduce((allPosts, postSlug) => {
     const source = fs.readFileSync(
-      path.join(root, "data", type, postSlug),
+      path.join(root, "src/data", type, postSlug),
       "utf8"
     );
     const { data } = matter(source);
@@ -88,7 +88,6 @@ export async function getAllFilesMetadata(type) {
     return [
       {
         ...data,
-        slug: postSlug.replace(".mdx", ""),
       },
       ...allPosts,
     ];

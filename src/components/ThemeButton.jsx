@@ -3,22 +3,34 @@ import { HiMoon, HiSun } from "react-icons/hi";
 import clsx from "clsx";
 import { useTheme } from "../contexts/ThemeContext";
 
-export default function ThemeButton() {
+export default function ThemeButton({
+  className,
+  noDarkMode = false,
+  style = {},
+}) {
   const { theme, setTheme } = useTheme();
-  const isDarkTheme = theme === "dark";
 
   return (
     <>
       <button
-        className={clsx([
-          "flex justify-center items-center px-3 h-12 focus:outline-none focus:ring focus:ring-black rounded-md",
-        ])}
+        style={style}
+        className={clsx(
+          [
+            "flex justify-center items-center h-10 w-10 p-2.5 focus:outline-none focus:ring-2 focus:ring-black rounded-md bg-coolGray-200",
+            className,
+          ],
+          !noDarkMode && "dark:focus:ring-coolGray-400 dark:bg-gray-600"
+        )}
         onClick={() => setTheme(theme === "light" ? "dark" : "light")}
       >
         {theme === "light" ? (
-          <HiMoon className="h-6 w-6" />
+          <HiMoon
+            className={clsx(["h-full w-full", !noDarkMode && "dark:text-white"])}
+          />
         ) : (
-          <HiSun className="h-6 w-6" />
+          <HiSun
+            className={clsx(["h-full w-full", !noDarkMode && "dark:text-white"])}
+          />
         )}
       </button>
     </>

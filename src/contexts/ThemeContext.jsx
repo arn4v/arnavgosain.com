@@ -18,8 +18,8 @@ export default function ThemeProvider({ children }) {
   useEffect(() => {
     const currentTheme = localStorage.getItem("theme");
     document.querySelector("html").classList.remove(currentTheme);
-    localStorage.setItem("theme", theme);
     document.querySelector("html").classList.add(theme);
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   return (

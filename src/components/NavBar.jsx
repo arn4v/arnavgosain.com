@@ -1,19 +1,66 @@
+import Link from "next/link";
 import ThemeButton from "./ThemeButton";
+import clsx from "clsx";
 import commonPropTypes from "~/lib/commonPropTypes";
+import { useRouter } from "next/router";
+import { useState } from "react";
 
-export default function NavBar() {
+export default function NavBar({ breadcrumb, className }) {
+  const router = useRouter();
+  const keys = Object.keys(breadcrumb) ?? [""];
   return (
     <>
-      <nav className="flex flex-row justify-between h-16 items-center my-3 box-border">
-        <div className="flex flex-row space-x-6 box-border h-full items-center justify-start">
-          <ThemeButton className="" />
-          <h1 className="font-bold font-mono text-3xl">Arnav Gosain</h1>
+      <nav className="flex flex-row justify-between h-16 items-center box-border my-4 w-full">
+        <div className="flex flex-row items-center justify-center space-x-3">
+          <button onClick={() => router.push("/")} className="dark:text-white text-lg">
+            Home
+          </button>
+          {keys.map((b) => {
+            return (
+              <>
+                <p className="select-none text-2xl text-gray-500 dark:text-white">/</p>
+                <button onClick={() => router.push(breadcrumb[b])} className="dark:text-white text-lg">
+                  {b}
+                </button>
+              </>
+            );
+          })}
         </div>
-        <div className=""></div>
+        {/* <div className="flex flex-row space-x-6 box-border h-full items-center justify-start">
+          <h1 className="font-bold font-mono text-3xl">Arnav Gosain</h1>
+          <NavBar.Item href="/">Home</NavBar.Item>
+          <NavBar.Item href="/blog">Blog</NavBar.Item>
+          <NavBar.Item href="/about">About</NavBar.Item>
+        </div> */}
+        <div className="">
+          <ThemeButton className="" />
+        </div>
       </nav>
     </>
   );
 }
+
+NavBar.Item = function NavItem({ children, className, href }) {
+  const router = useRouter();
+  let isActive = router.pathname.includes(href) || router.pathname === href;
+  if (router.pathname !== "/") isActive = router.pathname === href;
+
+  return (
+    <>
+      <button
+        onClick={() => router.push(href)}
+        className={clsx(
+          [
+            "p-2 focus:outline-none focus:ring-2 focus:ring-black dark:focus:ring-gray-600 rounded-md uppercase dark:text-white antialiased text-lg font-semibold hover:bg-coolGray-200 dark:hover:bg-gray-700 transition-colors duration-200 ease-in text-gray-900",
+          ],
+          isActive && "bg-coolGray-200 dark:bg-gray-700"
+        )}
+      >
+        {children}
+      </button>
+    </>
+  );
+};
 
 NavBar.propTypes = {
   ...commonPropTypes,
