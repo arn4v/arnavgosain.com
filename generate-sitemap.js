@@ -61,14 +61,12 @@ const frontmatter = require("front-matter");
     const body = fs.readFileSync(p, "utf-8");
     const { attributes: post } = frontmatter(body);
 
-    if (post.externalUrl) return;
-
     rss.item({
       title: post.title,
       guid: postPath,
       url: `${siteUrl}/${postPath}`,
       author: "Arnav Gosain",
-      date: post.date,
+      date: post.publishedAt,
     });
   });
 
