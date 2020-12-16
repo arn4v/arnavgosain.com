@@ -7,6 +7,7 @@ export default function Footer() {
         <CustomLink href="/">/home</CustomLink>
         <CustomLink href="/blog">/blog</CustomLink>
         <CustomLink href="/playlists">/playlists</CustomLink>
+        <CustomLink href="/rss">/rss</CustomLink>
       </div>
     </>
   );
