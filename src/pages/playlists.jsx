@@ -32,7 +32,7 @@ export default function PlaylistsPage({ playlists }) {
                   <h1 className="text-2xl font-semibold dark:text-white">
                     {key}
                   </h1>
-                  <div className="grid grid-cols-4 grid-flow-cols gap-4">
+                  <div className="grid grid-cols-3 lg:grid-cols-4 grid-flow-cols gap-4">
                     {Object.entries(value).map(([month, _value]) => {
                       return (
                         <CustomLink
@@ -44,9 +44,9 @@ export default function PlaylistsPage({ playlists }) {
                               backgroundImage: `url(${_value.img})`,
                               backgroundPosition: "center",
                             }}
-                            className="box-border flex items-center rounded-md shadow-md overflow-hidden relative"
+                            className="box-border px-2.5 lg:px-3.5 py-3.5 flex items-center rounded-md shadow-md overflow-hidden relative"
                           >
-                            <div className="m-3.5 font-medium text-black bg-cyan-200 z-10">
+                            <div className="font-medium text-black bg-cyan-200 z-10">
                               {month}
                             </div>
                           </div>

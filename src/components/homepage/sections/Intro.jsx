@@ -19,9 +19,9 @@ export default function IntroSection() {
   return (
     <>
       <section className="relative w-full antialiased bg-white dark:bg-black dark:text-white rounded-md dark:border-transparent mt -8 sm:px-5">
-        <ThemeButton className="absolute top-0 right-0 left-auto" />
+        <ThemeButton className="absolute top-0 right-0 left-auto mt-2 lg:mt-0" />
         <div className="flex flex-col items-start justify-center space-y-5">
-          <h1 className="text-3xl font-bold">Hey, I'm Arnav Gosain 👋</h1>
+          <h1 className="text-3xl w-2/3 lg:w-full font-bold">Hey, I'm Arnav Gosain 👋</h1>
           <p className="text-xl font-medium leading-relaxed text-justify text-gray-800 dark:text-white">
             I'm a photographer & developer based in Delhi, India. I write my
             thoughts and learnings on my{" "}

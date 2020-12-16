@@ -38,17 +38,17 @@ export default function BlogPage({ posts }) {
           openGraph={{ title, url, description }}
         />
         <div className="flex flex-col space-y-8">
-          {Object.keys(posts)
+          {Object.entries(posts)
             .reverse()
-            .map((key) => {
+            .map(([key, value]) => {
               return (
                 <>
-                  <div className="flex flex-col space-y-4">
+                  <div key={{}} className="flex flex-col space-y-4">
                     <h1 className="text-2xl font-semibold dark:text-white">
                       {key}
                     </h1>
                     <div className="flex flex-col space-y-2">
-                      {posts[key].map((p) => {
+                      {value.map((p) => {
                         return (
                           <>
                             <Link href={`/blog/${p.slug}`}>
