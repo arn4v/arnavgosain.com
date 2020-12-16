@@ -8,7 +8,7 @@ import { useState } from "react";
 const IntroLink = ({ children, href }) => (
   <CustomLink
     href={href}
-    className="bg-cyan-200 hover:bg-cyan-300 duration-50 dark:text-black ease-in transition-colors underline cursor-pointer"
+    className="underline cursor-pointer bg-cyan-200 hover:bg-cyan-300 duration-50 dark:text-black ease-in transition-colors"
   >
     {children}
   </CustomLink>
@@ -18,11 +18,11 @@ export default function IntroSection() {
   const [emailPopupState, setEmailPopupState] = useState(false);
   return (
     <>
-      <section className="w-full antialiased bg-white dark:bg-black dark:text-white rounded-md dark:border-transparent relative mt -8 sm:px-5">
-        <ThemeButton className="absolute left-auto right-0 top-0" />
-        <div className="flex flex-col justify-center items-start space-y-5">
+      <section className="relative w-full antialiased bg-white dark:bg-black dark:text-white rounded-md dark:border-transparent mt -8 sm:px-5">
+        <ThemeButton className="absolute top-0 right-0 left-auto" />
+        <div className="flex flex-col items-start justify-center space-y-5">
           <h1 className="text-3xl font-bold">Hey, I'm Arnav Gosain 👋</h1>
-          <p className="text-xl text-gray-800 dark:text-white font-medium leading-relaxed text-justify">
+          <p className="text-xl font-medium leading-relaxed text-justify text-gray-800 dark:text-white">
             I'm a photographer & developer based in Delhi, India. I write my
             thoughts and learnings on my{" "}
             <IntroLink href="/blog">blog</IntroLink> and create a{" "}
@@ -34,36 +34,31 @@ export default function IntroSection() {
             ), <IntroLink>newsletters</IntroLink> and{" "}
             <IntroLink>books</IntroLink>.
           </p>
-          <div className="grid grid-cols-2 w-full gap-x-8">
-            <div className="flex flex-col space-y-2 md:flex-row md:space-x-3 items-start md:items-center justify-center justify-self-start">
-              <p className="font-semibold text-gray-800 text-xl lg:text-2xl bg-cyan-200">
+          <div className="w-full grid grid-cols-2 gap-x-8">
+            <div className="flex flex-col items-start justify-center space-y-2 md:flex-row md:space-x-3 md:items-center justify-self-start">
+              <p className="text-xl font-semibold text-gray-800 lg:text-2xl bg-cyan-200">
                 Get in touch with me:
               </p>
-              <div className="flex flex-row space-x-3 items-center justify-center relative">
-                {/* {emailPopupState && (
-                  <div className="absolute origin-top top-0 rounded-md bg-white text-black">
-                    arnav@arnavgosain.com
-                  </div>
-                )} */}
+              <div className="relative flex flex-row items-center justify-center space-x-3">
                 <CustomLink href={"mailto:arnav@arnavgosain.com"}>
                   <HiOutlineMail
-                    className="h-8 w-8"
+                    className="w-8 h-8"
                     onMouseEnter={() => setEmailPopupState(true)}
                     onMouseLeave={() => setEmailPopupState(false)}
                   />
                 </CustomLink>
                 <CustomLink href="https://twitter.com/arn4v">
-                  <VscTwitter className="h-8 w-8" />
+                  <VscTwitter className="w-8 h-8" />
                 </CustomLink>
               </div>
             </div>
-            <div className="flex flex-col space-y-2 md:flex-row md:space-x-3 items-start md:items-center justify-center justify-self-start">
-              <p className="font-semibold text-gray-800 text-xl lg:text-2xl bg-cyan-200">
+            <div className="flex flex-col items-start justify-center space-y-2 md:flex-row md:space-x-3 md:items-center justify-self-start">
+              <p className="text-xl font-semibold text-gray-800 lg:text-2xl bg-cyan-200">
                 Keep in touch with me:
               </p>
-              <div className="flex flex-row space-x-3 items-center justify-center">
+              <div className="flex flex-row items-center justify-center space-x-3">
                 <CustomLink href="https://instagram.com/arn4v">
-                  <FaInstagram className="h-8 w-8" />
+                  <FaInstagram className="w-8 h-8" />
                 </CustomLink>
               </div>
             </div>
