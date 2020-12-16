@@ -6,17 +6,27 @@ const frontmatter = require("front-matter");
 
 (async () => {
   const prettierConfig = await prettier.resolveConfig("./.prettierrc.js");
-  const siteUrl = "https://arnavgosain.com/";
+  const siteUrl = "https://arnavgosain.com";
 
   /**
    * Let's start with the Sitemap!
    */
 
   // Start with posts
-  const pages = await globby([
-    "src/pages/*.{js,jsx}",
-    "src/data/**/*.{mdx,md}",
-  ]);
+  let pages = await globby(["src/pages/*.{js,jsx}", "src/data/**/*.{mdx,md}"]);
+  pages = pages
+    .filter(
+      (page) => !(page.includes("_app.jsx") || page.includes("index.jsx"))
+    )
+    .map((page) => {
+      if (page.includes("src/data/"))
+        return page.replace("src/data/", "").replace(".mdx", "");
+      if (page.includes("src/pages/"))
+        return page
+          .replace("src/pages/", "")
+          .replace(".jsx", "")
+          .replace(".js", "");
+    });
 
   let sitemap = `
         <?xml version="1.0" encoding="UTF-8"?>
@@ -24,17 +34,7 @@ const frontmatter = require("front-matter");
 
   pages.forEach((page) => {
     let type = "page";
-    if (page.includes(".mdx")) {
-      page = page.replace(/\.mdx?$/, "");
-      type = "blog";
-    } else if (page.includes(".js")) {
-      page.replace(".js", "");
-    } else if (page.includes(".jsx")) {
-      page = page.replace(".jsx", "");
-    }
-    sitemap += `<url><loc>${siteUrl}/${
-      type === "blog" && `blog/`
-    }${page}</loc></url>`;
+    sitemap += `<url><loc>${siteUrl}/${page}</loc></url>`;
   });
 
   sitemap += `</urlset>`;
@@ -49,7 +49,7 @@ const frontmatter = require("front-matter");
   /**
    * Next: The RSS feed.
    */
-  const posts = await globby(["src/data/**/*.{mdx,md}"]);
+  const posts = await await globby(["src/data/**/*.{mdx,md}"]);
 
   const rss = new RSS({
     title: "Arnav Gosain",
@@ -57,7 +57,7 @@ const frontmatter = require("front-matter");
   });
 
   posts.forEach((p) => {
-    const postPath = p.replace(/\.mdx?$/, "");
+    const postPath = p.replace(/\.mdx?$/, "").replace("src/data", "");
     const body = fs.readFileSync(p, "utf-8");
     const { attributes: post } = frontmatter(body);
 
@@ -65,8 +65,8 @@ const frontmatter = require("front-matter");
 
     rss.item({
       title: post.title,
-      guid: `/blog/${postPath}`,
-      url: `${siteUrl}/blog/${postPath}`,
+      guid: postPath,
+      url: `${siteUrl}/${postPath}`,
       author: "Arnav Gosain",
       date: post.date,
     });
@@ -74,5 +74,5 @@ const frontmatter = require("front-matter");
 
   const xmlFeed = rss.xml({ indent: true });
 
-  fs.writeFileSync("public/rss-feed.xml", xmlFeed);
+  fs.writeFileSync("public/rss.xml", xmlFeed);
 })();

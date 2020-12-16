@@ -1,5 +1,6 @@
 import CustomLink from "~/components/CustomLink";
 import Image from "next/image";
+import { NextSeo } from "next-seo";
 import PageLayout from "~/components/PageLayout";
 import axios from "axios";
 import { baseUrl } from "~/config";
@@ -24,7 +25,10 @@ export default function PlaylistsPage({ playlists }) {
             .reverse()
             .map(([key, value]) => {
               return (
-                <div key={key} className="flex flex-col space-y-4">
+                <div
+                  key={`${key}_${Object.keys(playlists).indexOf(key)}`}
+                  className="flex flex-col space-y-4"
+                >
                   <h1 className="text-2xl font-semibold dark:text-white">
                     {key}
                   </h1>
@@ -44,16 +48,11 @@ export default function PlaylistsPage({ playlists }) {
                               }}
                               className="box-border flex items-center rounded-md shadow-md overflow-hidden relative"
                             >
-                              <div className="m-3.5 font-medium text-black bg-cyan-200 z-10">
+                              <div
+                                className="m-3.5 font-medium text-black bg-cyan-200 z-10"
+                              >
                                 {month}
                               </div>
-                              {/* <Image
-                                layout="fill"
-                                className="object-cover absolute object-center"
-                                src={_value["img"]}
-                                unoptimized={true}
-                                unselectable={true}
-                              /> */}
                             </div>
                           </CustomLink>
                         );

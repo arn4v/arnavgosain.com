@@ -37,37 +37,39 @@ export default function BlogPage({ posts }) {
           canonical={url}
           openGraph={{ title, url, description }}
         />
-        <div className="mt-4 flex flex-col space-y-8">
+        <div className="flex flex-col space-y-8">
           {Object.keys(posts)
             .reverse()
             .map((key) => {
               return (
                 <>
-                  <h1 className="text-2xl font-semibold dark:text-white">
-                    {key}
-                  </h1>
-                  <div className="flex flex-col space-y-2">
-                    {posts[key].map((p) => {
-                      return (
-                        <>
-                          <Link href={`/blog/${p.slug}`}>
+                  <div className="flex flex-col space-y-4">
+                    <h1 className="text-2xl font-semibold dark:text-white">
+                      {key}
+                    </h1>
+                    <div className="flex flex-col space-y-2">
+                      {posts[key].map((p) => {
+                        return (
+                          <>
+                            <Link href={`/blog/${p.slug}`}>
+                              <div
+                                style={{}}
+                                className="w-full flex flex-row justify-between cursor-pointer"
+                              >
+                                <p className="dark:text-white">{p.title}</p>
+                                <p className="dark:text-white">
+                                  {formatDate(p.publishedAt)}
+                                </p>
+                              </div>
+                            </Link>
                             <div
-                              style={{}}
-                              className="w-full flex flex-row justify-between cursor-pointer"
-                            >
-                              <p className="dark:text-white">{p.title}</p>
-                              <p className="dark:text-white">
-                                {formatDate(p.publishedAt)}
-                              </p>
-                            </div>
-                          </Link>
-                          <div
-                            style={{ height: "0.25px" }}
-                            className="w-full bg-gray-300"
-                          ></div>
-                        </>
-                      );
-                    })}
+                              style={{ height: "0.25px" }}
+                              className="w-full bg-gray-300"
+                            ></div>
+                          </>
+                        );
+                      })}
+                    </div>
                   </div>
                 </>
               );

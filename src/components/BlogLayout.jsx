@@ -1,17 +1,25 @@
 import BlogSeo from "~/components/BlogSeo";
 import PageLayout from "~/components/PageLayout";
+import { baseUrl } from "~/config";
 import commonPropTypes from "~/lib/commonPropTypes";
+import { useRouter } from "next/router";
 
 export default function BlogLayout({ children, metadata }) {
+  const router = useRouter();
   return (
     <>
-      {/* <BlogSeo metadata={metadata} /> */}
       <PageLayout
         breadcrumb={{
           Blog: "/blog",
           [metadata.title]: `/blog/${metadata.slug}`,
         }}
       >
+        <BlogSeo
+          title={metadata.title}
+          author="Arnav Gosain"
+          publishedAt={metadata.publishedAt}
+          url={`${baseUrl}/blog/${metadata.slug}`}
+        />
         <article className="max-w-3xl">
           <div className="flex flex-col space-y-4 items-start justify-center mb-4">
             <h1 className="text-3xl font-bold dark:text-white">
@@ -26,7 +34,9 @@ export default function BlogLayout({ children, metadata }) {
               <div className=""></div>
             </div>
           </div>
-          <div className="prose w-full max-w-full dark:prose-dark text-justify">{children}</div>
+          <div className="prose w-full max-w-full dark:prose-dark text-justify">
+            {children}
+          </div>
         </article>
       </PageLayout>
     </>
