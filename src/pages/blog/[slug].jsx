@@ -30,5 +30,3 @@ export async function getStaticProps({ params: { slug } }) {
   const post = await getPostContent(slug);
   return { props: post };
 }
-
-export const config = { amp: true };
