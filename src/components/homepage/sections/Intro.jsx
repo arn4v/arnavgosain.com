@@ -35,8 +35,8 @@ export default function IntroSection() {
             <IntroLink>books</IntroLink>.
           </p>
           <div className="grid grid-cols-2 w-full gap-x-8">
-            <div className="flex flex-row space-x-3 items-center justify-center justify-self-start">
-              <p className="font-semibold text-gray-800 text-2xl bg-cyan-200">
+            <div className="flex flex-col space-y-2 md:flex-row md:space-x-3 items-start md:items-center justify-center justify-self-start">
+              <p className="font-semibold text-gray-800 text-xl lg:text-2xl bg-cyan-200">
                 Get in touch with me:
               </p>
               <div className="flex flex-row space-x-3 items-center justify-center relative">
@@ -57,8 +57,8 @@ export default function IntroSection() {
                 </CustomLink>
               </div>
             </div>
-            <div className="flex flex-row space-x-3 items-center justify-center justify-self-start">
-              <p className="font-semibold text-gray-800 text-2xl bg-cyan-200">
+            <div className="flex flex-col space-y-2 md:flex-row md:space-x-3 items-start md:items-center justify-center justify-self-start">
+              <p className="font-semibold text-gray-800 text-xl lg:text-2xl bg-cyan-200">
                 Keep in touch with me:
               </p>
               <div className="flex flex-row space-x-3 items-center justify-center">
