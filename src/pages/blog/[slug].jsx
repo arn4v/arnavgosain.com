@@ -2,10 +2,7 @@ import { getFilesByType, getPostContent } from "~/lib/mdxUtils";
 
 import BlogLayout from "~/components/BlogLayout";
 import MDXComponents from "~/components/MDXComponents";
-import { MDXProvider } from "@mdx-js/react";
-import PageLayout from "~/components/PageLayout";
 import hydrate from "next-mdx-remote/hydrate";
-import { useRouter } from "next";
 
 export default function Post({ mdxSource, metadata }) {
   const content = hydrate(mdxSource, { components: MDXComponents });

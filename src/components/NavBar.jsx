@@ -10,7 +10,7 @@ export default function NavBar({ breadcrumb, className }) {
   const keys = Object.keys(breadcrumb) ?? [""];
   return (
     <>
-      <nav className="flex flex-row justify-between h-16 items-center box-border my-4 w-full">
+      <nav className="flex flex-row justify-between py-3 items-center box-border my-4 w-full">
         <div className="flex flex-row items-center justify-center space-x-3">
           <button onClick={() => router.push("/")} className="dark:text-white text-lg">
             Home

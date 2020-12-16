@@ -1,7 +1,7 @@
 import Link from "next/link";
 import clsx from "clsx";
 
-export default function CustomLink({ href, children, className }) {
+export default function CustomLink({ href = "", children, className }) {
   const linkProps = {
     href,
     target: "_blank",

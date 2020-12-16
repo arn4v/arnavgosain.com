@@ -16,6 +16,7 @@
     "format": "prettier --write src/**/*.{js,jsx}"
   },
   "dependencies": {
+    "axios": "^0.21.0",
     "clsx": "^1.1.1",
     "date-fns": "^2.16.1",
     "gray-matter": "^4.0.2",
@@ -40,6 +41,7 @@
     "prettier": "^2.2.1",
     "rehype": "^11.0.0",
     "sass": "^1.30.0",
-    "tailwindcss": "^2.0.2"
+    "tailwindcss": "^2.0.2",
+    "unified": "^9.2.0"
   }
 }

@@ -12,7 +12,7 @@ export default function BlogLayout({ children, metadata }) {
           [metadata.title]: `/blog/${metadata.slug}`,
         }}
       >
-        <article className="max-w-3xl mx-auto">
+        <article className="max-w-3xl">
           <div className="flex flex-col space-y-4 items-start justify-center mb-4">
             <h1 className="text-3xl font-bold dark:text-white">
               {metadata.title}
@@ -26,9 +26,7 @@ export default function BlogLayout({ children, metadata }) {
               <div className=""></div>
             </div>
           </div>
-          <div className="prose max-w-3xl text-justify dark:prose-dark">
-            {children}
-          </div>
+          <div className="prose w-full max-w-full dark:prose-dark text-justify">{children}</div>
         </article>
       </PageLayout>
     </>

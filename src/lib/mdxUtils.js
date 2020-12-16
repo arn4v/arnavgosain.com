@@ -93,3 +93,33 @@ export function getAllFilesMetadata(type) {
     ];
   }, []);
 }
+
+export function getBlogPostsByYear(year) {
+  const years = [];
+  const posts = getAllFilesMetadata("blog");
+  const sortedPosts = {};
+
+  posts.forEach((post) => {
+    const year = post.publishedAt.split("-")[0];
+    if (!years.includes(year)) years.push(year);
+  });
+
+  years.forEach((y) => {
+    sortedPosts[y] = posts
+      .filter((p) => {
+        if (p.publishedAt.includes(y)) return p;
+      })
+      .sort((a, b) => {
+        a = a.publishedAt.split("-");
+        b = b.publishedAt.split("-");
+        return a > b ? 1 : a < b ? -1 : 0;
+      })
+      .reverse();
+  });
+
+  if (year) {
+    return sortedPosts[year];
+  }
+
+  return sortedPosts;
+}
