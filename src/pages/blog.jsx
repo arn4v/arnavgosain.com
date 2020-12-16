@@ -1,5 +1,7 @@
 import Link from "next/link";
+import { NextSeo } from "next-seo";
 import PageLayout from "~/components/PageLayout";
+import { baseUrl } from "~/config";
 import { getAllFilesMetadata } from "~/lib/mdxUtils";
 
 function formatDate(date) {
@@ -21,10 +23,20 @@ function formatDate(date) {
   return `${date[2]} ${months[date[1]]}`;
 }
 
+const url = baseUrl + "/blog";
+const title = "Blog - Arnav Gosain";
+const description = "Thoughts on arts, software and life.";
+
 export default function BlogPage({ posts }) {
   return (
     <>
       <PageLayout breadcrumb={{ Blog: "/blog" }}>
+        <NextSeo
+          title={title}
+          description={description}
+          canonical={url}
+          openGraph={{ title, url, description }}
+        />
         <div className="mt-4 flex flex-col space-y-8">
           {Object.keys(posts)
             .reverse()

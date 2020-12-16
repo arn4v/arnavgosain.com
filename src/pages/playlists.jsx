@@ -2,11 +2,23 @@ import CustomLink from "~/components/CustomLink";
 import Image from "next/image";
 import PageLayout from "~/components/PageLayout";
 import axios from "axios";
+import { baseUrl } from "~/config";
+
+const url = baseUrl + "/playlists";
+const title = "Playlists - Arnav Gosain";
+const description =
+  "Playlists I have curated month over month for the last 4 years.";
 
 export default function PlaylistsPage({ playlists }) {
   return (
     <>
       <PageLayout breadcrumb={{ Playlists: "/playlists" }}>
+        <NextSeo
+          title={title}
+          description={description}
+          canonical={url}
+          openGraph={{ title, url, description }}
+        />
         <div className="flex flex-col space-y-6">
           {Object.entries(playlists)
             .reverse()
