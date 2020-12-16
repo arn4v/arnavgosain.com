@@ -33,30 +33,26 @@ export default function PlaylistsPage({ playlists }) {
                     {key}
                   </h1>
                   <div className="grid grid-cols-4 grid-flow-cols gap-4">
-                    {Object.entries(value)
-                      .reverse()
-                      .map(([month, _value]) => {
-                        return (
-                          <CustomLink
-                            key={`${key}_${month}`}
-                            href={_value["href"]}
+                    {Object.entries(value).map(([month, _value]) => {
+                      return (
+                        <CustomLink
+                          key={`${key}_${month}`}
+                          href={_value["href"]}
+                        >
+                          <div
+                            style={{
+                              backgroundImage: `url(${_value.img})`,
+                              backgroundPosition: "center",
+                            }}
+                            className="box-border flex items-center rounded-md shadow-md overflow-hidden relative"
                           >
-                            <div
-                              style={{
-                                backgroundImage: `url(${_value.img})`,
-                                backgroundPosition: "center",
-                              }}
-                              className="box-border flex items-center rounded-md shadow-md overflow-hidden relative"
-                            >
-                              <div
-                                className="m-3.5 font-medium text-black bg-cyan-200 z-10"
-                              >
-                                {month}
-                              </div>
+                            <div className="m-3.5 font-medium text-black bg-cyan-200 z-10">
+                              {month}
                             </div>
-                          </CustomLink>
-                        );
-                      })}
+                          </div>
+                        </CustomLink>
+                      );
+                    })}
                   </div>
                 </div>
               );
