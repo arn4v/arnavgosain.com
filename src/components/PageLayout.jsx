@@ -10,12 +10,8 @@ import { useRouter } from "next/router";
  * @param {object} [props.breadcrumb]
  * @param {boolean} [props.noFooter = false]
  */
-export default function PageLayout({
-  children,
-  className,
-  breadcrumb,
-  noFooter = false,
-}) {
+export default function PageLayout(props) {
+  const { children, className, breadcrumb, noFooter = false } = props;
   const router = useRouter();
 
   return (

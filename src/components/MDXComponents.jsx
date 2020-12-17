@@ -4,6 +4,7 @@ import Link from "next/link";
 /**
  * @param {Object} props
  * @param {React.ReactNode} [props.children]
+ * @param {string} [props.href]
  */
 const MDXLink = (props) => {
   const { href } = props;

@@ -3,6 +3,12 @@ import { HiMoon, HiSun } from "react-icons/hi";
 import clsx from "clsx";
 import { useTheme } from "../contexts/ThemeContext";
 
+/**
+ * @param {Object} props
+ * @param {string} [props.className]
+ * @param {boolean} [props.noDarkMode = false]
+ * @param {React.CSSProperties} [props.style]
+ */
 export default function ThemeButton({
   className,
   noDarkMode = false,
@@ -14,6 +20,7 @@ export default function ThemeButton({
     <>
       <button
         style={style}
+        aria-label="Toggle Dark Mode"
         className={clsx(
           [
             "flex justify-center items-center h-10 w-10 p-2.5 focus:outline-none focus:ring-2 focus:ring-black rounded-md bg-coolGray-200",

@@ -9,14 +9,18 @@ import { useState } from "react";
  * @param {Object} props
  * @param {React.ReactNode} [props.children]
  * @param {string} props.href
+ * @param {string} [props.title]
+ * @param {number} [props.tabindex]
+ * @param {string} [props.description]
  */
 const IntroLink = (props) => {
-  const { children, href } = props;
+  const { children, href, title } = props;
 
   return (
     <CustomLink
       href={href}
       className="underline cursor-pointer bg-cyan-200 hover:bg-cyan-300 duration-50 dark:text-black ease-in transition-colors"
+      title={title}
     >
       {children}
     </CustomLink>
@@ -42,8 +46,11 @@ export default function IntroSection() {
             <IntroLink href="https://www.notion.so/25f93c764a074fd188d14103075d9a2e?v=57023d44b3814101be8fd61faba3a813">
               here
             </IntroLink>
-            ), <IntroLink>newsletters</IntroLink> and{" "}
-            <IntroLink>books</IntroLink>.
+            ),{" "}
+            <IntroLink href="https://www.notion.so/NewsletterDB-e89894e368ee4f838d83e619edcbbc25">
+              newsletters
+            </IntroLink>{" "}
+            and <IntroLink href="/bookshelf">books</IntroLink>.
           </p>
           <div className="w-full grid grid-cols-2 gap-x-8">
             <div className="flex flex-col items-start justify-center space-y-2 md:flex-row md:space-x-3 md:items-center justify-self-start">
@@ -51,14 +58,20 @@ export default function IntroSection() {
                 Get in touch with me:
               </p>
               <div className="relative flex flex-row items-center justify-center space-x-3">
-                <CustomLink href={"mailto:arnav@arnavgosain.com"}>
+                <CustomLink
+                  href="mailto:arnav@arnavgosain.com"
+                  title="Link to my email address"
+                >
                   <HiOutlineMail
                     className="w-8 h-8"
                     onMouseEnter={() => setEmailPopupState(true)}
                     onMouseLeave={() => setEmailPopupState(false)}
                   />
                 </CustomLink>
-                <CustomLink href="https://twitter.com/arn4v">
+                <CustomLink
+                  href="https://twitter.com/arn4v"
+                  title="Link to my Twitter"
+                >
                   <VscTwitter className="w-8 h-8" />
                 </CustomLink>
               </div>
@@ -68,7 +81,7 @@ export default function IntroSection() {
                 Keep in touch with me:
               </p>
               <div className="flex flex-row items-center justify-center space-x-3">
-                <CustomLink href="https://instagram.com/arn4v">
+                <CustomLink href="https://instagram.com/arn4v" title="Link to my Instagram">
                   <FaInstagram className="w-8 h-8" />
                 </CustomLink>
               </div>
