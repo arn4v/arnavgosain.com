@@ -1,0 +1,4 @@
+Sitemap: https://arnavgosain.com/sitemap.xml
+User-agent: *
+Allow: /*
+Disallow: /api/*
