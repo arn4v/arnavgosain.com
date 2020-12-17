@@ -1,7 +1,7 @@
 import { HiMoon, HiSun } from "react-icons/hi";
 
 import clsx from "clsx";
-import { useTheme } from "../contexts/ThemeContext";
+import { useTheme } from "next-themes";
 
 /**
  * @param {Object} props
@@ -9,11 +9,8 @@ import { useTheme } from "../contexts/ThemeContext";
  * @param {boolean} [props.noDarkMode = false]
  * @param {React.CSSProperties} [props.style]
  */
-export default function ThemeButton({
-  className,
-  noDarkMode = false,
-  style = {},
-}) {
+export default function ThemeButton(props) {
+  const { className, noDarkMode = false, style = {} } = props;
   const { theme, setTheme } = useTheme();
 
   return (
