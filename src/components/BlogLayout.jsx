@@ -1,9 +1,17 @@
 import BlogSeo from "~/components/BlogSeo";
 import PageLayout from "~/components/PageLayout";
 import { baseUrl } from "~/config";
-import commonPropTypes from "~/lib/commonPropTypes";
 import { useRouter } from "next/router";
 
+/**
+ * @param {Object} props
+ * @param {React.ReactNode} [props.children]
+ * @param {Object} props.metadata
+ * @param {string} props.metadata.title
+ * @param {string} props.metadata.author
+ * @param {string} props.metadata.slug
+ * @param {string} props.metadata.publishedAt
+ */
 export default function BlogLayout({ children, metadata }) {
   const router = useRouter();
   return (
@@ -42,7 +50,3 @@ export default function BlogLayout({ children, metadata }) {
     </>
   );
 }
-
-BlogLayout.propTypes = {
-  ...commonPropTypes,
-};

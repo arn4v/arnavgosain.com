@@ -1,8 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
 
+/**
+ * @param {Object} props
+ * @param {React.ReactNode} [props.children]
+*/
 const MDXLink = (props) => {
-  const href = props.href;
+  const {href} = props;
   const isInternalLink = href && (href.startsWith("/") || href.startsWith("#"));
 
   if (isInternalLink) {

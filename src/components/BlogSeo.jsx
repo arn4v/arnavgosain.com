@@ -1,6 +1,16 @@
 import { ArticleJsonLd, NextSeo } from "next-seo";
 
-export default function BlogSeo({ title, publishedAt, url }) {
+/**
+ * @param {object} props
+ * @param {string} [props.className]
+ * @param {React.ReactNode} [props.children]
+ * @param {string} props.title
+ * @param {string} props.author
+ * @param {string} props.publishedAt
+ * @param {string} props.url
+ */
+export default function BlogSeo(props) {
+  const { title, publishedAt, url } = props;
   const date = new Date(
     publishedAt.replace(new RegExp("-", "g"), "/")
   ).toISOString();

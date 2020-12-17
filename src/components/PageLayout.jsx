@@ -3,6 +3,13 @@ import NavBar from "./NavBar";
 import clsx from "clsx";
 import { useRouter } from "next/router";
 
+/**
+ * @param {object} props
+ * @param {string} [props.className]
+ * @param {React.ReactNode} [props.children]
+ * @param {object} [props.breadcrumb]
+ * @param {boolean} [props.noFooter = false]
+ */
 export default function PageLayout({
   children,
   className,

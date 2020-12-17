@@ -10,6 +10,11 @@ const title = "Playlists - Arnav Gosain";
 const description =
   "Playlists I have curated month over month for the last 4 years.";
 
+/**
+ * @param {Object} props
+ * @param {React.ReactNode} [props.children]
+ * @param {Object} props.playlists
+ */
 export default function PlaylistsPage({ playlists }) {
   return (
     <>
@@ -65,7 +70,7 @@ export default function PlaylistsPage({ playlists }) {
 
 export async function getStaticProps() {
   const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
-  let playlists = require("../data/homepage/playlists").default;
+  let playlists = require("../data/playlists").default;
   const accessToken = (
     await axios({
       url: "https://accounts.spotify.com/api/token",

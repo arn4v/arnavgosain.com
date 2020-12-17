@@ -1,25 +1,39 @@
 import Link from "next/link";
 import ThemeButton from "./ThemeButton";
 import clsx from "clsx";
-import commonPropTypes from "~/lib/commonPropTypes";
 import { useRouter } from "next/router";
 import { useState } from "react";
 
-export default function NavBar({ breadcrumb, className }) {
+/**
+ * @param {Object} props
+ * @param {string} [props.className]
+ * @param {React.ReactNode} [props.children]
+ * @param {Object} [props.breadcrumb]
+ */
+export default function NavBar(props) {
+  const { breadcrumb, className } = props;
   const router = useRouter();
   const keys = Object.keys(breadcrumb) ?? [""];
   return (
     <>
       <nav className="flex flex-row justify-between py-3 items-center box-border my-4 w-full">
         <div className="flex flex-row items-center justify-center space-x-3">
-          <button onClick={() => router.push("/")} className="dark:text-white text-lg">
+          <button
+            onClick={() => router.push("/")}
+            className="dark:text-white text-lg"
+          >
             Home
           </button>
           {keys.map((b) => {
             return (
               <>
-                <p className="select-none text-2xl text-gray-500 dark:text-white">/</p>
-                <button onClick={() => router.push(breadcrumb[b])} className="dark:text-white text-lg">
+                <p className="select-none text-2xl text-gray-500 dark:text-white">
+                  /
+                </p>
+                <button
+                  onClick={() => router.push(breadcrumb[b])}
+                  className="dark:text-white text-lg"
+                >
                   {b}
                 </button>
               </>
@@ -40,7 +54,13 @@ export default function NavBar({ breadcrumb, className }) {
   );
 }
 
-NavBar.Item = function NavItem({ children, className, href }) {
+/**
+ * @param {Object} props
+ * @param {React.ReactNode} [props.children]
+ * @param {string} [props.className]
+ * @param {string} [props.href]
+ */
+function NavItem({ children, className, href }) {
   const router = useRouter();
   let isActive = router.pathname.includes(href) || router.pathname === href;
   if (router.pathname !== "/") isActive = router.pathname === href;
@@ -60,8 +80,4 @@ NavBar.Item = function NavItem({ children, className, href }) {
       </button>
     </>
   );
-};
-
-NavBar.propTypes = {
-  ...commonPropTypes,
-};
+}

@@ -2,6 +2,10 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 const themeContext = createContext({ theme: "light", setTheme: null });
 
+/**
+ * @param {Object} props
+ * @param {React.ReactNode} props.children
+ */
 export default function ThemeProvider({ children }) {
   const [theme, setTheme] = useState("light");
 
