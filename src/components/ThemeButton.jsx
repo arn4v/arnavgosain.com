@@ -25,11 +25,17 @@ export default function ThemeButton({
       >
         {theme === "light" ? (
           <HiMoon
-            className={clsx(["h-full w-full", !noDarkMode && "dark:text-white"])}
+            className={clsx([
+              "h-full w-full",
+              !noDarkMode && "dark:text-white",
+            ])}
           />
         ) : (
           <HiSun
-            className={clsx(["h-full w-full", !noDarkMode && "dark:text-white"])}
+            className={clsx([
+              "h-full w-full",
+              !noDarkMode && "dark:text-white",
+            ])}
           />
         )}
       </button>
