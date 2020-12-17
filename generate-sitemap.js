@@ -2,7 +2,7 @@ const fs = require("fs");
 const globby = require("globby");
 const prettier = require("prettier");
 const RSS = require("rss");
-const frontmatter = require("front-matter").default;
+const frontmatter = require("front-matter");
 
 (async () => {
   const prettierConfig = await prettier.resolveConfig("./.prettierrc.js");
