@@ -2,7 +2,7 @@ const fs = require("fs");
 const globby = require("globby");
 const prettier = require("prettier");
 const RSS = require("rss");
-const frontmatter = require("front-matter");
+const frontmatter = require("front-matter").default;
 
 (async () => {
   const prettierConfig = await prettier.resolveConfig("./.prettierrc.js");
@@ -49,11 +49,12 @@ const frontmatter = require("front-matter");
   /**
    * Next: The RSS feed.
    */
-  const posts = await await globby(["src/data/**/*.{mdx,md}"]);
+  const posts = await await globby(["src/data/blog/*.{mdx,md}"]);
 
   const rss = new RSS({
     title: "Arnav Gosain",
     site_url: siteUrl,
+    feed_url: siteUrl + "/rss.xml",
   });
 
   posts.forEach((p) => {
@@ -66,6 +67,7 @@ const frontmatter = require("front-matter");
       guid: postPath,
       url: `${siteUrl}/${postPath}`,
       author: "Arnav Gosain",
+      description: "",
       date: post.publishedAt,
     });
   });
