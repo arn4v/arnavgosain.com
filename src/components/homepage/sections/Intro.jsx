@@ -42,8 +42,11 @@ export default function IntroSection() {
             thoughts and learnings on my{" "}
             <IntroLink href="/blog">blog</IntroLink> and create a{" "}
             <IntroLink href="/playlists">playlist</IntroLink> every month. I'm
-            interested in startups (I track startups I find{" "}
-            <IntroLink href="https://www.notion.so/25f93c764a074fd188d14103075d9a2e?v=57023d44b3814101be8fd61faba3a813">
+            interested in startups (I track startups{" "}
+            <IntroLink
+              href="https://www.notion.so/25f93c764a074fd188d14103075d9a2e?v=57023d44b3814101be8fd61faba3a813"
+              title="Startup Tracker on Notion"
+            >
               here
             </IntroLink>
             ),{" "}
@@ -81,7 +84,10 @@ export default function IntroSection() {
                 Keep in touch with me:
               </p>
               <div className="flex flex-row items-center justify-center space-x-3">
-                <CustomLink href="https://instagram.com/arn4v" title="Link to my Instagram">
+                <CustomLink
+                  href="https://instagram.com/arn4v"
+                  title="Link to my Instagram"
+                >
                   <FaInstagram className="w-8 h-8" />
                 </CustomLink>
               </div>
