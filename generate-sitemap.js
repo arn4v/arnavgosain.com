@@ -13,10 +13,18 @@ const frontmatter = require("front-matter");
    */
 
   // Start with posts
-  let pages = await globby(["src/pages/*.{js,jsx}", "src/data/**/*.{mdx,md}"]);
+  let pages = await globby([
+    "src/pages/*.{js,jsx}",
+    "src/data/blog/**/*.{mdx,md}",
+  ]);
   pages = pages
     .filter(
-      (page) => !(page.includes("_app.jsx") || page.includes("index.jsx"))
+      (page) =>
+        !(
+          page.includes("_app.jsx") ||
+          page.includes("index.jsx") ||
+          page.includes("_document.jsx")
+        )
     )
     .map((page) => {
       if (page.includes("src/data/"))
@@ -65,7 +73,7 @@ const frontmatter = require("front-matter");
     rss.item({
       title: post.title,
       guid: postPath,
-      url: `${siteUrl}/${postPath}`,
+      url: `${siteUrl}${postPath}`,
       author: "Arnav Gosain",
       description: "",
       date: post.publishedAt,
