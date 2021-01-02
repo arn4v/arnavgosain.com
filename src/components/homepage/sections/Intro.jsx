@@ -31,10 +31,10 @@ export default function IntroSection() {
   const [emailPopupState, setEmailPopupState] = useState(false);
   return (
     <>
-      <section className="relative w-full antialiased bg-white dark:bg-black dark:text-white rounded-md dark:border-transparent mt -8 sm:px-5">
+      <section className="relative w-full antialiased bg-white dark:bg-black dark:text-white rounded-md dark:border-transparent">
         <ThemeButton className="absolute top-0 right-0 left-auto mt-2 lg:mt-0" />
         <div className="flex flex-col items-start justify-center space-y-5">
-          <h1 className="text-3xl w-2/3 lg:w-full font-bold">
+          <h1 className="w-2/3 text-3xl font-bold lg:w-full">
             Hey, I'm Arnav Gosain 👋
           </h1>
           <p className="text-xl font-medium leading-relaxed text-justify text-gray-800 dark:text-white">
@@ -55,42 +55,33 @@ export default function IntroSection() {
             </IntroLink>{" "}
             and <IntroLink href="/bookshelf">books</IntroLink>.
           </p>
-          <div className="w-full grid grid-cols-2 gap-x-8">
-            <div className="flex flex-col items-center justify-start space-y-2 md:flex-row md:space-y-0 md:space-x-3 md:items-center justify-self-start">
-              <p className="text-xl font-semibold text-gray-800 lg:text-2xl bg-cyan-200">
-                Get in touch with me:
-              </p>
-              <div className="relative flex flex-row items-center justify-center space-x-3">
-                <CustomLink
-                  href="mailto:arnav@arnavgosain.com"
-                  title="Link to my email address"
-                >
-                  <HiOutlineMail
-                    className="w-8 h-8"
-                    onMouseEnter={() => setEmailPopupState(true)}
-                    onMouseLeave={() => setEmailPopupState(false)}
-                  />
-                </CustomLink>
-                <CustomLink
-                  href="https://twitter.com/arn4v"
-                  title="Link to my Twitter"
-                >
-                  <VscTwitter className="w-8 h-8" />
-                </CustomLink>
-              </div>
-            </div>
-            <div className="flex flex-col items-center justify-center space-y-2 md:flex-row md:space-x-3 md:space-y-0 md:items-center justify-self-start">
-              <p className="text-xl font-semibold text-gray-800 lg:text-2xl bg-cyan-200">
-                Keep in touch with me:
-              </p>
-              <div className="flex flex-row items-center justify-center space-x-3">
-                <CustomLink
-                  href="https://instagram.com/arn4v"
-                  title="Link to my Instagram"
-                >
-                  <FaInstagram className="w-8 h-8" />
-                </CustomLink>
-              </div>
+          <div className="flex flex-row items-center justify-start w-full space-x-3">
+            <p className="text-xl font-semibold text-gray-800 lg:text-2xl bg-cyan-200">
+              Get in touch with me:
+            </p>
+            <div className="relative flex flex-row items-center justify-center space-x-3">
+              <CustomLink
+                href="mailto:arnav@arnavgosain.com"
+                title="Link to my email address"
+              >
+                <HiOutlineMail
+                  className="w-8 h-8"
+                  onMouseEnter={() => setEmailPopupState(true)}
+                  onMouseLeave={() => setEmailPopupState(false)}
+                />
+              </CustomLink>
+              <CustomLink
+                href="https://twitter.com/arn4v"
+                title="Link to my Twitter"
+              >
+                <VscTwitter className="w-8 h-8" />
+              </CustomLink>
+              <CustomLink
+                href="https://instagram.com/arn4v"
+                title="Link to my Instagram"
+              >
+                <FaInstagram className="w-8 h-8" />
+              </CustomLink>
             </div>
           </div>
         </div>

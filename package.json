@@ -19,6 +19,7 @@
     "axios": "^0.21.0",
     "clsx": "^1.1.1",
     "date-fns": "^2.16.1",
+    "framer-motion": "^3.1.1",
     "front-matter": "^4.0.2",
     "globby": "^11.0.1",
     "gray-matter": "^4.0.2",

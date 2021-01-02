@@ -2,6 +2,7 @@ import Footer from "./Footer";
 import NavBar from "./NavBar";
 import clsx from "clsx";
 import { useRouter } from "next/router";
+import { motion } from "framer-motion";
 
 /**
  * @param {object} props
@@ -23,7 +24,7 @@ export default function PageLayout(props) {
           className,
         ])}
       >
-        <div className="w-full max-w-4xl mx-auto px-8 lg:px-0">
+          <div className="w-full max-w-4xl px-8 mx-auto lg:px-0 mt-4 lg:mt-0">
           {breadcrumb && <NavBar breadcrumb={breadcrumb} />}
           {children}
         </div>
