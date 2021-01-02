@@ -67,50 +67,45 @@ export default function ProjectsSection() {
           {projects.map((p) => {
             return (
               <>
-                <div className="relative">
-                  <div
-                    key={p.name}
-                    className="w-full shadow-sm dark:shadow-inner h-full gap-3 rounded-md dark:bg-gray-900 dark:text-white bg-coolGray-100 hover:shadow-md transition-shadow duration-200 ease-in-out p-4 flex flex-col items-start justify-center"
-                  >
-                    <span className="flex flex-row items-center justify-start space-x-4">
-                      <p className="text-base lg:text-lg font-semibold">
-                        {p.name}
-                      </p>
-                    </span>
-                    <p className="text-sm lg:text-base">{p.description}</p>
-                    <p className="text-sm lg:text-base">{p.duration ?? ""}</p>
-                    <span className="flex flex-row gap-2 flex-wrap">
-                      {p.tags.sort().map((t) => {
-                        return (
-                          <>
-                            <div
-                              key={`${p.name}-${t}`}
-                              className={`rounded-xl py-1 font-semibold text-white px-2 text-xs ${tagColors[t]}`}
-                            >
-                              {t}
-                            </div>
-                          </>
-                        );
-                      })}
-                    </span>
-                  </div>
-                  {p.github && (
-                    <>
-                      <style jsx>{`
-                        .github-icon {
-                          transform: translate(
-                            calc(0.5 * 3rem),
-                            calc(-0.5 * 3rem)
-                          );
-                        }
-                      `}</style>
-                      <div className="z-10 github-icon bg-white h-12 w-12 top-0 right-0 rounded-full flex items-center justify-center absolute">
-                        <CustomLink href={p.github}>
-                          <VscGithub className="w-8 h-8 lg:w-10 lg:h-10 text-black" />
+                <div
+                  key={p.name}
+                  className="w-full shadow-sm dark:shadow-inner h-full gap-3 rounded-md dark:bg-gray-900 dark:text-white bg-coolGray-100 hover:shadow-md transition-shadow duration-200 ease-in-out p-4 flex flex-col items-start justify-center"
+                >
+                  <span className="flex flex-row items-center justify-start space-x-2 lg:space-x-3">
+                    <p className="text-base lg:text-lg font-semibold">
+                      {p.name}
+                    </p>
+                    {p.github && (
+                      <>
+                        <p>•</p>
+                        <CustomLink
+                          href={p.github}
+                          className="flex flex-row space-x-2"
+                        >
+                          <div className="bg-white h-6 w-6 top-0 right-0 rounded-full flex items-center justify-center">
+                            <VscGithub className="w-8 h-8 lg:w-5 lg:h-5 text-black" />
+                          </div>
+                          <p>Github</p>
                         </CustomLink>
-                      </div>
-                    </>
-                  )}
+                      </>
+                    )}
+                  </span>
+                  <p className="text-sm lg:text-base">{p.description}</p>
+                  <p className="text-sm lg:text-base">{p.duration ?? ""}</p>
+                  <span className="flex flex-row gap-2 flex-wrap">
+                    {p.tags.sort().map((t) => {
+                      return (
+                        <>
+                          <div
+                            key={`${p.name}-${t}`}
+                            className={`rounded-xl h-6 py-1 font-semibold text-white px-2 text-xs ${tagColors[t]}`}
+                          >
+                            {t}
+                          </div>
+                        </>
+                      );
+                    })}
+                  </span>
                 </div>
               </>
             );
