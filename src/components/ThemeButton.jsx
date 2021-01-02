@@ -20,7 +20,7 @@ export default function ThemeButton(props) {
         aria-label="Toggle Dark Mode"
         className={clsx(
           [
-            "flex justify-center items-center h-10 w-10 p-2.5 focus:outline-none focus:ring-2 focus:ring-black rounded-md bg-coolGray-200",
+            "flex justify-center items-center h-10 w-10 p-2.5 focus:outline-none focus:ring-2 transition-all duration-150 ease-in-out focus:ring-black rounded-md bg-coolGray-100",
             className,
           ],
           !noDarkMode && "dark:focus:ring-coolGray-400 dark:bg-gray-600"

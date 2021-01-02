@@ -35,7 +35,7 @@ export function getFilesByType(type) {
  * @returns {Array.<string>}
  */
 export function getAllPosts() {
-  return getDocsByType("blog").map((f) => f.replace(".mdx", ""));
+  return getFilesByType("blog").map((f) => f.replace(".mdx", ""));
 }
 
 /*
@@ -45,6 +45,7 @@ export function getAllPosts() {
 export function getPostBySlug(slug) {
   return fs.readFileSync(path.join(getTypePath("blog"), `${slug}.mdx`), "utf8");
 }
+
 /**
  * Returns post content
  * @param  {string} slug

@@ -43,7 +43,10 @@ export default function BlogPage({ posts }) {
             .map(([key, value]) => {
               return (
                 <>
-                  <div key={{}} className="flex flex-col space-y-4">
+                  <div
+                    key={`${key}-${value}`}
+                    className="flex flex-col space-y-4"
+                  >
                     <h1 className="text-2xl font-semibold dark:text-white">
                       {key}
                     </h1>
@@ -51,11 +54,8 @@ export default function BlogPage({ posts }) {
                       {value.map((p) => {
                         return (
                           <>
-                            <Link href={`/blog/${p.slug}`}>
-                              <div
-                                style={{}}
-                                className="w-full flex flex-row justify-between cursor-pointer"
-                              >
+                            <Link href={`/${p.slug}`}>
+                              <div className="flex flex-row justify-between w-full cursor-pointer">
                                 <p className="dark:text-white">{p.title}</p>
                                 <p className="dark:text-white">
                                   {formatDate(p.publishedAt)}

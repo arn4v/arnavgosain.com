@@ -19,12 +19,12 @@ export default function PageLayout(props) {
     <>
       <main
         className={clsx([
-          "flex flex-col bg-white min-h-screen dark:bg-black overflow-x-hidden space-y-6",
+          "flex flex-col bg-white min-h-screen dark:bg-black overflow-x-hidden space-y-6 py-8 lg:py-0 transition-colors duration-250 ease-in-out",
           !noFooter && "justify-between",
           className,
         ])}
       >
-          <div className="w-full max-w-4xl px-8 mx-auto lg:px-0 mt-4 lg:mt-0">
+        <div className="w-full max-w-4xl px-8 mx-auto lg:px-0">
           {breadcrumb && <NavBar breadcrumb={breadcrumb} />}
           {children}
         </div>
