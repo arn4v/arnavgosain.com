@@ -11,7 +11,7 @@ export default function MyApp({ Component, pageProps }) {
     <>
       <GoogleFonts href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" />
       <DefaultSeo {...SEO} />
-      <ThemeProvider attribute="class" defaultTheme="dark">
+      <ThemeProvider attribute="class">
         <Component {...pageProps} />
       </ThemeProvider>
     </>

@@ -1,6 +1,7 @@
 import { VscGithub } from "react-icons/vsc";
 import React from "react";
 import CustomLink from "~/components/CustomLink";
+import { HiLink } from "react-icons/hi";
 
 /*
  * @typedef {Object} Project
@@ -63,13 +64,13 @@ export default function ProjectsSection() {
     <>
       <div className="flex flex-col space-y-5">
         <h1 className="text-3xl font-bold dark:text-white">Projects</h1>
-        <div className="grid grid-rows-4 lg:grid-rows-2 lg:grid-cols-2 gap-8">
+        <div className="grid grid-rows-4 lg:grid-rows-2 lg:grid-cols-2 gap-4 lg:gap-6">
           {projects.map((p) => {
             return (
               <>
                 <div
                   key={p.name}
-                  className="w-full shadow-sm dark:shadow-inner h-full gap-3 rounded-md dark:bg-gray-900 dark:text-white bg-coolGray-100 hover:shadow-md transition-shadow duration-200 ease-in-out p-4 flex flex-col items-start justify-center"
+                  className="w-full shadow-sm dark:shadow-inner h-full gap-3 rounded-md dark:bg-gray-900 dark:text-white bg-coolGray-100 hover:shadow-md p-4 flex flex-col items-start justify-center transition-all duration-250 ease-in-out"
                 >
                   <span className="flex flex-row items-center justify-start space-x-2 lg:space-x-3">
                     <p className="text-base lg:text-lg font-semibold">
@@ -80,12 +81,12 @@ export default function ProjectsSection() {
                         <p>•</p>
                         <CustomLink
                           href={p.github}
-                          className="flex flex-row space-x-2"
+                          className="flex flex-row space-x-0.5 items-center justify-center"
                         >
-                          <div className="bg-white h-6 w-6 top-0 right-0 rounded-full flex items-center justify-center">
-                            <VscGithub className="w-8 h-8 lg:w-5 lg:h-5 text-black" />
+                          <div className="h-6 w-6 top-0 right-0 rounded-full flex items-center justify-center">
+                            <HiLink className="w-5 h-5 text-black dark:text-white" />
                           </div>
-                          <p>Github</p>
+                          <p className="text-sm lg:text-base">GitHub</p>
                         </CustomLink>
                       </>
                     )}
