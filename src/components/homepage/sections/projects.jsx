@@ -72,7 +72,7 @@ export default function ProjectsSection() {
                   key={p.name}
                   className="w-full shadow-sm dark:shadow-inner h-full gap-3 rounded-md dark:bg-gray-900 dark:text-white bg-coolGray-100 hover:shadow-md p-4 flex flex-col items-start justify-center transition-all duration-250 ease-in-out"
                 >
-                  <span className="flex flex-row items-center justify-start space-x-2 lg:space-x-3">
+                  <span className="flex flex-row items-center justify-start space-x-2">
                     <p className="text-base lg:text-lg font-semibold">
                       {p.name}
                     </p>
@@ -81,12 +81,14 @@ export default function ProjectsSection() {
                         <p>•</p>
                         <CustomLink
                           href={p.github}
-                          className="flex flex-row space-x-0.5 items-center justify-center"
+                          className="flex flex-row space-x-0.5 items-center justify-center group"
                         >
                           <div className="h-6 w-6 top-0 right-0 rounded-full flex items-center justify-center">
-                            <HiLink className="w-5 h-5 text-black dark:text-white" />
+                            <HiLink className="w-5 h-5 group-hover:text-orange-400 transition-colors duration-250 ease-in-out text-black dark:text-white" />
                           </div>
-                          <p className="text-sm lg:text-base">GitHub</p>
+                          <p className="text-sm lg:text-base group-hover:text-orange-400 transition-colors duration-250 ease-in-out">
+                            GitHub
+                          </p>
                         </CustomLink>
                       </>
                     )}
