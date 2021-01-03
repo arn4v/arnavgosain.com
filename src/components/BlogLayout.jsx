@@ -21,7 +21,7 @@ export default function BlogLayout({ children, metadata }) {
       <PageLayout
         breadcrumb={{
           Blog: "/blog",
-          [metadata.title]: `/blog/${metadata.slug}`,
+          [metadata.title]: `/${metadata.slug}`,
         }}
       >
         <BlogSeo
