@@ -35,7 +35,7 @@ export function getFilesByType(type) {
  * @returns {Array.<string>}
  */
 export function getAllPosts() {
-  return getFilesByType("blog").map((f) => f.replace(".mdx", ""));
+  return getFilesByType("blog").map((f) => f.replace(/\.mdx/g, ""));
 }
 
 /*
@@ -46,6 +46,17 @@ export function getPostBySlug(slug) {
   return fs.readFileSync(path.join(getTypePath("blog"), `${slug}.mdx`), "utf8");
 }
 
+export const remarkPlugins = [
+  require("remark-autolink-headings"),
+  require("remark-slug"),
+  require("remark-code-titles"),
+];
+
+export const mdxOptions = {
+  remarkPlugins: remarkPlugins,
+  rehypePlugins: [mdxPrism],
+};
+
 /**
  * Returns post content
  * @param  {string} slug
@@ -55,14 +66,7 @@ export async function getPostContent(slug) {
   const { data, content } = matter(source);
   const mdxSource = await renderToString(content, {
     components: MDXComponents,
-    mdxOptions: {
-      remarkPlugins: [
-        require("remark-autolink-headings"),
-        require("remark-slug"),
-        require("remark-code-titles"),
-      ],
-      rehypePlugins: [mdxPrism],
-    },
+    mdxOptions,
   });
 
   return {
