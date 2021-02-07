@@ -1,34 +1,51 @@
 import CustomLink from "~/components/CustomLink";
-import { Fragment } from "react";
+import * as React from "react";
 import PageLayout from "~/components/PageLayout";
-import books from "~/data/bookshelf";
+import { books } from "~/data/bookshelf";
+import Image from "next/image";
 
 /**
  * @returns {React.ReactNode}
+ * @default
  */
 export default function Bookshelf() {
   return (
     <>
       <PageLayout breadcrumb={{ Bookshelf: "/bookshelf" }}>
-        <h1 className="text-2xl font-bold dark:text-white">
-          Arnav's Bookshelf
-        </h1>
-        <div className="flex flex-col space-y-2 mt-4">
-          {books.map((book) => {
+        <div className="flex flex-col mt-4 gap-6">
+          {Object.entries(books).map(([key, value], index) => {
             return (
-              <Fragment key={books.indexOf(book)}>
-                <div className="flex flex-row items-center justify-start space-x-2">
-                  <div className="h-1.5 w-1.5 bg-black rounded-full dark:bg-white"></div>
-                  <CustomLink href={book.link} className="dark:text-white">
-                    {book.title}
-                    {book.author && ` by ${book.author}`}
-                  </CustomLink>
+              <React.Fragment key={index}>
+                <h1 className="text-2xl font-bold dark:text-white">{key}</h1>
+                <div className="grid grid-cols-3 lg:grid-cols-4 gap-4">
+                  {value.map((book, _index) => {
+                    return (
+                      <React.Fragment key={book.id}>
+                        <CustomLink
+                          href={book.url}
+                          className="flex flex-col items-start justify-center w-full p-4 bg-gray-100 rounded-lg gap-2 dark:text-white hover:bg-gray-200 shadow dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-150 ease-in-out"
+                        >
+                          <Image
+                            src={`/images/books/${book.id}.jpg`}
+                            layout="intrinsic"
+                            height={136}
+                            width={96}
+                            className="mx-auto"
+                          />
+                          <div className="flex flex-col items-start justify-center gap-1">
+                            <span className="text-sm font-medium lg:text-base">
+                              {book.title}
+                            </span>
+                            <span className="text-xs lg:text-sm">
+                              {book.author}
+                            </span>
+                          </div>
+                        </CustomLink>
+                      </React.Fragment>
+                    );
+                  })}
                 </div>
-                <div
-                  style={{ height: "0.25px" }}
-                  className="w-full bg-gray-300"
-                ></div>
-              </Fragment>
+              </React.Fragment>
             );
           })}
         </div>

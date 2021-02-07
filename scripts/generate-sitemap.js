@@ -14,8 +14,8 @@ const frontmatter = require("front-matter");
 
   // Start with posts
   let pages = await globby([
-    "src/pages/*.{js,jsx}",
-    "src/data/blog/**/*.{mdx,md}",
+    "../src/pages/*.{js,jsx}",
+    "../src/data/blog/**/*.{mdx,md}",
   ]);
   pages = pages
     .filter(
@@ -57,7 +57,7 @@ const frontmatter = require("front-matter");
   /**
    * Next: The RSS feed.
    */
-  const posts = await await globby(["src/data/blog/*.{mdx,md}"]);
+  const posts = await await globby(["../src/data/blog/*.{mdx,md}"]);
 
   const rss = new RSS({
     title: "Arnav Gosain",

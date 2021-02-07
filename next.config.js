@@ -2,7 +2,8 @@ module.exports = {
   images: { domains: ["images.unsplash.com", "mosaic.scdn.co"] },
   webpack: (config, { dev, isServer }) => {
     if (isServer) {
-      require("./generate-sitemap");
+      require("./scripts/download-book-covers");
+      require("./scripts/generate-sitemap");
     }
     return config;
   },
