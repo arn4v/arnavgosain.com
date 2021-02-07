@@ -17,13 +17,13 @@ export default function Bookshelf() {
             return (
               <React.Fragment key={index}>
                 <h1 className="text-2xl font-bold dark:text-white">{key}</h1>
-                <div className="grid grid-cols-3 lg:grid-cols-4 gap-4">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                   {value.map((book, _index) => {
                     return (
                       <React.Fragment key={book.id}>
                         <CustomLink
                           href={book.url}
-                          className="flex flex-col items-start justify-center w-full p-4 bg-gray-100 rounded-lg gap-2 dark:text-white hover:bg-gray-200 shadow dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-150 ease-in-out"
+                          className="flex flex-col items-start justify-center w-full p-4 bg-gray-100 rounded-lg shadow gap-2 dark:text-white hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-150 ease-in-out"
                         >
                           <Image
                             src={`/images/books/${book.id}.jpg`}
@@ -33,12 +33,8 @@ export default function Bookshelf() {
                             className="mx-auto"
                           />
                           <div className="flex flex-col items-start justify-center gap-1">
-                            <span className="text-sm font-medium lg:text-base">
-                              {book.title}
-                            </span>
-                            <span className="text-xs lg:text-sm">
-                              {book.author}
-                            </span>
+                            <span className="text-sm font-medium lg:text-base">{book.title}</span>
+                            <span className="text-xs lg:text-sm">{book.author}</span>
                           </div>
                         </CustomLink>
                       </React.Fragment>
