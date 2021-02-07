@@ -2,7 +2,7 @@ import { DefaultSeo } from "next-seo";
 import { ThemeProvider } from "next-themes";
 import GoogleFonts from "next-google-fonts";
 import "~/styles/tailwind.css";
-import "~/styles/index.scss";
+import "~/styles/index.css";
 import "~/styles/tailwind-utils.css";
 import SEO from "~/next-seo.config";
 

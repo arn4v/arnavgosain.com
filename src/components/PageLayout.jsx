@@ -2,7 +2,6 @@ import Footer from "./Footer";
 import NavBar from "./NavBar";
 import clsx from "clsx";
 import { useRouter } from "next/router";
-import { motion } from "framer-motion";
 
 /**
  * @param {object} props
