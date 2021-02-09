@@ -33,8 +33,12 @@ export default function Bookshelf() {
                             className="mx-auto"
                           />
                           <div className="flex flex-col items-start justify-center gap-1">
-                            <span className="text-sm font-medium lg:text-base">{book.title}</span>
-                            <span className="text-xs lg:text-sm">{book.author}</span>
+                            <span className="text-sm font-medium lg:text-base">
+                              {book.title}
+                            </span>
+                            <span className="text-xs lg:text-sm">
+                              {book.author}
+                            </span>
                           </div>
                         </CustomLink>
                       </React.Fragment>
