@@ -18,7 +18,7 @@ export default function PageLayout(props) {
     <>
       <main
         className={clsx([
-          "flex flex-col bg-white min-h-screen dark:bg-black overflow-x-hidden space-y-6 py-8 lg:py-0 transition-colors duration-250 ease-in-out",
+          "flex flex-col bg-white min-h-screen dark:bg-black overflow-x-hidden space-y-6 transition-colors duration-250 ease-in-out",
           !noFooter && "justify-between",
           className,
         ])}
