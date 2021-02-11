@@ -1,4 +1,8 @@
 const playlists = {
+  2021: {
+    February: "https://open.spotify.com/playlist/1qjPW5dOdRvoxBo4ltlHC4",
+    January: "https://open.spotify.com/playlist/1KmB3lqQGMg9O1siooy4Sb",
+  },
   2020: {
     December: "https://open.spotify.com/playlist/5KlEL1uAZTykuiHticVdBR",
     November: "https://open.spotify.com/playlist/2XvYRIUUOTdGXN22y19HXa",
