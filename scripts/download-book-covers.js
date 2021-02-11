@@ -1,16 +1,39 @@
 const https = require("https");
-const puppeteer = require("puppeteer");
 const path = require("path");
 const fs = require("fs");
 const { books } = require("../src/data/bookshelf");
 const ImageDataURI = require("image-data-uri");
+
+let chromium = {};
+let puppeteer;
+const isLambda = process.env.AWS_LAMBDA_FUNCTION_VERSION;
+
+if (isLambda) {
+  // running on the Vercel platform.
+  chromium = require("chrome-aws-lambda");
+  puppeteer = require("puppeteer-core");
+} else {
+  // running locally.
+  puppeteer = require("puppeteer");
+}
 
 const config = {
   IMAGES_DIR: path.resolve(process.cwd(), "public/images/books"),
 };
 
 (async () => {
-  const browser = await puppeteer.launch();
+  let browser;
+  if (isLambda) {
+    browser = await chromium.puppeteer.launch({
+      args: [...chromium.args, "--hide-scrollbars", "--disable-web-security"],
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath,
+      headless: true,
+      ignoreHTTPSErrors: true,
+    });
+  } else {
+    browser = await puppeteer.launch();
+  }
   if (!fs.existsSync(config.IMAGES_DIR)) fs.mkdirSync(config.IMAGES_DIR);
   for (const [key, value] of Object.entries(books)) {
     for (const item of value) {
