@@ -36,3 +36,4 @@ public/rss.xml
 public/rss-feed.xml
 public/sitemap.xml
 .env
+debug.log
