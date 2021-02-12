@@ -16,19 +16,42 @@ import { HiLink } from "react-icons/hi";
  */
 const projects = [
   {
+    name: "Bookmarky",
+    description:
+      "A React/NextJS app to track and curate bookmarked content from Kindle, Instapaper, Pocket, et cetera.",
+    duration: "Ongoing",
+    github: "https://github.com/arn4v/bookmarky",
+    tags: [
+      "React",
+      "TailwindCSS",
+      "Framer Motion",
+      "NextJS",
+      "NodeJS",
+      "TypeScript",
+    ],
+  },
+  {
+    name: "Email2Roam",
+    description: "NodeJS script to add notes to Roam Research via Email.",
+    duration: "January 2021",
+    github: "https://github.com/arn4v/email2roam",
+    tags: ["NodeJS"],
+  },
+  {
+    name: "Onetab2Sqlite",
+    description:
+      "Another weapon in my infovore arsenal, adds OneTab links to an sqlite database.",
+    duration: "February 2021",
+    github: "https://github.com/arn4v/onetab2sqlite",
+    tags: ["NodeJS"],
+  },
+  {
     name: "Syncify",
     description:
       "Discord bot that interfaces with the Spotify API to sync the Spotify accounts of two discord users in a session.",
     duration: "August 2020 - September 2020",
     github: "https://github.com/arn4v/syncify",
     tags: ["TypeScript", "NodeJS"],
-  },
-  {
-    name: "Bookmarky",
-    description:
-      "A React/NextJS app to track and curate bookmarked content from Kindle, Instapaper, Pocket, et cetera.",
-    duration: "Ongoing",
-    tags: ["React", "NextJS", "NodeJS", "TypeScript"],
   },
   {
     name: "Ptool",
