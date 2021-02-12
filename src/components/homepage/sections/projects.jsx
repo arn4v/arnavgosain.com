@@ -17,15 +17,19 @@ import { HiLink } from "react-icons/hi";
 const projects = [
   {
     name: "Bookmarky",
-    description:
-      "A React/NextJS app to track and curate bookmarked content from Kindle, Instapaper, Pocket, et cetera.",
+    description: (
+      <>
+        <CustomLink className="hover:text-blue-600 transition duration-100 ease-in-out" href="https://pinboard.in">Pinboard.in</CustomLink>
+        {" alternative built in NextJS, Tailwind & Framer Motion."}
+      </>
+    ),
     duration: "Ongoing",
     github: "https://github.com/arn4v/bookmarky",
     tags: [
-      "React",
       "TailwindCSS",
       "Framer Motion",
       "NextJS",
+      "React",
       "NodeJS",
       "TypeScript",
     ],
@@ -53,30 +57,32 @@ const projects = [
     github: "https://github.com/arn4v/syncify",
     tags: ["TypeScript", "NodeJS"],
   },
-  {
-    name: "Ptool",
-    description: "A simple project scaffolding tool.",
-    github: "https://github.com/arn4v/ptool",
-    duration: "August 2020",
-    tags: ["Python"],
-  },
-  {
-    name: "Auto App Builder",
-    description:
-      "A script to automate the building and signing of opensource Android apps I use.",
-    github: "https://github.com/arn4v/auto-app-builder",
-    duration: "May 2020 - August 2020",
-    tags: ["Bash", "Python"],
-  },
+  // {
+  //   name: "Ptool",
+  //   description: "A simple project scaffolding tool.",
+  //   github: "https://github.com/arn4v/ptool",
+  //   duration: "August 2020",
+  //   tags: ["Python"],
+  // },
+  // {
+  //   name: "Auto App Builder",
+  //   description:
+  //     "A script to automate the building and signing of opensource Android apps I use.",
+  //   github: "https://github.com/arn4v/auto-app-builder",
+  //   duration: "May 2020 - August 2020",
+  //   tags: ["Bash", "Python"],
+  // },
 ];
 
 const tagColors = {
-  NextJS: "bg-gray-600",
-  NodeJS: "bg-emerald-700",
-  TypeScript: "bg-blue-900",
-  React: "bg-lightBlue-600",
-  Python: "bg-yellow-700",
-  Bash: "bg-purple-900",
+  "Framer Motion": "bg-gradient-to-tr from-pink-400 to-purple-600",
+  TailwindCSS: "bg-gradient-to-tr from-lightBlue-600 to-teal-400",
+  NextJS: "bg-gradient-to-tr from-gray-500 dark:from-gray-600 to-blueGray-900",
+  NodeJS: "bg-gradient-to-tr from-green-700 to-emerald-500",
+  TypeScript: "bg-gradient-to-tr from-blue-900 bg-lightBlue-600",
+  React: "bg-gradient-to-tr from-blue-700 to-lightBlue-500",
+  Python: "bg-gradient-to-tr from-orange-600 to-yellow-600",
+  Bash: "bg-gradient-to-tr from-blue-600 to-lightBlue-700",
 };
 
 /*
@@ -85,7 +91,7 @@ const tagColors = {
 export default function ProjectsSection() {
   return (
     <>
-      <div className="flex flex-col space-y-5">
+      <div className="flex flex-col gap-5">
         <h1 className="text-3xl font-bold dark:text-white">Projects</h1>
         <div className="grid grid-rows-4 lg:grid-rows-2 lg:grid-cols-2 gap-4 lg:gap-6">
           {projects.map((p) => {
@@ -124,7 +130,7 @@ export default function ProjectsSection() {
                         <>
                           <div
                             key={`${p.name}-${t}`}
-                            className={`rounded-xl h-6 py-1 font-semibold text-white px-2 text-xs ${tagColors[t]}`}
+                            className={`rounded-xl h-6 py-1 font-medium text-white px-2 text-xs ${tagColors[t]}`}
                           >
                             {t}
                           </div>
