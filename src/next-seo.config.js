@@ -26,10 +26,10 @@ const SEO = {
     description,
     images: [
       {
-        url: `${baseUrl}/static/images/banner.img`,
+        url: `${baseUrl}/static/og-banner.img`,
         alt: title,
-        width: 1280,
-        height: 720,
+        width: 1200,
+        height: 627,
       },
     ],
   },

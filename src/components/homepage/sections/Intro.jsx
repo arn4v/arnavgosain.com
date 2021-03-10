@@ -19,7 +19,7 @@ const IntroLink = (props) => {
   return (
     <CustomLink
       href={href}
-      className="underline cursor-pointer bg-cyan-200 hover:bg-cyan-300 duration-50 dark:text-black ease-in transition-colors"
+      className="underline transition-colors ease-in cursor-pointer bg-cyan-200 hover:bg-cyan-300 duration-50 dark:text-black"
       title={title}
     >
       {children}
@@ -29,9 +29,9 @@ const IntroLink = (props) => {
 
 export default function IntroSection() {
   const [emailPopupState, setEmailPopupState] = useState(false);
-  const { blogs, playlists, startup, newsletters } = {
+  const { blogs, playlist, startup, newsletters } = {
     blogs: <IntroLink href="/blog">blog</IntroLink>,
-    playlists: <IntroLink href="/playlists">playlist</IntroLink>,
+    playlist: <IntroLink href="/playlists">playlist</IntroLink>,
     startup: (
       <IntroLink
         href="https://www.notion.so/25f93c764a074fd188d14103075d9a2e?v=57023d44b3814101be8fd61faba3a813"
@@ -46,19 +46,20 @@ export default function IntroSection() {
       </IntroLink>
     ),
   };
+
   return (
     <>
-      <section className="relative w-full antialiased dark:text-white rounded-md dark:border-transparent">
+      <section className="relative w-full antialiased rounded-md dark:text-white dark:border-transparent">
         <ThemeButton className="absolute top-0 right-0 left-auto mt-2 lg:mt-0" />
         <div className="flex flex-col items-start justify-center space-y-5">
           <h1 className="w-2/3 text-3xl font-bold lg:w-full">
             Hey, I'm Arnav Gosain 👋
           </h1>
           <p className="text-xl font-medium leading-relaxed text-justify text-gray-800 dark:text-white">
-            I'm a photographer & developer based in Delhi, India. I write my
-            thoughts and learnings on my {blogs} and create {playlists} a every
-            month. I'm interested in startups (which I track {startup}),{" "}
-            {newsletters} and <IntroLink href="/bookshelf">books</IntroLink>.
+            I'm a photographer & developer based in Delhi, India. I create a{" "}
+            {playlist} every month. I'm interested in startups (which I track{" "}
+            {startup}) and reading {newsletters} {"&"}{" "}
+            <IntroLink href="/bookshelf">books</IntroLink>.
           </p>
           <div className="flex flex-row items-center justify-start w-full space-x-3">
             <p className="text-xl font-semibold text-gray-800 lg:text-2xl bg-cyan-200">
