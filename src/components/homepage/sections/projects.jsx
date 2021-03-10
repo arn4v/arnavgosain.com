@@ -103,7 +103,7 @@ export default function ProjectsSection() {
     <>
       <div className="flex flex-col gap-5">
         <h1 className="text-3xl font-bold dark:text-white">Projects</h1>
-        <div className="grid grid-rows-4 gap-4 lg:grid-rows-2 lg:grid-cols-2 lg:gap-6">
+        <div className="grid grid-flow-row gap-4 lg:grid-rows-2 lg:grid-cols-2 lg:gap-6">
           {projects.map((p) => {
             return (
               <>
