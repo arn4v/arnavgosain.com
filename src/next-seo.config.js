@@ -26,7 +26,7 @@ const SEO = {
     description,
     images: [
       {
-        url: `${baseUrl}/og-banner.img`,
+        url: `${baseUrl}/og-banner.png`,
         alt: title,
         width: 1200,
         height: 627,
