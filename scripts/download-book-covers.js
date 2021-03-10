@@ -6,7 +6,7 @@ const { books } = require("../src/data/bookshelf");
 const ImageDataURI = require("image-data-uri");
 
 let puppeteer;
-const isLambda = process.env.AWS_LAMBDA_FUNCTION_VERSION;
+const isLambda = !!process.env.AWS_LAMBDA_FUNCTION_VERSION;
 
 if (isLambda) {
   // running on the Vercel platform.
@@ -15,8 +15,6 @@ if (isLambda) {
   // running locally.
   puppeteer = require("puppeteer");
 }
-
-console.log(isLambda);
 
 const config = {
   IMAGES_DIR: path.resolve(process.cwd(), "public/images/books"),

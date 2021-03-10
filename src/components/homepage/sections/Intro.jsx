@@ -69,6 +69,7 @@ export default function IntroSection() {
               <CustomLink
                 href="mailto:arnav@arnavgosain.com"
                 title="Link to my email address"
+                className="hover:text-"
               >
                 <HiOutlineMail
                   className="w-8 h-8"
@@ -79,12 +80,14 @@ export default function IntroSection() {
               <CustomLink
                 href="https://twitter.com/arn4v"
                 title="Link to my Twitter"
+                className="hover:text-blue-400"
               >
                 <VscTwitter className="w-8 h-8" />
               </CustomLink>
               <CustomLink
                 href="https://instagram.com/arn4v"
                 title="Link to my Instagram"
+                className="hover:text-red-400"
               >
                 <FaInstagram className="w-8 h-8" />
               </CustomLink>

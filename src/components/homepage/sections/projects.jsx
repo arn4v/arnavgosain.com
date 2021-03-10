@@ -16,38 +16,29 @@ import { HiLink } from "react-icons/hi";
  */
 const projects = [
   {
+    name: "Portfolio",
+    description:
+      "My portfolio (this website) built with NextJS, React and TailwindCSS.",
+    duration: "December 2020 - Present",
+    github: "https://github.com/arn4v/arnavgosain.com",
+    tags: ["NextJS", "React", "TailwindCSS"],
+  },
+  {
     name: "Bookmarky",
     description: (
       <>
-        <CustomLink className="hover:text-blue-600 transition duration-100 ease-in-out" href="https://pinboard.in">Pinboard.in</CustomLink>
+        <CustomLink
+          className="transition duration-100 ease-in-out hover:text-blue-600"
+          href="https://pinboard.in"
+        >
+          Pinboard.in
+        </CustomLink>
         {" alternative built in NextJS, Tailwind & Framer Motion."}
       </>
     ),
-    duration: "Ongoing",
+    duration: "February 2021 - Present",
     github: "https://github.com/arn4v/bookmarky",
-    tags: [
-      "TailwindCSS",
-      "Framer Motion",
-      "NextJS",
-      "React",
-      "NodeJS",
-      "TypeScript",
-    ],
-  },
-  {
-    name: "Email2Roam",
-    description: "NodeJS script to add notes to Roam Research via Email.",
-    duration: "January 2021",
-    github: "https://github.com/arn4v/email2roam",
-    tags: ["NodeJS"],
-  },
-  {
-    name: "Onetab2Sqlite",
-    description:
-      "Another weapon in my infovore arsenal, adds OneTab links to an sqlite database.",
-    duration: "February 2021",
-    github: "https://github.com/arn4v/onetab2sqlite",
-    tags: ["NodeJS"],
+    tags: ["TailwindCSS", "Framer Motion", "NextJS", "React", "TypeScript"],
   },
   {
     name: "Syncify",
@@ -57,22 +48,41 @@ const projects = [
     github: "https://github.com/arn4v/syncify",
     tags: ["TypeScript", "NodeJS"],
   },
-  // {
-  //   name: "Ptool",
-  //   description: "A simple project scaffolding tool.",
-  //   github: "https://github.com/arn4v/ptool",
-  //   duration: "August 2020",
-  //   tags: ["Python"],
-  // },
-  // {
-  //   name: "Auto App Builder",
-  //   description:
-  //     "A script to automate the building and signing of opensource Android apps I use.",
-  //   github: "https://github.com/arn4v/auto-app-builder",
-  //   duration: "May 2020 - August 2020",
-  //   tags: ["Bash", "Python"],
-  // },
-];
+  {
+    name: "Email2Roam",
+    description: "NodeJS script to add notes to Roam Research via Email.",
+    duration: "January 2021",
+    github: "https://github.com/arn4v/email2roam",
+    tags: ["NodeJS"],
+    exclude: true,
+  },
+  {
+    name: "Onetab2Sqlite",
+    description:
+      "Another weapon in my infovore arsenal, adds OneTab links to an sqlite database.",
+    duration: "February 2021",
+    github: "https://github.com/arn4v/onetab2sqlite",
+    tags: ["NodeJS"],
+    exclude: true,
+  },
+  {
+    name: "Ptool",
+    description: "A simple project scaffolding tool.",
+    github: "https://github.com/arn4v/ptool",
+    duration: "August 2020",
+    tags: ["Python"],
+    exclude: true,
+  },
+  {
+    name: "Auto App Builder",
+    description:
+      "A script to automate the building and signing of opensource Android apps I use.",
+    github: "https://github.com/arn4v/auto-app-builder",
+    duration: "May 2020 - August 2020",
+    tags: ["Bash", "Python"],
+    exclude: true,
+  },
+].filter((i) => i.exclude);
 
 const tagColors = {
   "Framer Motion": "bg-gradient-to-tr from-pink-400 to-purple-600",
@@ -93,16 +103,16 @@ export default function ProjectsSection() {
     <>
       <div className="flex flex-col gap-5">
         <h1 className="text-3xl font-bold dark:text-white">Projects</h1>
-        <div className="grid grid-rows-4 lg:grid-rows-2 lg:grid-cols-2 gap-4 lg:gap-6">
+        <div className="grid grid-rows-4 gap-4 lg:grid-rows-2 lg:grid-cols-2 lg:gap-6">
           {projects.map((p) => {
             return (
               <>
                 <div
                   key={p.name}
-                  className="w-full shadow-sm dark:shadow-inner h-full gap-3 rounded-md dark:bg-gray-900 dark:text-white bg-coolGray-100 hover:shadow-md p-4 flex flex-col items-start justify-center transition-all duration-250 ease-in-out"
+                  className="flex flex-col items-start justify-center w-full h-full gap-3 p-4 transition-all ease-in-out rounded-md shadow-sm dark:shadow-inner dark:bg-gray-900 dark:text-white bg-coolGray-100 hover:shadow-md duration-250"
                 >
                   <span className="flex flex-row items-center justify-start space-x-2">
-                    <p className="text-base lg:text-lg font-semibold">
+                    <p className="text-base font-semibold lg:text-lg">
                       {p.name}
                     </p>
                     {p.github && (
@@ -112,10 +122,10 @@ export default function ProjectsSection() {
                           href={p.github}
                           className="flex flex-row space-x-0.5 items-center justify-center group"
                         >
-                          <div className="h-6 w-6 top-0 right-0 rounded-full flex items-center justify-center">
-                            <HiLink className="w-5 h-5 group-hover:text-orange-400 transition-colors duration-250 ease-in-out text-black dark:text-white" />
+                          <div className="top-0 right-0 flex items-center justify-center w-6 h-6 rounded-full">
+                            <HiLink className="w-5 h-5 text-black transition-colors ease-in-out group-hover:text-orange-400 duration-250 dark:text-white" />
                           </div>
-                          <p className="text-sm lg:text-base group-hover:text-orange-400 transition-colors duration-250 ease-in-out">
+                          <p className="text-sm transition-colors ease-in-out lg:text-base group-hover:text-orange-400 duration-250">
                             GitHub
                           </p>
                         </CustomLink>
@@ -124,7 +134,7 @@ export default function ProjectsSection() {
                   </span>
                   <p className="text-sm lg:text-base">{p.description}</p>
                   <p className="text-sm lg:text-base">{p.duration ?? ""}</p>
-                  <span className="flex flex-row gap-2 flex-wrap">
+                  <span className="flex flex-row flex-wrap gap-2">
                     {p.tags.sort().map((t) => {
                       return (
                         <>
