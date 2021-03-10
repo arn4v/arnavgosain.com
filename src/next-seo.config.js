@@ -3,12 +3,12 @@ import { baseUrl } from "./config";
 /**
  * @type {string}
  */
-const title = "Arnav Gosain - Photographer, Developer, Creator.";
+const title = "Arnav Gosain - Developer, photographer, maker.";
 
 /**
  * @type {string}
  */
-const description = "Full-stack developer, photographer, creator of things.";
+const description = "Developer, photographer, maker of things.";
 
 /**
  * @constant
