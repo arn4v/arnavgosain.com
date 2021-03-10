@@ -38,7 +38,7 @@ const projects = [
     ),
     duration: "February 2021 - Present",
     github: "https://github.com/arn4v/bookmarky",
-    tags: ["TailwindCSS", "Framer Motion", "NextJS", "React", "TypeScript"],
+    tags: ["TailwindCSS", "Framer Motion", "NextJS", "React"],
   },
   {
     name: "Syncify",
