@@ -82,7 +82,7 @@ const projects = [
     tags: ["Bash", "Python"],
     exclude: true,
   },
-].filter((i) => i.exclude);
+].filter((i) => !i.exclude);
 
 const tagColors = {
   "Framer Motion": "bg-gradient-to-tr from-pink-400 to-purple-600",
