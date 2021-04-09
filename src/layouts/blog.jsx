@@ -5,16 +5,20 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 
 /**
+ * @typedef {Object} Frontmatter
+ * @param {string} frontMatter.title
+ * @param {string} author
+ * @param {string} slug
+ * @param {string} publishedAt
+ * @param {Object} readingTime
+ */
+
+/**
  * @param {Object} props
  * @param {React.ReactNode} [props.children]
- * @param {Object} props.metadata
- * @param {string} props.metadata.title
- * @param {string} props.metadata.author
- * @param {string} props.metadata.slug
- * @param {string} props.metadata.publishedAt
- * @param {Object} props.metadata.readingTime
+ * @param {Frontmatter} props.frontMatter
  */
-export default function BlogLayout({ children, metadata }) {
+export default function BlogLayout({ children, frontMatter: metadata }) {
   const router = useRouter();
   return (
     <>
