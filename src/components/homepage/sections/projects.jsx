@@ -100,60 +100,54 @@ const tagColors = {
  */
 export default function ProjectsSection() {
   return (
-    <>
-      <div className="flex flex-col gap-5">
-        <h1 className="text-3xl font-bold dark:text-white">Projects</h1>
-        <div className="grid grid-flow-row gap-4 lg:grid-rows-2 lg:grid-cols-2 lg:gap-6">
-          {projects.map((p) => {
-            return (
-              <>
-                <div
-                  key={p.name}
-                  className="flex flex-col items-start justify-center w-full h-full gap-3 p-4 transition-all ease-in-out rounded-md shadow-sm dark:shadow-inner dark:bg-gray-900 dark:text-white bg-coolGray-100 hover:shadow-md duration-250"
-                >
-                  <span className="flex flex-row items-center justify-start space-x-2">
-                    <p className="text-base font-semibold lg:text-lg">
-                      {p.name}
-                    </p>
-                    {p.github && (
-                      <>
-                        <p>•</p>
-                        <CustomLink
-                          href={p.github}
-                          className="flex flex-row space-x-0.5 items-center justify-center group"
-                        >
-                          <div className="top-0 right-0 flex items-center justify-center w-6 h-6 rounded-full">
-                            <HiLink className="w-5 h-5 text-black transition-colors ease-in-out group-hover:text-orange-400 duration-250 dark:text-white" />
-                          </div>
-                          <p className="text-sm transition-colors ease-in-out lg:text-base group-hover:text-orange-400 duration-250">
-                            GitHub
-                          </p>
-                        </CustomLink>
-                      </>
-                    )}
-                  </span>
-                  <p className="text-sm lg:text-base">{p.description}</p>
-                  <p className="text-sm lg:text-base">{p.duration ?? ""}</p>
-                  <span className="flex flex-row flex-wrap gap-2">
-                    {p.tags.sort().map((t) => {
-                      return (
-                        <>
-                          <div
-                            key={`${p.name}-${t}`}
-                            className={`rounded-xl h-6 py-1 font-medium text-white px-2 text-xs ${tagColors[t]}`}
-                          >
-                            {t}
-                          </div>
-                        </>
-                      );
-                    })}
-                  </span>
-                </div>
-              </>
-            );
-          })}
-        </div>
+    <div className="flex flex-col gap-5">
+      <h1 className="text-3xl font-bold dark:text-white">Projects</h1>
+      <div className="grid grid-flow-row gap-4 lg:grid-rows-2 lg:grid-cols-2 lg:gap-6">
+        {projects.map((p) => {
+          return (
+            <>
+              <div
+                key={p.name}
+                className="flex flex-col items-start justify-center w-full h-full gap-3 p-4 transition-all ease-in-out rounded-md shadow-sm dark:shadow-inner dark:bg-gray-900 dark:text-white bg-coolGray-100 hover:shadow-md duration-250"
+              >
+                <span className="flex flex-row items-center justify-start space-x-2">
+                  <p className="text-base font-semibold lg:text-lg">{p.name}</p>
+                  {p.github && (
+                    <>
+                      <p>•</p>
+                      <CustomLink
+                        href={p.github}
+                        className="flex flex-row space-x-0.5 items-center justify-center group"
+                      >
+                        <div className="top-0 right-0 flex items-center justify-center w-6 h-6 rounded-full">
+                          <HiLink className="w-5 h-5 text-black transition-colors ease-in-out group-hover:text-orange-400 duration-250 dark:text-white" />
+                        </div>
+                        <p className="text-sm transition-colors ease-in-out lg:text-base group-hover:text-orange-400 duration-250">
+                          GitHub
+                        </p>
+                      </CustomLink>
+                    </>
+                  )}
+                </span>
+                <p className="text-sm lg:text-base">{p.description}</p>
+                <p className="text-sm lg:text-base">{p.duration ?? ""}</p>
+                <span className="flex flex-row flex-wrap gap-2">
+                  {p.tags.sort().map((t) => {
+                    return (
+                      <div
+                        key={`${p.name}-${t}`}
+                        className={`rounded-xl h-6 py-1 font-medium text-white px-2 text-xs ${tagColors[t]}`}
+                      >
+                        {t}
+                      </div>
+                    );
+                  })}
+                </span>
+              </div>
+            </>
+          );
+        })}
       </div>
-    </>
+    </div>
   );
 }

@@ -20,46 +20,43 @@ const PostPage = ({ metadata, recordMap }) => {
   const { theme } = useTheme();
 
   return (
-    <React.Fragment>
-      <PageLayout
-        className="select-text"
-        breadcrumb={{
-          Blog: "/blog",
-          [metadata.title]: `/${metadata.slug}`,
-        }}
-      >
-        <BlogSeo
-          title={metadata.title}
-          author="Arnav Gosain"
-          date={metadata.date}
-          url={`${baseUrl}/blog/${metadata.slug}`}
-        />
-        <article className="flex flex-col space-y-6">
-          <div className="flex flex-col space-y-4 items-start justify-center4">
-            <h1 className="text-3xl font-bold dark:text-white max-w-3xl">
-              {metadata.title}
-            </h1>
-            <div className="w-full flex flex-row justify-between max-w-3xl text-gray-600">
-              <div className="flex flex-row space-x-4 items-center justify-center h-8">
-                <Image
-                  src="/images/display.jpg"
-                  height={32}
-                  width={32}
-                  className="object-contain rounded-full"
-                />
-                <p className="dark:text-white antialiased">{metadata.author}</p>
-              </div>
+    <PageLayout
+      breadcrumb={{
+        Blog: "/blog",
+        [metadata.title]: `/${metadata.slug}`,
+      }}
+    >
+      <BlogSeo
+        title={metadata.title}
+        author="Arnav Gosain"
+        date={metadata.date}
+        url={`${baseUrl}/blog/${metadata.slug}`}
+      />
+      <article className="flex flex-col space-y-6">
+        <div className="flex flex-col space-y-4 items-start justify-center4">
+          <h1 className="text-3xl font-bold dark:text-white max-w-3xl">
+            {metadata.title}
+          </h1>
+          <div className="w-full flex flex-row justify-between max-w-3xl text-gray-600">
+            <div className="flex flex-row space-x-4 items-center justify-center h-8">
+              <Image
+                src="/images/display.jpg"
+                height={32}
+                width={32}
+                className="object-contain rounded-full"
+              />
+              <p className="dark:text-white antialiased">{metadata.author}</p>
             </div>
-            <hr className="w-full" />
           </div>
-          <NotionRenderer
-            recordMap={recordMap}
-            darkMode={theme === "dark"}
-            className="w-full"
-          />
-        </article>
-      </PageLayout>
-    </React.Fragment>
+          <hr className="w-full" />
+        </div>
+        <NotionRenderer
+          recordMap={recordMap}
+          darkMode={theme === "dark"}
+          className="w[100%]"
+        />
+      </article>
+    </PageLayout>
   );
 };
 
@@ -77,7 +74,6 @@ export const getStaticProps = async (ctx) => {
 /** @type {import("next").GetStaticPaths<{ slug: string }>} */
 export const getStaticPaths = async () => {
   const slugs = await getAllPostSlugs();
-  console.log(slugs);
   return {
     paths: slugs.map((slug) => ({ params: { slug } })),
     fallback: false,
