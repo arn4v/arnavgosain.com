@@ -21,7 +21,7 @@ export default function PageLayout({
   return (
     <div
       className={clsx([
-        "flex flex-col bg-white min-h-screen dark:bg-black overflow-x-hidden space-y-6 transition-colors duration-250 ease-in-out",
+        "flex flex-col bg-white min-h-screen dark:bg-black overflow-x-hidden space-y-6",
         !noFooter ? "justify-between" : "justify-start",
         className,
       ])}

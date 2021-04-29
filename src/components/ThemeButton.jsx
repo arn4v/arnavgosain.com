@@ -14,36 +14,32 @@ export default function ThemeButton(props) {
   const { theme, setTheme } = useTheme();
 
   return (
-    <>
-      <button
-        style={style}
-        aria-label="Toggle Dark Mode"
-        className={clsx(
-          [
-            "flex justify-center items-center h-10 w-10 p-2.5 focus:outline-none focus:ring-2 transition-all duration-150 ease-in-out focus:ring-black rounded-md bg-coolGray-100",
-            className,
-          ],
-          !noDarkMode && "dark:focus:ring-coolGray-400 dark:bg-gray-600"
-        )}
-        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-      >
-        {theme === "light" && (
-          <HiMoon
-            className={clsx([
-              "h-full w-full",
-              !noDarkMode && "dark:text-white",
-            ])}
-          />
-        )}
-        {theme === "dark" && (
-          <HiSun
-            className={clsx([
-              "h-full w-full",
-              !noDarkMode && "dark:text-white",
-            ])}
-          />
-        )}
-      </button>
-    </>
+    <button
+      style={style}
+      aria-label="Toggle Dark Mode"
+      className={clsx(
+        [
+          "flex justify-center items-center h-10 w-10 p-2.5 focus:outline-none focus:ring-2 transition-all duration-150 ease-in-out focus:ring-black rounded-md bg-coolGray-100",
+          className,
+        ],
+        !noDarkMode && "dark:focus:ring-coolGray-400 dark:bg-gray-600"
+      )}
+      onClick={() =>
+        setTheme(
+          theme === "light" || theme?.toString() === "null" ? "dark" : "light"
+        )
+      }
+    >
+      {(theme?.toString() === "null" || theme === "light") && (
+        <HiMoon
+          className={clsx(["h-full w-full", !noDarkMode && "dark:text-white"])}
+        />
+      )}
+      {theme === "dark" && (
+        <HiSun
+          className={clsx(["h-full w-full", !noDarkMode && "dark:text-white"])}
+        />
+      )}
+    </button>
   );
 }

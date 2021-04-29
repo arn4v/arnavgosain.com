@@ -27,10 +27,7 @@ const projects = [
     name: "Bookmarky",
     description: (
       <>
-        <CustomLink
-          className="transition duration-100 ease-in-out hover:text-blue-600"
-          href="https://pinboard.in"
-        >
+        <CustomLink className="hover:text-blue-500" href="https://pinboard.in">
           Pinboard.in
         </CustomLink>
         {" alternative built in NextJS, Tailwind & Framer Motion."}
@@ -108,7 +105,7 @@ export default function ProjectsSection() {
             <>
               <div
                 key={p.name}
-                className="flex flex-col items-start justify-center w-full h-full gap-3 p-4 transition-all ease-in-out rounded-md shadow-sm dark:shadow-inner dark:bg-gray-900 dark:text-white bg-coolGray-100 hover:shadow-md duration-250"
+                className="flex flex-col items-start justify-center w-full h-full gap-3 p-4 rounded-md shadow-sm dark:shadow-inner dark:bg-gray-900 dark:text-white bg-coolGray-100 hover:shadow-md"
               >
                 <span className="flex flex-row items-center justify-start space-x-2">
                   <p className="text-base font-semibold lg:text-lg">{p.name}</p>
@@ -120,9 +117,9 @@ export default function ProjectsSection() {
                         className="flex flex-row space-x-0.5 items-center justify-center group"
                       >
                         <div className="top-0 right-0 flex items-center justify-center w-6 h-6 rounded-full">
-                          <HiLink className="w-5 h-5 text-black transition-colors ease-in-out group-hover:text-orange-400 duration-250 dark:text-white" />
+                          <HiLink className="w-5 h-5 text-black group-hover:text-orange-400 dark:text-white" />
                         </div>
-                        <p className="text-sm transition-colors ease-in-out lg:text-base group-hover:text-orange-400 duration-250">
+                        <p className="text-sm lg:text-base group-hover:text-orange-400">
                           GitHub
                         </p>
                       </CustomLink>

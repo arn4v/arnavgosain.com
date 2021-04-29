@@ -9,11 +9,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <DefaultSeo {...SEO} />
-      <ThemeProvider
-        defaultTheme="dark"
-        themes={["light", "dark"]}
-        attribute="class"
-      >
+      <ThemeProvider attribute="class">
         <Component {...pageProps} />
       </ThemeProvider>
     </>
