@@ -20,7 +20,7 @@ export const getAllPostSlugs = async () => {
   const posts = await getAllPosts();
   const slugs = posts
     .map((post) => post.slug)
-    .filter((post) => post.published === true);
+    .filter((post) => !post.published);
   return slugs;
 };
 
