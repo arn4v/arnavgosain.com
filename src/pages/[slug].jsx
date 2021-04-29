@@ -95,7 +95,6 @@ export const getStaticProps = async (ctx) => {
 /** @type {import("next").GetStaticPaths<{ slug: string }>} */
 export const getStaticPaths = async () => {
   const slugs = await getAllPostSlugs();
-  console.log(slugs);
   return {
     paths: slugs.map((slug) => ({ params: { slug } })),
     fallback: true,

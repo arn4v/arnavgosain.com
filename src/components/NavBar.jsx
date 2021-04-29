@@ -16,22 +16,14 @@ export default function NavBar(props) {
   return (
     <nav className="flex flex-row justify-between py-3 items-center box-border my-4 w-full -ml-1">
       <div className="flex flex-row items-center justify-center space-x-3">
-        <Link href="/">
-          <a className="dark:text-white text-lg cursor-pointer hover:bg-gray-300 hover:dark:bg-gray-700 rounded transition duration-75 ease-in px-2">
-            Home
-          </a>
-        </Link>
+        <NavLink href="/">Home</NavLink>
         {keys.map((item) => {
           return (
             <React.Fragment key={item}>
               <p className="select-none text-2xl text-gray-500 dark:text-white">
                 /
               </p>
-              <Link href={breadcrumb[item]}>
-                <a className="dark:text-white text-lg cursor-pointer hover:bg-gray-300 hover:dark:bg-gray-700 rounded transition duration-75 ease-in px-2">
-                  {item}
-                </a>
-              </Link>
+              <NavLink href={breadcrumb[item]}>{item}</NavLink>
             </React.Fragment>
           );
         })}
@@ -40,5 +32,15 @@ export default function NavBar(props) {
         <ThemeButton />
       </div>
     </nav>
+  );
+}
+
+function NavLink({ href, children }) {
+  return (
+    <Link href={href}>
+      <a className="dark:text-white text-lg cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-700 rounded transition duration-75 ease-in px-2">
+        {children}
+      </a>
+    </Link>
   );
 }
