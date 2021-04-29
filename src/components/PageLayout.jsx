@@ -10,26 +10,27 @@ import { useRouter } from "next/router";
  * @param {object} [props.breadcrumb]
  * @param {boolean} [props.noFooter = false]
  */
-export default function PageLayout(props) {
-  const { children, className, breadcrumb, noFooter = false } = props;
+export default function PageLayout({
+  children,
+  className = "",
+  breadcrumb,
+  noFooter = false,
+}) {
   const router = useRouter();
 
   return (
-    <>
-      <main
-        id="page-layout"
-        className={clsx([
-          "flex flex-col bg-white min-h-screen dark:bg-black overflow-x-hidden space-y-6 transition-colors duration-250 ease-in-out",
-          !noFooter ? "justify-between" : "justify-start",
-          className,
-        ])}
-      >
-        <div className="w-full h-full max-w-4xl px-8 py-8 mx-auto lg:px-0">
-          {breadcrumb && <NavBar breadcrumb={breadcrumb} />}
-          {children}
-        </div>
-        {!noFooter && <Footer />}
-      </main>
-    </>
+    <div
+      className={clsx([
+        "flex flex-col bg-white min-h-screen dark:bg-black overflow-x-hidden space-y-6 transition-colors duration-250 ease-in-out",
+        !noFooter ? "justify-between" : "justify-start",
+        className,
+      ])}
+    >
+      <div className="w-full h-full max-w-4xl px-8 py-8 mx-auto lg:px-0">
+        {breadcrumb && <NavBar breadcrumb={breadcrumb} />}
+        {children}
+      </div>
+      {!noFooter && <Footer />}
+    </div>
   );
 }

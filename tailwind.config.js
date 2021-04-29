@@ -4,7 +4,7 @@ const { spacing } = require("tailwindcss/defaultTheme");
 
 module.exports = {
   purge: ["./src/**/*.{js,ts,jsx,tsx}"],
-  darkMode: "class", // 'media' or 'class'
+  darkMode: "class",
   theme: {
     extend: {
       colors: {

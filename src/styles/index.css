@@ -1,3 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  user-select: auto;
+  cursor: auto;
+  --notion-max-width: 100%;
+}
+
 .cover-img {
   z-index: -1;
 }
