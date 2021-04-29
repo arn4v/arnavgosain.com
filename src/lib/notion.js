@@ -8,7 +8,9 @@ const NOTION_BLOG_ID = process.env.NOTION_BLOG_ID;
  */
 export const getAllPostSlugs = async () => {
   const posts = await getAllPosts();
-  return posts.filter((post) => !post.published).map((post) => post.slug);
+  return posts
+    .filter((post) => !post.published || !post.date)
+    .map((post) => post.slug);
 };
 
 /**
@@ -16,24 +18,11 @@ export const getAllPostSlugs = async () => {
  */
 export const getAllPosts = async () => {
   return await fetch(
-    `https://potion-api.vercel.app/table?id=${NOTION_BLOG_ID}`,
+    `https://notion-api.splitbee.io/v1/table/${NOTION_BLOG_ID}`,
     {
       method: "get",
     }
-  )
-    .then((res) => res.json())
-    .then((json) => {
-      return json.map((item) => {
-        const createdAt = new Date(item.fields.createdAt).toISOString();
-        const updatedAt = new Date(item.fields.updatedAt).toISOString();
-
-        return {
-          ...item.fields,
-          createdAt,
-          updatedAt,
-        };
-      });
-    });
+  ).then((res) => res.json());
 };
 
 /**
