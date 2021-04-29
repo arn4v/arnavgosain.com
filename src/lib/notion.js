@@ -8,9 +8,10 @@ const NOTION_BLOG_ID = process.env.NOTION_BLOG_ID;
  */
 export const getAllPostSlugs = async () => {
   const posts = await getAllPosts();
-  return posts
-    .filter((post) => !post.published || !post.date)
+  const slugs = posts
+    .filter((post) => post.published === true && typeof post.date === "string")
     .map((post) => post.slug);
+  return slugs;
 };
 
 /**
@@ -22,7 +23,17 @@ export const getAllPosts = async () => {
     {
       method: "get",
     }
-  ).then((res) => res.json());
+  )
+    .then((res) => res.json())
+    .then((json) => {
+      return json.map((item) => {
+        const { author, ...metadata } = item;
+        return {
+          ...metadata,
+          author: author[0]?.fullName,
+        };
+      });
+    });
 };
 
 /**

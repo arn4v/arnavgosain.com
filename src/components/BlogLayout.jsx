@@ -11,7 +11,7 @@ import Image from "next/image";
  * @param {string} props.metadata.title
  * @param {string} props.metadata.author
  * @param {string} props.metadata.slug
- * @param {string} props.metadata.publishedAt
+ * @param {string} props.metadata.date
  */
 export default function BlogLayout({ children, metadata }) {
   return (
@@ -25,7 +25,7 @@ export default function BlogLayout({ children, metadata }) {
         <BlogSeo
           title={metadata.title}
           author="Arnav Gosain"
-          publishedAt={metadata.publishedAt}
+          date={metadata.date}
           url={`${baseUrl}/blog/${metadata.slug}`}
         />
         <article className="flex flex-col space-y-6">
@@ -46,9 +46,7 @@ export default function BlogLayout({ children, metadata }) {
             </div>
             <hr className="w-full" />
           </div>
-          <div className="w-full max-w-3xl dark:prose-dark text-justify">
-            {children}
-          </div>
+          <div className="w-full max-w-3xl text-justify">{children}</div>
         </article>
       </PageLayout>
     </>
