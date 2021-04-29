@@ -2,10 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  user-select: auto;
-  cursor: auto;
+.notion {
   --notion-max-width: 100%;
+}
+
+.notion-viewport {
+  display: none;
 }
 
 .cover-img {

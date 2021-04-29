@@ -14,10 +14,12 @@ export default function NavBar(props) {
   const keys = Object.keys(breadcrumb) ?? [""];
 
   return (
-    <nav className="flex flex-row justify-between py-3 items-center box-border my-4 w-full">
+    <nav className="flex flex-row justify-between py-3 items-center box-border my-4 w-full -ml-1">
       <div className="flex flex-row items-center justify-center space-x-3">
         <Link href="/">
-          <a className="dark:text-white text-lg cursor-pointer">Home</a>
+          <a className="dark:text-white text-lg cursor-pointer hover:bg-gray-300 hover:dark:bg-gray-700 rounded transition duration-75 ease-in px-2">
+            Home
+          </a>
         </Link>
         {keys.map((item) => {
           return (
@@ -26,13 +28,15 @@ export default function NavBar(props) {
                 /
               </p>
               <Link href={breadcrumb[item]}>
-                <a className="dark:text-white text-lg cursor-pointer">{item}</a>
+                <a className="dark:text-white text-lg cursor-pointer hover:bg-gray-300 hover:dark:bg-gray-700 rounded transition duration-75 ease-in px-2">
+                  {item}
+                </a>
               </Link>
             </React.Fragment>
           );
         })}
       </div>
-      <div>
+      <div className="pl-1">
         <ThemeButton />
       </div>
     </nav>
