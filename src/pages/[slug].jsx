@@ -2,10 +2,15 @@ import * as React from "react";
 import BlogSeo from "~/components/BlogSeo";
 import Image from "next/image";
 import PageLayout from "~/components/PageLayout";
-import { NotionRenderer } from "react-notion-x";
 import { baseUrl } from "~/config";
 import { getAllPostSlugs, getSlugData } from "~/lib/notion";
 import { useTheme } from "next-themes";
+import dynamic from "next/dynamic";
+import { useRouter } from "next/router";
+
+const NotionRenderer = dynamic(() =>
+  import("react-notion-x").then((mod) => mod.NotionRenderer)
+);
 
 /**
  * @typedef {Object} Props
@@ -18,11 +23,9 @@ import { useTheme } from "next-themes";
  */
 const PostPage = ({ metadata, recordMap }) => {
   const { theme } = useTheme();
+  const router = useRouter();
 
-  React.useEffect(() => {
-    console.log(metadata, recordMap);
-  }, [metadata, recordMap]);
-
+  if (router.isFallback) return null;
   if (!metadata || !recordMap) return null;
 
   return (
