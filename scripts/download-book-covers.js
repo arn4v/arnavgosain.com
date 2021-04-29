@@ -1,40 +1,64 @@
-const chromium = require("chrome-aws-lambda");
 const https = require("https");
 const path = require("path");
 const fs = require("fs");
 const { books } = require("../src/data/bookshelf");
 const ImageDataURI = require("image-data-uri");
 
-let puppeteer;
-const isLambda = !!process.env.AWS_LAMBDA_FUNCTION_VERSION;
-
-if (isLambda) {
-  // running on the Vercel platform.
-  puppeteer = require("puppeteer-core");
-} else {
-  // running locally.
-  puppeteer = require("puppeteer");
-}
+// https://www.bannerbear.com/blog/ways-to-speed-up-puppeteer-screenshots/
+const minimal_args = [
+  "--autoplay-policy=user-gesture-required",
+  "--disable-background-networking",
+  "--disable-background-timer-throttling",
+  "--disable-backgrounding-occluded-windows",
+  "--disable-breakpad",
+  "--disable-client-side-phishing-detection",
+  "--disable-component-update",
+  "--disable-default-apps",
+  "--disable-dev-shm-usage",
+  "--disable-domain-reliability",
+  "--disable-extensions",
+  "--disable-features=AudioServiceOutOfProcess",
+  "--disable-hang-monitor",
+  "--disable-ipc-flooding-protection",
+  "--disable-notifications",
+  "--disable-offer-store-unmasked-wallet-cards",
+  "--disable-popup-blocking",
+  "--disable-print-preview",
+  "--disable-prompt-on-repost",
+  "--disable-renderer-backgrounding",
+  "--disable-setuid-sandbox",
+  "--disable-speech-api",
+  "--disable-sync",
+  "--hide-scrollbars",
+  "--ignore-gpu-blacklist",
+  "--metrics-recording-only",
+  "--mute-audio",
+  "--no-default-browser-check",
+  "--no-first-run",
+  "--no-pings",
+  "--no-sandbox",
+  "--no-zygote",
+  "--password-store=basic",
+  "--use-gl=swiftshader",
+  "--use-mock-keychain",
+];
 
 const config = {
   IMAGES_DIR: path.resolve(process.cwd(), "public/images/books"),
 };
+const isLocal = typeof process.env.VERCEL === "undefined";
+const executablePath =
+  "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe";
 
 (async () => {
-  let browser;
-  if (isLambda) {
-    browser = await puppeteer.launch({
-      args: ["--hide-scrollbars", "--disable-web-security", "--no-sandbox"],
-      defaultViewport: chromium.defaultViewport,
-      executablePath: await chromium.executablePath,
-      headless: true,
-      ignoreHTTPSErrors: true,
-    });
-  } else {
-    browser = await puppeteer.launch({
-      args: ["--no-sandbox"],
-    });
-  }
+  const browser = isLocal
+    ? await require("playwright-core").chromium.launch({
+        args: minimal_args,
+        headless: true,
+        executablePath,
+      })
+    : await require("playwright-aws-lambda").launchChromium({});
+
   if (!fs.existsSync(config.IMAGES_DIR)) fs.mkdirSync(config.IMAGES_DIR);
   for (const [key, value] of Object.entries(books)) {
     for (const item of value) {
@@ -45,7 +69,10 @@ const config = {
         item.url.length > 0
       ) {
         const filePath = path.resolve(
-          path.join(config.IMAGES_DIR, `${item.id}.jpg`)
+          path.join(
+            config.IMAGES_DIR,
+            `${item.title.replace(/ /g, "-").toLowerCase()}.jpg`
+          )
         );
         try {
           const page = await browser.newPage();

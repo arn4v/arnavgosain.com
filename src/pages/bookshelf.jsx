@@ -26,7 +26,9 @@ export default function Bookshelf() {
                           className="flex flex-col items-start justify-center w-full p-4 bg-gray-100 rounded-lg shadow gap-2 dark:text-white hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 transition duration-150 ease-in-out"
                         >
                           <Image
-                            src={`/images/books/${book.id}.jpg`}
+                            src={`/images/books/${book.title
+                              .replace(/ /g, "-")
+                              .toLowerCase()}.jpg`}
                             layout="intrinsic"
                             height={136}
                             width={96}
