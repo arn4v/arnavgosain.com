@@ -1,5 +1,7 @@
 const playlists = {
   2021: {
+    April: "https://open.spotify.com/playlist/06695IEI2dDt7sLhrzN8w4",
+    March: "https://open.spotify.com/playlist/1gO5tGi4TrCum3KvLckLoR",
     February: "https://open.spotify.com/playlist/1qjPW5dOdRvoxBo4ltlHC4",
     January: "https://open.spotify.com/playlist/1KmB3lqQGMg9O1siooy4Sb",
   },
