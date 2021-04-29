@@ -19,6 +19,12 @@ import { useTheme } from "next-themes";
 const PostPage = ({ metadata, recordMap }) => {
   const { theme } = useTheme();
 
+  React.useEffect(() => {
+    console.log(metadata, recordMap);
+  }, [metadata, recordMap]);
+
+  if (!metadata || !recordMap) return null;
+
   return (
     <PageLayout
       breadcrumb={{
@@ -63,6 +69,14 @@ const PostPage = ({ metadata, recordMap }) => {
 /** @type {import("next").GetStaticProps<Props, { slug: string }>} */
 export const getStaticProps = async (ctx) => {
   const slug = ctx.params.slug;
+  const slugs = await getAllPostSlugs();
+
+  if (!slug || !slugs.includes(slug)) {
+    return {
+      notFound: true,
+    };
+  }
+
   const { metadata, recordMap } = await getSlugData(slug);
 
   return {

@@ -3,14 +3,24 @@ import { NotionAPI } from "notion-client";
 const notion = new NotionAPI();
 const NOTION_BLOG_ID = process.env.NOTION_BLOG_ID;
 
+const requiredKeys = [
+  "title",
+  "date",
+  "slug",
+  "tags",
+  "date",
+  "published",
+  "author",
+];
+
 /**
  * @returns {Promise<Array<string>>}
  */
 export const getAllPostSlugs = async () => {
   const posts = await getAllPosts();
   const slugs = posts
-    .filter((post) => post.published === true && typeof post.date === "string")
-    .map((post) => post.slug);
+    .map((post) => post.slug)
+    .filter((post) => post.published === true);
   return slugs;
 };
 
@@ -26,7 +36,19 @@ export const getAllPosts = async () => {
   )
     .then((res) => res.json())
     .then((json) => {
-      return json.map((item) => {
+      return json.filter((/** @type {Record<any, any>} */ post) =>
+        requiredKeys.reduce((acc, cur) => {
+          if (typeof post[cur] === "undefined") {
+            acc = false;
+          } else {
+            acc = true;
+          }
+          return acc;
+        }, true)
+      );
+    })
+    .then((filtered) => {
+      return filtered.map((item) => {
         const { author, ...metadata } = item;
         return {
           ...metadata,

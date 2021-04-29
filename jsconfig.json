@@ -6,5 +6,7 @@
     },
     "checkJs": true,
     "jsx": "preserve"
-  }
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
 }
