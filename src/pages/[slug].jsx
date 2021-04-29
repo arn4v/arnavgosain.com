@@ -67,7 +67,7 @@ export const getStaticProps = async (ctx) => {
 
   return {
     props: { metadata, recordMap },
-    revalidate: 1,
+    revalidate: 60,
   };
 };
 
