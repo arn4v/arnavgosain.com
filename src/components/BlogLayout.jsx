@@ -12,10 +12,8 @@ import Image from "next/image";
  * @param {string} props.metadata.author
  * @param {string} props.metadata.slug
  * @param {string} props.metadata.publishedAt
- * @param {Object} props.metadata.readingTime
  */
 export default function BlogLayout({ children, metadata }) {
-  const router = useRouter();
   return (
     <>
       <PageLayout
@@ -44,15 +42,11 @@ export default function BlogLayout({ children, metadata }) {
                   className="object-contain rounded-full"
                 />
                 <p className="dark:text-white antialiased">{metadata.author}</p>
-                <p className="dark:text-white">&bull;</p>
-                <p className="dark:text-white">
-                  {metadata?.readingTime.minutes} minute read
-                </p>
               </div>
             </div>
             <hr className="w-full" />
           </div>
-          <div className="prose w-full max-w-3xl dark:prose-dark text-justify">
+          <div className="w-full max-w-3xl dark:prose-dark text-justify">
             {children}
           </div>
         </article>
