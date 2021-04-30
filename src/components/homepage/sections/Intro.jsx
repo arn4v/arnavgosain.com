@@ -49,9 +49,8 @@ export default function IntroSection() {
 
   return (
     <>
-      <section className="relative w-full antialiased rounded-md dark:text-white dark:border-transparent">
-        <ThemeButton className="absolute top-0 right-0 left-auto mt-2 lg:mt-0" />
-        <div className="flex flex-col items-start justify-center space-y-5">
+      <section className="w-full antialiased rounded-md dark:text-white dark:border-transparent">
+        <div className="flex flex-col items-start justify-center space-y-6">
           <h1 className="w-2/3 text-3xl font-bold lg:w-full">
             Hey, I'm Arnav Gosain 👋
           </h1>
