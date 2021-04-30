@@ -73,8 +73,8 @@ const PostPage = ({ metadata, recordMap }) => {
   );
 };
 
-/** @type {import("next").GetServerSideProps<Props, { slug: string }>} */
-export const getServerSideProps = async (ctx) => {
+/** @type {import("next").GetStaticProps<Props, { slug: string }>} */
+export const getStaticProps = async (ctx) => {
   const slug = ctx.params.slug;
   const slugs = await getAllPostSlugs();
 
@@ -88,6 +88,16 @@ export const getServerSideProps = async (ctx) => {
 
   return {
     props: { metadata, recordMap },
+    revalidate: 1,
+  };
+};
+
+/** @type {import("next").GetStaticPaths<{ slug: string }>} */
+export const getStaticPaths = async () => {
+  const slugs = await getAllPostSlugs();
+  return {
+    paths: slugs.map((slug) => ({ params: { slug } })),
+    fallback: true,
   };
 };
 
