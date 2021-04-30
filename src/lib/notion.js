@@ -1,5 +1,6 @@
-const NotionAPI = require("notion-client").NotionAPI;
-const readingTime = require("reading-time");
+import { NotionAPI } from "notion-client";
+import readingTime from "reading-time";
+import { getFormattedDateText } from "./utils";
 
 const notion = new NotionAPI();
 const NOTION_BLOG_ID = process.env.NOTION_BLOG_ID;
@@ -69,7 +70,8 @@ export const getSlugData = async (slug) => {
   const readingTime = await getBlocksReadingTime(
     Object.values(recordMap.block)
   );
-  return { metadata: { ...metadata, readingTime }, recordMap };
+  const formattedDate = getFormattedDateText(metadata.date);
+  return { metadata: { ...metadata, readingTime, formattedDate }, recordMap };
 };
 
 export const blocksToText = async (blocks) => {
