@@ -1,6 +1,5 @@
 @tailwind base;
 @tailwind components;
-@tailwind utilities;
 
 .notion {
   --notion-max-width: 100%;
@@ -15,9 +14,11 @@
 }
 
 .notion-viewport {
-  display: none;
+  visibility: hidden;
 }
 
 .cover-img {
   z-index: -1;
 }
+
+@tailwind utilities;
