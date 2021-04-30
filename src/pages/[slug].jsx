@@ -74,7 +74,7 @@ const PostPage = ({ metadata, recordMap }) => {
                   layout="fixed"
                 />
               </div>
-              <div className="flex items-center justify-start gap-1 font-medium lg:gap-4 text-sm lg:text-base whitespace-nowrap flex-wrap">
+              <div className="flex flex-col lg:flex-row items-start justify-center lg:items-center lg:justify-start gap-2 font-medium lg:gap-4 text-sm lg:text-base whitespace-nowrap">
                 <h2>{metadata.author}</h2>
                 <div className="flex items-center justify-start gap-2 lg:gap-4">
                   <div className="hidden lg:block">/</div>
