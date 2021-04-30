@@ -14,13 +14,8 @@ export default function NavBar(props) {
   const keys = Object.keys(breadcrumb ?? {});
 
   return (
-<<<<<<< HEAD
     <nav className="flex flex-row justify-between py-3 items-center box-border my-4 w-full">
       <div className="flex flex-row items-center justify-center space-x-3 -ml-2">
-=======
-    <nav className="flex flex-row justify-between py-3 items-center box-border my-4 w-full -ml-2">
-      <div className="flex flex-row items-center justify-center space-x-3">
->>>>>>> origin/main
         <NavLink href="/">arnavgosain.com</NavLink>
         {keys.map((item) => {
           return (
