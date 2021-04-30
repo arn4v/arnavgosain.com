@@ -15,12 +15,12 @@ export default function NavBar(props) {
 
   return (
     <nav className="flex flex-row justify-between py-3 items-center box-border my-4 w-full">
-      <div className="flex flex-row items-center justify-center space-x-3 -ml-2">
+      <div className="flex flex-row items-center justify-start gap-1 lg:gap-3 -ml-2 flex-wrap">
         <NavLink href="/">arnavgosain.com</NavLink>
         {keys.map((item) => {
           return (
             <React.Fragment key={item}>
-              <p className="select-none text-2xl text-gray-500 dark:text-white">
+              <p className="select-none text-lg lg:text-2xl text-gray-500 dark:text-white">
                 /
               </p>
               <NavLink href={breadcrumb[item]}>{item}</NavLink>
@@ -40,7 +40,7 @@ function NavLink({ href, children, className = "" }) {
     <Link href={href}>
       <a
         className={clsx([
-          "dark:text-white text-lg cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-700 rounded transition duration-75 ease-in px-2",
+          "dark:text-white lg:text-lg cursor-pointer hover:bg-gray-300 dark:hover:bg-gray-700 rounded transition duration-75 ease-in px-2 text-base",
           className,
         ])}
       >

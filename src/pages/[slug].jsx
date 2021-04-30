@@ -49,11 +49,11 @@ const PostPage = ({ metadata, recordMap }) => {
       />
       <article className="flex flex-col space-y-6">
         <div className="flex flex-col space-y-6 items-start justify-center">
-          <h1 className="text-3xl font-bold dark:text-white max-w-3xl">
+          <h1 className="text-2xl lg:text-3xl font-bold dark:text-white max-w-3xl">
             {metadata.title}
           </h1>
           <div className="w-full flex flex-row justify-between max-w-3xl text-gray-800 dark:text-white antialiased">
-            <div className="flex flex-row space-x-4 items-center justify-center h-8">
+            <div className="flex flex-row space-x-2 lg:space-x-4 items-center justify-center h-8 text-sm lg:text-base whitespace-nowrap">
               <Image
                 src="/images/display.jpg"
                 height={32}

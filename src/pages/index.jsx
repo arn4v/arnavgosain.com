@@ -14,11 +14,11 @@ export default function IndexPage({ posts }) {
           <IntroSection />
           <div className="flex flex-col space-y-6 w-full">
             <div className="flex items-center justify-between">
-              <span className="text-3xl font-bold dark:text-white">
+              <span className="text-2xl lg:text-3xl font-bold dark:text-white">
                 Blog posts
               </span>
               <Link href="/blog">
-                <a className="dark:bg-gray-800 dark:hover:bg-gray-700 bg-gray-100 border border-gray-300 hover:bg-gray-200 dark:border-gray-800 flex items-center justify-center transition duration-150 ease-in space-x-2 py-2 px-2 rounded-md">
+                <a className="dark:bg-gray-800 dark:hover:bg-gray-700 bg-gray-100 border border-gray-300 hover:bg-gray-200 dark:border-gray-800 flex items-center justify-center transition duration-150 ease-in space-x-2 lg:py-2 lg:px-2 text-sm lg:text-base py-2 px-1 whitespace-nowrap rounded-md">
                   <span>View all posts</span>
                   <HiArrowRight />
                 </a>
