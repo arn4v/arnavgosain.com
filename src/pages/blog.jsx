@@ -1,5 +1,5 @@
 import PageLayout from "~/components/PageLayout";
-import { getAllPosts, getSlugData } from "~/lib/notion";
+import { getAllPostSlugs, getSlugData } from "~/lib/notion";
 import PostCard from "~/components/PostCard";
 
 const BlogPage = ({ posts }) => {
@@ -18,8 +18,8 @@ const BlogPage = ({ posts }) => {
 
 export const getStaticProps = async () => {
   const posts = [];
-  for (const post of await getAllPosts()) {
-    const data = await getSlugData(post.slug);
+  for (const slug of await getAllPostSlugs()) {
+    const data = await getSlugData(slug);
     const metadata = data.metadata;
     posts.push(metadata);
   }
