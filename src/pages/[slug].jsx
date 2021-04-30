@@ -48,32 +48,50 @@ const PostPage = ({ metadata, recordMap }) => {
         url={`${baseUrl}/blog/${metadata.slug}`}
       />
       <article className="flex flex-col space-y-6">
-        <div className="flex flex-col space-y-6 items-start justify-center">
+        <div className="flex flex-col space-y-4 items-start justify-center">
           <h1 className="text-2xl lg:text-3xl font-bold dark:text-white max-w-3xl">
             {metadata.title}
           </h1>
           <div className="w-full flex flex-row justify-between max-w-3xl text-gray-800 dark:text-white antialiased">
-            <div className="flex flex-row space-x-2 lg:space-x-4 items-center justify-center h-8 text-sm lg:text-base whitespace-nowrap">
-              <Image
-                src="/images/display.jpg"
-                height={32}
-                width={32}
-                className="object-contain rounded-full"
-              />
-              <p>{metadata.author}</p>
-              <div>/</div>
-              <p>
-                Published on{" "}
-                <time
-                  dateTime={getDateObjectFromString(
-                    metadata.date
-                  ).toISOString()}
-                >
-                  {metadata.formattedDate}
-                </time>
-              </p>
-              <div>/</div>
-              <p>{metadata.readingTime}</p>
+            <div className="flex items-center justify-center gap-3 lg:gap-4 text-sm lg:text-base">
+              <div className="hidden lg:block">
+                <Image
+                  src="/images/display.jpg"
+                  draggable={false}
+                  height={32}
+                  width={32}
+                  className="rounded-full"
+                  layout="fixed"
+                />
+              </div>
+              <div className="lg:hidden block">
+                <Image
+                  src="/images/display.jpg"
+                  draggable={false}
+                  height={48}
+                  width={48}
+                  className="rounded-full"
+                  layout="fixed"
+                />
+              </div>
+              <div className="flex items-center justify-start gap-1 font-medium lg:gap-4 text-sm lg:text-base whitespace-nowrap flex-wrap">
+                <h2>{metadata.author}</h2>
+                <div className="flex items-center justify-start gap-2 lg:gap-4">
+                  <div className="hidden lg:block">/</div>
+                  <p>
+                    Published on{" "}
+                    <time
+                      dateTime={getDateObjectFromString(
+                        metadata.date
+                      ).toISOString()}
+                    >
+                      {metadata.formattedDate}
+                    </time>
+                  </p>
+                  <div>/</div>
+                  <h2>{metadata.readingTime}</h2>
+                </div>
+              </div>
             </div>
           </div>
           <hr className="w-full" />

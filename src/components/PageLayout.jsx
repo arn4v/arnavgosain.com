@@ -24,7 +24,7 @@ export default function PageLayout({
         className,
       ])}
     >
-      <div className="w-full h-full max-w-4xl px-8 mx-auto lg:px-0">
+      <div className="w-full h-full max-w-4xl px-3 mx-auto lg:px-0">
         {breadcrumb && <NavBar breadcrumb={breadcrumb} />}
         {!breadcrumb && <NavBar />}
         {children}
