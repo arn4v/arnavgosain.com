@@ -1,12 +1,12 @@
 import * as React from "react";
-import BlogSeo from "~/components/BlogSeo";
 import Image from "next/image";
-import PageLayout from "~/components/PageLayout";
-import { baseUrl } from "~/config";
-import { getAllPostSlugs, getSlugData } from "~/lib/notion";
-import { useTheme } from "next-themes";
 import dynamic from "next/dynamic";
 import { useRouter } from "next/router";
+import { useTheme } from "next-themes";
+import { baseUrl } from "~/config";
+import PageLayout from "~/components/PageLayout";
+import BlogSeo from "~/components/BlogSeo";
+import { getAllPostSlugs, getSlugData } from "~/lib/notion";
 
 const NotionRenderer = dynamic(() =>
   import("react-notion-x").then((mod) => mod.NotionRenderer)
@@ -73,8 +73,8 @@ const PostPage = ({ metadata, recordMap }) => {
   );
 };
 
-/** @type {import("next").GetStaticProps<Props, { slug: string }>} */
-export const getStaticProps = async (ctx) => {
+/** @type {import("next").GetServerSideProps<Props, { slug: string }>} */
+export const getServerSideProps = async (ctx) => {
   const slug = ctx.params.slug;
   const slugs = await getAllPostSlugs();
 
@@ -88,16 +88,6 @@ export const getStaticProps = async (ctx) => {
 
   return {
     props: { metadata, recordMap },
-    revalidate: 60,
-  };
-};
-
-/** @type {import("next").GetStaticPaths<{ slug: string }>} */
-export const getStaticPaths = async () => {
-  const slugs = await getAllPostSlugs();
-  return {
-    paths: slugs.map((slug) => ({ params: { slug } })),
-    fallback: true,
   };
 };
 
