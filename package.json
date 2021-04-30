@@ -20,6 +20,7 @@
     "clsx": "^1.1.1",
     "date-fns": "^2.21.1",
     "image-data-uri": "^2.0.1",
+    "inter-ui": "^3.18.1",
     "next": "^10.2.0",
     "next-seo": "^4.24.0",
     "next-themes": "0.0.14",

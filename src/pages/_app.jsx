@@ -3,7 +3,7 @@ import "react-notion-x/src/styles.css";
 import { DefaultSeo } from "next-seo";
 import { ThemeProvider } from "next-themes";
 import SEO from "~/next-seo.config";
-import "@fontsource/inter";
+import "inter-ui/inter.css";
 
 export default function MyApp({ Component, pageProps }) {
   return (
