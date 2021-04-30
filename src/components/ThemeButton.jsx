@@ -17,13 +17,10 @@ export default function ThemeButton(props) {
     <button
       style={style}
       aria-label="Toggle Dark Mode"
-      className={clsx(
-        [
-          "flex justify-center items-center h-10 w-10 p-2.5 focus:outline-none focus:ring-2 transition-all duration-150 ease-in-out focus:ring-black rounded-md bg-coolGray-100",
-          className,
-        ],
-        !noDarkMode && "dark:focus:ring-coolGray-400 dark:bg-gray-600"
-      )}
+      className={clsx([
+        "dark:bg-gray-800 dark:hover:bg-gray-700 bg-gray-100 border border-gray-300 hover:bg-gray-200 dark:border-gray-800 flex items-center justify-center space-x-2 focus:outline-none rounded-md h-10 w-10",
+        className,
+      ])}
       onClick={() =>
         setTheme(
           theme === "light" || theme?.toString() === "null" ? "dark" : "light"
@@ -32,12 +29,12 @@ export default function ThemeButton(props) {
     >
       {(theme?.toString() === "null" || theme === "light") && (
         <HiMoon
-          className={clsx(["h-full w-full", !noDarkMode && "dark:text-white"])}
+          className={clsx(["h-5 w-5", !noDarkMode && "dark:text-white"])}
         />
       )}
       {theme === "dark" && (
         <HiSun
-          className={clsx(["h-full w-full", !noDarkMode && "dark:text-white"])}
+          className={clsx(["h-5 w-5", !noDarkMode && "dark:text-white"])}
         />
       )}
     </button>
