@@ -1,18 +1,17 @@
 import IntroSection from "~/components/homepage/sections/Intro";
 import PageLayout from "~/components/PageLayout";
 import ProjectsSection from "~/components/homepage/sections/projects";
-import PostCard from "~/components/PostCard";
-import { getAllPosts, getSlugData } from "~/lib/notion";
-import { HiArrowRight } from "react-icons/hi";
-import Link from "next/link";
+// import PostCard from "~/components/PostCard";
+// import { getAllPosts, getSlugData } from "~/lib/notion";
+// import { HiArrowRight } from "react-icons/hi";
+// import Link from "next/link";
 
-export default function IndexPage({ posts }) {
+export default function IndexPage() {
   return (
-    <>
-      <PageLayout>
-        <div className="flex flex-col space-y-16 pt-8 pb-6">
-          <IntroSection />
-          <div className="flex flex-col space-y-6 w-full">
+    <PageLayout>
+      <div className="flex flex-col space-y-16 pt-8 pb-6">
+        <IntroSection />
+        {/* <div className="flex flex-col space-y-6 w-full">
             <div className="flex items-center justify-between">
               <span className="text-2xl lg:text-3xl font-bold dark:text-white">
                 Blog posts
@@ -29,25 +28,24 @@ export default function IndexPage({ posts }) {
                 return <PostCard key={item.id} data={item} />;
               })}
             </div>
-          </div>
-          <ProjectsSection />
-        </div>
-      </PageLayout>
-    </>
+          </div> */}
+        <ProjectsSection />
+      </div>
+    </PageLayout>
   );
 }
 
-export const getStaticProps = async () => {
-  const posts = [];
+// export const getStaticProps = async () => {
+//   const posts = [];
 
-  for (const { slug } of await getAllPosts()) {
-    const { metadata } = await getSlugData(slug);
-    posts.push(metadata);
-  }
+//   for (const { slug } of await getAllPosts()) {
+//     const { metadata } = await getSlugData(slug);
+//     posts.push(metadata);
+//   }
 
-  return {
-    props: {
-      posts: posts.slice(0, 6),
-    },
-  };
-};
+//   return {
+//     props: {
+//       posts: posts.slice(0, 6),
+//     },
+//   };
+// };

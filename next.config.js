@@ -8,6 +8,7 @@ module.exports = {
       require("./scripts/download-book-covers");
       // require("./scripts/generate-sitemap");
     }
+    config.resolve.fallback = { fs: false, module: false };
 
     if (!dev && !isServer) {
       config.resolve.alias = Object.assign(config.resolve.alias, {
