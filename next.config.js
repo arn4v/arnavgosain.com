@@ -1,7 +1,16 @@
+/**
+ * @type {import("next/dist/next-server/server/config-shared").NextConfig}
+ */
 module.exports = {
   images: { domains: ["images.unsplash.com", "mosaic.scdn.co"] },
   future: {
     webpack5: true,
+    strictPostcssConfiguration: true,
+  },
+  reactStrictMode: true,
+  experimental: {
+    turboMode: true,
+    eslint: true,
   },
   webpack: (config, { dev, isServer }) => {
     if (isServer) {
