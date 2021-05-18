@@ -19,6 +19,7 @@
     "axios": "^0.21.1",
     "clsx": "^1.1.1",
     "date-fns": "^2.21.3",
+    "globby": "^11.0.3",
     "image-data-uri": "^2.0.1",
     "json2csv": "^5.0.6",
     "next": "^10.2.1-canary.8",

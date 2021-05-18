@@ -63,18 +63,13 @@ const executablePath =
   if (!fs.existsSync(config.IMAGES_DIR)) fs.mkdirSync(config.IMAGES_DIR);
   for (const [key, value] of Object.entries(books)) {
     for (const item of value) {
-      if (
-        !fs.existsSync(
-          path.resolve(path.join(config.IMAGES_DIR, `${item.id}.jpg`))
-        ) &&
-        item.url.length > 0
-      ) {
-        const filePath = path.resolve(
-          path.join(
-            config.IMAGES_DIR,
-            `${item.title.replace(/ /g, "-").toLowerCase()}.jpg`
-          )
-        );
+      const filePath = path.resolve(
+        path.join(
+          config.IMAGES_DIR,
+          `${item.title.replace(/ /g, "-").toLowerCase()}.jpg`
+        )
+      );
+      if (!fs.existsSync(filePath) && item.url.length > 0) {
         try {
           const page = await browser.newPage();
           page.setDefaultNavigationTimeout(0);

@@ -15,7 +15,7 @@ module.exports = {
   webpack: (config, { dev, isServer }) => {
     if (isServer) {
       require("./scripts/download-book-covers");
-      // require("./scripts/generate-sitemap");
+      require("./scripts/generate-sitemap");
     }
     config.resolve.fallback = { fs: false, module: false };
 
