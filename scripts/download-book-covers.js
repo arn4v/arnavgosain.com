@@ -1,8 +1,8 @@
 const https = require("https");
 const path = require("path");
 const fs = require("fs");
-const { books } = require("../src/data/bookshelf");
 const ImageDataURI = require("image-data-uri");
+const { getBooks } = require("../src/lib/bookshelf");
 
 // https://www.bannerbear.com/blog/ways-to-speed-up-puppeteer-screenshots/
 const minimal_args = [
@@ -51,6 +51,7 @@ const executablePath =
   "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe";
 
 (async () => {
+  const books = await getBooks();
   const browser = isLocal
     ? await require("playwright-core").chromium.launch({
         args: minimal_args,

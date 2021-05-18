@@ -2,6 +2,7 @@ import CustomLink from "~/components/CustomLink";
 import * as React from "react";
 import PageLayout from "~/components/PageLayout";
 import Image from "next/image";
+import { getBooks } from "~/lib/bookshelf";
 
 /**
  * @returns {React.ReactNode}
@@ -54,23 +55,9 @@ export default function Bookshelf({ data }) {
 }
 
 export async function getStaticProps() {
-  const data = await fetch(
-    "https://notion-api.splitbee.io/v1/table/cee24ed079424c76a59cf386b9e9d78d",
-    {
-      method: "get",
-    }
-  ).then((res) => res.json());
-
   return {
     props: {
-      data: data.reduce((acc, cur) => {
-        const { status, ...metadata } = cur;
-        acc[status] = [
-          ...(Array.isArray(acc[status]) ? acc[status] : []),
-          metadata,
-        ];
-        return acc;
-      }, {}),
+      data: await getBooks(),
     },
   };
 }
