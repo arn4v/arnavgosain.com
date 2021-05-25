@@ -2,8 +2,13 @@ import { HiArrowRight } from "react-icons/hi";
 import Link from "next/link";
 import Image from "next/image";
 import { getDateObjectFromString } from "~/lib/utils";
+import { BlogPost } from "~/types";
 
-export default function PostCard({ data }) {
+interface Props {
+  data: BlogPost;
+}
+
+export default function PostCard({ data }: Props) {
   return (
     <Link href={`/${data.slug}`}>
       <a className="flex items-center justify-between w-full px-4 py-4 transition duration-100 ease-out bg-gray-100 border border-gray-300 rounded-md shadow-md hover:bg-gray-200 dark:bg-gray-900 dark:border-gray-800 group dark:hover:bg-gray-800">
@@ -27,7 +32,9 @@ export default function PostCard({ data }) {
                 <p>
                   Published on{" "}
                   <time
-                    dateTime={getDateObjectFromString(data.date).toISOString()}
+                    dateTime={getDateObjectFromString(
+                      data.date as string
+                    ).toISOString()}
                   >
                     {data.formattedDate}
                   </time>

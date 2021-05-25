@@ -1,4 +1,4 @@
-import GalleryTile from "../GalleryTile";
+import GalleryTile from "./GalleryTile";
 import galleries from "~/data/galleries";
 
 export default function PhotographySection() {
