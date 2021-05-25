@@ -48,15 +48,15 @@ const PostPage = ({ metadata, recordMap }) => {
         url={`${baseUrl}/blog/${metadata.slug}`}
       />
       <article className="flex flex-col space-y-6">
-        <div className="flex flex-col space-y-4 items-start justify-center">
-          <h1 className="text-2xl lg:text-3xl font-bold dark:text-white max-w-3xl">
+        <div className="flex flex-col items-start justify-center space-y-4">
+          <h1 className="max-w-3xl text-2xl font-bold lg:text-3xl dark:text-white">
             {metadata.title}
           </h1>
-          <div className="w-full flex flex-row justify-between max-w-3xl text-gray-800 dark:text-white antialiased">
-            <div className="flex items-center justify-center gap-3 lg:gap-4 text-sm lg:text-base">
+          <div className="flex flex-row justify-between w-full max-w-3xl antialiased text-gray-800 dark:text-white">
+            <div className="flex items-center justify-center gap-3 text-sm lg:gap-4 lg:text-base">
               <div className="hidden lg:block">
                 <Image
-                  src="/images/display.jpg"
+                  src="/static/display.jpg"
                   draggable={false}
                   height={32}
                   width={32}
@@ -64,9 +64,9 @@ const PostPage = ({ metadata, recordMap }) => {
                   layout="fixed"
                 />
               </div>
-              <div className="lg:hidden block">
+              <div className="block lg:hidden">
                 <Image
-                  src="/images/display.jpg"
+                  src="/static/display.jpg"
                   draggable={false}
                   height={48}
                   width={48}
@@ -74,7 +74,7 @@ const PostPage = ({ metadata, recordMap }) => {
                   layout="fixed"
                 />
               </div>
-              <div className="flex flex-col lg:flex-row items-start justify-center lg:items-center lg:justify-start gap-2 font-medium lg:gap-4 text-sm lg:text-base whitespace-nowrap">
+              <div className="flex flex-col items-start justify-center gap-2 text-sm font-medium lg:flex-row lg:items-center lg:justify-start lg:gap-4 lg:text-base whitespace-nowrap">
                 <h2>{metadata.author}</h2>
                 <div className="flex items-center justify-start gap-2 lg:gap-4">
                   <div className="hidden lg:block">/</div>
