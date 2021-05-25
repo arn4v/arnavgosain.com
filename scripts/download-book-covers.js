@@ -66,7 +66,10 @@ const executablePath =
       const filePath = path.resolve(
         path.join(
           config.IMAGES_DIR,
-          `${item.title.replace(/ /g, "-").toLowerCase()}.jpg`
+          `${item.title
+            .replace(/ /g, "-")
+            .replace(/,|'|\./g, "")
+            .toLowerCase()}.jpg`
         )
       );
       if (!fs.existsSync(filePath) && item.url.length > 0) {

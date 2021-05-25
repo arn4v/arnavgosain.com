@@ -19,30 +19,30 @@ export default function Bookshelf({ data }) {
               <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
                 {value.map((book, _index) => {
                   return (
-                    <React.Fragment key={book.id}>
-                      <CustomLink
-                        href={book.url}
-                        className="flex flex-col items-start justify-center w-full gap-2 p-4 transition duration-150 ease-in-out bg-gray-100 rounded-lg shadow dark:text-white hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
-                      >
-                        <Image
-                          src={`/static/bookshelf/${book.title
-                            .toLowerCase()
-                            .replace(/ /g, "-")}.jpg`}
-                          layout="intrinsic"
-                          height={136}
-                          width={96}
-                          className="mx-auto"
-                        />
-                        <div className="flex flex-col items-start justify-center gap-1">
-                          <span className="text-sm font-medium lg:text-base">
-                            {book.title}
-                          </span>
-                          <span className="text-xs lg:text-sm">
-                            {book.author}
-                          </span>
-                        </div>
-                      </CustomLink>
-                    </React.Fragment>
+                    <CustomLink
+                      key={book.id}
+                      href={book.url}
+                      className="flex flex-col items-start justify-center w-full gap-2 p-4 transition duration-150 ease-in-out bg-gray-100 rounded-lg shadow dark:text-white hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
+                    >
+                      <Image
+                        src={`/static/bookshelf/${book.title
+                          .replace(/ /g, "-")
+                          .replace(/,|'|\./g, "")
+                          .toLowerCase()}.jpg`}
+                        layout="intrinsic"
+                        height={136}
+                        width={96}
+                        className="mx-auto"
+                      />
+                      <div className="flex flex-col items-start justify-center gap-1">
+                        <span className="text-sm font-medium lg:text-base">
+                          {book.title}
+                        </span>
+                        <span className="text-xs lg:text-sm">
+                          {book.author}
+                        </span>
+                      </div>
+                    </CustomLink>
                   );
                 })}
               </div>
