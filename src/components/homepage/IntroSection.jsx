@@ -51,7 +51,7 @@ export default function IntroSection() {
     <>
       <section className="w-full antialiased rounded-md dark:text-white dark:border-transparent">
         <div className="flex flex-col items-start justify-center space-y-6">
-          <h1 className="w-2/3 lg:text-3xl text-2xl whitespace-nowrap font-bold lg:w-full">
+          <h1 className="w-2/3 text-2xl font-bold lg:text-3xl whitespace-nowrap lg:w-full">
             Hey, I'm Arnav Gosain 👋
           </h1>
           <p className="text-xl font-medium leading-relaxed text-gray-800 dark:text-white">
@@ -61,14 +61,14 @@ export default function IntroSection() {
             <IntroLink href="/bookshelf">books</IntroLink>.
           </p>
           <div className="flex flex-row items-center justify-start w-full space-x-3">
-            <p className="whitespace-nowrap font-semibold text-gray-800 lg:text-2xl bg-cyan-200">
+            <p className="font-semibold text-gray-800 whitespace-nowrap lg:text-2xl bg-cyan-200">
               Get in touch with me:
             </p>
             <div className="relative flex flex-row items-center justify-center space-x-3">
               <CustomLink
                 href="mailto:arnav@arnavgosain.com"
                 title="Link to my email address"
-                className="hover:text-"
+                className="hover:text-amber-400"
               >
                 <HiOutlineMail
                   className="w-8 h-8"

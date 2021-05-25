@@ -11,6 +11,9 @@ module.exports = {
       colors: {
         ...colors,
       },
+      borderColor: {
+        ...colors,
+      },
       fontFamily: {
         sans: ["Inter", ...defaultTheme.fontFamily.sans],
         inter: ["Inter"],

@@ -1,6 +1,7 @@
 import IntroSection from "~/components/homepage/IntroSection";
 import PageLayout from "~/components/PageLayout";
 import ProjectsSection from "~/components/homepage/ProjectsSection";
+import Navbar from "~/components/NavItem";
 
 export default function IndexPage() {
   return (
