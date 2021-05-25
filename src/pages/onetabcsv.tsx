@@ -28,12 +28,12 @@ export default function IndexPage(): JSX.Element {
             "Convert OneTab Export text to CSV for importing into Notion.",
         }}
       />
-      <div className="min-h-screen w-screen flex flex-col items-center justify-start py-6">
-        <div className="flex flex-col w-4/5 lg:w-2/5 gap-12">
-          <h1 className="text-xl font-bold mx-auto">
+      <div className="flex flex-col items-center justify-start w-screen min-h-screen py-6">
+        <div className="flex flex-col w-4/5 gap-12 lg:w-2/5">
+          <h1 className="mx-auto text-xl font-bold">
             OneTab Export To CSV Converter
           </h1>
-          <div className="flex flex-col flex-1 bg-white shadow-md items-center w-full rounded p-8 border border-gray-100 gap-4">
+          <div className="flex flex-col items-center flex-1 w-full gap-4 p-8 bg-white border border-gray-100 rounded shadow-md">
             <h1 className="font-bold">Paste OneTab Export</h1>
             <textarea
               onChange={(e) => setOnetabExport(e.target.value)}
@@ -41,16 +41,16 @@ export default function IndexPage(): JSX.Element {
               className="w-full border border-gray-200 rounded shadow min-h-[120px] focus:outline-none focus:ring-2 focus:ring-gray-500 px-2 py-2"
             />
           </div>
-          <div className="justify-center flex w-full">
+          <div className="flex justify-center w-full">
             <button
-              className="bg-white focus:ring focus:ring-green-400 rounded shadow-md border border-gray-200 focus:border-transparent focus:outline-none font-medium px-4 py-2"
+              className="px-4 py-2 font-medium bg-white border border-gray-200 rounded shadow-md focus:ring focus:ring-green-400 focus:border-transparent focus:outline-none"
               onClick={convert}
             >
               Convert to CSV
             </button>
           </div>
           {csvText.length > 0 && exportId && (
-            <div className="flex flex-col flex-1 bg-white shadow-md items-center w-full rounded p-8 border border-gray-100 gap-4">
+            <div className="flex flex-col items-center flex-1 w-full gap-4 p-8 bg-white border border-gray-100 rounded shadow-md">
               <h1 className="font-bold">Copy/Save CSV</h1>
               <textarea
                 className="w-full border border-gray-200 rounded shadow min-h-[120px] focus:outline-none focus:ring-2 focus:ring-gray-500 px-2 py-2"
@@ -58,9 +58,9 @@ export default function IndexPage(): JSX.Element {
                 onClick={() => csvTextareaRef.current.select()}
                 value={csvText}
               />
-              <div className="flex items-center justify-center gap-6 w-full">
+              <div className="flex items-center justify-center w-full gap-6">
                 <button
-                  className="bg-white border-gray-300 border px-2 rounded shadow py-2 flex items-center justify-center gap-2 focus:outline-none focus:ring focus:ring-green-500"
+                  className="flex items-center justify-center gap-2 px-2 py-2 bg-white border border-gray-300 rounded shadow focus:outline-none focus:ring focus:ring-green-500"
                   onClick={() => {
                     csvTextareaRef.current.select();
                     document.execCommand("copy");
@@ -70,7 +70,7 @@ export default function IndexPage(): JSX.Element {
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
+                    className="w-6 h-6"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -88,12 +88,12 @@ export default function IndexPage(): JSX.Element {
                   href={URL.createObjectURL(
                     new Blob([csvText], { type: "text/plain" })
                   )}
-                  className="bg-white border-gray-300 border px-2 rounded shadow py-2 flex items-center justify-center gap-2 focus:outline-none focus:ring focus:ring-green-500"
+                  className="flex items-center justify-center gap-2 px-2 py-2 bg-white border border-gray-300 rounded shadow focus:outline-none focus:ring focus:ring-green-500"
                   download={`onetab-export-${exportId}.csv`}
                 >
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6"
+                    className="w-6 h-6"
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"

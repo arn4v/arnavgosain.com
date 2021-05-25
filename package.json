@@ -19,6 +19,7 @@
     "@types/uuid": "^8.3.0",
     "axios": "^0.21.1",
     "clsx": "^1.1.1",
+    "csvtojson": "^2.0.10",
     "date-fns": "^2.21.3",
     "globby": "^11.0.3",
     "image-data-uri": "^2.0.1",
