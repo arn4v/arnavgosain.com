@@ -20,6 +20,7 @@ interface State {
   dedupedCsv: string;
   exportId: string;
 }
+
 export default function DedupeCsvPage(): JSX.Element {
   const [state, setState] = React.useState<State>({
     first: "",
@@ -37,6 +38,10 @@ export default function DedupeCsvPage(): JSX.Element {
   const secondRef = React.useRef<HTMLTextAreaElement>();
   const finalRef = React.useRef<HTMLTextAreaElement>();
 
+  /**
+   * When the value of any of the two textarea changes parse csv to json
+   * and find common keys
+   */
   React.useEffect(() => {
     (async () => {
       try {
@@ -152,7 +157,6 @@ export default function DedupeCsvPage(): JSX.Element {
               onSelect={() => finalRef.current.select()}
               onChange={() => {}}
             />
-
             <a
               href={URL.createObjectURL(
                 new Blob([state.dedupedCsv], { type: "text/plain" })

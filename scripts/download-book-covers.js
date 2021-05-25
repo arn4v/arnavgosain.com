@@ -44,7 +44,7 @@ const minimal_args = [
 ];
 
 const config = {
-  IMAGES_DIR: path.resolve(process.cwd(), "public/images/books"),
+  IMAGES_DIR: path.resolve(process.cwd(), "public/static/bookshelf"),
 };
 const isLocal = typeof process.env.VERCEL === "undefined";
 const executablePath =
@@ -58,7 +58,7 @@ const executablePath =
         headless: true,
         executablePath,
       })
-    : await require("playwright-aws-lambda").launchChromium({});
+    : await require("playwright-aws-lambda").launchChromium();
 
   if (!fs.existsSync(config.IMAGES_DIR)) fs.mkdirSync(config.IMAGES_DIR);
   for (const [key, value] of Object.entries(books)) {
