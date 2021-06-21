@@ -15,7 +15,7 @@ const links = [
 
 export default function Navbar({ className = "" }: Props) {
   const router = useRouter();
-  console.log(router.pathname)
+
   return (
     <nav
       className={clsx([
