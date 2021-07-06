@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { useTheme } from "next-themes";
 import * as React from "react";
-import { HiMoon, HiSun } from "react-icons/hi";
+import { HiOutlineMoon, HiOutlineSun } from "react-icons/hi";
 
 /**
  * @param {Object} props
@@ -13,6 +13,10 @@ export default function ThemeButton(props) {
   const { className, noDarkMode = false, style = {} } = props;
   const { theme, setTheme } = useTheme();
 
+  // React.useEffect(() => {
+  //   console.log(theme === "light");
+  // }, [theme]);
+
   return (
     <button
       style={style}
@@ -21,21 +25,17 @@ export default function ThemeButton(props) {
         "dark:bg-gray-800 dark:hover:bg-gray-700 bg-gray-100 border border-gray-300 hover:bg-gray-200 dark:border-gray-800 flex items-center justify-center space-x-2 focus:outline-none rounded-md h-10 w-10",
         className,
       ])}
-      onClick={() =>
-        setTheme(
-          theme === "light" || theme?.toString() === "null" ? "dark" : "light"
-        )
-      }
+      onClick={() => {
+        setTheme(theme === "light" ? "dark" : "light");
+      }}
     >
-      {theme === "light" ? (
-        <HiMoon
-          className={clsx(["h-5 w-5", !noDarkMode && "dark:text-white"])}
-        />
-      ) : (
-        <HiSun
-          className={clsx(["h-5 w-5", !noDarkMode && "dark:text-white"])}
-        />
+      {theme === "light" && (
+        <HiOutlineMoon className="h-5 w-5 dark:text-white moon" />
       )}
+      {theme === "dark" && (
+        <HiOutlineSun className="h-5 w-5 dark:text-white moon" />
+      )}
+      {!theme && <HiOutlineMoon className="h-5 w-5 dark:text-white moon" />}
     </button>
   );
 }

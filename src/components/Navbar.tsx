@@ -9,7 +9,6 @@ interface Props {
 
 const links = [
   { title: "Home", href: "/" },
-  { title: "Polywork", href: "https://polywork.com/arn4v" },
   { title: "Projects", href: "/projects" },
   { title: "Bookshelf", href: "/bookshelf" },
   { title: "Playlists", href: "/playlists" },

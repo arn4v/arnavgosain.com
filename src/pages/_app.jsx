@@ -10,7 +10,6 @@ export default function MyApp({ Component, pageProps }) {
       <DefaultSeo {...defaultSeoProps} />
       <ThemeProvider
         attribute="class"
-        defaultTheme="light"
         themes={["light", "dark"]}
         enableColorScheme={false}
         enableSystem={false}

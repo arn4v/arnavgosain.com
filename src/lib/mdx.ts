@@ -21,7 +21,8 @@ export const getAllPosts = () => {
       const absPath = path.join(postsPath, filePath);
       const source = fs.readFileSync(absPath, { encoding: "utf-8" });
       const { data, content } = matter(source);
-      const metadata = data as PostMetadata;
+      let metadata = data as PostMetadata;
+      metadata.reading_time = readingTime(content).text;
       return {
         filePath,
         absPath,

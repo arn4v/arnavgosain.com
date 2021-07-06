@@ -15,7 +15,7 @@ export default function ProjectsSection() {
       </div>
       <ProjectsGrid data={projects.filter((item) => !item.exclude)} />
       <Link href="/projects">
-        <a className="bg-gray-100 hover:bg-gray-200 border border-gray-300 dark:bg-gray-900 dark:hover:bg-gray-800 flex items-center gap-2 px-2 py-2 rounded-md transition dark:border-gray-700 justify-center">
+        <a className="bg-gray-100 hover:bg-gray-200 border border-gray-300 dark:bg-gray-900 dark:hover:bg-gray-800 flex items-center gap-2 px-2 py-2 rounded-md transition dark:border-gray-700 justify-center dark:text-white">
           View all {projects.length} projects <HiArrowRight />
         </a>
       </Link>
