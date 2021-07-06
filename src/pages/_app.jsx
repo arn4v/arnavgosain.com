@@ -1,14 +1,13 @@
 import { DefaultSeo } from "next-seo";
 import { ThemeProvider } from "next-themes";
-import "react-notion-x/src/styles.css";
-import SEO from "~/next-seo.config";
+import defaultSeoProps from "~/next-seo.config";
 import "../styles/index.css";
 
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <style data-href="https://fonts.googleapis.com/css2?family=Inter"></style>
-      <DefaultSeo {...SEO} />
+      <DefaultSeo {...defaultSeoProps} />
       <ThemeProvider
         attribute="class"
         defaultTheme="light"

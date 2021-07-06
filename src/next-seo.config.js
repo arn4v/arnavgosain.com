@@ -14,7 +14,7 @@ const description = "Developer, photographer, maker of things.";
  * @constant
  * @type {import("next-seo").DefaultSeoProps}
  */
-const SEO = {
+const defaultSeoProps = {
   title,
   description,
   canonical: baseUrl,
@@ -40,4 +40,4 @@ const SEO = {
   },
 };
 
-export default SEO;
+export default defaultSeoProps;
