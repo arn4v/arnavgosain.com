@@ -14,6 +14,7 @@ export default function PostCard({ data }: { data: PostMetadata }) {
           <div className="flex items-center justify-center gap-4 text-sm lg:text-base">
             <div>
               <Image
+                alt="Arnav Gosain"
                 src="/static/display.jpg"
                 draggable={false}
                 height={36}

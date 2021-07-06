@@ -1,3 +1,22 @@
+const path = require("path");
+
+if (process.platform === "win32") {
+  process.env.ESBUILD_BINARY_PATH = path.join(
+    process.cwd(),
+    "node_modules",
+    "esbuild",
+    "esbuild.exe"
+  );
+} else {
+  process.env.ESBUILD_BINARY_PATH = path.join(
+    process.cwd(),
+    "node_modules",
+    "esbuild",
+    "bin",
+    "esbuild"
+  );
+}
+
 /**
  * @type {import("next/dist/next-server/server/config-shared").NextConfig}
  */
@@ -8,7 +27,12 @@ module.exports = {
       require("./scripts/download-book-covers");
       require("./scripts/generate-sitemap");
     }
-    config.resolve.fallback = { fs: false, module: false };
+
+    config.resolve.fallback = {
+      ...config.resolve.fallback,
+      fs: false,
+      module: false,
+    };
 
     if (!dev && !isServer) {
       config.resolve.alias = Object.assign(config.resolve.alias, {
@@ -19,6 +43,9 @@ module.exports = {
     }
 
     return config;
+  },
+  eslint: {
+    ignoreDuringBuilds: true,
   },
   async headers() {
     return [

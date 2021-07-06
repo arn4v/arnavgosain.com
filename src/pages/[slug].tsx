@@ -6,7 +6,6 @@ import * as React from "react";
 import BlogSeo from "~/components/BlogSeo";
 import PageLayout from "~/components/PageLayout";
 import { baseUrl } from "~/config";
-import { getAllPostsPaths, getPostMdx } from "~/lib/mdx";
 import { getDateObjectFromString } from "~/lib/utils";
 import PostMetadata from "~/types/metadata";
 
@@ -40,6 +39,7 @@ const PostPage = ({ code, frontmatter: metadata }: Props) => {
             <div className="flex items-center justify-center gap-3 text-sm lg:gap-4 lg:text-base">
               <div className="hidden lg:block">
                 <Image
+                  alt="Arnav Gosain"
                   src="/static/display.jpg"
                   draggable={false}
                   height={32}
@@ -50,6 +50,7 @@ const PostPage = ({ code, frontmatter: metadata }: Props) => {
               </div>
               <div className="block lg:hidden">
                 <Image
+                  alt="Arnav Gosain"
                   src="/static/display.jpg"
                   draggable={false}
                   height={48}
@@ -95,6 +96,7 @@ const PostPage = ({ code, frontmatter: metadata }: Props) => {
 export const getStaticProps: GetStaticProps<Props, { slug: string }> = async (
   ctx
 ) => {
+  const { getPostMdx } = await import("../lib/mdx");
   const slug = ctx.params.slug;
   return {
     props: await getPostMdx(slug),
@@ -102,7 +104,8 @@ export const getStaticProps: GetStaticProps<Props, { slug: string }> = async (
 };
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
-  const paths = getAllPostsPaths().map((item) => {
+  const { getAllPosts } = await import("../lib/mdx");
+  const paths = getAllPosts().map((item) => {
     return {
       params: { slug: item.slug },
     };

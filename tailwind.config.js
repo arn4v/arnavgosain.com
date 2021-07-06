@@ -1,7 +1,7 @@
 "use strict";
 const { lightBlue, ...colors } = require("tailwindcss/colors");
 const { spacing, fontFamily } = require("tailwindcss/defaultTheme");
-const { variants } = require("tailwindcss/defaultConfig");
+const typography = require("@tailwindcss/typography");
 
 module.exports = {
   mode: "jit",
@@ -87,5 +87,5 @@ module.exports = {
   variants: {
     typography: ["dark"],
   },
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [typography],
 };

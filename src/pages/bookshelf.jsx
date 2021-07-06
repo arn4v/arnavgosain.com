@@ -1,7 +1,7 @@
-import CustomLink from "~/components/CustomLink";
-import * as React from "react";
-import PageLayout from "~/components/PageLayout";
 import Image from "next/image";
+import * as React from "react";
+import CustomLink from "~/components/CustomLink";
+import PageLayout from "~/components/PageLayout";
 import { getBooks } from "~/lib/bookshelf";
 
 /**
@@ -25,6 +25,7 @@ export default function Bookshelf({ data }) {
                       className="flex flex-col items-start justify-center w-full gap-2 p-4 transition duration-150 ease-in-out bg-gray-100 rounded-lg shadow dark:text-white hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
                     >
                       <Image
+                        alt={`${book.title} Cover`}
                         src={`/static/bookshelf/${book.title
                           .replace(/ /g, "-")
                           .replace(/,|'|\./g, "")

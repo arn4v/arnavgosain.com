@@ -7,25 +7,29 @@ import { isProd } from "~/config";
 import PostMetadata from "../types/metadata";
 
 const rootPath = path.resolve(process.cwd());
-const postsPath = path.join(rootPath, "/data/blog");
+const postsPath = path.join(rootPath, "data", "blog");
 
-export const getAllPostsPaths = () => {
+export const getAllPosts = () => {
   const absolutePaths = fs
     .readdirSync(postsPath, {
       encoding: "utf-8",
     })
     .filter((filePath) => {
-      return /\.(md|mdx)/.test(filePath);
+      return /\.mdx?/.test(filePath);
     })
     .map((filePath) => {
       const absPath = path.join(postsPath, filePath);
-      const metadata = matter(fs.readFileSync(absPath, { encoding: "utf-8" }));
+      const source = fs.readFileSync(absPath, { encoding: "utf-8" });
+      const { data, content } = matter(source);
+      const metadata = data as PostMetadata;
       return {
         filePath,
         absPath,
-        published: metadata.data.published,
+        published: metadata.published,
         slug: filePath.replace(/\.mdx?/, ""),
         metadata: metadata,
+        source: source,
+        content: content,
       };
     })
     .filter((item) => (isProd ? !!item.published : true));
@@ -34,10 +38,25 @@ export const getAllPostsPaths = () => {
 };
 
 export const getPostMdx = async (slug: string) => {
-  const post = getAllPostsPaths().find((item) => item.slug === slug);
-  const source = fs.readFileSync(post.absPath, { encoding: "utf-8" });
-  const { data: frontmatter, content } = matter(source);
-  const { code } = await bundleMDX(source, {
+  if (process.platform === "win32") {
+    process.env.ESBUILD_BINARY_PATH = path.join(
+      process.cwd(),
+      "node_modules",
+      "esbuild",
+      "esbuild.exe"
+    );
+  } else {
+    process.env.ESBUILD_BINARY_PATH = path.join(
+      process.cwd(),
+      "node_modules",
+      "esbuild",
+      "bin",
+      "esbuild"
+    );
+  }
+
+  const post = getAllPosts().find((item) => item.slug === slug);
+  const { code } = await bundleMDX(post.source, {
     xdmOptions(opts) {
       opts.remarkPlugins = [
         ...(opts.remarkPlugins ?? []),
@@ -53,10 +72,10 @@ export const getPostMdx = async (slug: string) => {
     },
   });
 
-  frontmatter.reading_time = readingTime(content).text;
+  post.metadata.reading_time = readingTime(post.content).text;
 
   return {
     code,
-    frontmatter: frontmatter as PostMetadata,
+    frontmatter: post.metadata as PostMetadata,
   };
 };

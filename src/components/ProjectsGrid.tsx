@@ -11,7 +11,7 @@ const tagColors = {
   GraphQL: "bg-gradient-to-tr from-pink-900 to-pink-700",
   React: "bg-gradient-to-tr from-blue-700 to-sky-500",
   Python: "bg-gradient-to-tr from-orange-600 to-yellow-600",
-  Bash: "bg-gradient-to-tr from-blue-600 to-lightBlue-700",
+  Bash: "bg-gradient-to-tr from-blue-600 to-sky-700",
   Redis: "bg-gradient-to-tr from-radix-red-red10 to-radix-red-red9",
 };
 
