@@ -1,6 +1,6 @@
-import * as React from "react";
 import clsx from "clsx";
 import { useTheme } from "next-themes";
+import * as React from "react";
 import { HiMoon, HiSun } from "react-icons/hi";
 
 /**
@@ -27,12 +27,11 @@ export default function ThemeButton(props) {
         )
       }
     >
-      {(theme?.toString() === "null" || theme === "light") && (
+      {theme === "light" ? (
         <HiMoon
           className={clsx(["h-5 w-5", !noDarkMode && "dark:text-white"])}
         />
-      )}
-      {theme === "dark" && (
+      ) : (
         <HiSun
           className={clsx(["h-5 w-5", !noDarkMode && "dark:text-white"])}
         />
