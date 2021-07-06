@@ -1,9 +1,12 @@
-import Image from "next/image";
-
 export default function GalleryTile({ title, img, alt, href }) {
   return (
     <>
-      <a href={href} className="flex flex-col space-y-4" target="_blank">
+      <a
+        href={href}
+        rel="noreferrer noopener"
+        className="flex flex-col space-y-4"
+        target="_blank"
+      >
         <div
           style={{ backgroundImage: `url(${img})`, backgroundSize: "auto" }}
           className="overflow-hidden h-32 w-full rounded-md shadow-md p-3"
