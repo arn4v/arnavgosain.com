@@ -41,7 +41,7 @@ const projects = [
       {
         id: "2b706fc4-e686-4770-9183-677f3c62fa50",
         title: "GitHub",
-        url: "https://github.com/arn4v/brevis.link",
+        url: "https://github.com/arn4v/brevis",
       },
     ],
     tags: ["NextJS", "Redis"],
