@@ -14,17 +14,34 @@ export default function NavItem({
   className,
   active = false,
 }: Props) {
+  if (href.startsWith("/") || href.startsWith("#")) {
+    return (
+      <Link href={href}>
+        <a
+          className={clsx([
+            className,
+            "px-2 border-l-2 border-cyan-200 dark:border-cyan-200 dark:text-white border-b-2 hover:bg-cyan-200 font-bold text-black h-9 flex items-center justify-center dark:hover:text-black",
+            active && "bg-cyan-200 dark:text-black",
+          ])}
+        >
+          {children}
+        </a>
+      </Link>
+    );
+  }
+
   return (
-    <Link href={href}>
-      <a
-        className={clsx([
-          className,
-          "px-2 border-l-2 border-cyan-200 dark:border-cyan-200 dark:text-white border-b-2 hover:bg-cyan-200 font-bold text-black h-9 flex items-center justify-center dark:hover:text-black",
-          active && "bg-cyan-200 dark:text-black",
-        ])}
-      >
-        {children}
-      </a>
-    </Link>
+    <a
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className={clsx([
+        className,
+        "px-2 border-l-2 border-cyan-200 dark:border-cyan-200 dark:text-white border-b-2 hover:bg-cyan-200 font-bold text-black h-9 flex items-center justify-center dark:hover:text-black",
+        active && "bg-cyan-200 dark:text-black",
+      ])}
+    >
+      {children}
+    </a>
   );
 }

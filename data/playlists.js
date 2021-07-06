@@ -1,8 +1,8 @@
 const playlists = {
   2021: {
-    July: "",
-    June: "",
-    May: "",
+    July: "https://open.spotify.com/playlist/2PtR8lE47VqdZp06Mtfku1",
+    June: "https://open.spotify.com/playlist/3gv4wy2N9PWkDtFsyo10VH",
+    May: "https://open.spotify.com/playlist/1PsHp8q0IgtMP4JCVaRouh",
     April: "https://open.spotify.com/playlist/06695IEI2dDt7sLhrzN8w4",
     March: "https://open.spotify.com/playlist/1gO5tGi4TrCum3KvLckLoR",
     February: "https://open.spotify.com/playlist/1qjPW5dOdRvoxBo4ltlHC4",

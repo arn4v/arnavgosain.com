@@ -1,4 +1,3 @@
-import Footer from "./Footer";
 import clsx from "clsx";
 import Navbar from "./Navbar";
 
@@ -13,7 +12,7 @@ export default function PageLayout({ children, className = "" }) {
   return (
     <div
       className={clsx([
-        "flex flex-col bg-white min-h-screen dark:bg-black overflow-x-hidden space-y-6",
+        "flex flex-col bg-white min-h-screen dark:bg-black overflow-x-hidden space-y-6 pb-8",
         className,
       ])}
     >

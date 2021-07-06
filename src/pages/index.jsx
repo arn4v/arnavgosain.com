@@ -1,12 +1,11 @@
 import IntroSection from "~/components/homepage/IntroSection";
-import PageLayout from "~/components/PageLayout";
 import ProjectsSection from "~/components/homepage/ProjectsSection";
-import Navbar from "~/components/NavItem";
+import PageLayout from "~/components/PageLayout";
 
 export default function IndexPage() {
   return (
     <PageLayout>
-      <div className="flex flex-col pt-8 pb-6 space-y-16">
+      <div className="flex flex-col mt-6 space-y-16">
         <IntroSection />
         <ProjectsSection />
       </div>
