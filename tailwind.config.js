@@ -1,21 +1,24 @@
-const colors = require("tailwindcss/colors");
-const defaultTheme = require("tailwindcss/defaultTheme");
-const { spacing } = require("tailwindcss/defaultTheme");
+"use strict";
+const { lightBlue, ...colors } = require("tailwindcss/colors");
+const { spacing, fontFamily } = require("tailwindcss/defaultTheme");
+const { variants } = require("tailwindcss/defaultConfig");
 
 module.exports = {
   mode: "jit",
-  purge: ["./src/**/*.{js,ts,jsx,tsx}"],
+  purge: ["./src/**/*.{js,ts,jsx,tsx,css}"],
   darkMode: "class",
   theme: {
     extend: {
       colors: {
         ...colors,
+        radix: require("@radix-ui/colors"),
       },
       borderColor: {
         ...colors,
+        radix: require("@radix-ui/colors"),
       },
       fontFamily: {
-        sans: ["Inter", ...defaultTheme.fontFamily.sans],
+        sans: ["Inter", ...fontFamily.sans],
         inter: ["Inter"],
       },
       // thanks @leerob; https://github.com/leerob/leerob.io
@@ -82,7 +85,7 @@ module.exports = {
     },
   },
   variants: {
-    typography: ({ after }) => after(["dark"]),
+    typography: ["dark"],
   },
   plugins: [require("@tailwindcss/typography")],
 };

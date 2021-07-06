@@ -1,8 +1,7 @@
-import CustomLink from "~/components/CustomLink";
-import Image from "next/image";
-import { NextSeo } from "next-seo";
-import PageLayout from "~/components/PageLayout";
 import axios from "axios";
+import { NextSeo } from "next-seo";
+import CustomLink from "~/components/CustomLink";
+import PageLayout from "~/components/PageLayout";
 import { baseUrl } from "~/config";
 
 const url = baseUrl + "/playlists";
@@ -70,7 +69,7 @@ export default function PlaylistsPage({ playlists }) {
 
 export async function getStaticProps() {
   const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
-  let playlists = require("../data/playlists").default;
+  let playlists = require("../../data/playlists").default;
   const accessToken = (
     await axios({
       url: "https://accounts.spotify.com/api/token",
