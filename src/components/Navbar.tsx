@@ -11,11 +11,11 @@ interface Props {
 }
 
 const links = [
-  { title: "Home", href: "/" },
-  { title: "Projects", href: ["/projects"] },
-  { title: "Snippets", href: ["/snippets", "/snippets/[slug]"] },
-  { title: "Library", href: ["/library"] },
-  { title: "Playlists", href: ["/playlists"] },
+  { title: "Home", href: "/", active: /\/$/ },
+  { title: "Projects", href: "/projects", active: /\/projects$/ },
+  { title: "Snippets", href: "/snippets", active: /\/snippets(.*)$/ },
+  { title: "Library", href: "/library", active: /\/library$/ },
+  { title: "Playlists", href: "/playlists", active: /\/playlists$/ },
 ];
 
 export default function Navbar({ className = "" }: Props) {
@@ -44,13 +44,7 @@ export default function Navbar({ className = "" }: Props) {
           <span className="dark:text-white text-lg font-medium font-mono lg:hidden">
             {
               links.find((el) => {
-                if (router.pathname === "/") {
-                  return router.pathname === el.href[0];
-                }
-
-                return (
-                  router.pathname !== "/" && el.href.includes(router.pathname)
-                );
+                return el.active.test(router.pathname);
               }).title
             }
           </span>
@@ -59,8 +53,8 @@ export default function Navbar({ className = "" }: Props) {
               return (
                 <NavItem
                   key={item.title}
-                  href={item.href[0]}
-                  active={item.href.includes(router.pathname)}
+                  href={item.href}
+                  active={item.active.test(router.pathname)}
                 >
                   {item.title}
                 </NavItem>
@@ -75,8 +69,8 @@ export default function Navbar({ className = "" }: Props) {
           {links.map((item) => (
             <NavItem
               key={item.title}
-              href={item.href[0]}
-              active={router.pathname === item.href}
+              href={item.href}
+              active={item.active.test(router.pathname)}
               className="border-none px-6"
             >
               {item.title}
