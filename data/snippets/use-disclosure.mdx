@@ -1,9 +1,11 @@
 ---
-title: "useDisclosure Hook"
+title: "useDisclosure React Hook"
 seo_title: "useDisclosure React Hook"
 description: "Local state management for drawers, modals, accordions and menus"
 slug: "use-disclosure"
 ---
+
+**Code:**
 
 ```ts
 import * as React from "react";
@@ -17,4 +19,22 @@ export default function useDisclosure(initialState: boolean = false) {
 
   return { isOpen, onOpen, onClose, onToggle };
 }
+```
+
+**Usage:**
+
+```tsx
+import useDisclosure from "~/hooks/use-disclosure";
+
+const Component = () => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
+  return (
+    <div>
+      <button onClick={onOpen}>Open menu</button>
+      <button onClick={onClose}>Close menu</button>
+      {isOpen ? <div className="menu"></div> : null}
+    </div>
+  );
+};
 ```

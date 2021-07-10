@@ -5,6 +5,8 @@ description: React hook to implement typo-tolerant search with Fuse.js
 slug: use-fuse
 ---
 
+Install `fuse.js` package from npm to use this hook.
+
 ```ts
 import Fuse from "fuse.js";
 import * as React from "react";
@@ -32,4 +34,35 @@ export default function useFuse<T extends unknown>({
 
   return { fuse, result };
 }
+```
+
+**Usage:**
+
+```tsx
+import * as React from "react";
+import useFuse from "~/hooks/use-fuse";
+
+type Data = { id: string; title: string; author: string };
+
+const BooksList = ({ data }: { data: Data[] }) => {
+  const [query, setQuery] = React.useState<string>("");
+  const { fuse, result } = useFuse({
+    data: data,
+    query: query,
+    options: {
+      keys: ["title", "author"],
+    },
+  });
+
+  return result.map((item) => {
+    return (
+      <>
+        <input value={query} onChange={(e) => setQuery(e.target.value)} />
+        <div key={item.id}>
+          {item.title} - {item.author}
+        </div>
+      </>
+    );
+  });
+};
 ```
