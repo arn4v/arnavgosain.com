@@ -1,5 +1,6 @@
 import clsx from "clsx";
 import { useRouter } from "next/router";
+import * as React from "react";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import useDisclosure from "~/hooks/use-disclosure";
 import NavItem from "./NavItem";
@@ -11,10 +12,10 @@ interface Props {
 
 const links = [
   { title: "Home", href: "/" },
-  { title: "Projects", href: "/projects" },
-  { title: "Snippets", href: "/snippets" },
-  { title: "Library", href: "/library" },
-  { title: "Playlists", href: "/playlists" },
+  { title: "Projects", href: ["/projects"] },
+  { title: "Snippets", href: ["/snippets", "/snippets/[slug]"] },
+  { title: "Library", href: ["/library"] },
+  { title: "Playlists", href: ["/playlists"] },
 ];
 
 export default function Navbar({ className = "" }: Props) {
@@ -44,23 +45,27 @@ export default function Navbar({ className = "" }: Props) {
             {
               links.find((el) => {
                 if (router.pathname === "/") {
-                  return router.pathname === el.href;
+                  return router.pathname === el.href[0];
                 }
 
-                return el.href !== "/" && router.pathname.includes(el.href);
+                return (
+                  router.pathname !== "/" && el.href.includes(router.pathname)
+                );
               }).title
             }
           </span>
           <ul className="gap-4 lg:flex items-center hidden">
-            {links.map((item) => (
-              <NavItem
-                key={item.title}
-                href={item.href}
-                active={router.pathname === item.href}
-              >
-                {item.title}
-              </NavItem>
-            ))}
+            {links.map((item) => {
+              return (
+                <NavItem
+                  key={item.title}
+                  href={item.href[0]}
+                  active={item.href.includes(router.pathname)}
+                >
+                  {item.title}
+                </NavItem>
+              );
+            })}
           </ul>
         </div>
         <ThemeButton />
