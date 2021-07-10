@@ -75,7 +75,7 @@ export default function Navbar({ className = "" }: Props) {
           {links.map((item) => (
             <NavItem
               key={item.title}
-              href={item.href}
+              href={item.href[0]}
               active={router.pathname === item.href}
               className="border-none px-6"
             >
