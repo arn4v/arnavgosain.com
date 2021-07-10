@@ -1,4 +1,3 @@
-import { NextSeo } from "next-seo";
 import Image from "next/image";
 import * as React from "react";
 import CustomLink from "~/components/CustomLink";
@@ -6,7 +5,7 @@ import PageLayout from "~/components/PageLayout";
 import { baseUrl } from "~/config";
 import { getBooks } from "~/lib/bookshelf";
 
-const meta = {
+const openGraph = {
   title: "Library",
   url: baseUrl + "/library",
 };
@@ -18,8 +17,10 @@ const meta = {
 export default function Bookshelf({ data }) {
   return (
     <>
-      <NextSeo title={meta.title} openGraph={meta} />
-      <PageLayout breadcrumb={{ Bookshelf: "/bookshelf" }}>
+      <PageLayout
+        breadcrumb={{ Bookshelf: "/bookshelf" }}
+        seo={{ title: openGraph.title, openGraph: openGraph }}
+      >
         <div className="flex flex-col gap-6 mt-4">
           {Object.entries(data).map(([key, value], index) => {
             return (

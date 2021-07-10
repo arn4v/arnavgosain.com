@@ -1,4 +1,3 @@
-import { NextSeo } from "next-seo";
 import { OpenGraph } from "next-seo/lib/types";
 import projects from "~/components/homepage/projects";
 import PageLayout from "~/components/PageLayout";
@@ -13,8 +12,10 @@ const meta: OpenGraph = {
 const ProjectsPage = () => {
   return (
     <>
-      <NextSeo title={meta.title} openGraph={meta} />
-      <PageLayout breadcrumb={{ Projects: "/projects" }}>
+      <PageLayout
+        breadcrumb={{ Projects: "/projects" }}
+        seo={{ title: meta.title, openGraph: meta }}
+      >
         <div className="flex flex-col gap-6">
           <h1 className="text-3xl font-bold dark:text-white font-mono hidden lg:block">
             Projects

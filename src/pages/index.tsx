@@ -3,11 +3,12 @@ import IntroSection from "~/components/homepage/IntroSection";
 import ProjectsSection from "~/components/homepage/ProjectsSection";
 import PageLayout from "~/components/PageLayout";
 import { getDateObjectFromString } from "~/lib/utils";
+import { defaultOpenGraph } from "~/next-seo.config";
 import PostMetadata from "~/types/metadata";
 
 export default function IndexPage({ posts }: { posts: PostMetadata[] }) {
   return (
-    <PageLayout>
+    <PageLayout seo={{ openGraph: defaultOpenGraph }}>
       <div className="flex flex-col space-y-16">
         <IntroSection />
         <ProjectsSection />

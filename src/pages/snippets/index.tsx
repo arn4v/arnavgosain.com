@@ -1,4 +1,3 @@
-import { NextSeo } from "next-seo";
 import { OpenGraph } from "next-seo/lib/types";
 import Link from "next/link";
 import * as React from "react";
@@ -18,12 +17,14 @@ const meta: OpenGraph = {
 export default function SnippetsListPage({ snippets }: Props) {
   return (
     <>
-      <NextSeo
-        title={meta.title}
-        description={meta.description}
-        openGraph={meta}
-      />
-      <PageLayout className="py-8">
+      <PageLayout
+        className="py-8"
+        seo={{
+          title: meta.title,
+          description: meta.description,
+          openGraph: meta,
+        }}
+      >
         <h1 className="text-2xl font-bold dark:text-white font-mono hidden lg:block mb-6">
           Snippets
         </h1>

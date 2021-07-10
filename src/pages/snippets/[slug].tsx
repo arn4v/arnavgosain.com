@@ -1,6 +1,5 @@
 import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { NextSeo } from "next-seo";
 import * as React from "react";
 import PageLayout from "~/components/PageLayout";
 import { baseUrl } from "~/config";
@@ -17,17 +16,17 @@ export default function SnippetPage({ code, frontmatter, slug }: Props) {
 
   return (
     <>
-      <NextSeo
-        titleTemplate="%s | Snippets | Arnav Gosain"
-        title={frontmatter.title}
-        description={frontmatter.description}
-        openGraph={{
+      <PageLayout
+        seo={{
+          titleTemplate: "%s | Snippets | Arnav Gosain",
           title: frontmatter.title,
           description: frontmatter.description,
-          url: baseUrl + "/snippets/" + slug,
+          openGraph: {
+            title: frontmatter.title,
+            description: frontmatter.description,
+            url: baseUrl + "/snippets/" + slug,
+          },
         }}
-      />
-      <PageLayout
         breadcrumb={{
           Snippets: "/snippets",
           [frontmatter.title]: "/snippets/" + slug,

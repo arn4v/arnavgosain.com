@@ -1,5 +1,4 @@
 import axios from "axios";
-import { NextSeo } from "next-seo";
 import CustomLink from "~/components/CustomLink";
 import PageLayout from "~/components/PageLayout";
 import { baseUrl } from "~/config";
@@ -17,13 +16,15 @@ const description =
 export default function PlaylistsPage({ playlists }) {
   return (
     <>
-      <NextSeo
-        title={title}
-        description={description}
-        canonical={url}
-        openGraph={{ title, url, description }}
-      />
-      <PageLayout breadcrumb={{ Playlists: "/playlists" }}>
+      <PageLayout
+        breadcrumb={{ Playlists: "/playlists" }}
+        seo={{
+          title: title,
+          description: description,
+          canonical: url,
+          openGraph: { title, url, description },
+        }}
+      >
         <div className="flex flex-col space-y-6">
           {Object.entries(playlists)
             .reverse()

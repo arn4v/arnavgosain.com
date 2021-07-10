@@ -22,9 +22,9 @@ const defaultSeoProps = {
   openGraph: {
     type: "website",
     locale: "en_IE",
-    url: baseUrl,
-    title,
-    description,
+    // url: baseUrl,
+    // title,
+    // description,
     images: [
       {
         url: `${baseUrl}/static/og-banner.png`,
@@ -39,6 +39,22 @@ const defaultSeoProps = {
     site: "@arn4v",
     cardType: "summary_large_image",
   },
+};
+
+export const defaultOpenGraph = {
+  type: "website",
+  locale: "en_IE",
+  url: baseUrl,
+  title,
+  description,
+  images: [
+    {
+      url: `${baseUrl}/static/og-banner.png`,
+      alt: title,
+      width: 1200,
+      height: 627,
+    },
+  ],
 };
 
 export default defaultSeoProps;
