@@ -59,6 +59,11 @@ module.exports = {
         destination: "/rss.xml",
         permanent: true,
       },
+      {
+        source: "/bookshelf",
+        destination: "/library",
+        permanent: false,
+      },
     ];
   },
 };

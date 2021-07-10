@@ -11,7 +11,9 @@ export default function ProjectsSection() {
   return (
     <div className="flex flex-col gap-5">
       <div className="flex justify-between w-full items-center">
-        <h1 className="text-3xl font-bold dark:text-white">Recent Projects</h1>
+        <h1 className="text-xl font-mono font-bold dark:text-white">
+          Recent projects
+        </h1>
       </div>
       <ProjectsGrid data={projects.filter((item) => !item.exclude)} />
       <Link href="/projects">

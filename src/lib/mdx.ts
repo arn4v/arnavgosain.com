@@ -4,24 +4,24 @@ import { bundleMDX } from "mdx-bundler";
 import path from "path";
 import readingTime from "reading-time";
 import { isProd } from "~/config";
-import PostMetadata from "../types/metadata";
 
 const rootPath = path.resolve(process.cwd());
-const postsPath = path.join(rootPath, "data", "blog");
+type DataType = "blog" | "snippets";
 
-export const getAllPosts = () => {
+export const getAllFiles = (type: DataType = "blog") => {
+  const dirPath = path.join(rootPath, "data", type);
+
   const absolutePaths = fs
-    .readdirSync(postsPath, {
+    .readdirSync(dirPath, {
       encoding: "utf-8",
     })
     .filter((filePath) => {
       return /\.mdx?/.test(filePath);
     })
     .map((filePath) => {
-      const absPath = path.join(postsPath, filePath);
+      const absPath = path.join(dirPath, filePath);
       const source = fs.readFileSync(absPath, { encoding: "utf-8" });
-      const { data, content } = matter(source);
-      let metadata = data as PostMetadata;
+      const { data: metadata, content } = matter(source);
       metadata.reading_time = readingTime(content).text;
       return {
         filePath,
@@ -38,7 +38,10 @@ export const getAllPosts = () => {
   return absolutePaths;
 };
 
-export const getPostMdx = async (slug: string) => {
+export const getMdx = async <Frontmatter = unknown>(
+  type: DataType = "blog",
+  slug: string
+) => {
   if (process.platform === "win32") {
     process.env.ESBUILD_BINARY_PATH = path.join(
       process.cwd(),
@@ -56,8 +59,10 @@ export const getPostMdx = async (slug: string) => {
     );
   }
 
-  const post = getAllPosts().find((item) => item.slug === slug);
-  const { code } = await bundleMDX(post.source, {
+  const allFiles = getAllFiles(type);
+  const mdxFile = allFiles.find((item) => item.slug === slug);
+
+  const { code } = await bundleMDX(mdxFile.source, {
     xdmOptions(opts) {
       opts.remarkPlugins = [
         ...(opts.remarkPlugins ?? []),
@@ -73,10 +78,10 @@ export const getPostMdx = async (slug: string) => {
     },
   });
 
-  post.metadata.reading_time = readingTime(post.content).text;
+  mdxFile.metadata.reading_time = readingTime(mdxFile.content).text;
 
   return {
     code,
-    frontmatter: post.metadata as PostMetadata,
+    frontmatter: mdxFile.metadata as Frontmatter,
   };
 };

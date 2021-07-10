@@ -96,15 +96,15 @@ const PostPage = ({ code, frontmatter: metadata }: Props) => {
 export const getStaticProps: GetStaticProps<Props, { slug: string }> = async (
   ctx
 ) => {
-  const { getPostMdx } = await import("../lib/mdx");
+  const { getMdx: getPostMdx } = await import("../lib/mdx");
   const slug = ctx.params.slug;
   return {
-    props: await getPostMdx(slug),
+    props: await getPostMdx<PostMetadata>("blog", slug),
   };
 };
 
 export const getStaticPaths: GetStaticPaths<{ slug: string }> = async () => {
-  const { getAllPosts } = await import("../lib/mdx");
+  const { getAllFiles: getAllPosts } = await import("../lib/mdx");
   const paths = getAllPosts().map((item) => {
     return {
       params: { slug: item.slug },

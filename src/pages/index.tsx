@@ -18,10 +18,10 @@ export default function IndexPage({ posts }: { posts: PostMetadata[] }) {
 }
 
 export const getStaticProps = async () => {
-  const { getAllPosts } = await import("~/lib/mdx");
+  const { getAllFiles: getAllPosts } = await import("~/lib/mdx");
   return {
     props: {
-      posts: getAllPosts()
+      posts: getAllPosts("blog")
         .sort(
           (a, b) =>
             getDateObjectFromString(b.metadata.published_on).valueOf() -

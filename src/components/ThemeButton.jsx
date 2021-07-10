@@ -13,16 +13,12 @@ export default function ThemeButton(props) {
   const { className, noDarkMode = false, style = {} } = props;
   const { theme, setTheme } = useTheme();
 
-  // React.useEffect(() => {
-  //   console.log(theme === "light");
-  // }, [theme]);
-
   return (
     <button
       style={style}
       aria-label="Toggle Dark Mode"
       className={clsx([
-        "dark:bg-gray-800 dark:hover:bg-gray-700 bg-gray-100 border border-gray-300 hover:bg-gray-200 dark:border-gray-800 flex items-center justify-center space-x-2 focus:outline-none rounded-md h-10 w-10",
+        "dark:bg-gray-700 dark:hover:bg-gray-600 bg-gray-100 border border-gray-300 hover:bg-gray-200 dark:border-gray-800 flex items-center justify-center space-x-2 focus:outline-none rounded-md h-10 w-10",
         className,
       ])}
       onClick={() => {

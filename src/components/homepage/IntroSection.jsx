@@ -1,9 +1,8 @@
-import CustomLink from "~/components/CustomLink";
+import { useState } from "react";
 import { FaInstagram } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
-import ThemeButton from "~/components/ThemeButton";
 import { VscTwitter } from "react-icons/vsc";
-import { useState } from "react";
+import CustomLink from "~/components/CustomLink";
 
 /**
  * @param {Object} props
@@ -51,7 +50,7 @@ export default function IntroSection() {
     <>
       <section className="w-full antialiased rounded-md dark:text-white dark:border-transparent">
         <div className="flex flex-col items-start justify-center space-y-6">
-          <h1 className="w-2/3 text-2xl font-bold lg:text-3xl whitespace-nowrap lg:w-full">
+          <h1 className="w-2/3 text-lg font-mono font-bold lg:text-xl whitespace-nowrap lg:w-full">
             Hey, I'm Arnav Gosain 👋
           </h1>
           <p className="text-xl font-medium leading-relaxed text-gray-800 dark:text-white">
@@ -60,35 +59,31 @@ export default function IntroSection() {
             {startup}) and reading {newsletters} {"&"}{" "}
             <IntroLink href="/bookshelf">books</IntroLink>.
           </p>
-          <div className="flex flex-row items-center justify-start w-full space-x-3">
-            <p className="font-semibold text-gray-800 whitespace-nowrap lg:text-2xl bg-cyan-200">
-              Get in touch with me:
+          <div className="flex flex-row items-center justify-start w-full space-x-6">
+            <p className="font-semibold text-gray-800 whitespace-nowrap text-xl lg:text-xl bg-cyan-200">
+              Get in touch:
             </p>
             <div className="relative flex flex-row items-center justify-center space-x-3">
               <CustomLink
                 href="mailto:arnav@arnavgosain.com"
                 title="Link to my email address"
-                className="hover:text-amber-400"
+                className="hover:text-amber-400 z-0"
               >
-                <HiOutlineMail
-                  className="w-8 h-8"
-                  onMouseEnter={() => setEmailPopupState(true)}
-                  onMouseLeave={() => setEmailPopupState(false)}
-                />
+                <HiOutlineMail className="w-8 h-8" />
               </CustomLink>
               <CustomLink
                 href="https://twitter.com/arn4v"
                 title="Link to my Twitter"
                 className="hover:text-blue-400"
               >
-                <VscTwitter className="w-8 h-8" />
+                <VscTwitter className="w-8 h-8 z-0" />
               </CustomLink>
               <CustomLink
                 href="https://instagram.com/arn4v"
                 title="Link to my Instagram"
                 className="hover:text-red-400"
               >
-                <FaInstagram className="w-8 h-8" />
+                <FaInstagram className="w-8 h-8 z-0" />
               </CustomLink>
             </div>
           </div>

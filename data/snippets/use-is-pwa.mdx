@@ -1,0 +1,31 @@
+---
+title: useIsPwa
+seo_title: useIsPwa React Hook
+description: React hook that returns true if context is PWA
+slug: use-is-pwa
+---
+
+This hook makes use of the [useMediaQuery](/snippets/use-mediaquery) hook.
+
+**Code**:
+
+```ts
+import useMediaQuery from "./use-mediaquery";
+
+export default function useIsPwa() {
+  const isPwa = useMediaQuery("(display-mode: standalone)");
+
+  return isPwa;
+}
+```
+
+**Usage**:
+
+```ts
+import useIsPwa from '../hooks/use-ispwa';
+
+const Component = () => {
+  const isPwa = useIsPwa()
+  return isPwa ? /** PWA-only component */ : /** Non-PWA component */;
+}
+```
