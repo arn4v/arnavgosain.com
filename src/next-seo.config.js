@@ -15,7 +15,8 @@ const description = "Developer, photographer, maker of things.";
  * @type {import("next-seo").DefaultSeoProps}
  */
 const defaultSeoProps = {
-  title,
+  defaultTitle: title,
+  titleTemplate: "%s | Arnav Gosain",
   description,
   canonical: baseUrl,
   openGraph: {

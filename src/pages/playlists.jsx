@@ -5,7 +5,7 @@ import PageLayout from "~/components/PageLayout";
 import { baseUrl } from "~/config";
 
 const url = baseUrl + "/playlists";
-const title = "Playlists - Arnav Gosain";
+const title = "Playlists";
 const description =
   "Playlists I have curated month over month for the last 4 years.";
 
@@ -17,13 +17,13 @@ const description =
 export default function PlaylistsPage({ playlists }) {
   return (
     <>
+      <NextSeo
+        title={title}
+        description={description}
+        canonical={url}
+        openGraph={{ title, url, description }}
+      />
       <PageLayout breadcrumb={{ Playlists: "/playlists" }}>
-        <NextSeo
-          title={title}
-          description={description}
-          canonical={url}
-          openGraph={{ title, url, description }}
-        />
         <div className="flex flex-col space-y-6">
           {Object.entries(playlists)
             .reverse()

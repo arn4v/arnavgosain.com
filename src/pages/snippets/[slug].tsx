@@ -1,9 +1,9 @@
 import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticPaths, GetStaticProps } from "next";
 import { NextSeo } from "next-seo";
-import { useRouter } from "next/router";
 import * as React from "react";
 import PageLayout from "~/components/PageLayout";
+import { baseUrl } from "~/config";
 import SnippetFrontmatter from "~/types/SnippetFrontmatter";
 
 interface Props {
@@ -12,20 +12,26 @@ interface Props {
   frontmatter: SnippetFrontmatter;
 }
 
-export default function SnippetPage({ code, frontmatter }: Props) {
+export default function SnippetPage({ code, frontmatter, slug }: Props) {
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
-  const router = useRouter();
-  const slug = router.query.slug;
 
   return (
     <>
-      <NextSeo titleTemplate="%s | Snippets" title={frontmatter.title} />
+      <NextSeo
+        titleTemplate="%s | Snippets | Arnav Gosain"
+        title={frontmatter.title}
+        description={frontmatter.description}
+        openGraph={{
+          title: frontmatter.title,
+          description: frontmatter.description,
+          url: baseUrl + "/snippets/" + slug,
+        }}
+      />
       <PageLayout
         breadcrumb={{
           Snippets: "/snippets",
           [frontmatter.title]: "/snippets/" + slug,
         }}
-        className="py-8"
       >
         <h1 className="dark:text-white text-xl font-bold">
           {frontmatter.title}
