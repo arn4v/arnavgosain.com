@@ -8,7 +8,7 @@ import PostMetadata from "~/types/metadata";
 export default function IndexPage({ posts }: { posts: PostMetadata[] }) {
   return (
     <PageLayout>
-      <div className="flex flex-col mt-6 space-y-16">
+      <div className="flex flex-col space-y-16">
         <IntroSection />
         <ProjectsSection />
         {posts.length > 0 && <BlogSection data={posts} />}

@@ -11,17 +11,15 @@ interface Props {
 export default function SnippetsListPage({ snippets }: Props) {
   return (
     <PageLayout className="py-8">
-      <h1 className="text-2xl font-bold dark:text-white font-mono hidden lg:block">
+      <h1 className="text-2xl font-bold dark:text-white font-mono hidden lg:block mb-6">
         Snippets
       </h1>
       <div className="w-full grid lg:grid-cols-3 grid-cols-1 gap-6 lg:gap-8">
         {snippets.map(({ frontmatter, slug }) => {
           return (
             <Link key={frontmatter.slug} href={"/snippets/" + slug}>
-              <a className="flex flex-col bg-white border border-gray-200 shadow-sm dark:bg-gray-900 dark:border-gray-700 rounded-md px-2 py-2 gap-2 dark:text-white">
-                <span className="font-mono font-bold">
-                  {frontmatter.title}
-                </span>
+              <a className="flex flex-col bg-white border border-gray-200 shadow-sm dark:bg-gray-900 dark:border-gray-700 rounded-md px-2 py-2 gap-2 dark:text-white dark:hover:bg-gray-700 transition hover:bg-gray-100 hover:shadow-md">
+                <span className="font-mono font-bold">{frontmatter.title}</span>
                 <span className="text-sm">{frontmatter.description}</span>
               </a>
             </Link>

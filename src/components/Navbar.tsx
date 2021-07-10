@@ -28,11 +28,11 @@ export default function Navbar({ className = "" }: Props) {
         "h-20 w-full dark:bg-black bg-white border-b border-gray-200 dark:border-gray-700 fixed top-0 z-50",
       ])}
     >
-      <div className="flex w-full items-center justify-between h-full">
-        <div className="flex gap-4 ml-6">
+      <div className="flex w-full items-center justify-between h-full lg:max-w-4xl px-6 lg:px-0 mx-auto">
+        <div className="items-center justify-start gap-4 flex">
           <button
             onClick={onToggle}
-            className="focus:outline-none dark:text-white"
+            className="focus:outline-none dark:text-white lg:hidden"
           >
             {isOpen ? (
               <HiOutlineX className="h-6 w-6" />
@@ -40,7 +40,7 @@ export default function Navbar({ className = "" }: Props) {
               <HiOutlineMenu className="h-6 w-6" />
             )}
           </button>
-          <span className="dark:text-white text-lg font-medium font-mono">
+          <span className="dark:text-white text-lg font-medium font-mono lg:hidden">
             {
               links.find((el) => {
                 if (router.pathname === "/") {
@@ -51,19 +51,19 @@ export default function Navbar({ className = "" }: Props) {
               }).title
             }
           </span>
+          <ul className="gap-4 lg:flex items-center hidden">
+            {links.map((item) => (
+              <NavItem
+                key={item.title}
+                href={item.href}
+                active={router.pathname === item.href}
+              >
+                {item.title}
+              </NavItem>
+            ))}
+          </ul>
         </div>
-        <ul className="items-center justify-center gap-4 w-full hidden lg:flex">
-          {links.map((item) => (
-            <NavItem
-              key={item.title}
-              href={item.href}
-              active={router.pathname === item.href}
-            >
-              {item.title}
-            </NavItem>
-          ))}
-        </ul>
-        <ThemeButton className="mr-6" />
+        <ThemeButton />
       </div>
       {isOpen && (
         <ul className="w-full flex flex-col gap-2 lg:hidden dark:bg-black bg-white border-b border-gray-200 dark:border-gray-700">

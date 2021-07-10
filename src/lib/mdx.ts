@@ -32,8 +32,11 @@ export const getAllFiles = (type: DataType = "blog") => {
         source: source,
         content: content,
       };
-    })
-    .filter((item) => (isProd ? !!item.published : true));
+    });
+
+  if (type === "blog") {
+    return absolutePaths.filter((item) => (isProd ? !!item.published : true));
+  }
 
   return absolutePaths;
 };
