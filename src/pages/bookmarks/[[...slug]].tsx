@@ -45,11 +45,11 @@ const BookmarksPage = ({ data }: Props) => {
       <h1 className="text-3xl font-bold dark:text-white font-mono hidden lg:block mb-2">
         Bookmarks
       </h1>
-      <p className="lg:text-lg text-base font-medium mb-8">
+      <p className="lg:text-lg text-base font-medium mb-8 dark:text-white">
         Built on top of{" "}
         <CustomLink
           href="https://bookmarky.io"
-          className="text-cyan-600 underline"
+          className="bg-cyan-200 dark:text-black font-mono transition underline"
         >
           Bookmarky.io
         </CustomLink>{" "}
@@ -57,8 +57,6 @@ const BookmarksPage = ({ data }: Props) => {
       </p>
       <div className="grid grid-cols-1 gap-4">
         {data.map((item) => {
-          console.log(item.url);
-
           return (
             <a
               key={item.id}
