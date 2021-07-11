@@ -2,6 +2,7 @@ import axios from "axios";
 import { format, minutesToSeconds } from "date-fns";
 import { GetServerSideProps } from "next";
 import { OpenGraph } from "next-seo/lib/types";
+import { HiOutlineExternalLink } from "react-icons/hi";
 import CustomLink from "~/components/CustomLink";
 import PageLayout from "~/components/PageLayout";
 import { baseUrl } from "~/config";
@@ -56,15 +57,25 @@ const BookmarksPage = ({ data }: Props) => {
       </p>
       <div className="grid grid-cols-1 gap-4">
         {data.map((item) => {
+          console.log(item.url);
+
           return (
-            <CustomLink key={item.id} href={item.url}>
-              <div className="bg-white rounded-md border border-gray-300 shadow-sm p-2 hover:bg-gray-50 transition flex flex-col text-sm lg:text-base gap-2">
-                <span className="font-medium">{item.title}</span>
+            <a
+              key={item.id}
+              href={item.url}
+              title={item.title}
+              rel="noopener noreferrer"
+              target="_blank"
+              className="flex items-center justify-between py-2 px-4 rounded-md shadow-sm dark:shadow-inner dark:bg-gray-900 dark:hover:bg-gray-800 transiton dark:text-white bg-gray-100 hover:bg-gray-200 border border-gray-300 dark:border-gray-700 hover:shadow-md duration-150 ease-in"
+            >
+              <div className="flex flex-col gap-3">
+                <span className="font-bold">{item.title}</span>
                 <span>
                   Created on {format(new Date(item.createdAt), "do MMMM yyyy")}
                 </span>
               </div>
-            </CustomLink>
+              <HiOutlineExternalLink className="h-5 w-5" />
+            </a>
           );
         })}
       </div>

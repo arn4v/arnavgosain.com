@@ -33,10 +33,8 @@ export default function SnippetsListPage({ snippets }: Props) {
           {snippets.map(({ frontmatter, slug }) => {
             return (
               <Link key={frontmatter.slug} href={"/snippets/" + slug}>
-                <a className="flex flex-col bg-white border border-gray-200 shadow-sm dark:bg-gray-900 dark:border-gray-700 rounded-md px-2 py-2 gap-2 dark:text-white dark:hover:bg-gray-700 transition hover:bg-gray-100 hover:shadow-md">
-                  <span className="font-mono font-bold">
-                    {frontmatter.title}
-                  </span>
+                <a className="flex flex-col items-start justify-start gap-3 py-2 px-4 rounded-md shadow-sm dark:shadow-inner dark:bg-gray-900 dark:hover:bg-gray-800 transiton dark:text-white bg-gray-100 hover:bg-gray-200 border border-gray-300 dark:border-gray-700 hover:shadow-md duration-150 ease-in">
+                  <span className="font-bold">{frontmatter.title}</span>
                   <span className="text-sm">{frontmatter.description}</span>
                 </a>
               </Link>

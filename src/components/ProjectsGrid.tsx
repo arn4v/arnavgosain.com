@@ -27,7 +27,7 @@ const ProjectsGrid = ({ data }) => {
             <span className="flex flex-row items-center justify-start space-x-2">
               <p className="text-base font-semibold">{p.name}</p>
               {p.links.map(({ title, url }) => (
-                <React.Fragment key={`${title}-${url}-${p.is}`}>
+                <React.Fragment key={`${title}-${url}-${p.id}`}>
                   <p>•</p>
                   <CustomLink
                     href={url}

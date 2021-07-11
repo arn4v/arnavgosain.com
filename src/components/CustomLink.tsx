@@ -11,19 +11,23 @@ interface Props {
 
 export default function CustomLink({
   children,
-  href = "",
+  href,
   className,
   tabIndex,
-  title = "",
+  title,
 }: Props) {
   const linkProps: JSX.IntrinsicElements["a"] = {
-    href,
+    href: href ?? "",
     target: "_blank",
     rel: "noopener noreferrer",
     className: clsx([className]),
-    title,
-    "aria-label": title,
     tabIndex,
+    ...(title
+      ? {
+          title: title,
+          "aria-label": title,
+        }
+      : {}),
   };
 
   const isInternal =
