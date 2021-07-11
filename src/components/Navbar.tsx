@@ -19,14 +19,29 @@ const links = [
 ];
 
 export default function Navbar({ className = "" }: Props) {
+  const [isAtTop, setAtTop] = React.useState(true);
   const router = useRouter();
   const { isOpen, onToggle } = useDisclosure();
+
+  React.useEffect(() => {
+    const onScroll = (e: Event) => {
+      if (window.pageYOffset > 0) {
+        setAtTop(false);
+      } else {
+        setAtTop(true);
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, false);
+    return () => window.removeEventListener("scroll", onScroll, false);
+  }, []);
 
   return (
     <nav
       className={clsx([
         className,
-        "h-20 w-full dark:bg-black bg-white border-b border-gray-200 dark:border-gray-700 fixed top-0 z-50",
+        "h-20 w-full dark:bg-black bg-white border-b border-gray-200 dark:border-gray-700 fixed top-0 z-50 transition duration-100 ease-in-out",
+        isAtTop ? null : "shadow-lg",
       ])}
     >
       <div className="flex w-full items-center justify-between h-full lg:max-w-4xl px-6 lg:px-0 mx-auto">

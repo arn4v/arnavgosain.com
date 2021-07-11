@@ -22,9 +22,10 @@ const defaultSeoProps = {
   openGraph: {
     type: "website",
     locale: "en_IE",
-    // url: baseUrl,
-    // title,
-    // description,
+    profile: {
+      firstName: "Arnav",
+      lastName: "Gosain",
+    },
     images: [
       {
         url: `${baseUrl}/static/og-banner.png`,
