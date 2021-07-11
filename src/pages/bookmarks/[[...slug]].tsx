@@ -30,7 +30,7 @@ interface Props {
 const BookmarksPage = ({ data }: Props) => {
   const meta: OpenGraph = {
     title: "Bookmarks",
-    description: "",
+    description: "Links for later.",
     url: baseUrl + "/bookmarks",
   };
 

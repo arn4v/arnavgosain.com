@@ -26,14 +26,6 @@ const defaultSeoProps = {
       firstName: "Arnav",
       lastName: "Gosain",
     },
-    images: [
-      {
-        url: `${baseUrl}/static/og-banner.png`,
-        alt: title,
-        width: 1200,
-        height: 627,
-      },
-    ],
   },
   twitter: {
     handle: "@arn4v",
