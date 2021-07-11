@@ -19,6 +19,13 @@ export default function SnippetPage({ code, frontmatter, slug }: Props) {
     title: frontmatter.title + " | Snippets | Arnav Gosain",
     description: frontmatter.description,
     url: baseUrl + "/snippets/" + slug,
+    images: [
+      {
+        url: "/static/snippets-og-banner.png",
+        height: 627,
+        width: 1200,
+      },
+    ],
   };
 
   return (

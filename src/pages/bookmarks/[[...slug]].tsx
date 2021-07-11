@@ -32,6 +32,9 @@ const BookmarksPage = ({ data }: Props) => {
     title: "Bookmarks",
     description: "Links for later.",
     url: baseUrl + "/bookmarks",
+    images: [
+      { url: "/static/bookmarks-og-banner.png", height: 627, width: 1200 },
+    ],
   };
 
   return (

@@ -13,6 +13,13 @@ const meta: OpenGraph = {
   title: "Code Snippets",
   description:
     "A collection of code snippets that I use in my projects. Includes Next.js, React & Nodejs.",
+  images: [
+    {
+      url: "/static/snippets-og-banner.png",
+      height: 627,
+      width: 1200,
+    },
+  ],
 };
 
 export default function SnippetsListPage({ snippets }: Props) {
