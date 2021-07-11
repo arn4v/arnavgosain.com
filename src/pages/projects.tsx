@@ -1,8 +1,8 @@
 import { OpenGraph } from "next-seo/lib/types";
-import projects from "~/components/homepage/projects";
 import PageLayout from "~/components/PageLayout";
 import ProjectsGrid from "~/components/ProjectsGrid";
 import { baseUrl } from "~/config";
+import projects from "~/lib/projects";
 
 const meta: OpenGraph = {
   title: "Projects",

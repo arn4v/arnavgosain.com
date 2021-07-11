@@ -1,8 +1,8 @@
 import Link from "next/link";
 import React from "react";
 import { HiArrowRight } from "react-icons/hi";
-import ProjectsGrid from "../ProjectsGrid";
-import projects from "./projects";
+import projects from "../lib/projects";
+import ProjectsGrid from "./ProjectsGrid";
 
 /*
  * @returns {JSX.Element}

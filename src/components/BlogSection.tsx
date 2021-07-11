@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { HiArrowRight } from "react-icons/hi";
 import PostMetadata from "~/types/metadata";
-import PostCard from "../PostCard";
+import PostCard from "./PostCard";
 
 export default function BlogSection({ data }: { data: PostMetadata[] }) {
   return (

@@ -1,4 +1,4 @@
-import CustomLink from "../CustomLink";
+import CustomLink from "../components/CustomLink";
 
 const projects = [
   {

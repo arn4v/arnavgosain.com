@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { FaInstagram } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { VscTwitter } from "react-icons/vsc";
@@ -27,9 +26,8 @@ const IntroLink = (props) => {
 };
 
 export default function IntroSection() {
-  const [emailPopupState, setEmailPopupState] = useState(false);
-  const { blogs, playlist, startup, newsletters } = {
-    blogs: <IntroLink href="/blog">blog</IntroLink>,
+  const { writing, playlist, startup, newsletters } = {
+    writing: <IntroLink href="/blog">blog</IntroLink>,
     playlist: <IntroLink href="/playlists">playlist</IntroLink>,
     startup: (
       <IntroLink

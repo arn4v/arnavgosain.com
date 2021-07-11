@@ -1,7 +1,7 @@
-import BlogSection from "~/components/homepage/BlogSection";
-import IntroSection from "~/components/homepage/IntroSection";
-import ProjectsSection from "~/components/homepage/ProjectsSection";
+import BlogSection from "~/components/BlogSection";
+import IntroSection from "~/components/IntroSection";
 import PageLayout from "~/components/PageLayout";
+import ProjectsSection from "~/components/ProjectsSection";
 import { getDateObjectFromString } from "~/lib/utils";
 import { defaultOpenGraph } from "~/next-seo.config";
 import PostMetadata from "~/types/metadata";

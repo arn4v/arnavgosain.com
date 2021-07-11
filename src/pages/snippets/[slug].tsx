@@ -1,5 +1,6 @@
 import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticPaths, GetStaticProps } from "next";
+import { OpenGraph } from "next-seo/lib/types";
 import * as React from "react";
 import PageLayout from "~/components/PageLayout";
 import { baseUrl } from "~/config";
@@ -14,18 +15,19 @@ interface Props {
 export default function SnippetPage({ code, frontmatter, slug }: Props) {
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
 
+  const meta: OpenGraph = {
+    title: frontmatter.title + " | Snippets | Arnav Gosain",
+    description: frontmatter.description,
+    url: baseUrl + "/snippets/" + slug,
+  };
+
   return (
     <>
       <PageLayout
         seo={{
-          titleTemplate: "%s | Snippets | Arnav Gosain",
-          title: frontmatter.title,
-          description: frontmatter.description,
-          openGraph: {
-            title: frontmatter.title,
-            description: frontmatter.description,
-            url: baseUrl + "/snippets/" + slug,
-          },
+          title: meta.title,
+          description: meta.description,
+          openGraph: meta,
         }}
         breadcrumb={{
           Snippets: "/snippets",
