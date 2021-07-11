@@ -10,8 +10,9 @@ interface Props {
 }
 
 const meta: OpenGraph = {
-  title: "Snippets",
-  description: "Code snippets I use day-to-day",
+  title: "Code Snippets",
+  description:
+    "A collection of code snippets that I use in my projects. Includes Next.js, React & Nodejs.",
 };
 
 export default function SnippetsListPage({ snippets }: Props) {

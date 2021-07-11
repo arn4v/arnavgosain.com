@@ -1,3 +1,4 @@
+import { OpenGraph } from "next-seo/lib/types";
 import Image from "next/image";
 import * as React from "react";
 import CustomLink from "~/components/CustomLink";
@@ -5,29 +6,38 @@ import PageLayout from "~/components/PageLayout";
 import { baseUrl } from "~/config";
 import { getBooks } from "~/lib/bookshelf";
 
-const openGraph = {
+interface Book {
+  id: string;
+  title: string;
+  author: string;
+  url: string;
+  status: string;
+}
+
+interface Props {
+  data: Record<string, Array<Book>>;
+}
+
+const openGraph: OpenGraph = {
   title: "Library",
+  description: "Books I've read, reading and want to read.",
   url: baseUrl + "/library",
 };
 
-/**
- * @returns {React.ReactNode}
- * @default
- */
-export default function Bookshelf({ data }) {
+export default function Bookshelf({ data }: Props) {
   return (
     <>
       <PageLayout
         breadcrumb={{ Bookshelf: "/bookshelf" }}
         seo={{ title: openGraph.title, openGraph: openGraph }}
       >
-        <div className="flex flex-col gap-6 mt-4">
+        <div className="flex flex-col gap-6">
           {Object.entries(data).map(([key, value], index) => {
             return (
               <React.Fragment key={index}>
                 <h1 className="text-2xl font-bold dark:text-white">{key}</h1>
                 <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
-                  {value.map((book, _index) => {
+                  {value.map((book) => {
                     return (
                       <CustomLink
                         key={book.id}

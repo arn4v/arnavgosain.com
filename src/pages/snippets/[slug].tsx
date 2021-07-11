@@ -32,7 +32,7 @@ export default function SnippetPage({ code, frontmatter, slug }: Props) {
           [frontmatter.title]: "/snippets/" + slug,
         }}
       >
-        <h1 className="dark:text-white text-xl font-bold">
+        <h1 className="dark:text-white text-xl font-bold font-mono">
           {frontmatter.title}
         </h1>
         <article className="prose dark:prose-dark">
