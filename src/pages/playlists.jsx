@@ -3,26 +3,28 @@ import CustomLink from "~/components/CustomLink";
 import PageLayout from "~/components/PageLayout";
 import { baseUrl } from "~/config";
 
-const url = baseUrl + "/playlists";
-const title = "Playlists";
-const description =
-  "Playlists I have curated month over month for the last 4 years.";
-
 /**
  * @param {Object} props
  * @param {React.ReactNode} [props.children]
  * @param {Object} props.playlists
  */
 export default function PlaylistsPage({ playlists }) {
+  const openGraph = {
+    url: baseUrl + "/playlists",
+    title: "Playlists | Arnav Gosain",
+    description:
+      "Playlists I have curated month over month for the last 4 years.",
+  };
+
   return (
     <>
       <PageLayout
         breadcrumb={{ Playlists: "/playlists" }}
         seo={{
-          title: title,
-          description: description,
-          canonical: url,
-          openGraph: { title, url, description },
+          title: openGraph.title,
+          description: openGraph.description,
+          canonical: openGraph.url,
+          openGraph: openGraph,
         }}
       >
         <div className="flex flex-col space-y-6">

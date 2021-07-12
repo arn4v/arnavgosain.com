@@ -16,7 +16,7 @@ export default function SnippetPage({ code, frontmatter, slug }: Props) {
   const Component = React.useMemo(() => getMDXComponent(code), [code]);
 
   const meta: OpenGraph = {
-    title: frontmatter.title + " | Snippets | Arnav Gosain",
+    title: frontmatter.title + " | Code Snippets | Arnav Gosain",
     description: frontmatter.description,
     url: baseUrl + "/snippets/" + slug,
     images: [

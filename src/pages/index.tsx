@@ -8,7 +8,13 @@ import PostMetadata from "~/types/metadata";
 
 export default function IndexPage({ posts }: { posts: PostMetadata[] }) {
   return (
-    <PageLayout seo={{ openGraph: defaultOpenGraph }}>
+    <PageLayout
+      seo={{
+        title: defaultOpenGraph.title,
+        description: defaultOpenGraph.description,
+        openGraph: defaultOpenGraph,
+      }}
+    >
       <div className="flex flex-col space-y-16">
         <IntroSection />
         <ProjectsSection />

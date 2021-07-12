@@ -1,3 +1,5 @@
+import { DefaultSeoProps } from "next-seo";
+import { OpenGraph } from "next-seo/lib/types";
 import { baseUrl } from "./config";
 
 /**
@@ -10,18 +12,14 @@ const title = "Arnav Gosain - Developer, photographer, maker.";
  */
 const description = "Developer, photographer, maker of things.";
 
-/**
- * @constant
- * @type {import("next-seo").DefaultSeoProps}
- */
-const defaultSeoProps = {
+const defaultSeoProps: DefaultSeoProps = {
   defaultTitle: title,
-  titleTemplate: "%s | Arnav Gosain",
   description,
   canonical: baseUrl,
   openGraph: {
     type: "website",
     locale: "en_IE",
+    site_name: "Arnav Gosain",
     profile: {
       firstName: "Arnav",
       lastName: "Gosain",
@@ -34,7 +32,7 @@ const defaultSeoProps = {
   },
 };
 
-export const defaultOpenGraph = {
+export const defaultOpenGraph: OpenGraph = {
   type: "website",
   locale: "en_IE",
   url: baseUrl,

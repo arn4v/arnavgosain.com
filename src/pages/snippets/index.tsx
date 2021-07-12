@@ -10,7 +10,7 @@ interface Props {
 }
 
 const meta: OpenGraph = {
-  title: "Code Snippets",
+  title: "Code Snippets | Arnav Gosain",
   description:
     "A collection of code snippets that I use in my projects. Includes Next.js, React & Nodejs.",
   images: [

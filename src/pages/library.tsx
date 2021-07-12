@@ -18,20 +18,20 @@ interface Props {
   data: Record<string, Array<Book>>;
 }
 
-const openGraph: OpenGraph = {
-  title: "Library",
-  description: "Books I've read, reading and want to read.",
-  url: baseUrl + "/library",
-  images: [
-    {
-      url: "/static/library-og-banner.png",
-      height: 627,
-      width: 1200,
-    },
-  ],
-};
-
 export default function Bookshelf({ data }: Props) {
+  const openGraph: OpenGraph = {
+    title: "Library | Arnav Gosain",
+    description: "Books I've read, reading and want to read.",
+    url: baseUrl + "/library",
+    images: [
+      {
+        url: "/static/library-og-banner.png",
+        height: 627,
+        width: 1200,
+      },
+    ],
+  };
+
   return (
     <>
       <PageLayout

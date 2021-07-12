@@ -2,7 +2,6 @@ import axios from "axios";
 import { format, minutesToSeconds } from "date-fns";
 import { GetServerSideProps } from "next";
 import { OpenGraph } from "next-seo/lib/types";
-import { HiOutlineExternalLink } from "react-icons/hi";
 import CustomLink from "~/components/CustomLink";
 import PageLayout from "~/components/PageLayout";
 import { baseUrl } from "~/config";
@@ -29,7 +28,7 @@ interface Props {
 
 const BookmarksPage = ({ data }: Props) => {
   const meta: OpenGraph = {
-    title: "Bookmarks",
+    title: "Bookmarks | Arnav Gosain",
     description: "Links for later.",
     url: baseUrl + "/bookmarks",
     images: [
@@ -58,25 +57,34 @@ const BookmarksPage = ({ data }: Props) => {
         </CustomLink>{" "}
         API.
       </p>
-      <div className="grid grid-cols-1 gap-4">
+      <div className="grid grid-cols-1 gap-4 divide-y divide-gray-200">
         {data.map((item) => {
           return (
-            <a
+            <div
               key={item.id}
-              href={item.url}
-              title={item.title}
-              rel="noopener noreferrer"
-              target="_blank"
-              className="flex items-center justify-between py-2 px-4 rounded-md shadow-sm dark:shadow-inner dark:bg-gray-900 dark:hover:bg-gray-800 transiton dark:text-white bg-gray-100 hover:bg-gray-200 border border-gray-300 dark:border-gray-700 hover:shadow-md duration-150 ease-in"
+              className="flex items-start justify-start flex-col gap-2 dark:text-white pt-4"
             >
-              <div className="flex flex-col gap-3">
-                <span className="font-bold">{item.title}</span>
+              <a
+                href={item.url}
+                title={item.title}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <span className="font-bold bg-cyan-200 hover:bg-cyan-300 transition">
+                  {item.title}
+                </span>
+              </a>
+              <div className="flex gap-2 items-center">
+                <span>{format(new Date(item.createdAt), "do MMMM yyyy")}</span>
+                <span>/</span>
                 <span>
-                  Created on {format(new Date(item.createdAt), "do MMMM yyyy")}
+                  {item.tags
+                    .map((item) => item.name)
+                    .sort((a, b) => a.localeCompare(b))
+                    .join(", ")}
                 </span>
               </div>
-              <HiOutlineExternalLink className="h-5 w-5" />
-            </a>
+            </div>
           );
         })}
       </div>
@@ -96,7 +104,7 @@ export const getServerSideProps: GetServerSideProps<Props> = async (ctx) => {
   let tags: string[];
   switch (true) {
     case typeof slug === "undefined": {
-      tags = ["Reading List"];
+      tags = ["arnavgosain.com"];
     }
     case slug === "/reading": {
       tags = ["Reading List"];
@@ -117,11 +125,18 @@ export const getServerSideProps: GetServerSideProps<Props> = async (ctx) => {
 
   ctx.res.setHeader(
     "Cache-Control",
-    `public, s-maxage=1, stale-while-revalidate=${minutesToSeconds(10)}`
+    `public, s-maxage=1, stale-while-revalidate=${minutesToSeconds(5)}`
   );
-  const data = (res.data.data as Bookmark[]).sort(
-    (a, b) => new Date(b.createdAt).valueOf() - new Date(a.createdAt).valueOf()
-  );
+
+  const data = (res.data.data as Bookmark[])
+    .sort(
+      (a, b) =>
+        new Date(b.createdAt).valueOf() - new Date(a.createdAt).valueOf()
+    )
+    .map((item) => {
+      item.tags = item.tags.filter((item) => item.name !== "arnavgosain.com");
+      return item;
+    });
 
   return {
     props: {

@@ -1,7 +1,7 @@
-import * as React from "react";
-import parseOnetabExport, { jsonToCsv } from "~/lib/onetabcsv";
-import { v4 } from "uuid";
 import { NextSeo } from "next-seo";
+import * as React from "react";
+import { v4 } from "uuid";
+import parseOnetabExport, { jsonToCsv } from "~/lib/onetabcsv";
 
 export default function IndexPage(): JSX.Element {
   const [onetabExport, setOnetabExport] = React.useState<string>("");
@@ -20,10 +20,10 @@ export default function IndexPage(): JSX.Element {
   return (
     <>
       <NextSeo
-        title="OneTab Export to CSV Converter"
+        title="OneTab Export to CSV Converter | Arnav Gosain"
         description="Convert OneTab Export text to CSV for importing into Notion."
         openGraph={{
-          title: "OneTab Export to CSV Converter",
+          title: "OneTab Export to CSV Converter | Arnav Gosain",
           description:
             "Convert OneTab Export text to CSV for importing into Notion.",
         }}

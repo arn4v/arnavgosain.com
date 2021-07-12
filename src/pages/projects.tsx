@@ -5,7 +5,7 @@ import { baseUrl } from "~/config";
 import projects from "~/lib/projects";
 
 const meta: OpenGraph = {
-  title: "Projects",
+  title: "Projects | Arnav Gosain",
   url: baseUrl + "/projects",
 };
 

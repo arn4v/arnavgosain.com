@@ -72,6 +72,7 @@ export const getMdx = async <Frontmatter = unknown>(
         require("remark-slug"),
         require("remark-autolink-headings"),
         require("remark-code-titles"),
+        require("remark-gfm"),
       ];
       opts.rehypePlugins = [
         ...(opts.rehypePlugins ?? []),
