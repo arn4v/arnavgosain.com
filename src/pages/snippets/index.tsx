@@ -26,14 +26,13 @@ export default function SnippetsListPage({ snippets }: Props) {
   return (
     <>
       <PageLayout
-        className="py-8"
         seo={{
           title: meta.title,
           description: meta.description,
           openGraph: meta,
         }}
       >
-        <h1 className="text-2xl font-bold dark:text-white font-mono hidden lg:block mb-6">
+        <h1 className="text-3xl font-bold dark:text-white font-mono hidden lg:block mb-8">
           Snippets
         </h1>
         <div className="w-full grid lg:grid-cols-3 grid-cols-1 gap-6 lg:gap-8">

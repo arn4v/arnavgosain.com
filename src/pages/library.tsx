@@ -38,6 +38,9 @@ export default function Bookshelf({ data }: Props) {
         breadcrumb={{ Bookshelf: "/bookshelf" }}
         seo={{ title: openGraph.title, openGraph: openGraph }}
       >
+        <h1 className="text-3xl font-bold dark:text-white font-mono hidden lg:block mb-8">
+          Library
+        </h1>
         <div className="flex flex-col gap-6">
           {Object.entries(data).map(([key, value], index) => {
             return (
