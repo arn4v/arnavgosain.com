@@ -1,6 +1,6 @@
 import axios from "axios";
-import { format, minutesToSeconds } from "date-fns";
-import { GetServerSideProps } from "next";
+import { format } from "date-fns";
+import { GetStaticPaths, GetStaticProps } from "next";
 import { OpenGraph } from "next-seo/lib/types";
 import CustomLink from "~/components/CustomLink";
 import PageLayout from "~/components/PageLayout";
@@ -92,7 +92,7 @@ const BookmarksPage = ({ data }: Props) => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps<Props> = async (ctx) => {
+export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
   const slug = ctx.params.slug;
   const valid = undefined;
   if (slug !== valid) {
@@ -123,11 +123,6 @@ export const getServerSideProps: GetServerSideProps<Props> = async (ctx) => {
     },
   });
 
-  ctx.res.setHeader(
-    "Cache-Control",
-    `public, s-maxage=1, stale-while-revalidate=${minutesToSeconds(5)}`
-  );
-
   const data = (res.data.data as Bookmark[])
     .sort(
       (a, b) =>
@@ -142,6 +137,14 @@ export const getServerSideProps: GetServerSideProps<Props> = async (ctx) => {
     props: {
       data,
     },
+    revalidate: 60,
+  };
+};
+
+export const getStaticPaths: GetStaticPaths = async () => {
+  return {
+    paths: [{ params: { slug: undefined } }],
+    fallback: false,
   };
 };
 
