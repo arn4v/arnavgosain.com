@@ -52,10 +52,10 @@ export default function IntroSection() {
             Hey, I'm Arnav Gosain 👋
           </h1>
           <p className="text-xl font-medium leading-relaxed text-gray-800 dark:text-white">
-            I'm a photographer & developer based in Delhi, India. I create a{" "}
-            {playlist} every month. I'm interested in startups (which I track{" "}
-            {startup}) and reading {newsletters} {"&"}{" "}
-            <IntroLink href="/bookshelf">books</IntroLink>.
+            I'm a frontend developer who{" "}
+            <span className="text-pink-600">loves </span> working with{" "}
+            <span className="text-blue-600">React & Typescript</span>. I'm
+            currently looking for full-time roles, feel free to reach out!
           </p>
           <div className="flex flex-row items-center justify-start w-full space-x-6">
             <p className="font-semibold text-gray-800 whitespace-nowrap text-xl lg:text-xl bg-cyan-200">

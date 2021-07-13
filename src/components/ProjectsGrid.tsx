@@ -15,6 +15,11 @@ const tagColors = {
   Redis: "bg-gradient-to-tr from-radix-red-red10 to-radix-red-red9",
 };
 
+interface Project {
+  id: string;
+  name: string
+}
+
 const ProjectsGrid = ({ data }) => {
   return (
     <div className="grid grid-rows-1 gap-4 lg:gap-6">
@@ -46,7 +51,7 @@ const ProjectsGrid = ({ data }) => {
             <p className="text-sm lg:text-base">{p.description}</p>
             <p className="text-sm lg:text-base">{p.duration ?? ""}</p>
             <span className="flex flex-row flex-wrap gap-2">
-              {p.tags.sort().map((t) => {
+              {p.tags.map((t) => {
                 return (
                   <div
                     key={`${p.name}-${t}`}

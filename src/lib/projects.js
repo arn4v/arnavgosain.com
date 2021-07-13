@@ -2,6 +2,26 @@ import CustomLink from "../components/CustomLink";
 
 const projects = [
   {
+    id: "45932b82-650e-4bcf-80a5-7b00f3d5d117",
+    name: "use-children",
+    description:
+      "React hook for filtering the `children` for a specific component",
+    duration: "July 2021",
+    links: [
+      {
+        id: "6737897c-d381-40f2-abf0-4bc642857a48",
+        title: "Npm",
+        url: "https://www.npmjs.com/package/use-children",
+      },
+      {
+        id: "6737897c-d381-40f2-abf0-4bc642857a48",
+        title: "GitHub",
+        url: "https://github.com/arn4v/use-children",
+      },
+    ],
+    tags: ["React"],
+  },
+  {
     id: "aade4e01-d791-489b-b85b-4040b8d6dde5",
     name: "Bookmarky",
     description:
