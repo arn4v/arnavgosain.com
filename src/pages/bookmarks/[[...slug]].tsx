@@ -74,7 +74,7 @@ const BookmarksPage = ({ data }: Props) => {
                   {item.title}
                 </span>
               </a>
-              <div className="flex gap-2 items-center">
+              <div className="flex gap-2 items-center dark:text-white">
                 <span>{format(new Date(item.createdAt), "do MMMM yyyy")}</span>
                 <span>/</span>
                 {item.tags.length > 0 ? (
