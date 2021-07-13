@@ -77,12 +77,18 @@ const BookmarksPage = ({ data }: Props) => {
               <div className="flex gap-2 items-center">
                 <span>{format(new Date(item.createdAt), "do MMMM yyyy")}</span>
                 <span>/</span>
-                <span>
-                  {item.tags
-                    .map((item) => item.name)
-                    .sort((a, b) => a.localeCompare(b))
-                    .join(", ")}
-                </span>
+                {item.tags.length > 0 ? (
+                  <>
+                    <span>
+                      {item.tags
+                        .map((item) => item.name)
+                        .sort((a, b) => a.localeCompare(b))
+                        .join(", ")}
+                    </span>
+                  </>
+                ) : (
+                  <span>Uncategorized</span>
+                )}
               </div>
             </div>
           );
