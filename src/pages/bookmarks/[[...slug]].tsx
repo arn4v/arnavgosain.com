@@ -62,7 +62,7 @@ const BookmarksPage = ({ data }: Props) => {
           return (
             <div
               key={item.id}
-              className="flex items-start justify-start flex-col gap-2 dark:text-white pt-4"
+              className="flex items-start justify-start flex-col gap-2 pt-4"
             >
               <a
                 href={item.url}
@@ -105,9 +105,11 @@ export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
   switch (true) {
     case typeof slug === "undefined": {
       tags = ["arnavgosain.com"];
+      break;
     }
     case slug === "/reading": {
       tags = ["Reading List"];
+      break;
     }
   }
 
