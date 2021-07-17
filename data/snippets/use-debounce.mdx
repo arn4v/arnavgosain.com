@@ -1,0 +1,43 @@
+---
+title: "useDebounce React Hook"
+seo_title: "useDebounce React Hook"
+description: "Debounce values in React"
+slug: "use-debounce"
+---
+
+**Code:**
+
+```ts
+import * as React from "react";
+
+function useDebounce<T>(value: T, delay: number) {
+  const [debounced, setDebounced] = React.useState(value);
+
+  React.useEffect(() => {
+    const timeout = setTimeout(() => setDebounced(value), delay);
+    return () => clearTimeout(timeout);
+  }, [value]);
+
+  return debounced;
+}
+
+export default useDebounce;
+```
+
+**Usage**:
+
+```tsx
+import * as React from "react";
+import useDebounce from "~/hooks/use-debounce";
+
+export default function Component() {
+  const [value, setValue] = React.useState<string>("");
+  const debouncedValue = useDebounce(value);
+
+  React.useEffect(() => {
+    // Run side-effect on debounced value (like an api call)
+  }, [debouncedValue]);
+
+  return <input value={value} onChange={(e) => setValue(e.target.value)} />;
+}
+```
