@@ -110,7 +110,7 @@ export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
   let tags: string[];
   switch (true) {
     case typeof slug === "undefined": {
-      tags = ["arnavgosain.com"];
+      tags = ["Public"];
       break;
     }
     case slug === "/reading": {
@@ -137,7 +137,7 @@ export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
         new Date(b.createdAt).valueOf() - new Date(a.createdAt).valueOf()
     )
     .map((item) => {
-      item.tags = item.tags.filter((item) => item.name !== "arnavgosain.com");
+      item.tags = item.tags.filter((item) => item.name !== "Public");
       return item;
     });
 
