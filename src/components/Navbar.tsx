@@ -21,7 +21,12 @@ const links = [
     hidden: isProd,
   },
   { title: "Projects", href: "/projects", active: /\/projects$/ },
-  { title: "Snippets", href: "/snippets", active: /\/snippets(.*)$/ },
+  {
+    title: "Snippets",
+    href: "/snippets",
+    active: /\/snippets(.*)$/,
+    hidden: true,
+  },
   { title: "Bookmarks", href: "/bookmarks", active: /\/bookmarks\/?(.*)$/ },
   { title: "Library", href: "/library", active: /\/library$/ },
   { title: "Playlists", href: "/playlists", active: /\/playlists$/ },
