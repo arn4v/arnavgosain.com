@@ -7,7 +7,7 @@ export default function BlogSection({ data }: { data: PostMetadata[] }) {
   return (
     <div className="flex flex-col w-full space-y-6">
       <div className="flex items-center justify-between">
-        <span className="text-xl font-mono font-bold dark:text-white">
+        <span className="text-xl font-secondary font-bold dark:text-white">
           Recent writing
         </span>
       </div>

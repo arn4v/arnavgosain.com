@@ -1,28 +1,10 @@
+import About from "~/components/About";
 import BlogSection from "~/components/BlogSection";
-import IntroSection from "~/components/IntroSection";
 import PageLayout from "~/components/PageLayout";
-import ProjectsSection from "~/components/ProjectsSection";
+import ProjectsList from "~/components/ProjectsList";
 import { getDateObjectFromString } from "~/lib/utils";
 import { defaultOpenGraph } from "~/next-seo.config";
 import PostMetadata from "~/types/metadata";
-
-export default function IndexPage({ posts }: { posts: PostMetadata[] }) {
-  return (
-    <PageLayout
-      seo={{
-        title: defaultOpenGraph.title,
-        description: defaultOpenGraph.description,
-        openGraph: defaultOpenGraph,
-      }}
-    >
-      <div className="flex flex-col space-y-16">
-        <IntroSection />
-        <ProjectsSection />
-        {posts.length > 0 && <BlogSection data={posts} />}
-      </div>
-    </PageLayout>
-  );
-}
 
 export const getStaticProps = async () => {
   const { getAllFiles: getAllPosts } = await import("~/lib/mdx");
@@ -39,3 +21,23 @@ export const getStaticProps = async () => {
     },
   };
 };
+
+const IndexPage = ({ posts }: { posts: PostMetadata[] }) => {
+  return (
+    <PageLayout
+      seo={{
+        title: defaultOpenGraph.title,
+        description: defaultOpenGraph.description,
+        openGraph: defaultOpenGraph,
+      }}
+    >
+      <div className="flex flex-col space-y-8">
+        <About />
+        <ProjectsList />
+        {posts.length > 0 && <BlogSection data={posts} />}
+      </div>
+    </PageLayout>
+  );
+};
+
+export default IndexPage;

@@ -17,7 +17,7 @@ const ProjectsPage = () => {
         seo={{ title: meta.title, openGraph: meta }}
       >
         <div className="flex flex-col gap-6">
-          <h1 className="text-3xl font-bold dark:text-white font-mono hidden lg:block">
+          <h1 className="text-3xl font-bold dark:text-white font-secondary hidden lg:block">
             Projects
           </h1>
           <ProjectsGrid data={projects} />

@@ -20,7 +20,8 @@ module.exports = {
       fontFamily: {
         sans: ["Inter", ...fontFamily.sans],
         inter: ["Inter"],
-        mono: ["IBM Plex Mono", ...fontFamily.mono],
+        secondary: ["Space Grotesk", "sans-serif"],
+        mono: ["Space Mono", ...fontFamily.mono],
       },
       // thanks @leerob; https://github.com/leerob/leerob.io
       typography: (theme) => ({

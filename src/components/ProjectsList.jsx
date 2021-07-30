@@ -4,14 +4,11 @@ import { HiArrowRight } from "react-icons/hi";
 import projects from "../lib/projects";
 import ProjectsGrid from "./ProjectsGrid";
 
-/*
- * @returns {JSX.Element}
- */
-export default function ProjectsSection() {
+const ProjectsList = () => {
   return (
     <div className="flex flex-col gap-5">
       <div className="flex justify-between w-full items-center">
-        <h1 className="text-xl font-mono font-bold dark:text-white">
+        <h1 className="text-2xl font-mono font-bold dark:text-white">
           Recent projects
         </h1>
       </div>
@@ -23,4 +20,6 @@ export default function ProjectsSection() {
       </Link>
     </div>
   );
-}
+};
+
+export default ProjectsList;

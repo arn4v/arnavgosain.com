@@ -1,6 +1,7 @@
 import { format } from "date-fns";
-import { getMDXComponent } from "mdx-bundler/client";
 import { GetStaticPaths, GetStaticProps } from "next";
+import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
+import { useRemoteRefresh } from "next-remote-refresh/hook";
 import Image from "next/image";
 import * as React from "react";
 import BlogSeo from "~/components/BlogSeo";
@@ -8,14 +9,23 @@ import PageLayout from "~/components/PageLayout";
 import { baseUrl } from "~/config";
 import { getDateObjectFromString } from "~/lib/utils";
 import PostMetadata from "~/types/metadata";
+import CustomLink from "../components/CustomLink";
 
 interface Props {
-  code: string;
+  mdxSource: MDXRemoteSerializeResult;
   frontmatter: PostMetadata;
 }
 
-const PostPage = ({ code, frontmatter: metadata }: Props) => {
-  const Component = React.useMemo(() => getMDXComponent(code), [code]);
+const PostPage = ({ mdxSource, frontmatter: metadata }: Props) => {
+  useRemoteRefresh({
+    shouldRefresh(path) {
+      if (path.includes(metadata.slug)) {
+        return true;
+      }
+
+      return false;
+    },
+  });
 
   return (
     <>
@@ -87,7 +97,7 @@ const PostPage = ({ code, frontmatter: metadata }: Props) => {
             <hr className="w-full" />
           </div>
           <div className="prose dark:prose-dark">
-            <Component />
+            <MDXRemote {...mdxSource} components={{ a: CustomLink }} />
           </div>
         </article>
       </PageLayout>
@@ -98,7 +108,7 @@ const PostPage = ({ code, frontmatter: metadata }: Props) => {
 export const getStaticProps: GetStaticProps<Props, { slug: string }> = async (
   ctx
 ) => {
-  const { getMdx: getPostMdx } = await import("../lib/mdx");
+  const { getMdxSource: getPostMdx } = await import("../lib/mdx");
   const slug = ctx.params.slug;
   return {
     props: await getPostMdx<PostMetadata>("blog", slug),

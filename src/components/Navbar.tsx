@@ -3,6 +3,7 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import * as React from "react";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
+import { isProd } from "~/config";
 import useDisclosure from "~/hooks/use-disclosure";
 import NavItem from "./NavItem";
 import ThemeButton from "./ThemeButton";
@@ -13,6 +14,12 @@ interface Props {
 
 const links = [
   { title: "Home", href: "/", active: /\/$/ },
+  {
+    title: "Writing",
+    href: "/writing",
+    active: /^(?!.*(\/|projects|snippets|bookmarks|library|playlists)).*$/,
+    hidden: isProd,
+  },
   { title: "Projects", href: "/projects", active: /\/projects$/ },
   { title: "Snippets", href: "/snippets", active: /\/snippets(.*)$/ },
   { title: "Bookmarks", href: "/bookmarks", active: /\/bookmarks\/?(.*)$/ },
@@ -63,18 +70,20 @@ export default function Navbar({ className = "" }: Props) {
               <HiOutlineMenu className="h-6 w-6" />
             )}
           </button>
-          <span className="dark:text-white text-lg font-medium font-mono lg:hidden">
+          <span className="dark:text-white text-lg font-medium font-secondary lg:hidden">
             <Link href={active.href}>
               <a>{active.title}</a>
             </Link>
           </span>
           <ul className="gap-4 lg:flex items-center hidden">
             {links.map((item) => {
+              if (item.hidden) return null;
+
               return (
                 <NavItem
                   key={item.title}
                   href={item.href}
-                  active={item.active.test(router.pathname)}
+                  active={item.active.test(router.pathname) ?? false}
                 >
                   {item.title}
                 </NavItem>

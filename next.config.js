@@ -1,29 +1,12 @@
 const path = require("path");
-
-if (process.platform === "win32") {
-  process.env.ESBUILD_BINARY_PATH = path.join(
-    process.cwd(),
-    "node_modules",
-    "esbuild",
-    "esbuild.exe"
-  );
-} else {
-  process.env.ESBUILD_BINARY_PATH = path.join(
-    process.cwd(),
-    "node_modules",
-    "esbuild",
-    "bin",
-    "esbuild"
-  );
-}
-
 /**
  * @type {import("next/dist/next-server/server/config-shared").NextConfig}
  */
-module.exports = {
+let config = {
   images: { domains: ["images.unsplash.com", "mosaic.scdn.co"] },
-  webpack: (config, { dev, isServer }) => {
-    if (isServer) {
+  webpack: (config, options) => {
+    const { isServer, dev } = options;
+    if (isServer && !dev) {
       require("./scripts/download-book-covers");
       require("./scripts/generate-sitemap");
     }
@@ -118,3 +101,9 @@ const securityHeaders = [
     value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
   },
 ];
+
+config = require("next-remote-refresh")({
+  paths: [path.join(__dirname, "data")],
+})(config);
+
+module.exports = config;

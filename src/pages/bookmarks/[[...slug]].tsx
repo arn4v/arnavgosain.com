@@ -44,14 +44,14 @@ const BookmarksPage = ({ data }: Props) => {
         openGraph: meta,
       }}
     >
-      <h1 className="text-3xl font-bold dark:text-white font-mono hidden lg:block mb-2">
+      <h1 className="text-3xl font-bold dark:text-white font-secondary hidden lg:block mb-2">
         Bookmarks
       </h1>
       <p className="lg:text-lg text-base font-medium mb-8 dark:text-white">
         Built on top of{" "}
         <CustomLink
           href="https://bookmarky.io"
-          className="bg-cyan-200 dark:text-black font-mono transition underline"
+          className="bg-cyan-200 dark:text-black font-secondary transition underline"
         >
           Bookmarky.io
         </CustomLink>{" "}

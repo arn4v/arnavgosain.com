@@ -8,7 +8,7 @@ export default function MyApp({ Component, pageProps }) {
   return (
     <>
       <style data-href="https://fonts.googleapis.com/css2?family=Inter" />
-      <style data-href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;700&display=swap" />
+      <style data-href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" />
       <DefaultSeo {...defaultSeoProps} />
       <ThemeProvider
         attribute="class"

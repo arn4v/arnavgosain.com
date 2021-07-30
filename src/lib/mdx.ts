@@ -1,6 +1,7 @@
 import fs from "fs";
 import matter from "gray-matter";
-import { bundleMDX } from "mdx-bundler";
+import mdxPrism from "mdx-prism";
+import { serialize } from "next-mdx-remote/serialize";
 import path from "path";
 import readingTime from "reading-time";
 import { isProd } from "~/config";
@@ -41,51 +42,34 @@ export const getAllFiles = (type: DataType = "blog") => {
   return absolutePaths;
 };
 
-export const getMdx = async <Frontmatter = unknown>(
+export const getMdxSource = async <Frontmatter = unknown>(
   type: DataType = "blog",
   slug: string
 ) => {
-  if (process.platform === "win32") {
-    process.env.ESBUILD_BINARY_PATH = path.join(
-      process.cwd(),
-      "node_modules",
-      "esbuild",
-      "esbuild.exe"
-    );
-  } else {
-    process.env.ESBUILD_BINARY_PATH = path.join(
-      process.cwd(),
-      "node_modules",
-      "esbuild",
-      "bin",
-      "esbuild"
-    );
-  }
-
   const allFiles = getAllFiles(type);
   const mdxFile = allFiles.find((item) => item.slug === slug);
 
-  const { code } = await bundleMDX(mdxFile.source, {
-    xdmOptions(opts) {
-      opts.remarkPlugins = [
-        ...(opts.remarkPlugins ?? []),
+  const mdxSource = await serialize(mdxFile.content, {
+    mdxOptions: {
+      remarkPlugins: [
         require("remark-slug"),
         require("remark-autolink-headings"),
         require("remark-code-titles"),
         require("remark-gfm"),
-      ];
-      opts.rehypePlugins = [
-        ...(opts.rehypePlugins ?? []),
-        require("mdx-prism"),
-      ];
-      return opts;
+      ],
+      rehypePlugins: [mdxPrism],
     },
   });
 
   mdxFile.metadata.reading_time = readingTime(mdxFile.content).text;
 
   return {
-    code,
+    mdxSource: mdxSource,
     frontmatter: mdxFile.metadata as Frontmatter,
   };
 };
+
+export const getPostBySlug = (slug: string) => getMdxSource("blog", slug);
+
+export const getSnippetBySlug = (slug: string) =>
+  getMdxSource("snippets", slug);
