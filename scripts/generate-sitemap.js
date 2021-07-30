@@ -1,9 +1,11 @@
 const fs = require("fs");
-const globby = require("globby");
+const glob = require("glob");
 const prettier = require("prettier");
+const path = require("path");
 
 (async () => {
-  const pages = (await globby(["src/pages/**/*.{js,jsx,ts,tsx}"]))
+  const pages = glob
+    .sync(path.join(process.cwd(), "src/pages/**/*.{js,jsx,ts,tsx}"))
     .filter((page) => !page.match(/(_app|index|_document)/))
     .map((page) => page.replace(/src\/pages\//, "").replace(/\.(.+)/, ""));
 
