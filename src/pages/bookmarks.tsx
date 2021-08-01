@@ -57,13 +57,13 @@ const BookmarksPage = ({ data }: Props) => {
         </CustomLink>{" "}
         API.
       </p>
-      <div className="grid grid-cols-1 gap-4 divide-y divide-gray-200">
+      <div className="grid grid-cols-1 gap-4">
         {data.map((item) => {
           return (
             <CustomLink
               key={item.id}
               href={item.url}
-              className="flex flex-col items-start justify-center px-4 w-full py-2 transition duration-150 ease-in-out bg-gray-50 border border-gray-300 rounded-lg shadow dark:text-white hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 space-y-2"
+              className="flex flex-col items-start justify-center px-4 w-full py-2 transition duration-150 ease-in-out bg-gray-50 rounded-lg shadow dark:text-white hover:bg-gray-200 dark:bg-gray-900 dark:border-gray-700 dark:hover:bg-gray-800 space-y-2 border border-gray-300"
             >
               <span className="text-sm font-medium lg:text-base">
                 {item.title}

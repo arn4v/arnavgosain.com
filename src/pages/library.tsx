@@ -48,14 +48,16 @@ export default function Bookshelf({ data }: Props) {
                 key={index}
                 className="flex flex-col space-y-4 items-start justify-start w-full"
               >
-                <h1 className="text-2xl font-bold dark:text-white sticky top-0">{key}</h1>
+                <h1 className="text-2xl font-bold dark:text-white sticky top-0">
+                  {key}
+                </h1>
                 <div className="flex flex-col gap-4 w-full">
                   {value.map((book) => {
                     return (
                       <CustomLink
                         key={book.id}
                         href={book.url}
-                        className="flex flex-col items-start justify-center px-2 w-full py-1 transition duration-150 ease-in-out bg-gray-50 border border-gray-300 rounded-lg shadow dark:text-white hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
+                        className="flex flex-col items-start justify-center px-2 w-full py-1 transition duration-150 ease-in-out bg-gray-50 rounded-lg shadow dark:text-white hover:bg-gray-200 dark:bg-gray-900 dark:border-gray-700 dark:hover:bg-gray-800 space-y-2 border border-gray-300"
                       >
                         <div className="flex flex-col items-start justify-center gap-1">
                           <span className="text-sm font-medium lg:text-base">
