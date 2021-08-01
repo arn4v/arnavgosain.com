@@ -2,6 +2,76 @@ import CustomLink from "../components/CustomLink";
 
 const projects = [
   {
+    id: "2f6065fa-c979-41c6-9e92-ff781af5e037",
+    name: "next-mdx-builder",
+    description: (
+      <>
+        Next.js plugin that adds support for MDX Pages with layout support in
+        frontMatter. Inspired by{" "}
+        <CustomLink
+          href="https://github.com/hashicorp/next-mdx-enhanced"
+          className="font-mono text-cyan-600 hover:bg-cyan-200 hover:text-black transition"
+        >
+          next-mdx-enhanced
+        </CustomLink>
+        , powered by{" "}
+        <CustomLink
+          href="https://github.com/hashicorp/next-mdx-remote"
+          className="font-mono text-cyan-600 hover:bg-cyan-200 hover:text-black transition"
+        >
+          next-mdx-remote
+        </CustomLink>
+        .
+      </>
+    ),
+    duration: "August 2021",
+    links: [
+      {
+        id: "6596bc33-75b5-43e4-bef2-4f3267af25c6",
+        title: "Npm",
+        url: "https://www.npmjs.com/package/next-mdx-builder",
+      },
+      {
+        id: "97dfbcd3-926d-4940-bc32-d1ec2127cdc8",
+        title: "GitHub",
+        url: "https://github.com/arn4v/next-mdx-builder",
+      },
+    ],
+    tags: ["Next.js", "MDX"],
+  },
+  {
+    id: "fba4cf7d-72b7-4791-bc5e-c36bb85bf3c2",
+    name: "react-sensible",
+    description: (
+      <>
+        Set of React hooks I use across my projects. Inspired by the{" "}
+        <CustomLink
+          href="https://usehooks.com/"
+          className="font-mono text-cyan-600 hover:bg-cyan-200 hover:text-black transition"
+        >
+          use-hooks
+        </CustomLink>{" "}
+        project and{" "}
+        <CustomLink
+          href="https://www.npmjs.com/package/react-use"
+          className="font-mono text-cyan-600 hover:bg-cyan-200 hover:text-black transition"
+        >
+          react-use
+        </CustomLink>{" "}
+        library.
+      </>
+    ),
+    duration: "July 2021",
+    links: [
+      {
+        id: "39974630-ac2b-48e5-be79-4f905b79cd7e",
+        title: "Npm",
+        url: "https://www.npmjs.com/package/react-sensible",
+      },
+    ],
+    tags: ["React"],
+  },
+  {
     id: "45932b82-650e-4bcf-80a5-7b00f3d5d117",
     name: "use-children",
     description:
@@ -39,7 +109,7 @@ const projects = [
         url: "https://github.com/arn4v/bookmarky",
       },
     ],
-    tags: ["TailwindCSS", "Framer Motion", "NextJS", "React", "GraphQL"],
+    tags: ["TailwindCSS", "Framer Motion", "Next.js", "React", "GraphQL"],
   },
   {
     id: "f5202a90-218f-42c7-be9d-21193040624a",
@@ -64,15 +134,15 @@ const projects = [
         url: "https://github.com/arn4v/brevis",
       },
     ],
-    tags: ["NextJS", "Redis"],
+    tags: ["Next.js", "Redis"],
   },
   {
     id: "784bf98a-a474-4b75-8f73-f64411265149",
     name: "Portfolio",
     description:
-      "My portfolio (this website) built with NextJS, React and TailwindCSS.",
+      "My portfolio (this website) built with Next.js, React and TailwindCSS.",
     duration: "December 2020 - Present",
-    tags: ["NextJS", "React", "TailwindCSS"],
+    tags: ["Next.js", "React", "TailwindCSS"],
     links: [
       {
         id: "86bba27e-a2d8-4e2d-ba35-96f434da1f8b",
