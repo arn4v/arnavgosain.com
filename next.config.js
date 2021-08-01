@@ -1,4 +1,10 @@
-const path = require("path");
+const isProd = process.env.NODE_ENV === "production";
+
+if (!isProd) {
+  require("./scripts/download-book-covers");
+  require("./scripts/generate-sitemap");
+}
+
 /**
  * @type {import("next/dist/next-server/server/config-shared").NextConfig}
  */
@@ -6,10 +12,6 @@ let config = {
   images: { domains: ["images.unsplash.com", "mosaic.scdn.co"] },
   webpack: (config, options) => {
     const { isServer, dev } = options;
-    if (isServer && !dev) {
-      require("./scripts/download-book-covers");
-      require("./scripts/generate-sitemap");
-    }
 
     config.resolve.fallback = {
       ...config.resolve.fallback,
@@ -102,8 +104,16 @@ const securityHeaders = [
   },
 ];
 
-config = require("next-remote-refresh")({
-  paths: [path.join(__dirname, "data")],
+config = require("next-mdx-builder")({
+  mdxOptions: {
+    remarkPlugins: [
+      require("remark-slug"),
+      require("remark-autolink-headings"),
+      require("remark-code-titles"),
+      require("remark-gfm"),
+    ],
+    rehypePlugins: [require("mdx-prism")],
+  },
 })(config);
 
 module.exports = config;
