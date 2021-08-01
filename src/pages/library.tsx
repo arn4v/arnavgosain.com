@@ -41,30 +41,22 @@ export default function Bookshelf({ data }: Props) {
         <h1 className="text-3xl font-bold dark:text-white font-secondary hidden lg:block mb-8">
           Library
         </h1>
-        <div className="flex flex-col gap-6">
+        <div className="flex flex-col space-y-8 items-start justify-between">
           {Object.entries(data).map(([key, value], index) => {
             return (
-              <React.Fragment key={index}>
-                <h1 className="text-2xl font-bold dark:text-white">{key}</h1>
-                <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+              <div
+                key={index}
+                className="flex flex-col space-y-4 items-start justify-start w-full"
+              >
+                <h1 className="text-2xl font-bold dark:text-white sticky top-0">{key}</h1>
+                <div className="flex flex-col gap-4 w-full">
                   {value.map((book) => {
                     return (
                       <CustomLink
                         key={book.id}
                         href={book.url}
-                        className="flex flex-col items-start justify-center w-full gap-2 p-4 transition duration-150 ease-in-out bg-gray-100 rounded-lg shadow dark:text-white hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
+                        className="flex flex-col items-start justify-center px-2 w-full py-1 transition duration-150 ease-in-out bg-gray-50 border border-gray-300 rounded-lg shadow dark:text-white hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700"
                       >
-                        <Image
-                          alt={`${book.title} Cover`}
-                          src={`/static/bookshelf/${book.title
-                            .replace(/ /g, "-")
-                            .replace(/,|'|\./g, "")
-                            .toLowerCase()}.jpg`}
-                          layout="intrinsic"
-                          height={136}
-                          width={96}
-                          className="mx-auto"
-                        />
                         <div className="flex flex-col items-start justify-center gap-1">
                           <span className="text-sm font-medium lg:text-base">
                             {book.title}
@@ -77,7 +69,7 @@ export default function Bookshelf({ data }: Props) {
                     );
                   })}
                 </div>
-              </React.Fragment>
+              </div>
             );
           })}
         </div>

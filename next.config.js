@@ -24,6 +24,7 @@ let config = {
   eslint: {
     ignoreDuringBuilds: true,
   },
+  pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   async headers() {
     return [
       {

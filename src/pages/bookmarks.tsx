@@ -51,7 +51,7 @@ const BookmarksPage = ({ data }: Props) => {
         Built on top of{" "}
         <CustomLink
           href="https://bookmarky.io"
-          className="bg-cyan-200 dark:text-black font-secondary transition underline"
+          className="bg-cyan-200 dark:text-black transition underline"
         >
           Bookmarky.io
         </CustomLink>{" "}
@@ -60,20 +60,14 @@ const BookmarksPage = ({ data }: Props) => {
       <div className="grid grid-cols-1 gap-4 divide-y divide-gray-200">
         {data.map((item) => {
           return (
-            <div
+            <CustomLink
               key={item.id}
-              className="flex items-start justify-start flex-col gap-2 pt-4"
+              href={item.url}
+              className="flex flex-col items-start justify-center px-4 w-full py-2 transition duration-150 ease-in-out bg-gray-50 border border-gray-300 rounded-lg shadow dark:text-white hover:bg-gray-200 dark:bg-gray-800 dark:hover:bg-gray-700 space-y-2"
             >
-              <a
-                href={item.url}
-                title={item.title}
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <span className="font-bold bg-cyan-200 hover:bg-cyan-300 transition">
-                  {item.title}
-                </span>
-              </a>
+              <span className="text-sm font-medium lg:text-base">
+                {item.title}
+              </span>
               <div className="flex gap-2 items-center dark:text-white">
                 <span>{format(new Date(item.createdAt), "do MMMM yyyy")}</span>
                 <span>/</span>
@@ -90,7 +84,7 @@ const BookmarksPage = ({ data }: Props) => {
                   <span>Uncategorized</span>
                 )}
               </div>
-            </div>
+            </CustomLink>
           );
         })}
       </div>
@@ -99,26 +93,6 @@ const BookmarksPage = ({ data }: Props) => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
-  const slug = ctx.params.slug;
-  const valid = undefined;
-  if (slug !== valid) {
-    return {
-      notFound: true,
-    };
-  }
-
-  let tags: string[];
-  switch (true) {
-    case typeof slug === "undefined": {
-      tags = ["Public"];
-      break;
-    }
-    case slug === "/reading": {
-      tags = ["Reading List"];
-      break;
-    }
-  }
-
   const res = await axios.get("https://bookmarky.io/api/v1/bookmarks", {
     headers: {
       Authorization: `Bearer ${process.env.BOOKMARKY_TOKEN.replace(
@@ -127,7 +101,7 @@ export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
       )}`,
     },
     data: {
-      tags: { AND: tags },
+      tags: { AND: ["Public"] },
     },
   });
 
@@ -146,13 +120,6 @@ export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
       data,
     },
     revalidate: 60,
-  };
-};
-
-export const getStaticPaths: GetStaticPaths = async () => {
-  return {
-    paths: [{ params: { slug: undefined } }],
-    fallback: false,
   };
 };
 
