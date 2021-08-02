@@ -21,8 +21,8 @@ export default function NavItem({
           <a
             className={clsx([
               className,
-              "px-2 border-l-2 border-cyan-200 dark:border-cyan-200 dark:text-white border-b-2 hover:bg-cyan-200 font-bold text-black h-9 flex items-center dark:hover:text-black justify-start lg:justify-center font-mono",
-              active && "bg-cyan-200 dark:text-black",
+              "px-2 border-cyan-200 dark:border-blueGray-600 dark:text-white dark:hover:bg-blueGray-600 hover:bg-cyan-200 font-bold text-black h-9 flex items-center justify-start lg:justify-center font-mono border-l-2 border-b-2",
+              active && "dark:bg-blueGray-600 bg-cyan-200"
             ])}
           >
             {children}

@@ -25,7 +25,7 @@ const About = () => {
             <HighlightLink href="https://tartanhq.com">Tartan</HighlightLink>.
           </p>
           <div className="flex flex-row items-center justify-start w-full space-x-6">
-            <p className="font-semibold text-gray-800 whitespace-nowrap text-xl lg:text-xl bg-cyan-200">
+            <p className="font-semibold text-gray-800 whitespace-nowrap text-xl lg:text-xl dark:text-white dark:bg-blueGray-600 bg-cyan-200">
               Get in touch:
             </p>
             <div className="relative flex flex-row items-center justify-center space-x-3">

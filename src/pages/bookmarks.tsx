@@ -44,14 +44,14 @@ const BookmarksPage = ({ data }: Props) => {
         openGraph: meta,
       }}
     >
-      <h1 className="text-3xl font-bold dark:text-white font-secondary hidden lg:block mb-2">
+      <h1 className="text-3xl font-bold dark:text-gray-200 font-secondary hidden lg:block mb-2">
         Bookmarks
       </h1>
-      <p className="lg:text-lg text-base font-medium mb-8 dark:text-white">
+      <p className="lg:text-lg text-base font-medium mb-8 dark:text-gray-200">
         Built on top of{" "}
         <CustomLink
           href="https://bookmarky.io"
-          className="bg-cyan-200 dark:text-black transition underline"
+          className="bg-cyan-200 dark:bg-blueGray-600 underline"
         >
           Bookmarky.io
         </CustomLink>{" "}
@@ -63,12 +63,12 @@ const BookmarksPage = ({ data }: Props) => {
             <CustomLink
               key={item.id}
               href={item.url}
-              className="flex flex-col items-start justify-center px-4 w-full py-2 transition duration-150 ease-in-out bg-gray-50 rounded-lg shadow dark:text-white hover:bg-gray-200 dark:bg-gray-900 dark:border-gray-700 dark:hover:bg-gray-800 space-y-2 border border-gray-300"
+              className="flex flex-col items-start justify-center w-full h-full gap-3 py-2 px-4 dark:text-gray-200 rounded-md dark:hover:bg-gray-900 transition hover:bg-gray-50 border border-gray-300 dark:border-gray-800 hover:shadow-sm"
             >
               <span className="text-sm font-medium lg:text-base">
                 {item.title}
               </span>
-              <div className="flex gap-2 items-center dark:text-white">
+              <div className="flex gap-2 items-center">
                 <span>{format(new Date(item.createdAt), "do MMMM yyyy")}</span>
                 <span>/</span>
                 {item.tags.length > 0 ? (

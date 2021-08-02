@@ -29,7 +29,7 @@ const ProjectsGrid = ({ data }) => {
         return (
           <div
             key={p.id}
-            className="flex flex-col items-start justify-center w-full h-full gap-3 p-4 rounded-md shadow-sm dark:shadow-inner dark:bg-gray-900 dark:hover:bg-gray-800 transition dark:text-white bg-gray-100 hover:bg-gray-200 border border-gray-300 dark:border-gray-700 hover:shadow-md"
+            className="flex flex-col items-start justify-center w-full h-full gap-3 p-4 dark:text-gray-200 rounded-md dark:hover:bg-gray-900 transition hover:bg-gray-50 border border-gray-300 dark:border-gray-800 hover:shadow-sm"
           >
             <span className="flex flex-row items-center justify-start space-x-2">
               <p className="text-base font-semibold">{p.name}</p>

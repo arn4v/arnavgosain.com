@@ -38,7 +38,7 @@ export default function Bookshelf({ data }: Props) {
         breadcrumb={{ Bookshelf: "/bookshelf" }}
         seo={{ title: openGraph.title, openGraph: openGraph }}
       >
-        <h1 className="text-3xl font-bold dark:text-white font-secondary hidden lg:block mb-8">
+        <h1 className="text-3xl font-bold dark:text-gray-200 font-secondary hidden lg:block mb-8">
           Library
         </h1>
         <div className="flex flex-col space-y-8 items-start justify-between">
@@ -48,7 +48,7 @@ export default function Bookshelf({ data }: Props) {
                 key={index}
                 className="flex flex-col space-y-4 items-start justify-start w-full"
               >
-                <h1 className="text-2xl font-bold dark:text-white sticky top-0">
+                <h1 className="text-2xl font-bold sticky top-0 dark:text-gray-200">
                   {key}
                 </h1>
                 <div className="flex flex-col gap-4 w-full">
@@ -57,7 +57,7 @@ export default function Bookshelf({ data }: Props) {
                       <CustomLink
                         key={book.id}
                         href={book.url}
-                        className="flex flex-col items-start justify-center px-2 w-full py-1 transition duration-150 ease-in-out bg-gray-50 rounded-lg shadow dark:text-white hover:bg-gray-200 dark:bg-gray-900 dark:border-gray-700 dark:hover:bg-gray-800 space-y-2 border border-gray-300"
+                        className="flex flex-col items-start justify-center w-full h-full gap-3 px-2 py-1 dark:text-gray-200 rounded-md dark:hover:bg-gray-900 transition hover:bg-gray-50 border border-gray-300 dark:border-gray-800 hover:shadow-sm"
                       >
                         <div className="flex flex-col items-start justify-center gap-1">
                           <span className="text-sm font-medium lg:text-base">
