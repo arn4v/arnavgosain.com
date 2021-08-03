@@ -21,9 +21,10 @@ export const getDateObjectFromString = (dateString: string): Date => {
 export const generateSiteMap = async () => {
   const pages = glob
     .sync(path.join(process.cwd(), "src/pages/**/*.{js,jsx,ts,tsx,md,mdx}"))
-    .filter((page) => !/(_app|index|_document)/.test(page))
+    .filter((page) => !/(_app|_document)/.test(page))
     .map((page) => {
-      return page.split("src/pages")[1].replace(/\.(.*)/, "");
+      page = page.split("src/pages")[1].replace(/\.(.*)/, "");
+      return page.includes("index") ? page.replace("/index", "") : page;
     });
 
   const sitemap = `
