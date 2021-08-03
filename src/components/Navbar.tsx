@@ -17,7 +17,7 @@ const links = [
   {
     title: "Writing",
     href: "/writing",
-    active: /^(?!.*(\/|projects|snippets|bookmarks|library|playlists)).*$/,
+    active: /\/writing(\/)?(.*)$/,
     hidden: isProd,
   },
   { title: "Projects", href: "/projects", active: /\/projects$/ },

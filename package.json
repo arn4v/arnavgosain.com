@@ -24,6 +24,7 @@
     "clsx": "^1.1.1",
     "csvtojson": "^2.0.10",
     "date-fns": "^2.23.0",
+    "feed": "^4.2.2",
     "glob": "^7.1.7",
     "gray-matter": "^4.0.3",
     "image-data-uri": "^2.0.1",
@@ -54,7 +55,10 @@
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.4.1",
+    "@types/glob": "^7.1.4",
     "@types/json2csv": "^5.0.3",
+    "@types/mdx-js__react": "^1.5.4",
+    "@types/prettier": "^2.3.2",
     "@types/react": "^17.0.15",
     "@types/react-dom": "^17.0.9",
     "@types/uuid": "^8.3.1",

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://arnavgosain.com</id>
+    <title>Arnav Gosain's Blog</title>
+    <updated>2021-08-03T12:05:14.011Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <author>
+        <name>Arnav Gosain</name>
+        <email>arnav@arnavgosain.com</email>
+        <uri>https://twitter.com/arn4v</uri>
+    </author>
+    <link rel="alternate" href="https://arnavgosain.com"/>
+    <link rel="self" href="https://arnavgosain.com/atom.xml"/>
+    <icon>https://arnavgosain.com/favicon.ico</icon>
+    <rights>All rights reserved 2021, Arnav Gosain</rights>
+    <entry>
+        <title type="html"><![CDATA[Career Frameworks]]></title>
+        <id>https://arnavgosain.com/writing/career-frameworks</id>
+        <link href="https://arnavgosain.com/writing/career-frameworks"/>
+        <updated>2021-08-03T00:00:00.000Z</updated>
+        <author>
+            <name>Arnav Gosain</name>
+            <email>arnav@arnavgosain.com</email>
+            <uri>https://twitter.com/arn4v</uri>
+        </author>
+    </entry>
+</feed>

@@ -2,12 +2,16 @@ import About from "~/components/About";
 import BlogSection from "~/components/BlogSection";
 import PageLayout from "~/components/PageLayout";
 import ProjectsList from "~/components/ProjectsList";
-import { getDateObjectFromString } from "~/lib/utils";
+import { generateSiteMap, getDateObjectFromString } from "~/lib/utils";
 import { defaultOpenGraph } from "~/next-seo.config";
 import PostMetadata from "~/types/metadata";
 
 export const getStaticProps = async () => {
+  // Generate sitemap
+  await generateSiteMap();
+
   const { getAllFiles: getAllPosts } = await import("~/lib/mdx");
+
   return {
     props: {
       posts: getAllPosts("blog")

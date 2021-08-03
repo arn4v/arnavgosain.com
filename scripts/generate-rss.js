@@ -1,35 +1,49 @@
-const RSS = require("rss");
-const frontmatter = require("front-matter");
-const globby = require("globby");
+const { Feed } = require("feed");
+const path = require("path");
+const matter = require("gray-matter");
+const fs = require("fs");
+const glob = require("glob");
 
-(async () => {
-  /**
-   * Next: The RSS feed.
-   */
-  const posts = await await globby(["../src/data/blog/*.{mdx,md}"]);
+const siteURL = "https://arnavgosain.com";
+const updated = new Date();
 
-  const rss = new RSS({
-    title: "Arnav Gosain",
-    site_url: siteUrl,
-    feed_url: siteUrl + "/rss.xml",
+const author = {
+  name: "Arnav Gosain",
+  email: "arnav@arnavgosain.com",
+  link: "https://twitter.com/arn4v",
+};
+
+const posts = glob
+  .sync(path.join(__dirname, "../src/pages/**/*.{md,mdx}"))
+  .map((filePath) => [filePath, fs.readFileSync(filePath, "utf8")]);
+
+const feed = new Feed({
+  title: "Arnav Gosain's Blog",
+  author,
+  site_url: siteURL,
+  updated: updated,
+  feedLinks: {
+    rss2: `${siteURL}/rss/feed.xml`,
+    json: `${siteURL}/rss/feed.json`,
+    atom: `${siteURL}/rss/atom.xml`,
+  },
+});
+
+posts.forEach(([filePath, source]) => {
+  const postPath = filePath
+    .split("src/pages/writing")[1]
+    .replace(/\.(md|mdx)$/, "")
+    .replace(/\\/g, "/");
+  const { data, content } = matter(source);
+
+  feed.addItem({
+    title: data.title,
+    url: `${siteURL}/writing/${postPath}`,
+    author: [author],
+    date: new Date(data.publishedAt),
   });
+});
 
-  posts.forEach((p) => {
-    const postPath = p.replace(/\.mdx?$/, "").replace("src/data", "");
-    const body = fs.readFileSync(p, "utf-8");
-    const { attributes: post } = frontmatter(body);
-
-    rss.item({
-      title: post.title,
-      guid: postPath,
-      url: `${siteUrl}${postPath}`,
-      author: "Arnav Gosain",
-      description: "",
-      date: post.publishedAt,
-    });
-  });
-
-  const xmlFeed = rss.xml({ indent: true });
-
-  fs.writeFileSync("public/rss.xml", xmlFeed);
-})();
+fs.writeFileSync(path.join(__dirname, "../public/rss.xml"), feed.rss2());
+fs.writeFileSync(path.join(__dirname, "../public/atom.xml"), feed.atom1());
+fs.writeFileSync(path.join(__dirname, "../public/feed.json"), feed.json());

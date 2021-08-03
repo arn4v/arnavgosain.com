@@ -6,8 +6,8 @@ import PostMetadata from "~/types/metadata";
 
 export default function PostCard({ data }: { data: PostMetadata }) {
   return (
-    <Link href={`/${data.slug}`}>
-      <a className="flex items-center justify-between w-full px-4 py-4 transition duration-100 ease-out bg-gray-100 border border-gray-300 rounded-md shadow-md hover:bg-gray-200 dark:bg-gray-900 dark:border-gray-800 group dark:hover:bg-gray-800 dark:text-white">
+    <Link href={`/writing/${data.slug}`}>
+      <a className="flex items-center justify-between w-full h-full gap-3 p-4 dark:text-gray-200 rounded-md dark:hover:bg-gray-900 transition hover:bg-gray-50 border border-gray-300 dark:border-gray-800 hover:shadow-sm">
         <div className="flex flex-col space-y-4 items-start justify-start">
           <h1 className="font-semibold">{data.title}</h1>
           <div className="flex items-center justify-center gap-4 text-sm lg:text-base">
@@ -15,16 +15,9 @@ export default function PostCard({ data }: { data: PostMetadata }) {
               <div className="flex items-center justify-start gap-2 lg:gap-4">
                 <p>
                   Published on{" "}
-                  {(() => {
-                    const date = getDateObjectFromString(
-                      data.published_on as string
-                    );
-                    return (
-                      <time dateTime={date.toISOString()}>
-                        {format(date, "do MMMM yyyy")}
-                      </time>
-                    );
-                  })()}
+                  <time dateTime={new Date(data.published_on).toISOString()}>
+                    {format(new Date(data.published_on), "do MMMM yyyy")}
+                  </time>
                 </p>
                 <div>/</div>
                 <h2>{data.reading_time}</h2>

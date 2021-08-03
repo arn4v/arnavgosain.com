@@ -1,18 +1,11 @@
 const isProd = process.env.NODE_ENV === "production";
 
-if (!isProd) {
-  require("./scripts/download-book-covers");
-  require("./scripts/generate-sitemap");
-}
-
 /**
  * @type {import("next/dist/next-server/server/config-shared").NextConfig}
  */
 let config = {
   images: { domains: ["images.unsplash.com", "mosaic.scdn.co"] },
   webpack: (config, options) => {
-    const { isServer, dev } = options;
-
     config.resolve.fallback = {
       ...config.resolve.fallback,
       fs: false,
