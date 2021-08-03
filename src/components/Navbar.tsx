@@ -7,6 +7,7 @@ import { isProd } from "~/config";
 import useDisclosure from "~/hooks/use-disclosure";
 import NavItem from "./NavItem";
 import ThemeButton from "./ThemeButton";
+import { useIsAtTop } from "react-sensible";
 
 interface Props {
   className?: string;
@@ -20,19 +21,13 @@ const links = [
     active: /\/writing(\/)?(.*)$/,
   },
   { title: "Projects", href: "/projects", active: /\/projects$/ },
-  {
-    title: "Snippets",
-    href: "/snippets",
-    active: /\/snippets(.*)$/,
-    hidden: true,
-  },
   { title: "Bookmarks", href: "/bookmarks", active: /\/bookmarks\/?(.*)$/ },
   { title: "Library", href: "/library", active: /\/library$/ },
   { title: "Playlists", href: "/playlists", active: /\/playlists$/ },
 ];
 
 export default function Navbar({ className = "" }: Props) {
-  const [isAtTop, setAtTop] = React.useState(true);
+  const isAtTop = useIsAtTop();
   const router = useRouter();
   const active = React.useMemo(() => {
     return links.find((el) => {
@@ -40,19 +35,6 @@ export default function Navbar({ className = "" }: Props) {
     });
   }, [router.pathname]);
   const { isOpen, onToggle } = useDisclosure();
-
-  React.useEffect(() => {
-    const onScroll = (e: Event) => {
-      if (window.pageYOffset > 0) {
-        setAtTop(false);
-      } else {
-        setAtTop(true);
-      }
-    };
-
-    window.addEventListener("scroll", onScroll, false);
-    return () => window.removeEventListener("scroll", onScroll, false);
-  }, []);
 
   return (
     <nav
@@ -81,8 +63,6 @@ export default function Navbar({ className = "" }: Props) {
           </span>
           <ul className="gap-4 lg:flex items-center hidden">
             {links.map((item) => {
-              if (item.hidden) return null;
-
               return (
                 <NavItem
                   key={item.title}
