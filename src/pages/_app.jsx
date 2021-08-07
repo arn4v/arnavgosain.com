@@ -15,7 +15,7 @@ export default function MyApp({ Component, pageProps }) {
       {isProd ? (
         <>
           <Script async src="https://unpkg.com/thesemetrics@latest"></Script>
-          <Analytics trackerId={process.env.GA_TRACKING_ID} />
+          <Analytics trackerId={process.env.NEXT_PUBLIC_GA_TRACKING_ID} />
         </>
       ) : null}
       <style data-href="https://fonts.googleapis.com/css2?family=Inter" />
