@@ -60,9 +60,7 @@ export const generateFeeds = async () => {
     link: "https://twitter.com/arn4v",
   };
 
-  const posts = glob
-    .sync(path.join(process.cwd(), "src/pages/**/*.{md,mdx}"))
-    .map((filePath) => [filePath, fs.readFileSync(filePath, "utf8")]);
+  const posts = getPosts();
 
   const feed = new Feed({
     id: baseUrl,
@@ -80,18 +78,17 @@ export const generateFeeds = async () => {
     },
   });
 
-  posts.forEach(([filePath, source]) => {
+  posts.forEach(({ filePath, frontMatter }) => {
     const postPath = filePath
-      .split("src/pages/writing")[1]
+      .split("src/pages")[1]
       .replace(/\\/g, "/")
       .replace(/\.(.+)/, "");
-    const { data } = matter(source);
 
     feed.addItem({
-      title: data.title,
-      link: `${baseUrl}/writing${postPath}`,
+      title: frontMatter.title,
+      link: `${baseUrl}${postPath}`,
       author: [author],
-      date: new Date(data.published_on),
+      date: new Date(frontMatter.published_on),
     });
   });
 
@@ -101,29 +98,29 @@ export const generateFeeds = async () => {
   fs.writeFileSync(path.join(rootPath, "public/feed.json"), feed.json1());
 };
 
-export const getPostsData = () => {
+const getPosts = () => {
   const postPaths = glob.sync(
-    `${path.join(process.cwd(), "src/pages/writing")}/**/*.{md,mdx}`.replace(
-      /\\/g,
-      "/"
-    )
+    path.join(process.cwd(), "src/pages/**/*.{md,mdx}")
   );
+  return postPaths
+    .map((filePath) => {
+      const source = fs.readFileSync(filePath, "utf8");
+      const { data: frontMatter, content } = matter(source);
+      return { source, frontMatter, content, filePath };
+    })
+    .filter(
+      ({ frontMatter }) =>
+        typeof frontMatter.type === "string" && frontMatter.type === "writing"
+    );
+};
 
-  const posts = postPaths.map((filePath) => {
-    return [filePath, fs.readFileSync(filePath, "utf8")];
-  });
-
-  const processed = [];
-
-  for (const [filePath, source] of posts) {
-    const { data, content } = matter(source);
-    data.slug = filePath
-      .split("src/pages/writing")[1]
+export const getPostsData = () => {
+  return getPosts().map(({ frontMatter, filePath, content }) => {
+    frontMatter.slug = filePath
+      .split("src/pages")[1]
       .replace(/\//, "")
       .replace(/\.(md|mdx)/g, "");
-    data.reading_time = readingTime(content).text;
-    processed.push(data);
-  }
-
-  return processed;
+    frontMatter.reading_time = readingTime(content).text;
+    return frontMatter;
+  });
 };

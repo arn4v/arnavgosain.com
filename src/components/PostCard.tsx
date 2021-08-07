@@ -6,7 +6,7 @@ import PostMetadata from "~/types/metadata";
 
 export default function PostCard({ data }: { data: PostMetadata }) {
   return (
-    <Link href={`/writing/${data.slug}`}>
+    <Link href={`/${data.slug}`}>
       <a className="flex items-center justify-between w-full h-full gap-3 p-4 dark:text-gray-200 rounded-md dark:hover:bg-gray-900 transition hover:bg-gray-50 border border-gray-300 dark:border-gray-800 hover:shadow-sm">
         <div className="flex flex-col space-y-4 items-start justify-start">
           <h1 className="font-semibold">{data.title}</h1>

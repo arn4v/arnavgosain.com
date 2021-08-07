@@ -7,12 +7,16 @@ import NextNProgress from "nextjs-progressbar";
 import Head from "next/head";
 import { isProd } from "~/config";
 import Script from "next/script";
+import Analytics from "~/components/AnalyticsProvider";
 
 export default function MyApp({ Component, pageProps }) {
   return (
     <>
       {isProd ? (
-        <Script async src="https://unpkg.com/thesemetrics@latest"></Script>
+        <>
+          <Script async src="https://unpkg.com/thesemetrics@latest"></Script>
+          <Analytics trackerId={process.env.GA_TRACKING_ID} />
+        </>
       ) : null}
       <style data-href="https://fonts.googleapis.com/css2?family=Inter" />
       <style data-href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" />

@@ -18,7 +18,7 @@ const links = [
   {
     title: "Writing",
     href: "/writing",
-    active: /\/writing(\/)?(.*)$/,
+    active: /\/writing$/,
   },
   { title: "Projects", href: "/projects", active: /\/projects$/ },
   { title: "Bookmarks", href: "/bookmarks", active: /\/bookmarks\/?(.*)$/ },
@@ -56,18 +56,20 @@ export default function Navbar({ className = "" }: Props) {
               <HiOutlineMenu className="h-6 w-6" />
             )}
           </button>
-          <span className="dark:text-white text-lg font-medium font-secondary lg:hidden">
-            <Link href={active.href}>
-              <a>{active.title}</a>
-            </Link>
-          </span>
+          {active && (
+            <span className="dark:text-white text-lg font-medium font-secondary lg:hidden">
+              <Link href={active.href}>
+                <a>{active.title}</a>
+              </Link>
+            </span>
+          )}
           <ul className="gap-4 lg:flex items-center hidden">
             {links.map((item) => {
               return (
                 <NavItem
                   key={item.title}
                   href={item.href}
-                  active={item.active.test(router.pathname) ?? false}
+                  active={active && item.title === active.title}
                 >
                   {item.title}
                 </NavItem>
