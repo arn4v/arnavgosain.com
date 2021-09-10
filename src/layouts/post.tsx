@@ -35,7 +35,7 @@ const PostLayout = ({ frontMatter, children }) => {
             </h1>
             <div className="flex flex-row justify-between w-full max-w-3xl antialiased text-gray-800 dark:text-white">
               <div className="flex items-center justify-center gap-3 text-sm lg:gap-4 lg:text-base">
-                <div className="hidden lg:block">
+                <span className="hidden lg:block">
                   <Image
                     alt="Arnav Gosain"
                     src="/static/display.jpg"
@@ -45,8 +45,8 @@ const PostLayout = ({ frontMatter, children }) => {
                     className="rounded-full"
                     layout="fixed"
                   />
-                </div>
-                <div className="block lg:hidden">
+                </span>
+                <span className="block lg:hidden">
                   <Image
                     alt="Arnav Gosain"
                     src="/static/display.jpg"
@@ -56,8 +56,8 @@ const PostLayout = ({ frontMatter, children }) => {
                     className="rounded-full"
                     layout="fixed"
                   />
-                </div>
-                <div className="flex flex-col items-start justify-center gap-2 text-sm font-medium lg:flex-row lg:items-center lg:justify-start lg:gap-4 lg:text-base whitespace-nowrap">
+                </span>
+                <span className="flex flex-col items-start justify-center gap-2 text-sm font-medium lg:flex-row lg:items-center lg:justify-start lg:gap-4 lg:text-base whitespace-nowrap">
                   <h2>Arnav Gosain</h2>
                   <div className="flex items-center justify-start gap-2 lg:gap-4">
                     <div className="hidden lg:block">/</div>
@@ -68,7 +68,7 @@ const PostLayout = ({ frontMatter, children }) => {
                       </time>
                     </p>
                   </div>
-                </div>
+                </span>
               </div>
             </div>
             <hr className="w-full" />

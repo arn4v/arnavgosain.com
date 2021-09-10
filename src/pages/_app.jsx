@@ -1,8 +1,8 @@
 import { DefaultSeo } from "next-seo";
 import { ThemeProvider } from "next-themes";
 import "prism-themes/themes/prism-gruvbox-dark.css";
-import defaultSeoProps from "~/next-seo.config";
 import "../styles/index.css";
+import defaultSeoProps from "~/next-seo.config";
 import NextNProgress from "nextjs-progressbar";
 import Head from "next/head";
 import { isProd } from "~/config";

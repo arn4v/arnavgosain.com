@@ -11,7 +11,6 @@ let config = {
       fs: false,
       module: false,
     };
-
     return config;
   },
   eslint: {
