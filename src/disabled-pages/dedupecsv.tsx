@@ -1,11 +1,13 @@
-import * as React from "react";
-import { NextSeo } from "next-seo";
 import csvtojson from "csvtojson";
-import { jsonToCsv } from "~/lib/onetabcsv";
+import * as React from "react";
 import { v4 as uuid } from "uuid";
+import Seo, { SeoProps } from "~/components/Seo";
+import { jsonToCsv } from "~/lib/onetabcsv";
 
-const TITLE = "Dedupe CSV";
-const DESCRIPTION = "Deduplicate two CSV files";
+const seoConfig: SeoProps = {
+  title: "Dedupe CSV",
+  description: "Deduplicate two CSV files",
+};
 
 type Json = Record<string, string>;
 interface State {
@@ -81,14 +83,7 @@ export default function DedupeCsvPage(): JSX.Element {
 
   return (
     <>
-      <NextSeo
-        title={TITLE}
-        description={DESCRIPTION}
-        openGraph={{
-          title: TITLE,
-          description: DESCRIPTION,
-        }}
-      />
+      <Seo {...seoConfig} />
       <style jsx scoped>
         {`
           .gradient {

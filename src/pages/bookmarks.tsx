@@ -1,9 +1,9 @@
 import axios from "axios";
 import { format } from "date-fns";
 import { GetStaticPaths, GetStaticProps } from "next";
-import { OpenGraph } from "next-seo/lib/types";
 import CustomLink from "~/components/CustomLink";
 import PageLayout from "~/components/PageLayout";
+import { SeoProps } from "~/components/Seo";
 import { baseUrl } from "~/config";
 
 type Bookmark = {
@@ -27,23 +27,15 @@ interface Props {
 }
 
 const BookmarksPage = ({ data }: Props) => {
-  const meta: OpenGraph = {
+  const seoConfig: SeoProps = {
     title: "Bookmarks | Arnav Gosain",
     description: "Links for later.",
     url: baseUrl + "/bookmarks",
-    images: [
-      { url: "/static/bookmarks-og-banner.png", height: 627, width: 1200 },
-    ],
+    image: "/static/bookmarks-og-banner.png",
   };
 
   return (
-    <PageLayout
-      seo={{
-        title: meta.title,
-        description: meta.description,
-        openGraph: meta,
-      }}
-    >
+    <PageLayout seo={seoConfig}>
       <h1 className="text-3xl font-bold dark:text-gray-200 font-secondary hidden lg:block mb-2">
         Bookmarks
       </h1>

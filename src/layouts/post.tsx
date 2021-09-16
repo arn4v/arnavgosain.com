@@ -1,12 +1,12 @@
-import * as React from "react";
-import { format } from "date-fns";
 import { MDXProvider } from "@mdx-js/react";
+import { format } from "date-fns";
 import Image from "next/image";
-import BlogSeo from "~/components/BlogSeo";
+import * as React from "react";
 import CustomLink from "~/components/CustomLink";
 import PageLayout from "~/components/PageLayout";
+import Seo from "~/components/Seo";
 import { baseUrl } from "~/config";
-import { getDateObjectFromString } from "~/lib/utils";
+import { isoStringFromFrontmatter } from "~/lib/utils";
 
 const PostLayout = ({ frontMatter, children }) => {
   const published_on = React.useMemo(
@@ -16,11 +16,10 @@ const PostLayout = ({ frontMatter, children }) => {
 
   return (
     <>
-      <BlogSeo
+      <Seo
         title={frontMatter.title}
-        author="Arnav Gosain"
-        date={frontMatter.published_on}
         url={`${baseUrl}/${frontMatter.slug}`}
+        publishedAt={isoStringFromFrontmatter(frontMatter.published_on)}
       />
       <PageLayout
         breadcrumb={{

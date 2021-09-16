@@ -1,10 +1,10 @@
-import { OpenGraph } from "next-seo/lib/types";
 import PageLayout from "~/components/PageLayout";
 import ProjectsGrid from "~/components/ProjectsGrid";
+import { SeoProps } from "~/components/Seo";
 import { baseUrl } from "~/config";
 import projects from "~/lib/projects";
 
-const meta: OpenGraph = {
+const seoConfig: SeoProps = {
   title: "Projects | Arnav Gosain",
   url: baseUrl + "/projects",
 };
@@ -12,10 +12,7 @@ const meta: OpenGraph = {
 const ProjectsPage = () => {
   return (
     <>
-      <PageLayout
-        breadcrumb={{ Projects: "/projects" }}
-        seo={{ title: meta.title, openGraph: meta }}
-      >
+      <PageLayout breadcrumb={{ Projects: "/projects" }} seo={seoConfig}>
         <div className="flex flex-col gap-6">
           <h1 className="text-3xl font-bold dark:text-white font-secondary hidden lg:block">
             Projects

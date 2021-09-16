@@ -1,6 +1,6 @@
-import { NextSeo } from "next-seo";
 import * as React from "react";
 import { v4 } from "uuid";
+import Seo from "~/components/Seo";
 import parseOnetabExport, { jsonToCsv } from "~/lib/onetabcsv";
 
 export default function IndexPage(): JSX.Element {
@@ -19,14 +19,9 @@ export default function IndexPage(): JSX.Element {
 
   return (
     <>
-      <NextSeo
+      <Seo
         title="OneTab Export to CSV Converter | Arnav Gosain"
         description="Convert OneTab Export text to CSV for importing into Notion."
-        openGraph={{
-          title: "OneTab Export to CSV Converter | Arnav Gosain",
-          description:
-            "Convert OneTab Export text to CSV for importing into Notion.",
-        }}
       />
       <div className="flex flex-col items-center justify-start w-screen min-h-screen py-6">
         <div className="flex flex-col w-4/5 gap-12 lg:w-2/5">

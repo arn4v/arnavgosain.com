@@ -1,9 +1,8 @@
 import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { useRemoteRefresh } from "next-remote-refresh/hook";
-import { OpenGraph } from "next-seo/lib/types";
-import * as React from "react";
 import PageLayout from "~/components/PageLayout";
+import { SeoProps } from "~/components/Seo";
 import { baseUrl } from "~/config";
 import SnippetFrontmatter from "~/types/SnippetFrontmatter";
 
@@ -14,17 +13,11 @@ interface Props {
 }
 
 export default function SnippetPage({ mdxSource, frontmatter, slug }: Props) {
-  const meta: OpenGraph = {
+  const meta: SeoProps = {
     title: frontmatter.title + " | Code Snippets | Arnav Gosain",
     description: frontmatter.description,
     url: baseUrl + "/snippets/" + slug,
-    images: [
-      {
-        url: "/static/snippets-og-banner.png",
-        height: 627,
-        width: 1200,
-      },
-    ],
+    image: "/static/snippets-og-banner.png",
   };
 
   useRemoteRefresh({
@@ -37,7 +30,6 @@ export default function SnippetPage({ mdxSource, frontmatter, slug }: Props) {
         seo={{
           title: meta.title,
           description: meta.description,
-          openGraph: meta,
         }}
         breadcrumb={{
           Snippets: "/snippets",

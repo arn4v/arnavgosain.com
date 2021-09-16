@@ -124,3 +124,8 @@ export const getPostsData = () => {
     return frontMatter;
   });
 };
+
+export const isoStringFromFrontmatter = (date: string) => {
+  const [year, month, day] = date.split("-").map((i) => parseInt(i));
+  return new Date(year, month - 1, day).toISOString();
+};

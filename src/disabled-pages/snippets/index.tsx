@@ -1,8 +1,8 @@
 import { useRemoteRefresh } from "next-remote-refresh/hook";
-import { OpenGraph } from "next-seo/lib/types";
 import Link from "next/link";
 import * as React from "react";
 import PageLayout from "~/components/PageLayout";
+import { SeoProps } from "~/components/Seo";
 import { getAllFiles, getMdxSource } from "~/lib/mdx";
 import SnippetFrontmatter from "~/types/SnippetFrontmatter";
 
@@ -10,17 +10,11 @@ interface Props {
   snippets: { code: string; slug: string; frontmatter: SnippetFrontmatter }[];
 }
 
-const meta: OpenGraph = {
+const meta: SeoProps = {
   title: "Code Snippets | Arnav Gosain",
   description:
     "A collection of code snippets that I use in my projects. Includes Next.js, React & Nodejs.",
-  images: [
-    {
-      url: "/static/snippets-og-banner.png",
-      height: 627,
-      width: 1200,
-    },
-  ],
+  image: "/static/snippets-og-banner.png",
 };
 
 export default function SnippetsListPage({ snippets }: Props) {
@@ -28,13 +22,7 @@ export default function SnippetsListPage({ snippets }: Props) {
 
   return (
     <>
-      <PageLayout
-        seo={{
-          title: meta.title,
-          description: meta.description,
-          openGraph: meta,
-        }}
-      >
+      <PageLayout seo={meta}>
         <h1 className="text-3xl font-bold dark:text-white font-secondary hidden lg:block mb-8">
           Snippets
         </h1>

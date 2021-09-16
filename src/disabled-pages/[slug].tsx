@@ -3,11 +3,10 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { useRemoteRefresh } from "next-remote-refresh/hook";
 import Image from "next/image";
-import * as React from "react";
-import BlogSeo from "~/components/BlogSeo";
 import PageLayout from "~/components/PageLayout";
+import Seo from "~/components/Seo";
 import { baseUrl } from "~/config";
-import { getDateObjectFromString } from "~/lib/utils";
+import { getDateObjectFromString, isoStringFromFrontmatter } from "~/lib/utils";
 import PostMetadata from "~/types/metadata";
 import CustomLink from "../components/CustomLink";
 
@@ -29,11 +28,10 @@ const PostPage = ({ mdxSource, frontmatter: metadata }: Props) => {
 
   return (
     <>
-      <BlogSeo
+      <Seo
         title={metadata.title}
-        author="Arnav Gosain"
-        date={metadata.published_on}
         url={`${baseUrl}/${metadata.slug}`}
+        publishedAt={isoStringFromFrontmatter(metadata.published_on)}
       />
       <PageLayout
         breadcrumb={{

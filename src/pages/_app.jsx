@@ -1,13 +1,11 @@
-import { DefaultSeo } from "next-seo";
 import { ThemeProvider } from "next-themes";
-import "prism-themes/themes/prism-gruvbox-dark.css";
-import "../styles/index.css";
-import defaultSeoProps from "~/next-seo.config";
-import NextNProgress from "nextjs-progressbar";
 import Head from "next/head";
-import { isProd } from "~/config";
 import Script from "next/script";
+import "prism-themes/themes/prism-gruvbox-dark.css";
 import Analytics from "~/components/AnalyticsProvider";
+import Seo from "~/components/Seo";
+import { isProd } from "~/config";
+import "../styles/index.css";
 
 export default function MyApp({ Component, pageProps }) {
   return (
@@ -20,8 +18,7 @@ export default function MyApp({ Component, pageProps }) {
       ) : null}
       <style data-href="https://fonts.googleapis.com/css2?family=Inter" />
       <style data-href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" />
-      <DefaultSeo {...defaultSeoProps} />
-      <NextNProgress color="#a5f3fc" />
+      <Seo />
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
         <link

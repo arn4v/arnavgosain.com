@@ -1,13 +1,13 @@
 import clsx from "clsx";
-import { NextSeo, NextSeoProps } from "next-seo";
 import * as React from "react";
 import Navbar from "./Navbar";
+import Seo, { SeoProps } from "./Seo";
 
 interface Props {
   children: React.ReactNode;
   breadcrumb?: Record<string, string>;
   className?: string;
-  seo?: NextSeoProps;
+  seo?: SeoProps;
 }
 
 export default function PageLayout({
@@ -17,7 +17,7 @@ export default function PageLayout({
 }: Props) {
   return (
     <>
-      <NextSeo {...seo} />
+      <Seo {...seo} />
       <div
         className={clsx([
           "flex flex-col bg-white min-h-screen dark:bg-black overflow-x-hidden",

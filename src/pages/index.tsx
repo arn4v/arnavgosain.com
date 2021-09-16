@@ -3,7 +3,6 @@ import BlogSection from "~/components/BlogSection";
 import PageLayout from "~/components/PageLayout";
 import ProjectsList from "~/components/ProjectsList";
 import { generateSiteMap, getDateObjectFromString } from "~/lib/utils";
-import { defaultOpenGraph } from "~/next-seo.config";
 import PostMetadata from "~/types/metadata";
 
 export const getStaticProps = async () => {
@@ -28,13 +27,7 @@ export const getStaticProps = async () => {
 
 const IndexPage = ({ posts }: { posts: PostMetadata[] }) => {
   return (
-    <PageLayout
-      seo={{
-        title: defaultOpenGraph.title,
-        description: defaultOpenGraph.description,
-        openGraph: defaultOpenGraph,
-      }}
-    >
+    <PageLayout>
       <div className="flex flex-col space-y-8">
         <About />
         <ProjectsList />

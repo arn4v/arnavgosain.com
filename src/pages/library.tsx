@@ -1,8 +1,6 @@
-import { OpenGraph } from "next-seo/lib/types";
-import Image from "next/image";
-import * as React from "react";
 import CustomLink from "~/components/CustomLink";
 import PageLayout from "~/components/PageLayout";
+import { SeoProps } from "~/components/Seo";
 import { baseUrl } from "~/config";
 import { getBooks } from "~/lib/bookshelf";
 
@@ -18,26 +16,17 @@ interface Props {
   data: Record<string, Array<Book>>;
 }
 
-export default function Bookshelf({ data }: Props) {
-  const openGraph: OpenGraph = {
-    title: "Library | Arnav Gosain",
-    description: "Books I've read, reading and want to read.",
-    url: baseUrl + "/library",
-    images: [
-      {
-        url: "/static/library-og-banner.png",
-        height: 627,
-        width: 1200,
-      },
-    ],
-  };
+const seoConfig: SeoProps = {
+  title: "Library | Arnav Gosain",
+  description: "Books I've read, reading and want to read.",
+  url: baseUrl + "/library",
+  image: "/static/library-og-banner.png",
+};
 
+export default function Bookshelf({ data }: Props) {
   return (
     <>
-      <PageLayout
-        breadcrumb={{ Bookshelf: "/bookshelf" }}
-        seo={{ title: openGraph.title, openGraph: openGraph }}
-      >
+      <PageLayout breadcrumb={{ Bookshelf: "/bookshelf" }} seo={seoConfig}>
         <h1 className="text-3xl font-bold dark:text-gray-200 font-secondary hidden lg:block mb-8">
           Library
         </h1>

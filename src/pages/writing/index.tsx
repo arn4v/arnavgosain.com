@@ -1,16 +1,11 @@
 import { GetStaticProps } from "next";
-import glob from "glob";
-import fs from "fs";
-import path from "path";
-import matter from "gray-matter";
-import readingTime from "reading-time";
-import { OpenGraph } from "next-seo/lib/types";
 import PageLayout from "~/components/PageLayout";
-import { baseUrl } from "~/config";
 import PostsList from "~/components/PostsList";
-import { generateFeeds, generateSiteMap, getPostsData } from "~/lib/utils";
+import { SeoProps } from "~/components/Seo";
+import { baseUrl } from "~/config";
+import { generateFeeds, getPostsData } from "~/lib/utils";
 
-const meta: OpenGraph = {
+const seoConfig: SeoProps = {
   title: "Writing | Arnav Gosain",
   url: baseUrl + "/writing",
 };
@@ -18,10 +13,7 @@ const meta: OpenGraph = {
 const ProjectsPage = ({ data }) => {
   return (
     <>
-      <PageLayout
-        breadcrumb={{ Projects: "/projects" }}
-        seo={{ title: meta.title, openGraph: meta }}
-      >
+      <PageLayout breadcrumb={{ Projects: "/projects" }} seo={seoConfig}>
         <div className="flex flex-col gap-6">
           <h1 className="text-3xl font-bold dark:text-white font-secondary hidden lg:block">
             Writing
