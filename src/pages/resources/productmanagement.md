@@ -7,6 +7,14 @@ layout: "../../layouts/post"
 
 This post is an exhaustive list of resources I refer to for Product Management.
 
+## Blogs
+
+1. [Bring the Donuts by Ken Norton](https://www.bringthedonuts.com/)
+2. [Lenny's Newsletter](https://www.lennysnewsletter.com/)
+3. [Product Life by Will Lawrence](https://productlife.to/)
+4. [Product Lessons](https://productlessons.substack.com/)
+5. [The Product Person](https://theproductperson.substack.com/)
+
 ## User Interviews / Talking To Users
 
 1. [Eric Migicovsky - How to Talk to Users - YouTube](https://www.youtube.com/watch?v=MT4Ig2uqjTc)
