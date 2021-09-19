@@ -77,9 +77,7 @@ export default function PlaylistsPage({ playlists }) {
 
 export async function getStaticProps() {
   const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
-  let playlists = isProd
-    ? require("../../data/playlists").default
-    : require("playlists.json");
+  let playlists = require("../../data/playlists").default;
 
   if (isProd) {
     const accessToken = (
