@@ -7,6 +7,8 @@ layout: "../../layouts/post"
 
 This page is a list of a variety of companies' handbooks/playbooks.
 
+### Company Handbooks
+
 | Company Name | Handbook Url                                                                  |
 | ------------ | ----------------------------------------------------------------------------- |
 | PostHog      | https://posthog.com/handbook                                                  |

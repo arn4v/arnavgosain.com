@@ -16,9 +16,9 @@ interface Props {
 const links = [
   { title: "Home", href: "/", active: /\/$/ },
   {
-    title: "Writing",
-    href: "/writing",
-    active: /\/writing$/,
+    title: "Blog",
+    href: "/blog",
+    active: /\/blog(.*)$/,
   },
   { title: "Projects", href: "/projects", active: /\/projects$/ },
   { title: "Bookmarks", href: "/bookmarks", active: /\/bookmarks\/?(.*)$/ },

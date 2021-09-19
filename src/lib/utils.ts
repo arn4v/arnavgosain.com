@@ -7,6 +7,7 @@ import { Feed } from "feed";
 import matter from "gray-matter";
 import { baseUrl } from "~/config";
 import readingTime from "reading-time";
+import PostMetadata from "~/types/metadata";
 
 export const getFormattedDateText = (dateString: string): string => {
   const date = getDateObjectFromString(dateString);
@@ -114,7 +115,7 @@ const getPosts = () => {
     );
 };
 
-export const getPostsData = () => {
+export const getPostsData = (): PostMetadata[] => {
   return getPosts().map(({ frontMatter, filePath, content }) => {
     frontMatter.slug = filePath
       .split("src/pages")[1]
@@ -122,7 +123,7 @@ export const getPostsData = () => {
       .replace(/\.(md|mdx)/g, "");
     frontMatter.reading_time = readingTime(content).text;
     return frontMatter;
-  });
+  }) as PostMetadata[];
 };
 
 export const isoStringFromFrontmatter = (date: string) => {

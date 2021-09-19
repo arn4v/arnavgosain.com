@@ -9,8 +9,20 @@ export default class CustomDocument extends Document {
             <link
               rel="alternate"
               type="application/rss+xml"
-              title="RSS Feed for arnavgosain.com"
-              href="/rss.xml"
+              title="arnavgosain.com RSS Feed"
+              href="rss.xml"
+            />
+            <link
+              rel="alternate"
+              type="application/atom+xml"
+              title="arnavgosain.com Atom feed"
+              href="atom.xml"
+            />
+            <link
+              rel="alternate"
+              type="application/feed+json"
+              title="arnavgosain.com Json feed"
+              href="feed.json"
             />
           </Head>
           <body>

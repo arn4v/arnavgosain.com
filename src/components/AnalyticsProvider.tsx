@@ -1,10 +1,9 @@
-import * as React from "react";
+import GoogleAnalytics, { GAnalytics as IGAnalytics } from "ganalytics";
 import { useRouter } from "next/router";
-import GoogleAnalytics, { GAnalytics as GAnalyticsInterface } from "ganalytics";
-import { isProd } from "~/config";
+import * as React from "react";
 
 const Analytics = ({ trackerId }: { trackerId: string }) => {
-  const analytics = React.useRef<GAnalyticsInterface>(null);
+  const analytics = React.useRef<IGAnalytics>(null);
   const router = useRouter();
   const onRouteChange = React.useCallback(() => {
     analytics.current.send("pageview");

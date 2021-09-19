@@ -34,6 +34,26 @@ let config = {
         destination: "/library",
         permanent: false,
       },
+      {
+        source: "/writing",
+        destination: "/blog",
+        permanent: false,
+      },
+      {
+        source: "/writing/:path*",
+        destination: "/blog/:path*",
+        permanent: false,
+      },
+      {
+        source: "/resources",
+        destination: "/blog",
+        permanent: false,
+      },
+      {
+        source: "/resources/:path*",
+        destination: "/resources/:path*",
+        permanent: false,
+      },
     ];
   },
 };

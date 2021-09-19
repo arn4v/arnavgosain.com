@@ -2,28 +2,12 @@ import About from "~/components/About";
 import BlogSection from "~/components/BlogSection";
 import PageLayout from "~/components/PageLayout";
 import ProjectsList from "~/components/ProjectsList";
-import { generateSiteMap, getDateObjectFromString } from "~/lib/utils";
+import {
+  generateSiteMap,
+  getDateObjectFromString,
+  getPostsData,
+} from "~/lib/utils";
 import PostMetadata from "~/types/metadata";
-
-export const getStaticProps = async () => {
-  // Generate sitemap
-  await generateSiteMap();
-
-  const { getAllFiles: getAllPosts } = await import("~/lib/mdx");
-
-  return {
-    props: {
-      posts: getAllPosts("blog")
-        .sort(
-          (a, b) =>
-            getDateObjectFromString(b.metadata.published_on).valueOf() -
-            getDateObjectFromString(a.metadata.published_on).valueOf()
-        )
-        .slice(0, 6)
-        .map((item) => item.metadata),
-    },
-  };
-};
 
 const IndexPage = ({ posts }: { posts: PostMetadata[] }) => {
   return (
@@ -35,6 +19,25 @@ const IndexPage = ({ posts }: { posts: PostMetadata[] }) => {
       </div>
     </PageLayout>
   );
+};
+
+export const getStaticProps = async () => {
+  // Generate sitemap
+  await generateSiteMap();
+
+  const posts = getPostsData()
+    .slice(0, 6)
+    .sort(
+      (a, b) =>
+        getDateObjectFromString(b.published_on).valueOf() -
+        getDateObjectFromString(a.published_on).valueOf()
+    );
+
+  return {
+    props: {
+      posts,
+    },
+  };
 };
 
 export default IndexPage;

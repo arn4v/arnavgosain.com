@@ -1,7 +1,7 @@
+import { format } from "date-fns";
 import Link from "next/link";
 import { HiArrowRight } from "react-icons/hi";
 import PostMetadata from "~/types/metadata";
-import PostCard from "./PostCard";
 
 export default function BlogSection({ data }: { data: PostMetadata[] }) {
   return (
@@ -12,8 +12,20 @@ export default function BlogSection({ data }: { data: PostMetadata[] }) {
         </span>
       </div>
       <div className="flex flex-col items-center justify-center gap-4 lg:gap-6">
-        {data.map((item: PostMetadata) => {
-          return <PostCard key={item.title as string} data={item} />;
+        {data.map((data: PostMetadata) => {
+          return (
+            <Link key={`${data.title}-${data.slug}`} href={`/${data.slug}`}>
+              <a className="flex items-center justify-between w-full h-full gap-3 p-4 dark:text-gray-200 rounded-md dark:hover:bg-gray-900 transition hover:bg-gray-50 border border-gray-300 dark:border-gray-800 hover:shadow-sm font-medium">
+                <p className="font-semibold">{data.title}</p>
+                <p>
+                  Published on{" "}
+                  <time dateTime={new Date(data.published_on).toISOString()}>
+                    {format(new Date(data.published_on), "do MMMM yyyy")}
+                  </time>
+                </p>
+              </a>
+            </Link>
+          );
         })}
       </div>
       <Link href="/blog">
