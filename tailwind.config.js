@@ -5,7 +5,7 @@ const typography = require("@tailwindcss/typography");
 
 module.exports = {
   mode: "jit",
-  purge: ["./src/**/*.{js,ts,jsx,tsx,css}"],
+  purge: ["./src/**/*.{js,ts,jsx,tsx,css,md,mdx}"],
   darkMode: "class",
   theme: {
     extend: {
@@ -38,7 +38,7 @@ module.exports = {
             "h2,h3,h4": {
               "scroll-margin-top": spacing[32],
             },
-            code: { color: theme("colors.pink.500") },
+            code: { color: theme("colors.orange.500") },
             "blockquote p:first-of-type::before": false,
             "blockquote p:last-of-type::after": false,
           },

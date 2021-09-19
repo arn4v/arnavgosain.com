@@ -1,11 +1,11 @@
 ---
 type: "writing"
-title: "Company Handbooks/Playbooks"
+title: "Company Building resources"
 published_on: "2021-09-19"
 layout: "../../layouts/post"
 ---
 
-This page is a list of a variety of companies' handbooks/playbooks.
+This page is a list of company building resources.
 
 ### Company Handbooks
 
