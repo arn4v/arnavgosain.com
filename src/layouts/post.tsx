@@ -21,7 +21,7 @@ const PostLayout = ({ frontMatter, children }) => {
         [frontMatter.title]: `/${frontMatter.slug}`,
       }}
       seo={{
-        title: frontMatter.title,
+        title: `${frontMatter.title} | Arnav Gosain`,
         url: `${baseUrl}/${frontMatter.slug}`,
         publishedAt: published_on.toISOString(),
       }}

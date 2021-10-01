@@ -40,18 +40,23 @@ let config = {
         permanent: false,
       },
       {
-        source: "/writing/:path*",
-        destination: "/blog/:path*",
-        permanent: false,
-      },
-      {
         source: "/resources",
         destination: "/blog",
         permanent: false,
       },
       {
+        source: "/writing/:path*",
+        destination: "/:path*",
+        permanent: false,
+      },
+      {
+        source: "/resources/handbooks",
+        destination: "/companybuilding",
+        permanent: true,
+      },
+      {
         source: "/resources/:path*",
-        destination: "/resources/:path*",
+        destination: "/:path*",
         permanent: false,
       },
     ];

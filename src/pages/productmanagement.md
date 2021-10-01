@@ -2,7 +2,7 @@
 type: "writing"
 title: "Product Management Resources"
 published_on: "2021-08-20"
-layout: "../../layouts/post"
+layout: "../layouts/post"
 ---
 
 This post is an exhaustive list of resources I refer to for Product Management.
