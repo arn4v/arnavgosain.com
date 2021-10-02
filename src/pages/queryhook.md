@@ -1,7 +1,7 @@
 ---
 type: "writing"
 layout: "../layouts/post"
-published_on: "2021-10-01"
+published_on: "2021-10-02"
 title: "Improving API Documentation using React Query and TypeScript"
 ---
 
