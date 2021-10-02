@@ -84,16 +84,12 @@ export function useQuery<
   Params = Parameters<typeof queryFetchers[Key]>,
   Data = Await<ReturnType<typeof queryFetchers[Key]>>
 >(
-  arg1: Key,
+  key: Key,
   arg2?: Params | UseQueryOptions<Data>,
   arg3?: UseQueryOptions<Data, unknown, Data>
 ) {
-  const key = React.useMemo(() => arg1, [arg1]);
-  const params = React.useMemo(() => (Array.isArray(arg2) ? arg2 : []), [arg2]);
-  const options = React.useMemo(
-    () => (!!arg3 && Array.isArray(arg2) ? arg3 : arg2),
-    [arg2, arg3]
-  );
+  const params = Array.isArray(arg2) ? arg2 : [];
+  const options = !!arg3 && Array.isArray(arg2) ? arg3 : arg2;
 
   return useReactQuery(
     key,
