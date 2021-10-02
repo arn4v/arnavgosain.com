@@ -69,7 +69,7 @@ const PostLayout = ({ frontMatter, children }) => {
               </span>
             </div>
           </div>
-          <hr className="w-full" />
+          <div className="w-full h-px bg-gray-200 dark:bg-blueGray-600" />
         </div>
         <div className="prose dark:prose-dark max-w-full">
           <MDXProvider components={{ a: CustomLink }}>{children}</MDXProvider>

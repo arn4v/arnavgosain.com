@@ -40,7 +40,7 @@ export default function Navbar({ className = "" }: Props) {
     <nav
       className={clsx([
         className,
-        "h-20 w-full dark:bg-black bg-white border-b border-gray-200 dark:border-gray-700 fixed top-0 z-50 transition-shadow duration-100 ease-in-out",
+        "h-20 w-full dark:bg-black bg-white border-b border-gray-200 dark:border-blueGray-600 fixed top-0 z-50 transition-shadow duration-100 ease-in-out",
         isAtTop ? null : "shadow-lg",
       ])}
     >

@@ -140,7 +140,7 @@ export const queryFetchers = {
 
 Now that you're all done, you can take full advantage of VSCode autocomplete.
 
-<img src="/static/queryhook-autocomplete.png" />
+![](/static/queryhook-autocomplete.png)
 
 <br />
 
