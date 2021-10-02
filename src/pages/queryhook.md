@@ -3,6 +3,7 @@ type: "writing"
 layout: "../layouts/post"
 published_on: "2021-10-02"
 title: "Improving API Documentation using React Query and TypeScript"
+banner: "/static/queryhook-og.png"
 ---
 
 As your codebase grows, there is only one way to increase developer productivity: Documentation. One of many reasons I prefer TypeScript to JavaScript is that overtime, as your codebase grows, developer productivity increases because TypeScript (and typed languages in general) offer something that dynamically typed languages cannot, automatic documentation in your IDE.

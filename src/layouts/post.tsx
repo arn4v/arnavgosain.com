@@ -4,9 +4,7 @@ import Image from "next/image";
 import * as React from "react";
 import CustomLink from "~/components/CustomLink";
 import PageLayout from "~/components/PageLayout";
-import Seo from "~/components/Seo";
 import { baseUrl } from "~/config";
-import { isoStringFromFrontmatter } from "~/lib/utils";
 
 const PostLayout = ({ frontMatter, children }) => {
   const published_on = React.useMemo(
@@ -24,6 +22,11 @@ const PostLayout = ({ frontMatter, children }) => {
         title: `${frontMatter.title} | Arnav Gosain`,
         url: `${baseUrl}/${frontMatter.slug}`,
         publishedAt: published_on.toISOString(),
+        ...(frontMatter?.banner
+          ? {
+              image: frontMatter.banner,
+            }
+          : {}),
       }}
     >
       <article className="flex flex-col mt-4 space-y-6">
