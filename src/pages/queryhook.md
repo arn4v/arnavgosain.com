@@ -61,10 +61,11 @@ import {
   UseQueryResult,
 } from "react-query";
 import { queryFetchers, QueryKeys } from "~/lib/api/queries";
-import { Await, Widen } from "~/types";
+
+type Await<T>  = T extends Promise<infer U> ? U : T;
 
 export function useQuery<
-  Key extends Widen<QueryKeys>,
+  Key extends QueryKeys,
   Params = Parameters<typeof queryFetchers[Key]>,
   Data = Await<ReturnType<typeof queryFetchers[Key]>>
 >(key: Key, options?: UseQueryOptions<Data>): UseQueryResult<Data>;
