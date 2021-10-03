@@ -1,8 +1,8 @@
 ---
-type: "writing"
-title: "Company Building Resources"
-published_on: "2021-09-19"
 layout: "../layouts/post"
+title: "Company Building Resources"
+slug: "companybuilding"
+published_on: "2021-09-19"
 ---
 
 This page is a list of company building resources.

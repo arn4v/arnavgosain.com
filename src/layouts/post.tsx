@@ -6,28 +6,41 @@ import CustomLink from "~/components/CustomLink";
 import PageLayout from "~/components/PageLayout";
 import { baseUrl } from "~/config";
 
-const PostLayout = ({ frontMatter, children }) => {
-  const published_on = React.useMemo(
-    () => new Date(frontMatter.published_on),
-    [frontMatter?.published_on]
-  );
+interface Frontmatter {
+  title: string;
+  slug: string;
+  published_on: string;
+  // url of og & banner image
+  banner: string;
+}
 
+const PostLayout = ({
+  frontMatter,
+  children,
+}: {
+  frontMatter: Frontmatter;
+  children: React.ReactNode;
+}) => {
+  const published_on = new Date(frontMatter.published_on);
+  const seoProps = {
+    title: `${frontMatter.title} | Arnav Gosain`,
+    url: `${baseUrl}/${frontMatter.slug}`,
+    publishedAt: published_on.toISOString(),
+    ...(typeof frontMatter?.banner === "string"
+      ? {
+          image: frontMatter.banner,
+        }
+      : {}),
+  };
+
+  console.log(seoProps);
   return (
     <PageLayout
       breadcrumb={{
         Blog: "/blog",
         [frontMatter.title]: `/${frontMatter.slug}`,
       }}
-      seo={{
-        title: `${frontMatter.title} | Arnav Gosain`,
-        url: `${baseUrl}/${frontMatter.slug}`,
-        publishedAt: published_on.toISOString(),
-        ...(frontMatter?.banner
-          ? {
-              image: frontMatter.banner,
-            }
-          : {}),
-      }}
+      seo={seoProps}
     >
       <article className="flex flex-col mt-4 space-y-6">
         <div className="flex flex-col items-start justify-center space-y-4">
