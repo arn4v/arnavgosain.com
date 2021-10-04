@@ -1,4 +1,5 @@
 ---
+type: "writing"
 layout: "../layouts/post"
 title: "Career Frameworks"
 slug: "careerframeworks"

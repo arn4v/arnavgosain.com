@@ -1,4 +1,5 @@
 ---
+type: "writing"
 layout: "../layouts/post"
 title: "Improving API Documentation using React Query and TypeScript"
 slug: "queryhook"

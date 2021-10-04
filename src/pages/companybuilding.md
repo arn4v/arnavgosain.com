@@ -1,4 +1,5 @@
 ---
+type: "writing"
 layout: "../layouts/post"
 title: "Company Building Resources"
 slug: "companybuilding"
