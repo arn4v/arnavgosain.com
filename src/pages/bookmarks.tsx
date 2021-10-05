@@ -52,20 +52,19 @@ const BookmarksPage = ({ data }: Props) => {
       <div className="grid grid-cols-1 gap-4">
         {data.map((item) => {
           return (
-            <CustomLink
-              key={item.id}
-              href={item.url}
-              className="flex flex-col items-start justify-center w-full h-full gap-3 py-2 px-4 dark:text-gray-200 rounded-md dark:hover:bg-gray-900 transition hover:bg-gray-50 border border-gray-300 dark:border-gray-800 hover:shadow-sm"
-            >
-              <span className="text-sm font-medium lg:text-base">
+            <div key={item.id} className="flex flex-col gap-2 w-full">
+              <CustomLink
+                className="text-orange-500 hover:text-orange-700 underline font-medium"
+                href={item.url}
+              >
                 {item.title}
-              </span>
-              <div className="flex gap-2 items-center">
+              </CustomLink>
+              <div className="flex space-x-2 items-center text-gray-600 dark:text-blueGray-500">
                 <span>{format(new Date(item.createdAt), "do MMMM yyyy")}</span>
                 <span>/</span>
                 {item.tags.length > 0 ? (
                   <>
-                    <span>
+                    <span className="flex-nowrap">
                       {item.tags
                         .map((item) => item.name)
                         .sort((a, b) => a.localeCompare(b))
@@ -76,7 +75,7 @@ const BookmarksPage = ({ data }: Props) => {
                   <span>Uncategorized</span>
                 )}
               </div>
-            </CustomLink>
+            </div>
           );
         })}
       </div>
