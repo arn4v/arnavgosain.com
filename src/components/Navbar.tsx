@@ -77,7 +77,6 @@ export default function Navbar({ className = "" }: Props) {
             })}
           </ul>
         </div>
-        <ThemeButton />
       </div>
       {isOpen && (
         <ul className="w-full flex flex-col gap-2 lg:hidden dark:bg-black bg-white border-b border-gray-200 dark:border-gray-700">
