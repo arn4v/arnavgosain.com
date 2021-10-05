@@ -64,6 +64,7 @@
     "mdx-prism": "^0.3.4",
     "postcss": "8.3.6",
     "prettier": "^2.4.0",
+    "prisma": "^3.1.1",
     "rehype": "^12.0.0",
     "remark-autolink-headings": "^6",
     "remark-code-titles": "^0.1.2",
