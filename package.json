@@ -20,6 +20,7 @@
     "db-push": "prisma db push",
     "db-migrate-create": "prisma migrate dev --create-only --skip-generate",
     "db-migrate-dev": "prisma db migrate dev --skip-generate",
+    "db-view": "prisma studio -p 5556",
     "cz": "cz"
   },
   "dependencies": {

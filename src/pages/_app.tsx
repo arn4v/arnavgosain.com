@@ -32,9 +32,10 @@ const App = ({ Component, pageProps }: AppProps) => {
 
 export default withTRPC<AppRouter>({
   config() {
-    const url = process.env.VERCEL_URL
-      ? `https://${process.env.VERCEL_URL}/api/trpc`
-      : "http://localhost:3000/api/trpc";
+    const url =
+      process.env.NODE_ENV === "production" && process.env.NEXT_PUBLIC_VERCEL
+        ? `https://arnavgosain.com/api/trpc`
+        : "http://localhost:3000/api/trpc";
 
     return {
       url,

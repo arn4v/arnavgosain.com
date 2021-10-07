@@ -1,6 +1,7 @@
 ---
 type: "writing"
 title: "Product Management Resources"
+slug: "productmanagement"
 published_on: "2021-08-20"
 layout: "../layouts/post"
 ---

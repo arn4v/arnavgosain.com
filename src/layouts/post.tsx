@@ -38,9 +38,7 @@ const PostLayout = ({
         }
       : {}),
   };
-  const { data, isLoading } = useQuery(["views", frontMatter.slug], {
-    staleTime: Infinity,
-  });
+  const { data, isLoading } = useQuery(["views", frontMatter.slug]);
 
   return (
     <PageLayout
