@@ -2,9 +2,12 @@ import { MDXProvider } from "@mdx-js/react";
 import { format } from "date-fns";
 import Image from "next/image";
 import * as React from "react";
+import { HiEye } from "react-icons/hi";
 import CustomLink from "~/components/CustomLink";
+import { RadixEye } from "~/components/icons/RadixEye";
 import PageLayout from "~/components/PageLayout";
 import { baseUrl } from "~/config";
+import { useMutation, useQuery } from "~/trpc/hooks";
 
 interface Frontmatter {
   title: string;
@@ -13,6 +16,9 @@ interface Frontmatter {
   // url of og & banner image
   banner: string;
 }
+
+const editUrl = (slug) =>
+  `https://github.com/leerob/leerob.io/edit/main/data/${slug}.mdx`;
 
 const PostLayout = ({
   frontMatter,
@@ -32,8 +38,10 @@ const PostLayout = ({
         }
       : {}),
   };
+  const { data, isLoading } = useQuery(["views", frontMatter.slug], {
+    staleTime: Infinity,
+  });
 
-  console.log(seoProps);
   return (
     <PageLayout
       breadcrumb={{
@@ -81,6 +89,11 @@ const PostLayout = ({
                       {format(published_on, "do MMMM yyyy")}
                     </time>
                   </p>
+                </div>
+                <div className="flex items-center justify-start gap-2 lg:gap-4">
+                  <div className="hidden lg:block">/</div>
+                  <RadixEye className="h-4 w-4" />
+                  <p>{isLoading ? "---" : Number(data)}</p>
                 </div>
               </span>
             </div>

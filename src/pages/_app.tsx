@@ -1,12 +1,16 @@
+import { withTRPC } from "@trpc/next";
+import superjson from "superjson";
+import { AppProps } from "next/app";
 import Head from "next/head";
 import Script from "next/script";
 import "prism-themes/themes/prism-gruvbox-dark.css";
 import Analytics from "~/components/AnalyticsProvider";
 import Seo from "~/components/Seo";
 import { isProd } from "~/config";
+import { AppRouter } from "~/trpc/router";
 import "../styles/index.css";
 
-export default function MyApp({ Component, pageProps }) {
+const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       {isProd ? (
@@ -24,4 +28,24 @@ export default function MyApp({ Component, pageProps }) {
       <Component {...pageProps} />
     </>
   );
-}
+};
+
+export default withTRPC<AppRouter>({
+  config() {
+    const url = process.env.VERCEL_URL
+      ? `https://${process.env.VERCEL_URL}/api/trpc`
+      : "http://localhost:3000/api/trpc";
+
+    return {
+      url,
+      transformer: superjson,
+      queryClientConfig: {
+        defaultOptions: {
+          queries: {
+            staleTime: Infinity,
+          },
+        },
+      },
+    };
+  },
+})(App);
