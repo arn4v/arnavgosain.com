@@ -3,11 +3,12 @@ import { format } from "date-fns";
 import Image from "next/image";
 import * as React from "react";
 import { HiEye } from "react-icons/hi";
+import useSWR, { SWRConfiguration } from "swr";
 import CustomLink from "~/components/CustomLink";
 import { RadixEye } from "~/components/icons/RadixEye";
 import PageLayout from "~/components/PageLayout";
 import { baseUrl } from "~/config";
-import { useMutation, useQuery } from "~/trpc/hooks";
+import fetcher from "~/lib/fetcher";
 
 interface Frontmatter {
   title: string;
@@ -16,6 +17,16 @@ interface Frontmatter {
   // url of og & banner image
   banner: string;
 }
+
+const staleSwrConfig: SWRConfiguration = {
+  revalidateIfStale: false,
+  revalidateOnFocus: false,
+  revalidateOnMount: false,
+  revalidateOnReconnect: false,
+  refreshWhenHidden: false,
+  refreshWhenOffline: false,
+  refreshInterval: 0,
+};
 
 const editUrl = (slug) =>
   `https://github.com/leerob/leerob.io/edit/main/data/${slug}.mdx`;
@@ -38,7 +49,15 @@ const PostLayout = ({
         }
       : {}),
   };
-  const { data, isLoading } = useQuery(["views", frontMatter.slug]);
+  const {
+    data,
+    isValidating: isLoading,
+    mutate,
+  } = useSWR<number>(`/api/views/${frontMatter.slug}`, fetcher, staleSwrConfig);
+
+  React.useEffect(() => {
+    mutate();
+  }, [mutate]);
 
   return (
     <PageLayout
