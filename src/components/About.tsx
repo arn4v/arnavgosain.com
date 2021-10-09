@@ -1,7 +1,7 @@
 import React from "react";
 import { HiOutlineMail } from "react-icons/hi";
 import { VscTwitter } from "react-icons/vsc";
-import CustomLink from "~/components/CustomLink";
+import Link from "~/components/CustomLink";
 import HighlightLink from "./HighlightLink";
 
 const About = () => {
@@ -29,20 +29,20 @@ const About = () => {
               Get in touch:
             </p>
             <div className="relative flex flex-row items-center justify-center space-x-3">
-              <CustomLink
+              <Link
                 href="mailto:arnav@arnavgosain.com"
                 title="Link to my email address"
                 className="hover:text-amber-400 z-0"
               >
                 <HiOutlineMail className="w-8 h-8" />
-              </CustomLink>
-              <CustomLink
+              </Link>
+              <Link
                 href="https://twitter.com/arn4v"
                 title="Link to my Twitter"
                 className="hover:text-blue-400"
               >
                 <VscTwitter className="w-8 h-8 z-0" />
-              </CustomLink>
+              </Link>
             </div>
           </div>
         </div>

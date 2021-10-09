@@ -4,7 +4,7 @@ import Image from "next/image";
 import * as React from "react";
 import { HiEye } from "react-icons/hi";
 import useSWR, { SWRConfiguration } from "swr";
-import CustomLink from "~/components/CustomLink";
+import Link from "~/components/CustomLink";
 import { RadixEye } from "~/components/icons/RadixEye";
 import PageLayout from "~/components/PageLayout";
 import { baseUrl } from "~/config";
@@ -118,7 +118,7 @@ const PostLayout = ({
           <div className="w-full h-px bg-gray-200 dark:bg-blueGray-600" />
         </div>
         <div className="prose dark:prose-dark max-w-full">
-          <MDXProvider components={{ a: CustomLink }}>{children}</MDXProvider>
+          <MDXProvider components={{ a: Link }}>{children}</MDXProvider>
         </div>
       </article>
     </PageLayout>

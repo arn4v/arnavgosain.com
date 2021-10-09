@@ -1,4 +1,4 @@
-import CustomLink from "~/components/CustomLink";
+import Link from "~/components/CustomLink";
 import PageLayout from "~/components/PageLayout";
 import { SeoProps } from "~/components/Seo";
 import { baseUrl } from "~/config";
@@ -43,7 +43,7 @@ export default function Bookshelf({ data }: Props) {
                 <div className="flex flex-col gap-4 w-full">
                   {value.map((book) => {
                     return (
-                      <CustomLink
+                      <Link
                         key={book.id}
                         href={book.url}
                         className="flex flex-col items-start justify-center w-full h-full gap-3 px-2 py-1 dark:text-gray-200 rounded-md dark:hover:bg-gray-900 transition hover:bg-gray-50 border border-gray-300 dark:border-gray-800 hover:shadow-sm"
@@ -56,7 +56,7 @@ export default function Bookshelf({ data }: Props) {
                             {book.author}
                           </span>
                         </div>
-                      </CustomLink>
+                      </Link>
                     );
                   })}
                 </div>

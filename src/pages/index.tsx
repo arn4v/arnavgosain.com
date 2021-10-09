@@ -14,8 +14,8 @@ const IndexPage = ({ posts }: { posts: PostMetadata[] }) => {
     <PageLayout>
       <div className="flex flex-col space-y-8">
         <About />
+        <BlogSection data={posts} />
         <ProjectsList />
-        {posts.length > 0 && <BlogSection data={posts} />}
       </div>
     </PageLayout>
   );
@@ -26,7 +26,7 @@ export const getStaticProps = async () => {
   await generateSiteMap();
 
   const posts = getPostsData()
-    .slice(0, 6)
+    .slice(0, 3)
     .sort(
       (a, b) =>
         getDateObjectFromString(b.published_on).valueOf() -

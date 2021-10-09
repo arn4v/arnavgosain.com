@@ -1,6 +1,67 @@
-import CustomLink from "../components/CustomLink";
+import DescLink from "~/components/DescLink";
+import Link from "../components/CustomLink";
 
+/**
+ * @typedef {object} Link
+ * @property {string} id
+ * @property {string} title
+ * @property {string} url
+ */
+
+/**
+ * @typedef {Object} Project
+ * @property {string} id
+ * @property {string} name
+ * @property {JSX.Element} description
+ * @property {string} duration
+ * @property {Array.<Link>} links
+ * @property {Array.<string>} tags
+ */
+
+/**
+ * @type {Array.<Project>}
+ */
 const projects = [
+  {
+    id: "b346a995-b2af-4877-8fb8-4895e131d306",
+    name: "tsrq",
+    duration: "Easily Create Type-Safe React Query Hooks",
+    description: <></>,
+    links: [
+      {
+        id: "33bb21ef-8974-4b73-9cf9-c3abe87f953b",
+        title: "Npm",
+        url: "https://npmjs.org/package/tsrq",
+      },
+      {
+        id: "3a6ee375-be46-4f92-a85a-7c9bad085121",
+        title: "GitHub",
+        url: "https://github.com/arn4v/tsrq",
+      },
+    ],
+    tags: ["React", "TypeScript"],
+  },
+  {
+    id: "553b97d8-29b5-4456-86ad-ad9ecebb8a6f",
+    name: "relink",
+    duration: "August 2021",
+    description: (
+      <>
+        Relink is a personal contacts manager inspired by
+        <DescLink href="https://thesephist.com">thesephist</DescLink>'s{" "}
+        <DescLink href="https://github.com/thesephist/mira">mira</DescLink>.
+        Built with Golang and Svelte.
+      </>
+    ),
+    links: [
+      {
+        id: "487354b4-69e1-4abe-aaf4-ee827f768146",
+        title: "GitHub",
+        url: "https://github.com/arn4v/relink",
+      },
+    ],
+    tags: ["Go", "Svelte"],
+  },
   {
     id: "2f6065fa-c979-41c6-9e92-ff781af5e037",
     name: "next-mdx-builder",
@@ -8,19 +69,19 @@ const projects = [
       <>
         Next.js plugin that adds support for MDX Pages with layout support in
         frontMatter. Inspired by{" "}
-        <CustomLink
+        <Link
           href="https://github.com/hashicorp/next-mdx-enhanced"
-          className="font-mono text-cyan-600 hover:bg-cyan-200 hover:text-black transition"
+          className=""
         >
           next-mdx-enhanced
-        </CustomLink>
+        </Link>
         , powered by{" "}
-        <CustomLink
+        <Link
           href="https://github.com/hashicorp/next-mdx-remote"
           className="font-mono text-cyan-600 hover:bg-cyan-200 hover:text-black transition"
         >
           next-mdx-remote
-        </CustomLink>
+        </Link>
         .
       </>
     ),
@@ -45,19 +106,19 @@ const projects = [
     description: (
       <>
         Set of React hooks I use across my projects. Inspired by the{" "}
-        <CustomLink
+        <Link
           href="https://usehooks.com/"
           className="font-mono text-cyan-600 hover:bg-cyan-200 hover:text-black transition"
         >
           use-hooks
-        </CustomLink>{" "}
+        </Link>{" "}
         project and{" "}
-        <CustomLink
+        <Link
           href="https://www.npmjs.com/package/react-use"
           className="font-mono text-cyan-600 hover:bg-cyan-200 hover:text-black transition"
         >
           react-use
-        </CustomLink>{" "}
+        </Link>{" "}
         library.
       </>
     ),
@@ -117,8 +178,8 @@ const projects = [
     description: (
       <>
         Simple URL shortener built to test{" "}
-        <CustomLink href="https://upstash.com">Upstash.com's</CustomLink>{" "}
-        Serverless Redis offering.
+        <Link href="https://upstash.com">Upstash.com's</Link> Serverless Redis
+        offering.
       </>
     ),
     duration: "June 2021",

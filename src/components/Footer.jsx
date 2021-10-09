@@ -1,4 +1,4 @@
-import CustomLink from "./CustomLink";
+import Link from "./CustomLink";
 
 export default function Footer() {
   const className =
@@ -6,18 +6,18 @@ export default function Footer() {
   return (
     <>
       <div className="flex flex-row text-sm items-center justify-center w-full px-4 pb-4 lg:text-base text-black space-x-4 dark:text-white pt-auto">
-        <CustomLink className={className} href="/">
+        <Link className={className} href="/">
           /home
-        </CustomLink>
-        <CustomLink className={className} href="/blog">
+        </Link>
+        <Link className={className} href="/blog">
           /blog
-        </CustomLink>
-        <CustomLink className={className} href="/playlists">
+        </Link>
+        <Link className={className} href="/playlists">
           /playlists
-        </CustomLink>
-        <CustomLink className={className} href="/rss">
+        </Link>
+        <Link className={className} href="/rss">
           /rss
-        </CustomLink>
+        </Link>
       </div>
     </>
   );

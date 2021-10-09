@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import Link from "next/link";
+import NextLink from "next/link";
 
 interface Props {
   href: string;
@@ -9,7 +9,7 @@ interface Props {
   children: React.ReactNode;
 }
 
-export default function CustomLink({
+export default function Link({
   children,
   href,
   className,
@@ -38,11 +38,13 @@ export default function CustomLink({
     delete linkProps.target;
     delete linkProps.rel;
     return (
-      <Link href={href} passHref>
+      <NextLink href={href} passHref>
         <a {...linkProps}>{children}</a>
-      </Link>
+      </NextLink>
     );
   }
 
   return <a {...linkProps}>{children}</a>;
 }
+
+export type { Props as LinkProps };

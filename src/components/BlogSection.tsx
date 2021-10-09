@@ -29,7 +29,7 @@ export default function BlogSection({ data }: { data: PostMetadata[] }) {
         })}
       </div>
       <Link href="/blog">
-        <a className="flex items-center justify-center px-1 py-2 space-x-2 text-sm transition duration-150 ease-in bg-gray-100 border border-gray-300 rounded-md dark:bg-gray-800 dark:hover:bg-gray-700 hover:bg-gray-200 dark:border-gray-800 lg:py-2 lg:px-2 lg:text-base whitespace-nowrap dark:text-white">
+        <a className="flex items-center justify-center px-6 ml-auto py-2 space-x-4 text-sm transition duration-150 ease-in bg-gray-100 border border-gray-300 rounded-md dark:bg-gray-800 dark:hover:bg-gray-700 hover:bg-gray-200 dark:border-gray-800 lg:text-base whitespace-nowrap dark:text-white">
           <span>View all posts</span>
           <HiArrowRight />
         </a>

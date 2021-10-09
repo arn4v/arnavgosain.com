@@ -1,7 +1,7 @@
 import axios from "axios";
 import { format } from "date-fns";
 import { GetStaticPaths, GetStaticProps } from "next";
-import CustomLink from "~/components/CustomLink";
+import Link from "~/components/CustomLink";
 import PageLayout from "~/components/PageLayout";
 import { SeoProps } from "~/components/Seo";
 import { baseUrl } from "~/config";
@@ -41,24 +41,24 @@ const BookmarksPage = ({ data }: Props) => {
       </h1>
       <p className="lg:text-lg text-base font-medium mb-8 dark:text-gray-200">
         Built on top of{" "}
-        <CustomLink
+        <Link
           href="https://bookmarky.io"
           className="bg-cyan-200 dark:bg-blueGray-600 underline"
         >
           Bookmarky.io
-        </CustomLink>{" "}
+        </Link>{" "}
         API.
       </p>
       <div className="grid grid-cols-1 gap-4">
         {data.map((item) => {
           return (
             <div key={item.id} className="flex flex-col gap-2 w-full">
-              <CustomLink
+              <Link
                 className="text-orange-500 hover:text-orange-700 underline font-medium"
                 href={item.url}
               >
                 {item.title}
-              </CustomLink>
+              </Link>
               <div className="flex space-x-2 items-center text-gray-600 dark:text-blueGray-500">
                 <span>{format(new Date(item.createdAt), "do MMMM yyyy")}</span>
                 <span>/</span>

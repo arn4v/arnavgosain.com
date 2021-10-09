@@ -15,6 +15,7 @@ const tagColors = {
   Python: "bg-gradient-to-tr from-orange-600 to-yellow-600",
   Bash: "bg-gradient-to-tr from-blue-600 to-sky-700",
   Redis: "bg-gradient-to-tr from-radix-red-red10 to-radix-red-red9",
+  Go: "bg-gradient-to-tr from-radix-teal-teal10 to-radix-teal-teal7",
 };
 
 interface Project {

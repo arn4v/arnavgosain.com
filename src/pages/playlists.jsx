@@ -1,5 +1,5 @@
 import axios from "axios";
-import CustomLink from "~/components/CustomLink";
+import Link from "~/components/CustomLink";
 import PageLayout from "~/components/PageLayout";
 import { baseUrl, isProd } from "~/config";
 
@@ -47,7 +47,7 @@ export default function PlaylistsPage({ playlists }) {
                   <div className="grid grid-cols-3 lg:grid-cols-4 grid-flow-cols gap-4">
                     {Object.entries(value).map(([month, _value]) => {
                       return (
-                        <CustomLink
+                        <Link
                           key={`${key}_${month}`}
                           href={_value["href"]}
                         >
@@ -62,7 +62,7 @@ export default function PlaylistsPage({ playlists }) {
                               {month}
                             </div>
                           </div>
-                        </CustomLink>
+                        </Link>
                       );
                     })}
                   </div>
