@@ -62,3 +62,11 @@ This post is an exhaustive list of resources I refer to for Product Management.
 ## Customer Discovery
 
 1. [8 Customer Discovery Questions to Validate Product Market Fit for Your Startup by @ttunguz](https://tomtunguz.com/anatomy-of-a-customer-reference/)
+
+## Research
+
+1. [The Research Mentality... and how to adopt it for product-led growth - Andreessen Horowitz](https://a16z.com/2021/10/07/the-research-mentality-and-how-to-adopt-it-for-product-led-growth/)
+
+## Design Psychology / UX Laws
+
+1. [Home | Laws of UX](https://lawsofux.com/)
