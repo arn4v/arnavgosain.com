@@ -2,7 +2,7 @@ import { NextApiRequest, NextApiResponse } from "next";
 import cors from "cors";
 import nextConnect from "next-connect";
 import { prisma } from "~/lib/prisma";
-import { isProd } from "~/config";
+import { isProd } from "~/constants";
 
 export default nextConnect<NextApiRequest, NextApiResponse>()
   .use(

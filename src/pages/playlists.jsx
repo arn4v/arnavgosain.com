@@ -1,7 +1,7 @@
 import axios from "axios";
 import Link from "~/components/CustomLink";
 import PageLayout from "~/components/PageLayout";
-import { baseUrl, isProd } from "~/config";
+import { baseUrl, isProd } from "~/constants";
 
 /**
  * @param {Object} props

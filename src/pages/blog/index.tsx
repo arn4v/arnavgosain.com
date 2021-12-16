@@ -3,7 +3,7 @@ import { GetStaticProps } from "next";
 import Link from "next/link";
 import PageLayout from "~/components/PageLayout";
 import { SeoProps } from "~/components/Seo";
-import { baseUrl } from "~/config";
+import { baseUrl } from "~/constants";
 import { generateFeeds, getPostsData } from "~/lib/utils";
 import PostMetadata from "~/types/metadata";
 

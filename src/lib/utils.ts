@@ -5,7 +5,7 @@ import prettier from "prettier";
 import path from "path";
 import { Feed } from "feed";
 import matter from "gray-matter";
-import { baseUrl } from "~/config";
+import { baseUrl } from "~/constants";
 import readingTime from "reading-time";
 import PostMetadata from "~/types/metadata";
 

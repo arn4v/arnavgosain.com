@@ -4,17 +4,14 @@ import Script from "next/script";
 import "prism-themes/themes/prism-gruvbox-dark.css";
 import Analytics from "~/components/AnalyticsProvider";
 import Seo from "~/components/Seo";
-import { isProd } from "~/config";
+import { isProd } from "~/constants";
 import "../styles/index.css";
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       {isProd ? (
-        <>
-          <Script async src="https://unpkg.com/thesemetrics@latest"></Script>
-          <Analytics trackerId={process.env.NEXT_PUBLIC_GA_TRACKING_ID} />
-        </>
+        <Script async src="https://unpkg.com/thesemetrics@latest"></Script>
       ) : null}
       <style data-href="https://fonts.googleapis.com/css2?family=Inter" />
       <style data-href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" />

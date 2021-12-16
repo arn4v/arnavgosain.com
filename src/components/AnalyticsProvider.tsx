@@ -3,17 +3,15 @@ import { useRouter } from "next/router";
 import * as React from "react";
 
 const Analytics = ({ trackerId }: { trackerId: string }) => {
-  const analytics = React.useRef<IGAnalytics>(null);
+  const [analytics, setAnalytics] = React.useState<IGAnalytics>(
+    GoogleAnalytics(trackerId)
+  );
   const router = useRouter();
   const onRouteChange = React.useCallback(() => {
-    analytics.current.send("pageview");
-  }, []);
+    analytics.send("pageview");
+  }, [analytics]);
 
   React.useEffect(() => {
-    if (!analytics.current) {
-      analytics.current = GoogleAnalytics(trackerId);
-    }
-
     router.events.on("routeChangeComplete", onRouteChange);
 
     return () => {

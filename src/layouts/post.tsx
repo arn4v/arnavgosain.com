@@ -7,7 +7,7 @@ import useSWR, { SWRConfiguration } from "swr";
 import Link from "~/components/CustomLink";
 import { RadixEye } from "~/components/icons/RadixEye";
 import PageLayout from "~/components/PageLayout";
-import { baseUrl } from "~/config";
+import { baseUrl } from "~/constants";
 import fetcher from "~/lib/fetcher";
 
 interface Frontmatter {
@@ -27,9 +27,6 @@ const staleSwrConfig: SWRConfiguration = {
   refreshWhenOffline: false,
   refreshInterval: 0,
 };
-
-const editUrl = (slug) =>
-  `https://github.com/leerob/leerob.io/edit/main/data/${slug}.mdx`;
 
 const PostLayout = ({
   frontMatter,

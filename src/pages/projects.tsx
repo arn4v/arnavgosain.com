@@ -1,7 +1,7 @@
 import PageLayout from "~/components/PageLayout";
 import ProjectsGrid from "~/components/ProjectsGrid";
 import { SeoProps } from "~/components/Seo";
-import { baseUrl } from "~/config";
+import { baseUrl } from "~/constants";
 import projects from "~/lib/projects";
 
 const seoConfig: SeoProps = {

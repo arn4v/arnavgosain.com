@@ -9,17 +9,7 @@ import Link from "../components/CustomLink";
  */
 
 /**
- * @typedef {Object} Project
- * @property {string} id
- * @property {string} name
- * @property {JSX.Element} description
- * @property {string} duration
- * @property {Array.<Link>} links
- * @property {Array.<string>} tags
- */
-
-/**
- * @type {Array.<Project>}
+ * @type {Array.<import("~/types").Project>}
  */
 const projects = [
   {

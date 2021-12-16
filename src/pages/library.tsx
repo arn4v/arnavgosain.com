@@ -1,7 +1,7 @@
 import Link from "~/components/CustomLink";
 import PageLayout from "~/components/PageLayout";
 import { SeoProps } from "~/components/Seo";
-import { baseUrl } from "~/config";
+import { baseUrl } from "~/constants";
 import { getBooks } from "~/lib/bookshelf";
 
 interface Book {

@@ -1,10 +1,12 @@
 import fs from "fs";
 import matter from "gray-matter";
+// @ts-ignore
 import mdxPrism from "mdx-prism";
 import { serialize } from "next-mdx-remote/serialize";
 import path from "path";
 import readingTime from "reading-time";
-import { isProd } from "~/config";
+import { isProd } from "~/constants";
+import { UnpackArray } from "~/types";
 
 const rootPath = path.resolve(process.cwd());
 type DataType = "blog" | "snippets";
@@ -47,7 +49,7 @@ export const getMdxSource = async <Frontmatter = unknown>(
   slug: string
 ) => {
   const allFiles = getAllFiles(type);
-  const mdxFile = allFiles.find((item) => item.slug === slug);
+  const mdxFile: UnpackArray<ReturnType<typeof getAllFiles>> = allFiles.find((item) => item.slug === slug);
 
   const mdxSource = await serialize(mdxFile.content, {
     mdxOptions: {

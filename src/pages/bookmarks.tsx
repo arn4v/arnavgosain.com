@@ -4,7 +4,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import Link from "~/components/CustomLink";
 import PageLayout from "~/components/PageLayout";
 import { SeoProps } from "~/components/Seo";
-import { baseUrl } from "~/config";
+import { baseUrl } from "~/constants";
 
 type Bookmark = {
   id: string;
@@ -86,7 +86,7 @@ const BookmarksPage = ({ data }: Props) => {
 export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
   const res = await axios.get("https://bookmarky.io/api/v1/bookmarks", {
     headers: {
-      Authorization: `Bearer ${process.env.BOOKMARKY_TOKEN.replace(
+      Authorization: `Bearer ${(process.env.BOOKMARKY_TOKEN as string).replace(
         /(\\r|\\n)/g,
         ""
       )}`,
