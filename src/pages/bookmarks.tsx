@@ -84,7 +84,7 @@ const BookmarksPage = ({ data }: Props) => {
 };
 
 export const getStaticProps: GetStaticProps<Props> = async (ctx) => {
-  const res = await axios.get("https://bookmarky.io/api/v1/bookmarks", {
+  const res = await axios.get("https://bookmarky.mnsht.xyz/api/v1/bookmarks", {
     headers: {
       Authorization: `Bearer ${(process.env.BOOKMARKY_TOKEN as string).replace(
         /(\\r|\\n)/g,

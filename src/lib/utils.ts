@@ -8,6 +8,8 @@ import matter from "gray-matter";
 import { baseUrl } from "~/constants";
 import readingTime from "reading-time";
 import PostMetadata from "~/types/metadata";
+import nextConnect from "next-connect";
+import { NextApiRequest, NextApiResponse } from "next";
 
 export const getFormattedDateText = (dateString: string): string => {
   const date = getDateObjectFromString(dateString);
@@ -130,3 +132,5 @@ export const isoStringFromFrontmatter = (date: string) => {
   const [year, month, day] = date.split("-").map((i) => parseInt(i));
   return new Date(year, month - 1, day).toISOString();
 };
+
+export const nc = () => nextConnect<NextApiRequest, NextApiResponse>();
