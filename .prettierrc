@@ -4,6 +4,5 @@
   "tabWidth": 2,
   "semi": true,
   "singleQuote": false,
-  "arrowParens": "always",
-  "plugins": ["prettier-plugin-organize-imports"]
+  "arrowParens": "always"
 }

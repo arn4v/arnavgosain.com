@@ -26,16 +26,16 @@ export const getStaticProps = async () => {
   await generateSiteMap();
 
   const posts = getPostsData()
-    .slice(0, 3)
     .sort(
       (a, b) =>
         getDateObjectFromString(b.published_on).valueOf() -
         getDateObjectFromString(a.published_on).valueOf()
-    );
+    )
+    .slice(0, 3);
 
   return {
     props: {
-      posts,
+      posts: posts,
     },
   };
 };

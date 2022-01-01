@@ -17,7 +17,7 @@ const ProjectsPage = ({ data }: { data: PostMetadata[] }) => {
     <PageLayout breadcrumb={{ Projects: "/projects" }} seo={seoConfig}>
       <div className="flex flex-col gap-10">
         <h1 className="text-3xl font-bold dark:text-white font-secondary hidden lg:block">
-          Blog
+          Entries
         </h1>
         <div className="flex flex-col items-center justify-center gap-4 lg:gap-6">
           {data
@@ -33,7 +33,7 @@ const ProjectsPage = ({ data }: { data: PostMetadata[] }) => {
                   className="flex items-center justify-between w-full"
                 >
                   <Link href={`/${item.slug}`} passHref>
-                    <a className="text-orange-500 hover:text-orange-700 underline">
+                    <a className="text-orange-500 font-medium hover:text-orange-700 underline">
                       {item.title}
                     </a>
                   </Link>

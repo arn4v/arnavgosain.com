@@ -1,7 +1,7 @@
 import axios from "axios";
 import Link from "~/components/CustomLink";
 import PageLayout from "~/components/PageLayout";
-import { baseUrl, isProd } from "~/constants";
+import { baseUrl } from "~/constants";
 
 /**
  * @param {Object} props
@@ -74,7 +74,20 @@ export default function PlaylistsPage({ playlists }) {
 
 export async function getStaticProps() {
   const refresh_token = process.env.SPOTIFY_REFRESH_TOKEN;
-  let playlists = require("../../data/playlists").default;
+
+  const playlistsData = await fetch(
+    "https://notion-api.splitbee.io/v1/table/da624e18ea514216893e5e1037f6b76e"
+  ).then((res) => res.json());
+
+  const transformedData = playlistsData.reduce((acc, cur) => {
+    const year = parseInt(cur.Year);
+    acc[year] = {
+      ...(acc[year] ?? {}),
+      [cur?.Month]: cur?.URL,
+    };
+
+    return acc;
+  }, {});
 
   if (isProd) {
     const accessToken = (
@@ -84,9 +97,6 @@ export async function getStaticProps() {
         params: {
           refresh_token,
           grant_type: "refresh_token",
-          // grant_type: "authorization_code",
-          // code: process.env.SPOTIFY_AUTHORIZATION_CODE,
-          // redirect_uri: "https://arnavgosain.com/callback",
         },
         headers: {
           Authorization:
@@ -101,25 +111,29 @@ export async function getStaticProps() {
       })
     ).data["access_token"];
 
-    for (const [key, value] of Object.entries(playlists)) {
-      for (const [_key, _value] of Object.entries(value)) {
-        let id = _value;
-        if (id.includes("https://open.spotify.com/playlist"))
-          id = id.replace("https://open.spotify.com/playlist/", "");
-        let img = await axios({
-          method: "GET",
-          url: `https://api.spotify.com/v1/playlists/${id}`,
+    for (const [year, monthPlaylistMap] of Object.entries(transformedData)) {
+      for (const [month, playlistUrl] of Object.entries(monthPlaylistMap)) {
+        const id = playlistUrl.replace(
+          "https://open.spotify.com/playlist/",
+          ""
+        );
+
+        const img = await fetch(`https://api.spotify.com/v1/playlists/${id}`, {
           headers: { Authorization: `Bearer ${accessToken}` },
-        });
-        img = img["data"]["images"][0]["url"];
-        playlists[key][_key] = { href: _value, img };
+        }).then((res) => res.json());
+
+        transformedData[year][month] = {
+          href: playlistUrl,
+          img: img["images"][0]["url"],
+        };
       }
     }
   }
 
   return {
     props: {
-      playlists,
+      playlists: transformedData,
+      revalidate: 86400,
     },
   };
 }
