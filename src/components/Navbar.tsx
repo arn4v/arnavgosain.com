@@ -3,11 +3,9 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import * as React from "react";
 import { HiOutlineMenu, HiOutlineX } from "react-icons/hi";
-import { isProd } from "~/constants";
+import { useIsAtTop } from "react-sensible";
 import useDisclosure from "~/hooks/use-disclosure";
 import NavItem from "./NavItem";
-import ThemeButton from "./ThemeButton";
-import { useIsAtTop } from "react-sensible";
 
 interface Props {
   className?: string;
@@ -69,7 +67,9 @@ export default function Navbar({ className = "" }: Props) {
                 <NavItem
                   key={item.title}
                   href={item.href}
-                  active={typeof active !== "undefined" && item.title === active.title}
+                  active={
+                    typeof active !== "undefined" && item.title === active.title
+                  }
                 >
                   {item.title}
                 </NavItem>

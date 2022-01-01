@@ -49,7 +49,9 @@ export const getMdxSource = async <Frontmatter = unknown>(
   slug: string
 ) => {
   const allFiles = getAllFiles(type);
-  const mdxFile: UnpackArray<ReturnType<typeof getAllFiles>> = allFiles.find((item) => item.slug === slug);
+  const mdxFile: UnpackArray<ReturnType<typeof getAllFiles>> = allFiles.find(
+    (item) => item.slug === slug
+  );
 
   const mdxSource = await serialize(mdxFile.content, {
     mdxOptions: {

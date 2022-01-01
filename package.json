@@ -13,8 +13,8 @@
     "start": "next start",
     "export": "next export",
     "lint": "next lint",
-    "lint-fix": "next lint --fix",
-    "format": "prettier --write src/**/*.{js,jsx}",
+    "lint-fix": "next lint --cache --fix",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx}",
     "db-migrate-deploy": "prisma migrate deploy",
     "db-generate": "prisma generate",
     "db-push": "prisma db push",
@@ -75,7 +75,6 @@
     "eslint": "^8.6.0",
     "eslint-config-next": "canary",
     "husky": "^7.0.4",
-    "lint-staged": "^12.1.4",
     "mdx-prism": "^0.3.4",
     "postcss": "8.4.5",
     "prettier": "^2.5.1",
@@ -92,9 +91,5 @@
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
     }
-  },
-  "lint-staged": {
-    "*.js": "eslint --cache --fix",
-    "*.{js,jsx}": "prettier --write"
   }
 }

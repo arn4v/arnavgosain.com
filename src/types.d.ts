@@ -13,7 +13,7 @@ export interface Project {
   name: string;
   description: React.ReactNode;
   duration: string;
-  tags:  Array<keyof typeof tagColors & string>;
+  tags: Array<keyof typeof tagColors & string>;
   links: Array<{
     title: string;
     url: string;

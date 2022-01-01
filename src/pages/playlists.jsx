@@ -47,10 +47,7 @@ export default function PlaylistsPage({ playlists }) {
                   <div className="grid grid-cols-3 lg:grid-cols-4 grid-flow-cols gap-4">
                     {Object.entries(value).map(([month, _value]) => {
                       return (
-                        <Link
-                          key={`${key}_${month}`}
-                          href={_value["href"]}
-                        >
+                        <Link key={`${key}_${month}`} href={_value["href"]}>
                           <div
                             style={{
                               backgroundImage: `url(${_value.img})`,

@@ -1,6 +1,6 @@
 import axios from "axios";
 import { format } from "date-fns";
-import { GetStaticPaths, GetStaticProps } from "next";
+import { GetStaticProps } from "next";
 import Link from "~/components/CustomLink";
 import PageLayout from "~/components/PageLayout";
 import { SeoProps } from "~/components/Seo";

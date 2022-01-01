@@ -2,7 +2,6 @@ import { MDXProvider } from "@mdx-js/react";
 import { format } from "date-fns";
 import Image from "next/image";
 import * as React from "react";
-import { HiEye } from "react-icons/hi";
 import useSWR, { SWRConfiguration } from "swr";
 import Link from "~/components/CustomLink";
 import { RadixEye } from "~/components/icons/RadixEye";

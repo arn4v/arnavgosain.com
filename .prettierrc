@@ -5,5 +5,5 @@
   "semi": true,
   "singleQuote": false,
   "arrowParens": "always",
-  "plugins": ["organize-imports"]
+  "plugins": ["prettier-plugin-organize-imports"]
 }

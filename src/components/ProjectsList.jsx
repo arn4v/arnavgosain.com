@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { HiArrowRight, HiLink } from "react-icons/hi";
+import { HiArrowRight } from "react-icons/hi";
 import projects from "../lib/projects";
 import ProjectsGrid from "./ProjectsGrid";
 

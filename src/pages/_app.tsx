@@ -2,7 +2,6 @@ import { AppProps } from "next/app";
 import Head from "next/head";
 import Script from "next/script";
 import "prism-themes/themes/prism-gruvbox-dark.css";
-import Analytics from "~/components/AnalyticsProvider";
 import Seo from "~/components/Seo";
 import { isProd } from "~/constants";
 import "../styles/index.css";

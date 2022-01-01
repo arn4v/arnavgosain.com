@@ -1,5 +1,5 @@
-import * as React from "react";
 import { styled } from "@stitches/react";
+import * as React from "react";
 
 const Wrapper = styled("div", {
   height: "1200px",

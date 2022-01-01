@@ -1,15 +1,15 @@
 import { format } from "date-fns";
+import { Feed } from "feed";
 import fs from "fs";
 import glob from "glob";
-import prettier from "prettier";
-import path from "path";
-import { Feed } from "feed";
 import matter from "gray-matter";
-import { baseUrl } from "~/constants";
-import readingTime from "reading-time";
-import PostMetadata from "~/types/metadata";
-import nextConnect from "next-connect";
 import { NextApiRequest, NextApiResponse } from "next";
+import nextConnect from "next-connect";
+import path from "path";
+import prettier from "prettier";
+import readingTime from "reading-time";
+import { baseUrl } from "~/constants";
+import PostMetadata from "~/types/metadata";
 
 export const getFormattedDateText = (dateString: string): string => {
   const date = getDateObjectFromString(dateString);
