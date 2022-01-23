@@ -8,16 +8,16 @@ import CustomLink from "./CustomLink";
 const ProjectsGrid = ({ data }: { data: Project[] }) => {
   return (
     <div className="grid grid-rows-1 gap-4 lg:gap-6">
-      {data.map((p) => {
+      {data.map((p, idx) => {
         return (
           <div
-            key={p.id}
+            key={idx}
             className="flex flex-col items-start justify-center w-full h-full gap-3 p-4 dark:text-gray-200 rounded-md dark:hover:bg-gray-900 transition hover:bg-gray-50 border border-gray-300 dark:border-gray-800 hover:shadow-sm"
           >
             <span className="flex flex-row items-center justify-start space-x-2">
               <p className="text-base font-semibold">{p.name}</p>
-              {p.links.map(({ title, url }) => (
-                <React.Fragment key={`${title}-${url}-${p.id}`}>
+              {p.links.map(({ title, url }, idx) => (
+                <React.Fragment key={idx}>
                   <p>•</p>
                   <CustomLink
                     href={url}
