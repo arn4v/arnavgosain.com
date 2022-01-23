@@ -132,6 +132,7 @@ dist
 public/atom.xml
 public/feed.json
 public/rss.xml
+public/sitemap.xml
 
 # vscode
 .vscode
