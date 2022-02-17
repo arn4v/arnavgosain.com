@@ -70,3 +70,9 @@ This post is an exhaustive list of resources I refer to for Product Management.
 ## Design Psychology / UX Laws
 
 1. [Home | Laws of UX](https://lawsofux.com/)
+
+## Deliverables
+1. [The Top 10 Deliverables of Product Managers | Sachin Rekhi](https://www.sachinrekhi.com/top-10-deliverables-of-product-managers)
+
+## Web 3.0
+1. [A product manager’s guide to web3](https://www.lennysnewsletter.com/p/a-product-managers-guide-to-web3) by [[Lenny Rachitsky]]
