@@ -12,17 +12,21 @@ import Link from "../components/CustomLink";
  */
 const projects = [
   {
-    name: "Hookswitch",
-    duration: "December 2021 - Present",
+    name: "Markbox (FKA Bookmarky)",
     description:
-      "HTTP Request Interceptor & Forwarding Tool. Made for local development involving webhooks.",
+      "API-First, Tag Based Bookmarking Tool Inspired by Pinboard.in",
+    duration: "February 2021 - Present",
     links: [
       {
         title: "Live",
-        url: "https://hookswitch.xyz",
+        url: "https://markbox.in",
+      },
+      {
+        title: "GitHub",
+        url: "https://github.com/arn4v/markbox",
       },
     ],
-    tags: ["React", "TypeScript", "Next.js"],
+    tags: ["TailwindCSS", "Framer Motion", "Next.js", "React", "GraphQL"],
   },
   {
     name: "tsrq",
@@ -40,26 +44,7 @@ const projects = [
     ],
     tags: ["React", "TypeScript"],
   },
-  {
-    name: "relink",
-    duration: "August 2021",
-    description: (
-      <>
-        Relink is a personal contacts manager inspired by
-        <DescLink href="https://thesephist.com">thesephist</DescLink>'s{" "}
-        <DescLink href="https://github.com/thesephist/mira">mira</DescLink>.
-        Built with Golang and Svelte.
-      </>
-    ),
-    links: [
-      {
-        title: "GitHub",
-        url: "https://github.com/arn4v/relink",
-      },
-    ],
-    tags: ["Go", "Svelte"],
-  },
-  {
+	  {
     name: "next-mdx-builder",
     description: (
       <>
@@ -129,6 +114,38 @@ const projects = [
     tags: ["React"],
   },
   {
+    name: "Hookswitch",
+    duration: "December 2021 - Present",
+    description:
+      "Barebones HTTP Request Interceptor & Forwarding Tool. Made for local development involving webhooks. Not very useful for others in its current form - personal project.",
+    links: [
+      {
+        title: "Live",
+        url: "https://hookswitch.xyz",
+      },
+    ],
+    tags: ["React", "TypeScript", "Next.js"],
+  },
+  {
+    name: "relink",
+    duration: "August 2021",
+    description: (
+      <>
+        Relink is a personal contacts manager inspired by
+        <DescLink href="https://thesephist.com">thesephist</DescLink>'s{" "}
+        <DescLink href="https://github.com/thesephist/mira">mira</DescLink>.
+        Built with Golang and Svelte.
+      </>
+    ),
+    links: [
+      {
+        title: "GitHub",
+        url: "https://github.com/arn4v/relink",
+      },
+    ],
+    tags: ["Go", "Svelte"],
+  },
+  {
     id: "45932b82-650e-4bcf-80a5-7b00f3d5d117",
     name: "use-children",
     description:
@@ -149,23 +166,6 @@ const projects = [
     tags: ["React"],
   },
   {
-    name: "Markbox (FKA Bookmarky)",
-    description:
-      "API-First, Tag Based Bookmarking Tool Inspired by Pinboard.in",
-    duration: "February 2021 - Present",
-    links: [
-      {
-        title: "Live",
-        url: "https://markbox.in",
-      },
-      {
-        title: "GitHub",
-        url: "https://github.com/arn4v/markbox",
-      },
-    ],
-    tags: ["TailwindCSS", "Framer Motion", "Next.js", "React", "GraphQL"],
-  },
-  {
     name: "Brevis.link",
     description: (
       <>
@@ -178,7 +178,7 @@ const projects = [
     links: [
       {
         title: "Live",
-        url: "https://brevis.link",
+        url: "https://brevis.vercel.app",
       },
       {
         title: "GitHub",
