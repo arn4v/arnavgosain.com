@@ -26,7 +26,26 @@ const projects = [
         url: "https://github.com/arn4v/markbox",
       },
     ],
-    tags: ["TailwindCSS", "Framer Motion", "Next.js", "React", "GraphQL"],
+    tags: [
+      "React",
+      "Next.js",
+      "TypeScript",
+      "tRPC",
+      "TailwindCSS",
+      "Framer Motion",
+    ],
+  },
+  {
+    name: "Docguard",
+    description: "Password protection / gated-access for Notion documents",
+    duration: "Active",
+    links: [
+      {
+        title: "Live",
+        url: "https://docguard.co",
+      },
+    ],
+    tags: ["React", "Next.js", "TypeScript", "Chakra UI", "Auth0"],
   },
   {
     name: "tsrq",
@@ -44,7 +63,7 @@ const projects = [
     ],
     tags: ["React", "TypeScript"],
   },
-	  {
+  {
     name: "next-mdx-builder",
     description: (
       <>
