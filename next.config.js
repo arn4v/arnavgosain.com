@@ -1,20 +1,18 @@
 const isProd = process.env.NODE_ENV === "production";
+const { withContentlayer } = require("next-contentlayer");
 
 /**
- * @type {import("next/dist/next-server/server/config-shared").NextConfig}
+ * @type {import("next").NextConfig}
  */
 let config = {
   images: { domains: ["images.unsplash.com", "mosaic.scdn.co"] },
-  webpack: (config, options) => {
-    config.resolve.fallback = {
-      ...config.resolve.fallback,
-      fs: false,
-      module: false,
-    };
-    return config;
-  },
   eslint: {
     ignoreDuringBuilds: true,
+  },
+  swcMinify: true,
+  reactStrictMode: true,
+  experimental: {
+    esmExternals: false,
   },
   pageExtensions: ["js", "jsx", "ts", "tsx", "md", "mdx"],
   async redirects() {
@@ -63,16 +61,6 @@ let config = {
   },
 };
 
-config = require("next-mdx-builder")({
-  mdxOptions: {
-    remarkPlugins: [
-      require("remark-slug"),
-      require("remark-autolink-headings"),
-      require("remark-code-titles"),
-      require("remark-gfm"),
-    ],
-    rehypePlugins: [require("mdx-prism")],
-  },
-})(config);
+config = withContentlayer(config);
 
 module.exports = config;

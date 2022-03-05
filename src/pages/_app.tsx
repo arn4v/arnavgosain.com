@@ -1,3 +1,15 @@
+import "@fontsource/ibm-plex-mono/400.css";
+import "@fontsource/ibm-plex-mono/500.css";
+import "@fontsource/ibm-plex-mono/600.css";
+import "@fontsource/ibm-plex-mono/700.css";
+import "@fontsource/inter/400.css";
+import "@fontsource/inter/500.css";
+import "@fontsource/inter/600.css";
+import "@fontsource/inter/700.css";
+import "@fontsource/manrope/400.css";
+import "@fontsource/manrope/500.css";
+import "@fontsource/manrope/600.css";
+import "@fontsource/manrope/700.css";
 import { AppProps } from "next/app";
 import Head from "next/head";
 import Script from "next/script";
@@ -12,8 +24,6 @@ const App = ({ Component, pageProps }: AppProps) => {
       {isProd ? (
         <Script async src="https://unpkg.com/thesemetrics@latest"></Script>
       ) : null}
-      <style data-href="https://fonts.googleapis.com/css2?family=Inter" />
-      <style data-href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Space+Mono:wght@400;700&display=swap" />
       <Head>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>

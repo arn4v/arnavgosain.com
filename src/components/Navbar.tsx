@@ -55,7 +55,7 @@ export default function Navbar({ className = "" }: Props) {
             )}
           </button>
           {active && (
-            <span className="dark:text-white text-lg font-medium font-secondary lg:hidden">
+            <span className="dark:text-white text-lg font-medium font-mono lg:hidden">
               <Link href={active.href}>
                 <a>{active.title}</a>
               </Link>

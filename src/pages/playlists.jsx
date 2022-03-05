@@ -27,7 +27,7 @@ export default function PlaylistsPage({ playlists }) {
           openGraph: openGraph,
         }}
       >
-        <h1 className="text-3xl font-bold dark:text-white font-secondary hidden lg:block mb-8">
+        <h1 className="text-3xl font-bold dark:text-white font-mono hidden lg:block mb-8">
           Playlists
         </h1>
         <div className="flex flex-col space-y-6">

@@ -1,32 +1,32 @@
+import { allPosts, Post } from ".contentlayer/generated";
 import { format } from "date-fns";
 import { GetStaticProps } from "next";
 import Link from "next/link";
 import PageLayout from "~/components/PageLayout";
 import { SeoProps } from "~/components/Seo";
 import { baseUrl } from "~/constants";
-import { generateFeeds, getPostsData } from "~/lib/utils";
-import PostMetadata from "~/types/metadata";
 
 const seoConfig: SeoProps = {
   title: "Blog | Arnav Gosain",
   url: baseUrl + "/writing",
 };
 
-const ProjectsPage = ({ data }: { data: PostMetadata[] }) => {
+const BlogPage = ({ data }: { data: Post[] }) => {
   return (
     <PageLayout breadcrumb={{ Projects: "/projects" }} seo={seoConfig}>
       <div className="flex flex-col gap-10">
-        <h1 className="text-3xl font-bold dark:text-white font-secondary hidden lg:block">
+        <h1 className="text-3xl font-bold dark:text-white font-mono hidden lg:block">
           Entries
         </h1>
         <div className="flex flex-col items-center justify-center gap-4 lg:gap-6">
           {data
             .sort(
               (a, b) =>
-                new Date(b.published_on).valueOf() -
-                new Date(a.published_on).valueOf()
+                new Date(b.publishedOn).valueOf() -
+                new Date(a.publishedOn).valueOf()
             )
             .map((item) => {
+              const date = new Date(item.publishedOn);
               return (
                 <div
                   key={`${item.title}-${item.slug}`}
@@ -39,8 +39,8 @@ const ProjectsPage = ({ data }: { data: PostMetadata[] }) => {
                   </Link>
                   <p className="self-center justify-self-end">
                     Published on{" "}
-                    <time dateTime={new Date(item.published_on).toISOString()}>
-                      {format(new Date(item.published_on), "do MMMM yyyy")}
+                    <time dateTime={date.toISOString()}>
+                      {format(date, "do MMMM yyyy")}
                     </time>
                   </p>
                 </div>
@@ -53,14 +53,11 @@ const ProjectsPage = ({ data }: { data: PostMetadata[] }) => {
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  await generateFeeds();
-  const data = getPostsData();
-
   return {
     props: {
-      data,
+      data: allPosts,
     },
   };
 };
 
-export default ProjectsPage;
+export default BlogPage;

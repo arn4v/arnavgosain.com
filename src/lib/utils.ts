@@ -1,15 +1,13 @@
+import { allPosts } from ".contentlayer/generated";
 import { format } from "date-fns";
 import { Feed } from "feed";
 import fs from "fs";
 import glob from "glob";
-import matter from "gray-matter";
 import { NextApiRequest, NextApiResponse } from "next";
 import nextConnect from "next-connect";
 import path from "path";
 import prettier from "prettier";
-import readingTime from "reading-time";
 import { baseUrl } from "~/constants";
-import PostMetadata from "~/types/metadata";
 
 export const getFormattedDateText = (dateString: string): string => {
   const date = getDateObjectFromString(dateString);
@@ -22,13 +20,16 @@ export const getDateObjectFromString = (dateString: string): Date => {
 };
 
 export const generateSiteMap = async () => {
-  const pages = glob
-    .sync(path.join(process.cwd(), "src/pages/**/*.{js,jsx,ts,tsx,md,mdx}"))
-    .filter((page) => !/(_app|_document)/.test(page))
-    .map((page) => {
-      page = page.split("src/pages")[1].replace(/\.(.*)/, "");
-      return page.includes("index") ? page.replace("/index", "") : page;
-    });
+  const pages = [
+    ...glob
+      .sync(path.join(process.cwd(), "src/pages/**/*.{js,jsx,ts,tsx}"))
+      .filter((page) => !/(_app|_document|\[slug\]|api)/.test(page))
+      .map((page) => {
+        page = page.split("src/pages")[1].replace(/\.(.*)/, "");
+        return page.includes("index") ? page.replace("/index", "") : page;
+      }),
+    ...allPosts.map((item) => "/" + item.slug),
+  ];
 
   const sitemap = `
         <?xml version="1.0" encoding="UTF-8"?>
@@ -63,8 +64,6 @@ export const generateFeeds = async () => {
     link: "https://twitter.com/arn4v",
   };
 
-  const posts = getPosts();
-
   const feed = new Feed({
     id: baseUrl,
     title: "Arnav Gosain's Blog",
@@ -81,17 +80,12 @@ export const generateFeeds = async () => {
     },
   });
 
-  posts.forEach(({ filePath, frontMatter }) => {
-    const postPath = filePath
-      .split("src/pages")[1]
-      .replace(/\\/g, "/")
-      .replace(/\.(.+)/, "");
-
+  allPosts.forEach(({ slug, title, publishedOn }) => {
     feed.addItem({
-      title: frontMatter.title,
-      link: `${baseUrl}${postPath}`,
+      title: title,
+      link: `${baseUrl}/${slug}`,
       author: [author],
-      date: new Date(frontMatter.published_on),
+      date: new Date(publishedOn),
     });
   });
 
@@ -99,38 +93,6 @@ export const generateFeeds = async () => {
   fs.writeFileSync(path.join(rootPath, "public/rss.xml"), feed.rss2());
   fs.writeFileSync(path.join(rootPath, "public/atom.xml"), feed.atom1());
   fs.writeFileSync(path.join(rootPath, "public/feed.json"), feed.json1());
-};
-
-const getPosts = () => {
-  const postPaths = glob.sync(
-    path.join(process.cwd(), "src/pages/**/*.{md,mdx}")
-  );
-  return postPaths
-    .map((filePath) => {
-      const source = fs.readFileSync(filePath, "utf8");
-      const { data: frontMatter, content } = matter(source);
-      return { source, frontMatter, content, filePath };
-    })
-    .filter(
-      ({ frontMatter }) =>
-        typeof frontMatter.type === "string" && frontMatter.type === "writing"
-    );
-};
-
-export const getPostsData = (): PostMetadata[] => {
-  return getPosts().map(({ frontMatter, filePath, content }) => {
-    frontMatter.slug = filePath
-      .split("src/pages")[1]
-      .replace(/\//, "")
-      .replace(/\.(md|mdx)/g, "");
-    frontMatter.reading_time = readingTime(content).text;
-    return frontMatter;
-  }) as PostMetadata[];
-};
-
-export const isoStringFromFrontmatter = (date: string) => {
-  const [year, month, day] = date.split("-").map((i) => parseInt(i));
-  return new Date(year, month - 1, day).toISOString();
 };
 
 export const nc = () => nextConnect<NextApiRequest, NextApiResponse>();

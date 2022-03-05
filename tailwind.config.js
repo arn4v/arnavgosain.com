@@ -1,6 +1,7 @@
 "use strict";
 const { lightBlue, ...colors } = require("tailwindcss/colors");
 const { spacing, fontFamily } = require("tailwindcss/defaultTheme");
+const radixColors = require("@radix-ui/colors");
 const typography = require("@tailwindcss/typography");
 
 module.exports = {
@@ -11,17 +12,16 @@ module.exports = {
     extend: {
       colors: {
         ...colors,
-        radix: require("@radix-ui/colors"),
+        radix: radixColors,
       },
       borderColor: {
         ...colors,
-        radix: require("@radix-ui/colors"),
+        radix: radixColors,
       },
       fontFamily: {
         sans: ["Inter", ...fontFamily.sans],
-        inter: ["Inter"],
-        secondary: ["Space Grotesk", "sans-serif"],
-        mono: ["Space Mono", ...fontFamily.mono],
+        secondary: ["IBM Plex Mono", "sans-serif"],
+        mono: ["IBM Plex Mono", ...fontFamily.mono],
       },
       // thanks @leerob; https://github.com/leerob/leerob.io
       typography: (theme) => ({

@@ -1,9 +1,6 @@
 ---
-type: "writing"
-layout: "../layouts/post"
 title: "Company Building Resources"
-slug: "companybuilding"
-published_on: "2021-09-19"
+publishedOn: 2021-09-19
 ---
 
 This page is a list of company building resources.
@@ -23,5 +20,5 @@ This page is a list of company building resources.
 | Obvious              | Partial       | https://playbook.obvious.in/                                                  |
 | Netflix Culture Deck | Partial       | https://www.slideshare.net/reed2001/culture-1798664k                          |
 | MUI                  | Remote        | https://mui-org.notion.site/Handbook-f086d47e10794d5e839aef9dc67f324b         |
-| Strapi 							 | - 						 | https://handbook.strapi.io/																									 |
-| Sourcegraph 				 | - 						 | https://handbook.sourcegraph.com/ 																						 |
+| Strapi               | -             | https://handbook.strapi.io/                                                   |
+| Sourcegraph          | -             | https://handbook.sourcegraph.com/                                             |

@@ -139,3 +139,7 @@ public/sitemap.xml
 
 # vercel
 .vercel
+
+
+# Contentlayer
+.contentlayer
