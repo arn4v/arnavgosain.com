@@ -108,7 +108,7 @@ const PostLayout = ({ post }: { post: Post }) => {
               </span>
             </div>
           </div>
-          <div className="w-full h-px bg-gray-200 dark:bg-blueGray-600" />
+          <div className="w-full h-px bg-gray-200 dark:bg-slate-600" />
         </div>
         <div className="prose dark:prose-dark max-w-full">
           <MDXComponent
