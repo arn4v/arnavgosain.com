@@ -44,7 +44,7 @@ const projects = [
     ],
     tags: ["React", "TypeScript"],
   },
-	  {
+  {
     name: "next-mdx-builder",
     description: (
       <>
