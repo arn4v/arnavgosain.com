@@ -1,9 +1,6 @@
 ---
-type: "writing"
-layout: "../layouts/post"
 title: "Improving API Documentation using React Query and TypeScript"
-slug: "queryhook"
-published_on: "2021-10-02"
+publishedOn: 2021-10-02
 banner: "https://arnavgosain.com/static/queryhook-og.png"
 ---
 

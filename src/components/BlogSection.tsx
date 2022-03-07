@@ -1,18 +1,19 @@
+import { Post } from ".contentlayer/generated";
 import { format } from "date-fns";
 import Link from "next/link";
 import { HiArrowRight } from "react-icons/hi";
-import PostMetadata from "~/types/metadata";
 
-export default function BlogSection({ data }: { data: PostMetadata[] }) {
+export default function BlogSection({ data }: { data: Post[] }) {
   return (
     <div className="flex flex-col w-full space-y-6">
       <div className="flex items-center justify-between">
-        <span className="text-xl font-secondary font-bold dark:text-white">
+        <span className="text-xl font-mono font-bold dark:text-white">
           Recent posts
         </span>
       </div>
       <div className="flex flex-col items-center justify-center gap-4 lg:gap-6">
-        {data.map((data: PostMetadata, index) => {
+        {data.map((data, index) => {
+          const date = new Date(data.publishedOn);
           return (
             <div
               key={index}
@@ -25,8 +26,8 @@ export default function BlogSection({ data }: { data: PostMetadata[] }) {
               </Link>
               <p>
                 Published on{" "}
-                <time dateTime={new Date(data.published_on).toISOString()}>
-                  {format(new Date(data.published_on), "do MMMM yyyy")}
+                <time dateTime={date.toISOString()}>
+                  {format(date, "do MMMM yyyy")}
                 </time>
               </p>
             </div>

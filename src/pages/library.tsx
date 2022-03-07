@@ -27,7 +27,7 @@ export default function Bookshelf({ data }: Props) {
   return (
     <>
       <PageLayout breadcrumb={{ Bookshelf: "/bookshelf" }} seo={seoConfig}>
-        <h1 className="text-3xl font-bold dark:text-gray-200 font-secondary hidden lg:block mb-8">
+        <h1 className="text-3xl font-bold font-mono dark:text-gray-200 hidden lg:block mb-8">
           Library
         </h1>
         <div className="flex flex-col space-y-8 items-start justify-between">

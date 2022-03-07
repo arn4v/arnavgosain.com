@@ -1,23 +1,24 @@
-import GoogleAnalytics, { GAnalytics as IGAnalytics } from "ganalytics";
+import GoogleAnalytics from "ganalytics";
 import { useRouter } from "next/router";
 import * as React from "react";
 
 const Analytics = ({ trackerId }: { trackerId: string }) => {
-  const [analytics, setAnalytics] = React.useState<IGAnalytics>(
-    GoogleAnalytics(trackerId)
+  const [analytics] = React.useState(() =>
+    GoogleAnalytics(trackerId, {
+      aid: "1",
+    })
   );
   const router = useRouter();
-  const onRouteChange = React.useCallback(() => {
-    analytics.send("pageview");
-  }, [analytics]);
 
   React.useEffect(() => {
+    const onRouteChange = () => {
+      analytics.send("pageview");
+    };
+
     router.events.on("routeChangeComplete", onRouteChange);
 
-    return () => {
-      router.events.off("routeChangeComplete", onRouteChange);
-    };
-  }, [onRouteChange, router.events, trackerId]);
+    return () => router.events.off("routeChangeComplete", onRouteChange);
+  }, [analytics, router.events, trackerId]);
 
   return null;
 };

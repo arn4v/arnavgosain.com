@@ -7,8 +7,7 @@ import ProjectsGrid from "./ProjectsGrid";
 const tagColors = {
   "Framer Motion": "bg-gradient-to-tr from-pink-400 to-purple-600",
   TailwindCSS: "bg-gradient-to-tr from-sky-600 to-teal-400",
-  "Next.js":
-    "bg-gradient-to-tr from-gray-500 dark:from-gray-600 to-blueGray-900",
+  "Next.js": "bg-gradient-to-tr from-gray-500 dark:from-gray-600 to-slate-900",
   NodeJS: "bg-gradient-to-tr from-green-700 to-emerald-500",
   TypeScript: "bg-gradient-to-tr from-blue-900 bg-sky-600",
   GraphQL: "bg-gradient-to-tr from-pink-900 to-pink-700",
