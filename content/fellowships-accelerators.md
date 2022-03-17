@@ -1,6 +1,6 @@
 ---
 title: "Fellowships & Accelerators"
-published_on: "2022-03-17"
+publishedOn: "2022-03-17"
 ---
 
 The following is a running list of accelerators and fellowships I've come across so far.
