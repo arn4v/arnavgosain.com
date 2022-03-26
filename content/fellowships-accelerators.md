@@ -10,8 +10,8 @@ The following is a running list of accelerators and fellowships I've come across
 | Name                               | Notes                                           | Link                                 |
 | ---------------------------------- | ----------------------------------------------- | ------------------------------------ |
 | Soma Fellows                       | - Run by Soma Capital                           | https://somafellows.com/             |
-| Thiel Fellowship                   | Age range: <22/23 + Have to drop out of college | https://thielfellowship.org/         |
-| Interact Fellowship                | Age range: <22/23                               | https://joininteract.com/fellowship/ |
+| Thiel Fellowship                   | Age range: 22/23 + Have to drop out of college  | https://thielfellowship.org/         |
+| Interact Fellowship                | Age range: 22/23                                | https://joininteract.com/fellowship/ |
 | Kleiner Perkins Fellows            | -                                               | https://fellows.kleinerperkins.com/  |
 | OnDeck Catalyst (+ Other programs) | -                                               | https://www.beondeck.com/catalyst    |
 
