@@ -10,7 +10,29 @@ import Link from "../components/CustomLink";
 /**
  * @type {Array.<import("~/types").Project>}
  */
+
 const projects = [
+  {
+    name: "Rune",
+    description:
+      "Read, highlight & manage your newsletters – Rune is a dedicated space for your newsletters. ",
+    duration: "Active",
+    links: [
+      {
+        title: "Live",
+        url: "https://runereader.co",
+      },
+    ],
+    tags: [
+      "Remix.run",
+      "React",
+      "TypeScript",
+      "TailwindCSS",
+      "Prisma",
+      "SQLite",
+      "Postmark",
+    ],
+  },
   {
     name: "Markbox (FKA Bookmarky)",
     description:
@@ -59,7 +81,7 @@ const projects = [
         , powered by{" "}
         <Link
           href="https://github.com/hashicorp/next-mdx-remote"
-          className="font-mono text-cyan-600 hover:bg-cyan-200 hover:text-black transition"
+          className="font-mono transition text-cyan-600 hover:bg-cyan-200 hover:text-black"
         >
           next-mdx-remote
         </Link>
@@ -89,14 +111,14 @@ const projects = [
         Set of React hooks I use across my projects. Inspired by the{" "}
         <Link
           href="https://usehooks.com/"
-          className="font-mono text-cyan-600 hover:bg-cyan-200 hover:text-black transition"
+          className="font-mono transition text-cyan-600 hover:bg-cyan-200 hover:text-black"
         >
           use-hooks
         </Link>{" "}
         project and{" "}
         <Link
           href="https://www.npmjs.com/package/react-use"
-          className="font-mono text-cyan-600 hover:bg-cyan-200 hover:text-black transition"
+          className="font-mono transition text-cyan-600 hover:bg-cyan-200 hover:text-black"
         >
           react-use
         </Link>{" "}
