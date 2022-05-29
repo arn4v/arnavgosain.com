@@ -4,12 +4,10 @@ import { GetStaticProps } from "next";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import Image from "next/image";
 import * as React from "react";
-import useSWR, { SWRConfiguration } from "swr";
+import { SWRConfiguration } from "swr";
 import Link from "~/components/CustomLink";
-import { RadixEye } from "~/components/icons/RadixEye";
 import PageLayout from "~/components/PageLayout";
 import { baseUrl } from "~/constants";
-import fetcher from "~/lib/fetcher";
 
 interface Frontmatter {
   title: string;
@@ -42,15 +40,6 @@ const PostLayout = ({ post }: { post: Post }) => {
         }
       : {}),
   };
-  const {
-    data,
-    isValidating: isLoading,
-    mutate,
-  } = useSWR<number>(`/api/views/${post.slug}`, fetcher, staleSwrConfig);
-
-  React.useEffect(() => {
-    mutate();
-  }, [mutate]);
 
   return (
     <PageLayout
@@ -100,17 +89,12 @@ const PostLayout = ({ post }: { post: Post }) => {
                     </time>
                   </p>
                 </div>
-                <div className="flex items-center justify-start gap-2 lg:gap-4">
-                  <div className="hidden lg:block">/</div>
-                  <RadixEye className="h-4 w-4" />
-                  <p>{isLoading ? "---" : Number(data)}</p>
-                </div>
               </span>
             </div>
           </div>
           <div className="w-full h-px bg-gray-200 dark:bg-slate-600" />
         </div>
-        <div className="prose dark:prose-dark max-w-full">
+        <div className="max-w-full prose dark:prose-dark">
           <MDXComponent
             components={{
               a: Link,

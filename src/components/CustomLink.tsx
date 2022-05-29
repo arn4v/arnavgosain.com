@@ -47,4 +47,5 @@ export default function Link({
   return <a {...linkProps}>{children}</a>;
 }
 
+export { Link };
 export type { Props as LinkProps };

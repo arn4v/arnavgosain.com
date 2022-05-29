@@ -4,8 +4,10 @@ const { spacing, fontFamily } = require("tailwindcss/defaultTheme");
 const radixColors = require("@radix-ui/colors");
 const typography = require("@tailwindcss/typography");
 
+/** @type {import("tailwindcss/tailwind-config").TailwindConfig} */
 module.exports = {
   mode: "jit",
+
   purge: ["./src/**/*.{js,ts,jsx,tsx,css,md,mdx}"],
   darkMode: "class",
   theme: {
@@ -17,11 +19,6 @@ module.exports = {
       borderColor: {
         ...colors,
         radix: radixColors,
-      },
-      fontFamily: {
-        sans: ["Inter", ...fontFamily.sans],
-        secondary: ["IBM Plex Mono", "sans-serif"],
-        mono: ["IBM Plex Mono", ...fontFamily.mono],
       },
       // thanks @leerob; https://github.com/leerob/leerob.io
       typography: (theme) => ({

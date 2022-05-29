@@ -13,8 +13,8 @@ const ProjectsPage = () => {
   return (
     <>
       <PageLayout breadcrumb={{ Projects: "/projects" }} seo={seoConfig}>
-        <div className="flex flex-col gap-6">
-          <h1 className="text-3xl font-bold dark:text-white font-mono hidden lg:block">
+        <div className="flex flex-col gap-6 pb-8">
+          <h1 className="hidden font-mono text-3xl font-bold dark:text-white lg:block">
             Projects
           </h1>
           <ProjectsGrid data={projects} />

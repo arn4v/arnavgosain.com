@@ -72,6 +72,7 @@
     "@types/prettier": "^2.6.1",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@types/tailwindcss": "^3.0.10",
     "@types/uuid": "^8.3.4",
     "autoprefixer": "10.4.7",
     "commitizen": "^4.2.4",
