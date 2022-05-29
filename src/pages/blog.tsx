@@ -29,7 +29,7 @@ const BlogPage = ({ data }: { data: Post[] }) => {
                 className="flex flex-col items-start w-full"
               >
                 <Link href={`/${item.slug}`} passHref>
-                  <a className="font-medium text-orange-500 underline hover:text-orange-700">
+                  <a className="font-medium text-orange-500 hover:underline">
                     {item.title}
                   </a>
                 </Link>
