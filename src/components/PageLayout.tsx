@@ -35,7 +35,7 @@ export default function PageLayout({
               <Link key={idx} href={to} passHref>
                 <a
                   className={clsx(
-                    "font-medium",
+                    "font-medium text-sm md:text-base",
                     isActive.test(router.pathname)
                       ? "text-black underline"
                       : "text-zinc-600 hover:text-black hover:underline"

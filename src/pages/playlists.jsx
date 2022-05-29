@@ -27,9 +27,6 @@ export default function PlaylistsPage({ playlists }) {
           openGraph: openGraph,
         }}
       >
-        <h1 className="hidden mb-8 font-mono text-3xl font-bold dark:text-white lg:block">
-          Playlists
-        </h1>
         <div className="flex flex-col space-y-6">
           {Object.entries(playlists)
             .reverse()
