@@ -12,16 +12,15 @@ import "@fontsource/manrope/600.css";
 import "@fontsource/manrope/700.css";
 import { AppProps } from "next/app";
 import Head from "next/head";
-import { useRouter } from "next/router";
 import Script from "next/script";
-import { GoogleAnalytics } from "nextjs-google-analytics";
+import { GoogleAnalytics, usePagesViews } from "nextjs-google-analytics";
 import "prism-themes/themes/prism-gruvbox-dark.css";
 import Seo from "~/components/Seo";
 import { isProd } from "~/constants";
 import "../styles/index.css";
 
 const App = ({ Component, pageProps }: AppProps) => {
-  const router = useRouter();
+  usePagesViews();
 
   return (
     <>

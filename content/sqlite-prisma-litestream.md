@@ -47,13 +47,15 @@ node ./scripts/enable-wal.js
 npx concurrently "litestream replicate -config /etc/litestream.yml" "npm run start"
 ```
 
-## Dockerfile
+## `Dockerfile`
 
 ```Dockerfile
 CMD ["bash", "./scripts/run.sh"]
 ```
 
-## Explanation:
+---
+
+## Explanation
 
 1. Dockerfile runs the `run.sh` script.
 2. The script first restores the latest snapshot of the database from S3 using Litestream.
