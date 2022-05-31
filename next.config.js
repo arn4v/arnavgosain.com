@@ -61,6 +61,6 @@ let config = {
   },
 };
 
-config = withContentlayer(config);
+config = withContentlayer()(config);
 
 module.exports = config;

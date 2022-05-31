@@ -27,7 +27,7 @@ export default makeSource({
   contentDirPath: "content",
   documentTypes: [Post],
   mdx: {
-    remarkPlugins: [remarkGfm, remarkExternalLinks],
+    remarkPlugins: [remarkExternalLinks, remarkGfm],
     rehypePlugins: [
       rehypeSlug,
       rehypeCodeTitles,
