@@ -10,9 +10,9 @@ export interface SeoProps {
 
 export default function Seo({
   title = "Arnav Gosain - Developer, photographer, maker.",
-  description = "Developer, photographer, maker of things.",
+  description,
   url = "https://arnavgosain.com",
-  image = "https://arnavgosain.com/static/og-banner.png",
+  image,
   publishedAt,
 }: SeoProps) {
   return (
@@ -21,7 +21,7 @@ export default function Seo({
       <meta content={description} name="description" />
       <meta name="robots" content="follow, index" />
       <meta property="og:description" content={description} />
-      <meta property="og:image" content={image} />
+      {!!image && <meta property="og:image" content={image} />}
       <meta property="og:site_name" content="Arnav Gosain" />
       <meta property="og:title" content={title} />
       <meta property="og:type" content="website" />

@@ -3,11 +3,12 @@ import { format } from "date-fns";
 import { GetStaticProps } from "next";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import Image from "next/image";
-import * as React from "react";
 import { SWRConfiguration } from "swr";
 import Link from "~/components/CustomLink";
 import PageLayout from "~/components/PageLayout";
+import { SeoProps } from "~/components/Seo";
 import { baseUrl } from "~/constants";
+import { generateOgImages } from "~/lib/generate-og-images";
 
 interface Frontmatter {
   title: string;
@@ -30,15 +31,11 @@ const staleSwrConfig: SWRConfiguration = {
 const PostLayout = ({ post }: { post: Post }) => {
   const MDXComponent = useMDXComponent(post.body.code);
   const publishedOn = new Date(post.publishedOn);
-  const seoProps = {
+  const seoProps: SeoProps = {
     title: `${post.title} | Arnav Gosain`,
     url: `${baseUrl}/${post.slug}`,
     publishedAt: publishedOn.toISOString(),
-    ...(typeof post?.banner === "string"
-      ? {
-          image: post.banner,
-        }
-      : {}),
+    // image: post?.banner ?? `${baseUrl}/og-images/${post.slug}.png`,
   };
 
   return (
@@ -107,6 +104,8 @@ const PostLayout = ({ post }: { post: Post }) => {
 };
 
 export const getStaticPaths = async () => {
+  // await generateOgImages();
+
   return {
     paths: allPosts.map((p) => ({ params: { slug: p.slug } })),
     fallback: false,

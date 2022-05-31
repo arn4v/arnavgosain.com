@@ -17,7 +17,11 @@ const IndexPage = ({ posts }: { posts: Post[] }) => {
   const router = useRouter();
 
   return (
-    <PageLayout>
+    <PageLayout
+      seo={{
+        description: "Developer, photographer, maker of things.",
+      }}
+    >
       <section className="flex flex-col space-y-6 text-lg">
         <div className="flex items-center justify-start space-x-2">
           <span className="font-medium">Arnav Gosain</span>

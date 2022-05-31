@@ -1,11 +1,17 @@
+// const { allPosts } = require(".contentlayer/generated");
+// const fs = require("fs");
+// const path = require("path");
+// const playwright = require("playwright-aws-lambda");
+// const React = require("react");
+// const { renderToStaticMarkup } = require("react-dom/server");
+// const { PostOGImage } = require("../components/PostOGImage");
+import { allPosts } from ".contentlayer/generated";
+import fs from "fs";
+import path from "path";
 import * as playwright from "playwright-aws-lambda";
-import { createElement } from "react";
+import * as React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import { PostOGImage } from "~/components/PostOGImage";
-import { isProd } from "~/constants";
-import { nc } from "~/lib/utils";
-
-// Origin code from: https://github.com/dsumer/portfolio/blob/master/src/pages/api/og-image.ts
 
 const html = String.raw;
 const css = String.raw;
@@ -15,38 +21,38 @@ const height = 630,
 
 const baseCSS = css`
   @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
   * {
     box-sizing: border-box;
-    font-family: "Inter", sans-serif;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, avenir next, avenir,
+      segoe ui, helvetica neue, helvetica, Cantarell, Ubuntu, roboto, noto,
+      arial, sans-serif;
   }
-  h1 {
-  }
+
   body {
     margin: 0;
     font-family: system-ui, sans-serif;
   }
 `;
 
-const getHtmlData = ({ body }: { body: string }) => {
+const getHtmlData = (body: string) => {
   const htmlString = html`<!DOCTYPE html>
-    <head>
-    <meta charset="utf-8"><style>${baseCSS}</style>
-    </head>
-    <body style="display:inline-block">
-    ${body}
-    </body>
-  </html>`;
+    <html>
+      <head>
+        <meta charset="utf-8" />
+        <style>
+          ${baseCSS}
+        </style>
+      </head>
+      <body style="display:inline-block">
+        ${body}
+      </body>
+    </html>`;
 
   return htmlString;
 };
 
-export default nc().get(async (req, res) => {
-  const { title } = req.query;
-
-  const el = createElement(PostOGImage, { title });
-
-  const htmlString = getHtmlData({ body: renderToStaticMarkup(el) });
-
+export const generateOgImages = async () => {
   const browser = await playwright.launchChromium({
     headless: true,
     args: [
@@ -88,33 +94,39 @@ export default nc().get(async (req, res) => {
     ],
   });
 
-  const page = await browser.newPage({
-    viewport: {
-      width,
-      height,
-    },
-  });
-  await page.setContent(htmlString);
+  for (const post of allPosts) {
+    const el = React.createElement(PostOGImage, { title: post.title });
 
-  const data = await page.screenshot({
-    type: "jpeg",
-    clip: {
-      x: 0,
-      y: 0,
-      width,
-      height,
-    },
-    omitBackground: true,
-  });
+    const htmlString = getHtmlData(renderToStaticMarkup(el));
+
+    const page = await browser.newPage({
+      viewport: {
+        width,
+        height,
+      },
+    });
+
+    await page.setContent(htmlString);
+
+    const data = await page.screenshot({
+      type: "jpeg",
+      clip: {
+        x: 0,
+        y: 0,
+        width,
+        height,
+      },
+      omitBackground: true,
+    });
+
+    await fs.promises.writeFile(
+      path.resolve(process.cwd(), `public/static/og-images/${post.slug}.jpg`),
+      data,
+      "binary"
+    );
+
+    await page.close();
+  }
 
   await browser.close();
-
-  // Set the s-maxage property which caches the images then on the Vercel edge
-  if (isProd)
-    res.setHeader("Cache-Control", "s-maxage=31536000, stale-while-revalidate");
-
-  res.setHeader("Content-Type", "image/jpeg");
-
-  // write the image to the response with the specified Content-Type
-  res.end(data);
-});
+};

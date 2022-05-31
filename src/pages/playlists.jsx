@@ -86,7 +86,7 @@ export async function getStaticProps() {
     return acc;
   }, {});
 
-  if (isProd) {
+  if (isProd && process.env.VERCEL_URL) {
     const accessToken = (
       await axios({
         url: "https://accounts.spotify.com/api/token",
