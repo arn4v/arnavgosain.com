@@ -6,10 +6,8 @@ const typography = require("@tailwindcss/typography");
 
 /** @type {import("tailwindcss/tailwind-config").TailwindConfig} */
 module.exports = {
-  mode: "jit",
-
-  purge: ["./src/**/*.{js,ts,jsx,tsx,css,md,mdx}"],
   darkMode: "class",
+  content: ["./src/**/*.{js,ts,jsx,tsx,css,md,mdx}"],
   theme: {
     extend: {
       colors: {
