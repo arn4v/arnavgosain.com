@@ -61,6 +61,8 @@ CMD ["bash", "./scripts/run.sh"]
 4. Then, `enable-wal.js` is run to enable WAL journaling mode using PrismaClient's `$queryRaw`
 5. Finally, the Remix app & Litestream are started concurrently using the `concurrently`[^5] CLI tool.
 
+---
+
 [^1]: https://remix.run
 [^2]: https://prisma.io
 [^3]: https://litestream.io
