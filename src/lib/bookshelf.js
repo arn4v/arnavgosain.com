@@ -1,4 +1,4 @@
-const fetch = require("node-fetch");
+equire("isomorphic-fetch");
 
 module.exports.getBooks = async () => {
   const data = await fetch(
