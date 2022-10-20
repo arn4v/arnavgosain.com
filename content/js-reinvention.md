@@ -5,7 +5,7 @@ publishedOn: 2022-10-20
 
 Popular JS Libraries Have A Reinvention Problem
 
-It feels like every time I blink, a UI framework/state management solution/build tool I’m using has completely changed how it does things. Usually justified by “how much better it is”. Maybe it is, maybe it isn’t. But that doesn’t change the feeling that we’re chasing our own tails.
+It feels like every time I blink, a UI framework/state management solution/build tool I’m using has completely changed how it does things. Usually justified by “how much better it is”.
 
 And sure, there’s a deprecation period and a migration path, but that doesn’t make the constant changing feel any less like we’re chasing our tails.
 
