@@ -14,39 +14,34 @@ const seoConfig: SeoProps = {
 const BlogPage = ({ data }: { data: Post[] }) => {
   return (
     <PageLayout breadcrumb={{ Projects: "/projects" }} seo={seoConfig}>
-      <div className="flex flex-col gap-10">
-        <h1 className="text-3xl font-bold dark:text-white font-mono hidden lg:block">
-          Entries
-        </h1>
-        <div className="flex flex-col items-center justify-center gap-4 lg:gap-6">
-          {data
-            .sort(
-              (a, b) =>
-                new Date(b.publishedOn).valueOf() -
-                new Date(a.publishedOn).valueOf()
-            )
-            .map((item) => {
-              const date = new Date(item.publishedOn);
-              return (
-                <div
-                  key={`${item.title}-${item.slug}`}
-                  className="flex items-center justify-between w-full"
-                >
-                  <Link href={`/${item.slug}`} passHref>
-                    <a className="text-orange-500 font-medium hover:text-orange-700 underline">
-                      {item.title}
-                    </a>
-                  </Link>
-                  <p className="self-center justify-self-end">
-                    Published on{" "}
-                    <time dateTime={date.toISOString()}>
-                      {format(date, "do MMMM yyyy")}
-                    </time>
-                  </p>
-                </div>
-              );
-            })}
-        </div>
+      <div className="flex flex-col items-center justify-center gap-4 lg:gap-6">
+        {data
+          .sort(
+            (a, b) =>
+              new Date(b.publishedOn).valueOf() -
+              new Date(a.publishedOn).valueOf()
+          )
+          .map((item) => {
+            const date = new Date(item.publishedOn);
+            return (
+              <div
+                key={`${item.title}-${item.slug}`}
+                className="flex flex-col items-start w-full"
+              >
+                <Link href={`/${item.slug}`} passHref>
+                  <a className="font-medium text-orange-500 hover:underline">
+                    {item.title}
+                  </a>
+                </Link>
+                <p className="text-sm text-zinc-600">
+                  Published on{" "}
+                  <time dateTime={date.toISOString()}>
+                    {format(date, "do MMMM yyyy")}
+                  </time>
+                </p>
+              </div>
+            );
+          })}
       </div>
     </PageLayout>
   );

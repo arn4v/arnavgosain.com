@@ -140,6 +140,6 @@ public/sitemap.xml
 # vercel
 .vercel
 
-
 # Contentlayer
 .contentlayer
+/static/og-images/*.png

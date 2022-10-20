@@ -27,9 +27,6 @@ export default function PlaylistsPage({ playlists }) {
           openGraph: openGraph,
         }}
       >
-        <h1 className="text-3xl font-bold dark:text-white font-mono hidden lg:block mb-8">
-          Playlists
-        </h1>
         <div className="flex flex-col space-y-6">
           {Object.entries(playlists)
             .reverse()
@@ -40,11 +37,11 @@ export default function PlaylistsPage({ playlists }) {
                   className="flex flex-col space-y-4"
                 >
                   <a id={key} href={`#${key}`} className="relative mr-auto">
-                    <h1 className="text-2xl font-semibold dark:text-white hover:bg-cyan-200 transition">
+                    <h1 className="text-2xl font-semibold transition dark:text-white hover:bg-cyan-200">
                       {key}
                     </h1>
                   </a>
-                  <div className="grid grid-cols-3 lg:grid-cols-4 grid-flow-cols gap-4">
+                  <div className="grid grid-cols-3 gap-4 lg:grid-cols-4 grid-flow-cols">
                     {Object.entries(value).map(([month, _value]) => {
                       return (
                         <Link key={`${key}_${month}`} href={_value["href"]}>
@@ -55,7 +52,7 @@ export default function PlaylistsPage({ playlists }) {
                             }}
                             className="box-border px-2.5 lg:px-3.5 py-3.5 flex items-center rounded-md shadow-md overflow-hidden relative"
                           >
-                            <div className="font-medium text-black bg-cyan-200 z-10">
+                            <div className="z-10 font-medium text-black bg-cyan-200">
                               {month}
                             </div>
                           </div>
@@ -89,7 +86,7 @@ export async function getStaticProps() {
     return acc;
   }, {});
 
-  if (isProd) {
+  if (isProd && process.env.VERCEL_URL) {
     const accessToken = (
       await axios({
         url: "https://accounts.spotify.com/api/token",
@@ -133,7 +130,13 @@ export async function getStaticProps() {
   return {
     props: {
       playlists: transformedData,
-      revalidate: 86400,
+      ...(isProd
+        ? {
+            revalidate: 86400,
+          }
+        : {
+            revalidate: 1,
+          }),
     },
   };
 }

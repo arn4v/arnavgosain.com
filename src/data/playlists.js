@@ -1,4 +1,11 @@
 const playlists = {
+  2022: {
+    May: "https://open.spotify.com/playlist/5YdVtN9vVjauLWBFTZk1Fj",
+    April: "https://open.spotify.com/playlist/7Fb4NfLavXDkQrsWuT18yH",
+    March: "https://open.spotify.com/playlist/04DKZhmWtSRe3UstNvBLQE",
+    February: "https://open.spotify.com/playlist/54Tgs6lcpuE5xPcyOdDIkg",
+    January: "https://open.spotify.com/playlist/3VoqGYj8SPPjsRaxOheY4x",
+  },
   2021: {
     April: "https://open.spotify.com/playlist/06695IEI2dDt7sLhrzN8w4",
     March: "https://open.spotify.com/playlist/1gO5tGi4TrCum3KvLckLoR",

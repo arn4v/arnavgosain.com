@@ -3,13 +3,12 @@ import { format } from "date-fns";
 import { GetStaticProps } from "next";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import Image from "next/image";
-import * as React from "react";
-import useSWR, { SWRConfiguration } from "swr";
+import { SWRConfiguration } from "swr";
 import Link from "~/components/CustomLink";
-import { RadixEye } from "~/components/icons/RadixEye";
 import PageLayout from "~/components/PageLayout";
+import { SeoProps } from "~/components/Seo";
 import { baseUrl } from "~/constants";
-import fetcher from "~/lib/fetcher";
+import { generateOgImages } from "~/lib/generate-og-images";
 
 interface Frontmatter {
   title: string;
@@ -32,25 +31,12 @@ const staleSwrConfig: SWRConfiguration = {
 const PostLayout = ({ post }: { post: Post }) => {
   const MDXComponent = useMDXComponent(post.body.code);
   const publishedOn = new Date(post.publishedOn);
-  const seoProps = {
+  const seoProps: SeoProps = {
     title: `${post.title} | Arnav Gosain`,
     url: `${baseUrl}/${post.slug}`,
     publishedAt: publishedOn.toISOString(),
-    ...(typeof post?.banner === "string"
-      ? {
-          image: post.banner,
-        }
-      : {}),
+    // image: post?.banner ?? `${baseUrl}/og-images/${post.slug}.png`,
   };
-  const {
-    data,
-    isValidating: isLoading,
-    mutate,
-  } = useSWR<number>(`/api/views/${post.slug}`, fetcher, staleSwrConfig);
-
-  React.useEffect(() => {
-    mutate();
-  }, [mutate]);
 
   return (
     <PageLayout
@@ -100,17 +86,12 @@ const PostLayout = ({ post }: { post: Post }) => {
                     </time>
                   </p>
                 </div>
-                <div className="flex items-center justify-start gap-2 lg:gap-4">
-                  <div className="hidden lg:block">/</div>
-                  <RadixEye className="h-4 w-4" />
-                  <p>{isLoading ? "---" : Number(data)}</p>
-                </div>
               </span>
             </div>
           </div>
           <div className="w-full h-px bg-gray-200 dark:bg-slate-600" />
         </div>
-        <div className="prose dark:prose-dark max-w-full">
+        <div className="max-w-full prose dark:prose-dark">
           <MDXComponent
             components={{
               a: Link,
@@ -123,6 +104,8 @@ const PostLayout = ({ post }: { post: Post }) => {
 };
 
 export const getStaticPaths = async () => {
+  // await generateOgImages();
+
   return {
     paths: allPosts.map((p) => ({ params: { slug: p.slug } })),
     fallback: false,

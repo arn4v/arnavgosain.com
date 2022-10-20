@@ -1,6 +1,7 @@
 import clsx from "clsx";
+import Link from "next/link";
+import { useRouter } from "next/router";
 import * as React from "react";
-import Navbar from "./Navbar";
 import Seo, { SeoProps } from "./Seo";
 
 interface Props {
@@ -15,19 +16,38 @@ export default function PageLayout({
   className = "",
   seo = {},
 }: Props) {
+  const router = useRouter();
   return (
     <>
       <Seo {...seo} />
-      <div
-        className={clsx([
-          "flex flex-col bg-white min-h-screen dark:bg-black overflow-x-hidden",
-          className,
-        ])}
-      >
-        <Navbar />
-        <div className="w-full h-full px-6 mx-auto lg:px-0 mt-20 lg:max-w-4xl py-8">
-          {children}
-        </div>
+      <div className="w-full h-full px-8 py-12 lg:p-12">
+        <header className="w-full mx-auto md:w-2/5">
+          <nav className="flex space-x-4">
+            {(
+              [
+                ["About", "/", /\/$/],
+                ["Writing", "/blog", /\/blog(.*)$/],
+                ["Projects", "/projects", /\/projects$/],
+                ["Library", "/library", /\/library$/],
+                ["Playlists", "/playlists", /\/playlists$/],
+              ] as [string, string, RegExp][]
+            ).map(([title, to, isActive], idx) => (
+              <Link key={idx} href={to} passHref>
+                <a
+                  className={clsx(
+                    "font-medium text-sm md:text-base",
+                    isActive.test(router.pathname)
+                      ? "text-black underline"
+                      : "text-zinc-600 hover:text-black hover:underline"
+                  )}
+                >
+                  {title}
+                </a>
+              </Link>
+            ))}
+          </nav>
+        </header>
+        <main className="w-full mx-auto mt-8 md:w-2/5">{children}</main>
       </div>
     </>
   );
