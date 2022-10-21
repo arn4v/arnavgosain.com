@@ -3,7 +3,7 @@ title: "JS Libraries Have A Reinvention Problem"
 publishedOn: 2022-10-21
 ---
 
-Popular JS Libraries Have A Reinvention Problem
+Popular JS libraries have a reinvention problem.
 
 It feels like every time I blink, a UI framework/state management solution/build tool I’m using has completely changed how it does things. Usually justified by “how much better it is”.
 
