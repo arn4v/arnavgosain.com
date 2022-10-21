@@ -15,7 +15,7 @@ And the community responds with platitudes like “it’s not that bad”, “yo
 
 Maybe I’m just bad at this. Maybe I’m not keeping up. Maybe I’m not using the tools “the right way”. But I don’t think that’s it.
 
-As a collective, JS linrary authors need to get over this never-ending desire to change for the sake of changing, to chase the next shiny thing.
+As a collective, JS developers need to get over this never-ending desire to change for the sake of changing, to chase the next shiny thing.
 
 Maybe it’s time to start thinking about stability and backwards compatibility.
 
