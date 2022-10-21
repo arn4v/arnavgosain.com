@@ -1,6 +1,6 @@
 ---
 title: "JS Libraries Have A Reinvention Problem"
-publishedOn: 2022-10-20
+publishedOn: 2022-10-21
 ---
 
 Popular JS Libraries Have A Reinvention Problem

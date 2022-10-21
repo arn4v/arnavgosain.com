@@ -20,7 +20,7 @@ export default function PageLayout({
   return (
     <>
       <Seo {...seo} />
-      <div className="w-full h-full px-8 py-12 lg:p-12">
+      <div className="w-full h-auto px-8 py-12 lg:p-12">
         <header className="w-full mx-auto md:w-2/5">
           <nav className="flex space-x-4">
             {(
