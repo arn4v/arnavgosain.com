@@ -21,7 +21,6 @@ export function PostOGImage({ title }) {
           backgroundColor: "#ffffff",
           backgroundSize: "80px 80px",
           backgroundPosition: "0 0,40px 40px",
-          zIndex: 1,
         }}
       />
       <div
@@ -29,7 +28,7 @@ export function PostOGImage({ title }) {
           top: 0,
           display: "flex",
           flexDirection: "column",
-          alignItems: "start",
+          alignItems: "flex-start",
           justifyContent: "center",
         }}
       >
@@ -39,7 +38,7 @@ export function PostOGImage({ title }) {
             marginTop: "32px",
             display: "flex",
             alignItems: "center",
-            justifyContent: "start",
+            justifyContent: "flex-start",
           }}
         >
           <img

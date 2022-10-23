@@ -35,7 +35,7 @@ const PostLayout = ({ post }: { post: Post }) => {
     title: `${post.title} | Arnav Gosain`,
     url: `${baseUrl}/${post.slug}`,
     publishedAt: publishedOn.toISOString(),
-    // image: post?.banner ?? `${baseUrl}/og-images/${post.slug}.png`,
+    image: post?.banner ?? `${baseUrl}/api/og?title=${encodeURIComponent(post.title)}`,
   };
 
   return (

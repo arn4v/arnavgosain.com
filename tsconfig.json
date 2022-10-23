@@ -1,26 +1,33 @@
 {
   "compilerOptions": {
-    "target": "ES2019",
-    "module": "esnext",
-    "lib": ["DOM", "ESNext"],
+    "target": "es5",
+    "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
     "strict": true,
-    "importHelpers": true,
     "forceConsistentCasingInFileNames": true,
     "noEmit": true,
     "esModuleInterop": true,
+    "module": "esnext",
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "isolatedModules": true,
     "jsx": "preserve",
-    "typeRoots": ["@types", "./node_modules/@types"],
+    "incremental": true,
+    "noUncheckedIndexedAccess": true,
     "baseUrl": ".",
     "paths": {
       "~/*": ["src/*"]
-    },
-    "incremental": true
+    }
   },
   "exclude": ["node_modules"],
-  "include": ["next-env.d.ts", "./types/*.d.ts", "src/**/*"]
+  "include": [
+    "next-env.d.ts",
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "**/*.cjs",
+    "**/*.mjs"
+  ]
 }

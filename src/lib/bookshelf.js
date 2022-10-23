@@ -1,5 +1,3 @@
-require("isomorphic-fetch");
-
 module.exports.getBooks = async () => {
   const data = await fetch(
     "https://notion-api.splitbee.io/v1/table/cee24ed079424c76a59cf386b9e9d78d",
