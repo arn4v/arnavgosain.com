@@ -21,7 +21,7 @@ export default function Seo({
       <meta content={description} name="description" />
       <meta name="robots" content="follow, index" />
       <meta property="og:description" content={description} />
-      {!!image && <meta property="og:image" content={image} />}
+      {image ? <meta property="og:image" content={image} /> : null}
       <meta property="og:site_name" content="Arnav Gosain" />
       <meta property="og:title" content={title} />
       <meta property="og:type" content="website" />
