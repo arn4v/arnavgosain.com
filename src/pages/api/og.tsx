@@ -29,15 +29,13 @@ const handler: NextApiHandler = async (req, res) => {
   try {
     return new ImageResponse(
       (
-        <div
-          tw="h-full w-full flex items-start justify-start bg-gray-50"
-        >
+        <div tw="h-full w-full flex items-start justify-start bg-gray-50">
           <div tw="flex items-start justify-start h-full">
             <div tw="flex flex-col justify-between w-full h-full">
               <h1 tw="text-[80px] p-20 font-bold text-left">{title}</h1>
               <div tw="flex flex-col items-start justify-center pb-10">
-                <div tw="text-2xl px-20 font-bold mb-4">Arnav Gosain</div>
-                <div tw="text-lg px-20 font-medium">
+                <div tw="text-3xl px-20 font-bold mb-4">Arnav Gosain</div>
+                <div tw="text-2xl px-20 font-medium">
                   https://arnavgosain.com
                 </div>
               </div>
