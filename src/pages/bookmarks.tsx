@@ -7,7 +7,7 @@ const BookmarksPage = () => {
     title: "Bookmarks | Arnav Gosain",
     description: "Links for later.",
     url: baseUrl + "/bookmarks",
-    image: "/static/bookmarks-og-banner.png",
+    image: baseUrl + "/api/og?title=Bookmarks",
   };
 
   return (

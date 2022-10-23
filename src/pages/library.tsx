@@ -20,7 +20,7 @@ const seoConfig: SeoProps = {
   title: "Library | Arnav Gosain",
   description: "Books I've read, reading and want to read.",
   url: baseUrl + "/library",
-  image: "/static/library-og-banner.png",
+  image: baseUrl + "/api/og?title=Library",
 };
 
 export default function Bookshelf({ data }: Props) {
