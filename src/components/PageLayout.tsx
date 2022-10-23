@@ -11,12 +11,12 @@ interface Props {
   seo?: SeoProps;
 }
 
-export default function PageLayout({
-  children,
-  className = "",
-  seo = {},
-}: Props) {
+export default function PageLayout(props: Props) {
+  const { children, seo = {} } = props;
   const router = useRouter();
+
+  console.log(seo);
+
   return (
     <>
       <Seo {...seo} />
