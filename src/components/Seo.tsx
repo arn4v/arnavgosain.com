@@ -9,7 +9,7 @@ export interface SeoProps {
 }
 
 export default function Seo({
-  title = "Arnav Gosain - Developer, photographer, maker.",
+  title = "Arnav Gosain",
   description,
   url = "https://arnavgosain.com",
   image,

@@ -19,18 +19,26 @@ const IndexPage = ({ posts }: { posts: Post[] }) => {
   return (
     <PageLayout
       seo={{
-        description: "Developer, photographer, maker of things.",
+        description: "Arnav Gosain • Software engineer and maker of things.",
       }}
     >
-      <section className="flex flex-col space-y-6 text-lg">
+      <section className="flex flex-col space-y-6">
         <div className="flex items-center justify-start space-x-2">
-          <span className="font-medium">Arnav Gosain</span>
+          <span className="font-medium text-lg">Arnav Gosain</span>
           <span>•</span>
           <span className="font-medium text-zinc-500">Delhi, India</span>
         </div>
-        <p className="text-lg">
-          I'm a software engineer, photographer & maker of side projects.
-          Currently, I work at{" "}
+        <p className="text-md">
+          I'm a{" "}
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://github.com/arn4v"
+            className="font-semibold text-orange-500 hover:underline"
+          >
+            developer
+          </a>
+          /PM currently working at{" "}
           <a
             target="_blank"
             rel="noopener noreferrer"
@@ -38,9 +46,22 @@ const IndexPage = ({ posts }: { posts: Post[] }) => {
             className="font-semibold text-orange-500 hover:underline"
           >
             RemNote
-          </a>{" "}
-          where we're building an all-in-one workspace for thinking and
-          learning.
+          </a>
+          . I like to learn by{" "}
+          <Link
+            href="/projects"
+            className="font-semibold text-orange-500 hover:underline"
+          >
+            making things
+          </Link>{" "}
+          and frequently{" "}
+          <Link
+            href="/blog"
+            className="font-semibold text-orange-500 hover:underline"
+          >
+            write
+          </Link>{" "}
+          about it.
         </p>
       </section>
       <section id="social_links" className="flex items-center mt-8 space-x-4">
