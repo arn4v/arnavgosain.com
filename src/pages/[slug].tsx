@@ -8,7 +8,6 @@ import Link from "~/components/CustomLink";
 import PageLayout from "~/components/PageLayout";
 import { SeoProps } from "~/components/Seo";
 import { baseUrl } from "~/constants";
-import { generateOgImages } from "~/lib/generate-og-images";
 
 interface Frontmatter {
   title: string;
@@ -35,7 +34,9 @@ const PostLayout = ({ post }: { post: Post }) => {
     title: `${post.title} | Arnav Gosain`,
     url: `${baseUrl}/${post.slug}`,
     publishedAt: publishedOn.toISOString(),
-    image: post?.banner ?? `${baseUrl}/api/og?title=${encodeURIComponent(post.title)}`,
+    image:
+      post?.banner ??
+      `${baseUrl}/api/og?title=${encodeURIComponent(post.title)}`,
   };
 
   return (
