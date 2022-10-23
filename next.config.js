@@ -1,5 +1,4 @@
 const isProd = process.env.NODE_ENV === "production";
-const { withContentlayer } = require("next-contentlayer");
 
 /**
  * @type {import("next").NextConfig}
@@ -56,6 +55,6 @@ let config = {
   },
 };
 
-config = withContentlayer()(config);
+config = require("next-contentlayer").withContentlayer(config);
 
 module.exports = config;
