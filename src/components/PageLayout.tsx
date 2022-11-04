@@ -15,7 +15,6 @@ export default function PageLayout(props: Props) {
   const { children, seo = {} } = props;
   const router = useRouter();
 
-  console.log(seo);
 
   return (
     <>
