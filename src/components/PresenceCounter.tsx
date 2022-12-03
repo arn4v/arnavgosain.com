@@ -6,7 +6,7 @@ function usePresenceState() {
   const openSocket = React.useRef<WebSocket | null>(null);
 
   React.useEffect(() => {
-    const ws = new WebSocket("ws://127.0.0.1:8787");
+    const ws = new WebSocket(process.env.NEXT_PUBLIC_WEBSOCKET_URL);
     ws.addEventListener("open", () => {
       openSocket.current = ws;
       setIsConnected(true);
@@ -43,5 +43,5 @@ export function PresenceCounter() {
     return null;
   }
 
-  return <div>{count} people are currently reading this page.</div>;
+  return <div>You're 1 of {count} people currently on this page.</div>;
 }

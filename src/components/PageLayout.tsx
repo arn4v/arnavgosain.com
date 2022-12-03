@@ -48,7 +48,7 @@ export default function PageLayout(props: Props) {
           </nav>
         </header>
         <main className="w-full mx-auto mt-8 md:w-2/5">{children}</main>
-        <footer>
+        <footer className="w-full mx-auto mt-8 md:w-2/5 border-t border-gray-200 py-8">
           <PresenceCounter />
         </footer>
       </div>

@@ -16,59 +16,9 @@ export class PresenceDurableObject {
   constructor(state: DurableObjectState, env: Env) {
     this.state = state;
     this.sessions = [];
-  }
-
-  async getActiveUsers() {
-    const currentlyActive = await this.state.storage.get<ActiveUsers>("active");
-    return currentlyActive ?? {};
-  }
-
-  async setActiveUserState(ip: string, name: string | null) {
-    const currentlyActive = await this.getActiveUsers();
-
-    const newState = {
-      ...currentlyActive,
-      [ip]: {
-        connectedAt: new Date().getTime(),
-        name: null,
-      },
-    };
-
-    const storagePromise = this.state.storage.put<ActiveUsers>(
-      "active",
-      newState
-    );
-
-    await storagePromise;
-
-    return newState;
-  }
-
-  async nukeUser(ip: string) {
-    const currentlyActive = await this.getActiveUsers();
-    const newState = Object.fromEntries(
-      Object.entries(currentlyActive).filter(([key]) => key !== ip)
-    );
-
-    const storagePromise = this.state.storage.put<ActiveUsers>(
-      "active",
-      newState
-    );
-
-    await storagePromise;
-
-    return newState;
-  }
-
-  isValidPayload(e: MessageEvent, server: WebSocket) {
-    const isObject = typeof e.data === "object" && e.data !== null;
-    const isString = typeof e.data !== "string";
-
-    if (!isObject || isString) {
-      return false;
-    }
-
-    return true;
+    this.state.blockConcurrencyWhile(async () => {
+      await this.state.storage.put("counter", 0);
+    });
   }
 
   broadcast(message: string) {
@@ -130,23 +80,17 @@ export class PresenceDurableObject {
     const webSocketPair = new WebSocketPair();
     const [client, server] = Object.values(webSocketPair);
 
-    server.addEventListener("close", () => {
-      console.log("websocket closed");
-    });
-
-    server.addEventListener("open", async (e) => {
-      console.log("opened", { ip });
-    });
-
     server.addEventListener("error", (e) => {
       console.log("websocket error", e);
     });
 
     server.addEventListener("close", async (e) => {
       await this.closeSession(ip);
+      console.log("closed", { ip });
     });
 
     server.accept();
+    console.log("opened", { ip });
     await this.handleConnection(ip, server);
 
     return new Response(null, {
