@@ -119,6 +119,8 @@ export async function getStaticProps() {
           headers: { Authorization: `Bearer ${accessToken}` },
         }).then((res) => res.json());
 
+        console.log(img);
+
         transformedData[year][month] = {
           href: playlistUrl,
           img: img["images"][0]["url"],
