@@ -3,7 +3,6 @@ import { format } from "date-fns";
 import { GetStaticProps } from "next";
 import { useMDXComponent } from "next-contentlayer/hooks";
 import Image from "next/image";
-import { SWRConfiguration } from "swr";
 import Link from "~/components/CustomLink";
 import PageLayout from "~/components/PageLayout";
 import { SeoProps } from "~/components/Seo";
@@ -16,16 +15,6 @@ interface Frontmatter {
   // url of og & banner image
   banner: string;
 }
-
-const staleSwrConfig: SWRConfiguration = {
-  revalidateIfStale: false,
-  revalidateOnFocus: false,
-  revalidateOnMount: false,
-  revalidateOnReconnect: false,
-  refreshWhenHidden: false,
-  refreshWhenOffline: false,
-  refreshInterval: 0,
-};
 
 const PostLayout = ({ post }: { post: Post }) => {
   const MDXComponent = useMDXComponent(post.body.code);
