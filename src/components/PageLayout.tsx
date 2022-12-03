@@ -28,7 +28,7 @@ export default function PageLayout(props: Props) {
                 ["Writing", "/blog", /\/blog(.*)$/],
                 ["Projects", "/projects", /\/projects$/],
                 ["Library", "/library", /\/library$/],
-                ["Playlists", "/playlists", /\/playlists$/],
+                // ["Playlists", "/playlists", /\/playlists$/],
               ] as [string, string, RegExp][]
             ).map(([title, to, isActive], idx) => (
               <Link
