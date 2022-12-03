@@ -17,16 +17,15 @@ export default function NavItem({
   if (href.startsWith("/") || href.startsWith("#")) {
     return (
       <li>
-        <Link href={href}>
-          <a
-            className={clsx([
-              className,
-              "px-2 border-cyan-200 dark:border-slate-600 dark:text-white dark:hover:bg-slate-600 hover:bg-cyan-200 font-bold text-black h-9 flex items-center justify-start lg:justify-center font-mono border-l-2 border-b-2",
-              active && "dark:bg-slate-600 bg-cyan-200",
-            ])}
-          >
-            {children}
-          </a>
+        <Link
+          href={href}
+          className={clsx([
+            className,
+            "px-2 border-cyan-200 dark:border-slate-600 dark:text-white dark:hover:bg-slate-600 hover:bg-cyan-200 font-bold text-black h-9 flex items-center justify-start lg:justify-center font-mono border-l-2 border-b-2",
+            active && "dark:bg-slate-600 bg-cyan-200",
+          ])}
+        >
+          {children}
         </Link>
       </li>
     );

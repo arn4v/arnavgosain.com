@@ -38,7 +38,7 @@ export default function Link({
     delete linkProps.target;
     delete linkProps.rel;
     return (
-      <NextLink href={href} passHref>
+      <NextLink href={href} passHref legacyBehavior>
         <a {...linkProps}>{children}</a>
       </NextLink>
     );

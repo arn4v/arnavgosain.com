@@ -84,6 +84,5 @@
     "semi": true,
     "singleQuote": false,
     "arrowParens": "always"
-  },
-  "packageManager": "yarn@3.2.4"
+  }
 }

@@ -2,6 +2,7 @@ import clsx from "clsx";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import * as React from "react";
+import { PresenceCounter } from "./PresenceCounter";
 import Seo, { SeoProps } from "./Seo";
 
 interface Props {
@@ -14,7 +15,6 @@ interface Props {
 export default function PageLayout(props: Props) {
   const { children, seo = {} } = props;
   const router = useRouter();
-
 
   return (
     <>
@@ -31,22 +31,26 @@ export default function PageLayout(props: Props) {
                 ["Playlists", "/playlists", /\/playlists$/],
               ] as [string, string, RegExp][]
             ).map(([title, to, isActive], idx) => (
-              <Link key={idx} href={to} passHref>
-                <a
-                  className={clsx(
-                    "font-medium text-sm md:text-base",
-                    isActive.test(router.pathname)
-                      ? "text-black underline"
-                      : "text-zinc-600 hover:text-black hover:underline"
-                  )}
-                >
-                  {title}
-                </a>
+              <Link
+                key={idx}
+                href={to}
+                passHref
+                className={clsx(
+                  "font-medium text-sm md:text-base",
+                  isActive.test(router.pathname)
+                    ? "text-black underline"
+                    : "text-zinc-600 hover:text-black hover:underline"
+                )}
+              >
+                {title}
               </Link>
             ))}
           </nav>
         </header>
         <main className="w-full mx-auto mt-8 md:w-2/5">{children}</main>
+        <footer>
+          <PresenceCounter />
+        </footer>
       </div>
     </>
   );

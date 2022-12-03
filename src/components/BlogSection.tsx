@@ -19,10 +19,11 @@ export default function BlogSection({ data }: { data: Post[] }) {
               key={index}
               className="flex items-center justify-between w-full h-full"
             >
-              <Link href={`/${data.slug}`}>
-                <a className="text-orange-500 hover:text-orange-700 underline font-medium">
-                  {data.title}
-                </a>
+              <Link
+                href={`/${data.slug}`}
+                className="text-orange-500 hover:text-orange-700 underline font-medium"
+              >
+                {data.title}
               </Link>
               <p>
                 Published on{" "}
@@ -34,11 +35,12 @@ export default function BlogSection({ data }: { data: Post[] }) {
           );
         })}
       </div>
-      <Link href="/blog">
-        <a className="flex items-center justify-center px-6 ml-auto py-2 space-x-4 text-sm transition duration-150 ease-in bg-gray-100 border border-gray-300 rounded-md dark:bg-gray-800 dark:hover:bg-gray-700 hover:bg-gray-200 dark:border-gray-800 lg:text-base whitespace-nowrap dark:text-white">
-          <span>View all posts</span>
-          <HiArrowRight />
-        </a>
+      <Link
+        href="/blog"
+        className="flex items-center justify-center px-6 ml-auto py-2 space-x-4 text-sm transition duration-150 ease-in bg-gray-100 border border-gray-300 rounded-md dark:bg-gray-800 dark:hover:bg-gray-700 hover:bg-gray-200 dark:border-gray-800 lg:text-base whitespace-nowrap dark:text-white"
+      >
+        <span>View all posts</span>
+        <HiArrowRight />
       </Link>
     </div>
   );

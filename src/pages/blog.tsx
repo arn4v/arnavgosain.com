@@ -28,10 +28,12 @@ const BlogPage = ({ data }: { data: Post[] }) => {
                 key={`${item.title}-${item.slug}`}
                 className="flex flex-col items-start w-full"
               >
-                <Link href={`/${item.slug}`} passHref>
-                  <a className="font-medium text-orange-500 hover:underline">
-                    {item.title}
-                  </a>
+                <Link
+                  href={`/${item.slug}`}
+                  passHref
+                  className="font-medium text-orange-500 hover:underline"
+                >
+                  {item.title}
                 </Link>
                 <p className="text-sm text-zinc-600">
                   Published on{" "}

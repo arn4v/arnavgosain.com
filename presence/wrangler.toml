@@ -1,0 +1,10 @@
+name = "presence"
+main = "src/index.ts"
+compatibility_date = "2022-12-03"
+
+[durable_objects]
+bindings = [{ name = "presence", class_name = "PresenceDurableObject" }]
+
+[[migrations]]
+tag = "v1" # Should be unique for each entry
+new_classes = ["PresenceDurableObject"]
