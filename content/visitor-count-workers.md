@@ -5,6 +5,19 @@ publishedOn: '2022-12-05'
 
 As a fun experiment, I've wanted to add a live visitor count to my blog. I've seen this done in a few different ways, most commonly in a server-full way, but I wanted to try implementing as a serverless function. Unlike other serverless solutions, Cloudflare Workers support WebSockets & provide a neat interface for consistent storage via Durable Objects, so I decided to give it a shot.
 
+- [The Basics](#the-basics)
+	- [Wrangler](#wrangler)
+	- [Scaffolding a Worker](#scaffolding-a-worker)
+- [Creating a basic WebSocket server with Cloudflare Workers](#creating-a-basic-websocket-server-with-cloudflare-workers)
+- [Making a Counter using Durable Objects](#making-a-counter-using-durable-objects)
+- [Hooking up our `Counter` Durable Object with the request handler](#hooking-up-our-counter-durable-object-with-the-request-handler)
+- [Implementing the live visitors counter](#implementing-the-live-visitors-counter)
+	- [Keeping track of connections](#keeping-track-of-connections)
+	- [Broadcasting a message to all connected clients](#broadcasting-a-message-to-all-connected-clients)
+	- [Now we'll modify the `increment` and `decrement` methods to broadcast the new count to all connected clients](#now-well-modify-the-increment-and-decrement-methods-to-broadcast-the-new-count-to-all-connected-clients)
+	- [Discarding closed connections](#discarding-closed-connections)
+- [Full code](#full-code)
+
 ## The Basics
 
 ### Wrangler
@@ -32,29 +45,38 @@ Wrangler will create the following files:
 - `src/index.ts` - The main entrypoint for the Worker
 - `src/index.test.ts` - Vitest test file for the Worker
 
-## Connecting to the Worker WebSocket
-
-In the worker, you have to create a WebSocketPair and return one of the sockets to the client. The other socket is used to communicate with the Worker.
+## Creating a basic WebSocket server with Cloudflare Workers
 
 ```ts
-async handleRequest(request: Request, env: Env) {
-  const [client, server] = new WebSocketPair();
+async function handleRequest(request: Request, env: Env) {
+	const upgradeHeader = request.headers.get('Upgrade');
 
-  server.addEventListener('message', (event) => {
-    // Handle messages from the client
-  });
+	// If the upgrade header is not set, or it's not set to "websocket", return 426
+	if (!upgradeHeader || upgradeHeader !== 'websocket') {
+		return new Response('Expected Upgrade: websocket', { status: 426 });
+	}
 
-  server.addEventListener('close', () => {
-    // Handle the client disconnecting
-  });
+	const [client, server] = new WebSocketPair();
 
-  server.accept()
+	server.addEventListener('message', event => {
+		// Handle messages from the client
+	});
 
-  return new Response(null, {
-    status: 101,
-    webSocket: client,
-  });
+	server.addEventListener('close', () => {
+		// Handle the client disconnecting
+	});
+
+	server.accept();
+
+	return new Response(null, {
+		status: 101,
+		webSocket: client
+	});
 }
+
+export default {
+	fetch: handleRequest
+};
 ```
 
 On the client side, you can connect to the Worker using the `WebSocket` constructor.
@@ -77,7 +99,7 @@ socket.addEventListener('close', () => {
 
 ## Making a Counter using Durable Objects
 
-At surface level, a Durable Object is just a class. But an instance of this class is never created manually, as we need it to be created once & have a unique id, so it can be shared across WebSocket connections/requests.
+On surface level, a Durable Object is just a class. But a Durable Object class instance cannot be created manually, as it needs to be persisted and used in multiple requests.
 
 ```ts
 interface Env {
@@ -191,7 +213,7 @@ So here's the rundown of how it works:
 - Whenever the count changes, the new count will be broadcast to all connected clients.
 - When all clients disconnect, the DurableObject will be discarded.
 
-### Keeping track of conns
+### Keeping track of connections
 
 Since our DurableObject's `fetch` method is called for every WebSocket connection, we can store the WebSocket connection in a Set.
 
@@ -203,6 +225,13 @@ export class Counter {
 	private conns = new Set<WebSocket>();
 
 	async fetch(request: Request) {
+		const upgradeHeader = request.headers.get('Upgrade');
+
+		// If the upgrade header is not set, or it's not set to "websocket", return 426
+		if (!upgradeHeader || upgradeHeader !== 'websocket') {
+			return new Response('Expected Upgrade: websocket', { status: 426 });
+		}
+
 		const [client, server] = new WebSocketPair();
 
 		server.addEventListener('message', async event => {
@@ -412,6 +441,13 @@ export class Counter {
 }
 
 async function handleRequest(request: Request, env: Env) {
+	const upgradeHeader = request.headers.get('Upgrade');
+
+	// If the upgrade header is not set, or it's not set to "websocket", return 426
+	if (!upgradeHeader || upgradeHeader !== 'websocket') {
+		return new Response('Expected Upgrade: websocket', { status: 426 });
+	}
+
 	// Cloudflare provides the client IP in the 'CF-Connecting-IP' header
 	const ip = request.headers.get('CF-Connecting-IP') as string;
 
