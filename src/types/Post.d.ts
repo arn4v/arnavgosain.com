@@ -1,5 +1,5 @@
 export type PostData = {
-  title: string;
-  seoTitle: string;
-  isPublished: boolean;
+	title: string;
+	seoTitle: string;
+	isPublished: boolean;
 };

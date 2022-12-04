@@ -1,48 +1,43 @@
-import clsx from "clsx";
-import Link from "next/link";
+import clsx from 'clsx';
+import Link from 'next/link';
 
 interface Props {
-  href: string;
-  className?: string;
-  children: React.ReactNode;
-  active: boolean;
+	href: string;
+	className?: string;
+	children: React.ReactNode;
+	active: boolean;
 }
 
-export default function NavItem({
-  href,
-  children,
-  className,
-  active = false,
-}: Props) {
-  if (href.startsWith("/") || href.startsWith("#")) {
-    return (
-      <li>
-        <Link
-          href={href}
-          className={clsx([
-            className,
-            "px-2 border-cyan-200 dark:border-slate-600 dark:text-white dark:hover:bg-slate-600 hover:bg-cyan-200 font-bold text-black h-9 flex items-center justify-start lg:justify-center font-mono border-l-2 border-b-2",
-            active && "dark:bg-slate-600 bg-cyan-200",
-          ])}
-        >
-          {children}
-        </Link>
-      </li>
-    );
-  }
+export default function NavItem({ href, children, className, active = false }: Props) {
+	if (href.startsWith('/') || href.startsWith('#')) {
+		return (
+			<li>
+				<Link
+					href={href}
+					className={clsx([
+						className,
+						'px-2 border-cyan-200 dark:border-slate-600 dark:text-white dark:hover:bg-slate-600 hover:bg-cyan-200 font-bold text-black h-9 flex items-center justify-start lg:justify-center font-mono border-l-2 border-b-2',
+						active && 'dark:bg-slate-600 bg-cyan-200'
+					])}
+				>
+					{children}
+				</Link>
+			</li>
+		);
+	}
 
-  return (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className={clsx([
-        className,
-        "px-2 border-l-2 border-cyan-200 dark:border-cyan-200 dark:text-white border-b-2 hover:bg-cyan-200 font-bold text-black h-9 flex items-center justify-center dark:hover:text-black",
-        active && "bg-cyan-200 dark:text-black",
-      ])}
-    >
-      {children}
-    </a>
-  );
+	return (
+		<a
+			href={href}
+			target="_blank"
+			rel="noopener noreferrer"
+			className={clsx([
+				className,
+				'px-2 border-l-2 border-cyan-200 dark:border-cyan-200 dark:text-white border-b-2 hover:bg-cyan-200 font-bold text-black h-9 flex items-center justify-center dark:hover:text-black',
+				active && 'bg-cyan-200 dark:text-black'
+			])}
+		>
+			{children}
+		</a>
+	);
 }
