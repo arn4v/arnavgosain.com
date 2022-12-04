@@ -59,12 +59,16 @@ export class PresenceDurableObject {
 		return newCounter;
 	}
 
-	async closeSession(sym: symbol) {
+	async handleSessionClose(sym: symbol) {
 		this.sessions = this.sessions.filter(session => session.sym !== sym);
-		await this.decrementCounter();
+		if (this.sessions.length === 0) {
+			await this.state.storage.deleteAll();
+		} else {
+			await this.decrementCounter();
+		}
 	}
 
-	async handleSession(ip: string, socket: WebSocket) {
+	async handleSessionOpen(ip: string, socket: WebSocket) {
 		const sym = Symbol(ip);
 
 		socket.addEventListener('error', e => {
@@ -72,7 +76,7 @@ export class PresenceDurableObject {
 		});
 
 		socket.addEventListener('close', async e => {
-			await this.closeSession(sym);
+			await this.handleSessionClose(sym);
 			console.log('closed', { ip });
 		});
 
@@ -87,7 +91,7 @@ export class PresenceDurableObject {
 		const webSocketPair = new WebSocketPair();
 		const [client, server] = Object.values(webSocketPair);
 
-		await this.handleSession(ip, server);
+		await this.handleSessionOpen(ip, server);
 
 		return new Response(null, {
 			status: 101,
