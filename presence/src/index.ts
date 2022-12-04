@@ -1,122 +1,115 @@
 export interface Env {
-  presence: DurableObjectNamespace;
+	presence: DurableObjectNamespace;
 }
-
-interface ActiveUser {
-  connectedAt: number;
-  name: string | null;
-}
-
-type ActiveUsers = Record<string, ActiveUser>;
 
 export class PresenceDurableObject {
-  state: DurableObjectState;
-  sessions: { ip: string; socket: WebSocket }[];
+	state: DurableObjectState;
+	sessions: { ip: string; socket: WebSocket; sym: symbol }[];
 
-  constructor(state: DurableObjectState, env: Env) {
-    this.state = state;
-    this.sessions = [];
-    this.state.blockConcurrencyWhile(async () => {
-      await this.state.storage.put("counter", 0);
-    });
-  }
+	constructor(state: DurableObjectState, env: Env) {
+		this.state = state;
+		this.sessions = [];
+		this.state.blockConcurrencyWhile(async () => {
+			await this.state.storage.put('counter', 0);
+		});
+	}
 
-  broadcast(message: string) {
-    this.sessions.forEach((session) => {
-      session.socket.send(message);
-    });
-  }
+	broadcast(message: string) {
+		this.sessions = this.sessions.filter(session => {
+			try {
+				session.socket.send(message);
+				return true;
+			} catch {
+				return false;
+			}
+		});
+	}
 
-  async incrementCounter() {
-    const counter = await this.state.storage.get<number>("counter");
-    const newCounter = counter ? counter + 1 : 1;
+	async incrementCounter() {
+		const counter = await this.state.storage.get<number>('counter');
+		const newCounter = counter ? counter + 1 : 1;
 
-    const storagePromise = this.state.storage.put("counter", newCounter);
-    await storagePromise;
+		const storagePromise = this.state.storage.put('counter', newCounter);
+		await storagePromise;
 
-    this.broadcast(
-      JSON.stringify({
-        type: "update/count",
-        payload: newCounter,
-      })
-    );
+		this.broadcast(
+			JSON.stringify({
+				type: 'update/count',
+				payload: newCounter
+			})
+		);
 
-    return newCounter;
-  }
+		return newCounter;
+	}
 
-  async decrementCounter() {
-    const counter = await this.state.storage.get<number>("counter");
-    const newCounter = counter ? counter - 1 : 1;
+	async decrementCounter() {
+		const counter = await this.state.storage.get<number>('counter');
+		const newCounter = counter ? counter - 1 : 1;
 
-    const storagePromise = this.state.storage.put("counter", newCounter);
-    await storagePromise;
+		const storagePromise = this.state.storage.put('counter', newCounter);
+		await storagePromise;
 
-    this.broadcast(
-      JSON.stringify({
-        type: "update/count",
-        payload: newCounter,
-      })
-    );
+		this.broadcast(
+			JSON.stringify({
+				type: 'update/count',
+				payload: newCounter
+			})
+		);
 
-    return newCounter;
-  }
+		return newCounter;
+	}
 
-  async handleConnection(ip: string, socket: WebSocket) {
-    this.sessions.push({
-      ip,
-      socket,
-    });
+	async closeSession(sym: symbol) {
+		this.sessions = this.sessions.filter(session => session.sym !== sym);
+		await this.decrementCounter();
+	}
 
-    await this.incrementCounter();
-  }
+	async handleSession(ip: string, socket: WebSocket) {
+		const sym = Symbol(ip);
 
-  async closeSession(ip: string) {
-    this.sessions = this.sessions.filter((session) => session.ip !== ip);
-    await this.decrementCounter();
-  }
+		socket.addEventListener('error', e => {
+			console.log('websocket error', e);
+		});
 
-  async fetch(request: Request) {
-    const ip = request.headers.get("CF-Connecting-IP") as string;
-    const webSocketPair = new WebSocketPair();
-    const [client, server] = Object.values(webSocketPair);
+		socket.addEventListener('close', async e => {
+			await this.closeSession(sym);
+			console.log('closed', { ip });
+		});
 
-    server.addEventListener("error", (e) => {
-      console.log("websocket error", e);
-    });
+		socket.accept();
+		this.sessions.push({ ip, socket, sym });
 
-    server.addEventListener("close", async (e) => {
-      await this.closeSession(ip);
-      console.log("closed", { ip });
-    });
+		await this.incrementCounter();
+	}
 
-    server.accept();
-    console.log("opened", { ip });
-    await this.handleConnection(ip, server);
+	async fetch(request: Request) {
+		const ip = request.headers.get('CF-Connecting-IP') as string;
+		const webSocketPair = new WebSocketPair();
+		const [client, server] = Object.values(webSocketPair);
 
-    return new Response(null, {
-      status: 101,
-      webSocket: client,
-    });
-  }
+		await this.handleSession(ip, server);
+
+		return new Response(null, {
+			status: 101,
+			webSocket: client
+		});
+	}
 }
 
-async function handleWebsocketRequest(
-  request: Request,
-  env: Env
-): Promise<Response> {
-  const upgradeHeader = request.headers.get("Upgrade");
+async function handleWebsocketRequest(request: Request, env: Env): Promise<Response> {
+	const upgradeHeader = request.headers.get('Upgrade');
 
-  if (!upgradeHeader || upgradeHeader !== "websocket") {
-    return new Response("Expected Upgrade: websocket", { status: 426 });
-  }
+	if (!upgradeHeader || upgradeHeader !== 'websocket') {
+		return new Response('Expected Upgrade: websocket', { status: 426 });
+	}
 
-  const id = env.presence.idFromName("arnavgosain.com");
-  const presence = env.presence.get(id);
+	const id = env.presence.idFromName('arnavgosain.com');
+	const presence = env.presence.get(id);
 
-  return presence.fetch(request);
+	return presence.fetch(request);
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-  fetch: handleWebsocketRequest,
+	fetch: handleWebsocketRequest
 };
