@@ -7,7 +7,6 @@ As a fun experiment, I've wanted to add a live visitor count to my blog. I've se
 
 PS: If you're familiar with Cloudflare Workers, you can skip to [Implementing the live visitors counter](#implementing-the-live-visitors-counter).
 
-
 ## The Basics
 
 ### Wrangler
@@ -204,8 +203,8 @@ So here's the rundown of how it works:
 - Each client connects to the Worker via a WebSocket
 - When the connection is established, we'll increment the count in our DurableObject by 1.
 - When the connection is closed, we'll decrement the count in our DurableObject by 1.
-- Whenever the count changes, the new count will be broadcast to all connected clients.
-- When all clients disconnect, the DurableObject will be discarded.
+- Whenever the count changes, the new count will be broadcasted to all connected clients.
+- When all clients disconnect, we'll delete all the data in the DurableObject, which will discard the DurableObject instance.
 
 ### Keeping track of connections
 
