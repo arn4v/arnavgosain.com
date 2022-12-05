@@ -3,7 +3,7 @@ title: 'Implementing Live Visitor Count using Cloudflare Workers & Durable Objec
 publishedOn: '2022-12-05'
 ---
 
-As a fun experiment, I've wanted to add a live visitor count to my blog. I've seen this done in a few different ways, most commonly in a server-full way, but I wanted to try implementing as a serverless function. Unlike other serverless solutions, Cloudflare Workers support WebSockets & provide a neat interface for consistent storage via Durable Objects, so I decided to give it a shot.
+As a fun experiment, I wanted to add a live visitor count to my blog. I've seen this done in a few different ways, most commonly in a server-full way, but I wanted to try implementing it as a serverless function. Unlike other serverless solutions, Cloudflare Workers support WebSockets & provide a neat interface for consistent storage via Durable Objects, so I decided to give it a shot.
 
 PS: If you're familiar with Cloudflare Workers, you can skip to [Implementing the live visitors counter](#implementing-the-live-visitors-counter).
 
@@ -29,9 +29,9 @@ Wrangler will prompt you to create a package.json file, as well as whether you w
 
 Wrangler will create the following files:
 
-- `package.json` - Self explanatory.
+- `package.json` - Self-explanatory.
 - `wrangler.toml` - Configuration file for the Wrangler
-- `src/index.ts` - The main entrypoint for the Worker
+- `src/index.ts` - The main entry point for the Worker
 - `src/index.test.ts` - Vitest test file for the Worker
 
 ## Creating a basic WebSocket server with Cloudflare Workers
@@ -88,13 +88,13 @@ socket.addEventListener('close', () => {
 
 ## Making a Counter using Durable Objects
 
-On surface level, a Durable Object is just a class. But an instance of a Durable Object class cannot be created manually, as it needs to be persisted and used in multiple requests.
+On the surface level, a Durable Object is just a class. But an instance of a Durable Object class cannot be created manually, as it needs to be persisted and used in multiple requests.
 
 That's where the `Env` object comes in. The `Env` object is passed to the request & the Durable Object constructor by the Workers runtime. It contains the special properties that let you access your Durable Object in the request handler.
 
-In order for the runtime to know which Durable Object class to use, you need to register it in the `wrangler.toml` file.
+For the runtime to know which Durable Object class to use, you need to register it in the `wrangler.toml` file.
 
-```toml wrangler.toml
+```toml
 [durable_objects]
 bindings = [{ name = "counter", class_name = "Counter" }]
 
