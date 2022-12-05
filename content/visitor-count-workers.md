@@ -1,5 +1,5 @@
 ---
-title: 'Implementing Live Visitor Count with Cloudflare Workers & Durable Objects'
+title: 'Implementing Live Visitor Count using Cloudflare Workers & Durable Objects'
 publishedOn: '2022-12-05'
 ---
 
