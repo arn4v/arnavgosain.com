@@ -5,18 +5,8 @@ publishedOn: '2022-12-05'
 
 As a fun experiment, I've wanted to add a live visitor count to my blog. I've seen this done in a few different ways, most commonly in a server-full way, but I wanted to try implementing as a serverless function. Unlike other serverless solutions, Cloudflare Workers support WebSockets & provide a neat interface for consistent storage via Durable Objects, so I decided to give it a shot.
 
-- [The Basics](#the-basics)
-	- [Wrangler](#wrangler)
-	- [Scaffolding a Worker](#scaffolding-a-worker)
-- [Creating a basic WebSocket server with Cloudflare Workers](#creating-a-basic-websocket-server-with-cloudflare-workers)
-- [Making a Counter using Durable Objects](#making-a-counter-using-durable-objects)
-- [Hooking up our `Counter` Durable Object with the request handler](#hooking-up-our-counter-durable-object-with-the-request-handler)
-- [Implementing the live visitors counter](#implementing-the-live-visitors-counter)
-	- [Keeping track of connections](#keeping-track-of-connections)
-	- [Broadcasting a message to all connected clients](#broadcasting-a-message-to-all-connected-clients)
-	- [Now we'll modify the `increment` and `decrement` methods to broadcast the new count to all connected clients](#now-well-modify-the-increment-and-decrement-methods-to-broadcast-the-new-count-to-all-connected-clients)
-	- [Discarding closed connections](#discarding-closed-connections)
-- [Full code](#full-code)
+PS: If you're familiar with Cloudflare Workers, you can skip to [Implementing the live visitors counter](#implementing-the-live-visitors-counter).
+
 
 ## The Basics
 
