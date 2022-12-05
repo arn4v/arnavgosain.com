@@ -441,12 +441,9 @@ async function handleRequest(request: Request, env: Env) {
 		return new Response('Expected Upgrade: websocket', { status: 426 });
 	}
 
-	// Cloudflare provides the client IP in the 'CF-Connecting-IP' header
-	const ip = request.headers.get('CF-Connecting-IP') as string;
-
-	// We'll use the IP as the Durable Object's id
-	const counterId = env.counter.idFromName(ip);
-	// .get() will fetch the existing Durable Object instance, or create a new one if it doesn't exist
+	// Since we want all clients to connect to the same Durable Object instance, we'll use static string
+	// instead of the client IP
+	const counterId = env.counter.idFromName('arnavgosain.com');
 	const counter = env.counter.get(counterId);
 
 	return await counter.fetch(request);
