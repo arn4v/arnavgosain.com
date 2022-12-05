@@ -99,7 +99,22 @@ socket.addEventListener('close', () => {
 
 ## Making a Counter using Durable Objects
 
-On surface level, a Durable Object is just a class. But a Durable Object class instance cannot be created manually, as it needs to be persisted and used in multiple requests.
+On surface level, a Durable Object is just a class. But an instance of a Durable Object class cannot be created manually, as it needs to be persisted and used in multiple requests.
+
+That's where the `Env` object comes in. The `Env` object is passed to the request & the Durable Object constructor by the Workers runtime. It contains the special properties that let you access your Durable Object in the request handler.
+
+In order for the runtime to know which Durable Object class to use, you need to register it in the `wrangler.toml` file.
+
+```toml wrangler.toml
+[durable_objects]
+bindings = [{ name = "counter", class_name = "Counter" }]
+
+[[migrations]]
+tag = "v1" # Should be unique for each entry
+new_classes = ["Counter"]
+```
+
+After which it's accessible in the `Env` object as a `DurableObjectNamespace`.
 
 ```ts
 interface Env {
@@ -123,17 +138,6 @@ export class Counter {
 		return newCount;
 	}
 }
-```
-
-You might wonder where `counter` in came from in the `Env` interface. That's because the Durable Object is registered in the Worker's `wrangler.toml` file. The Workers runtime will then make it available in the `env` object, which can be accessed in the request handler or the DurableObject itself.
-
-```toml wrangler.toml
-[durable_objects]
-bindings = [{ name = "counter", class_name = "Counter" }]
-
-[[migrations]]
-tag = "v1" # Should be unique for each entry
-new_classes = ["Counter"]
 ```
 
 ## Hooking up our `Counter` Durable Object with the request handler
