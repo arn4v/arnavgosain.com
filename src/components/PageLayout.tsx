@@ -20,7 +20,7 @@ export default function PageLayout(props: Props) {
 		<>
 			<Seo {...seo} />
 			<div className="w-full h-auto px-8 py-12 lg:p-12">
-				<header className="w-full mx-auto md:w-2/5">
+				<header className="w-full mx-auto md:max-w-2xl">
 					<nav className="flex space-x-4">
 						{(
 							[
@@ -47,8 +47,8 @@ export default function PageLayout(props: Props) {
 						))}
 					</nav>
 				</header>
-				<main className="w-full mx-auto mt-8 md:w-2/5">{children}</main>
-				<footer className="w-full mx-auto mt-8 md:w-2/5 border-t border-gray-200 py-8">
+				<main className="w-full mx-auto mt-8 md:max-w-2xl">{children}</main>
+				<footer className="w-full mx-auto mt-8 md:max-w-2xl border-t border-gray-200 py-8">
 					<PresenceCounter />
 				</footer>
 			</div>

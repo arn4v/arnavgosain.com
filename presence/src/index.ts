@@ -110,7 +110,7 @@ async function handleWebsocketRequest(request: Request, env: Env): Promise<Respo
 	const id = env.presence.idFromName('arnavgosain.com');
 	const presence = env.presence.get(id);
 
-	return presence.fetch(request);
+	return await presence.fetch(request);
 }
 
 // eslint-disable-next-line import/no-anonymous-default-export
