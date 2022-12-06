@@ -1,5 +1,5 @@
 import { ImageResponse } from '@vercel/og';
-import { NextApiHandler } from 'next';
+import type { NextApiHandler } from 'next';
 
 export const config = {
 	runtime: 'experimental-edge'
