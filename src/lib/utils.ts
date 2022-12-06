@@ -1,4 +1,4 @@
-import { allPosts } from '.contentlayer/generated';
+import { allPosts } from 'contentlayer/generated';
 import { format } from 'date-fns';
 import { Feed } from 'feed';
 import fs from 'fs';

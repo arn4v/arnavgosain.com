@@ -36,7 +36,7 @@ export default function PageLayout(props: Props) {
 								href={to}
 								passHref
 								className={clsx(
-									'font-medium text-xs md:text-sm text-radix-slateDark-slate8 hover:text-black hover:underline',
+									'font-medium text-xs md:text-sm hover:underline text-radix-slateDark-slate5',
 									isActive.test(router.pathname) && 'underline'
 								)}
 							>

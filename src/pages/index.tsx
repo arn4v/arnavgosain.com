@@ -1,4 +1,4 @@
-import { allPosts, Post } from '.contentlayer/generated';
+import { allPosts, Post } from 'contentlayer/generated';
 import { format } from 'date-fns';
 import { useRouter } from 'next/router';
 import { AiFillGithub, AiFillLinkedin, AiFillMail, AiFillTwitterSquare } from 'react-icons/ai';
@@ -30,7 +30,7 @@ const IndexPage = ({ posts }: { posts: Post[] }) => {
 						target="_blank"
 						rel="noopener noreferrer"
 						href="https://github.com/arn4v"
-						className="font-semibold text-emerald-800 hover:underline"
+						className="font-medium text-emerald-800 underline"
 					>
 						developer
 					</a>
@@ -39,16 +39,16 @@ const IndexPage = ({ posts }: { posts: Post[] }) => {
 						target="_blank"
 						rel="noopener noreferrer"
 						href="https://remnote.com"
-						className="font-semibold text-emerald-800 hover:underline"
+						className="font-medium text-emerald-800 underline"
 					>
 						RemNote
 					</a>
 					. I like to learn by{' '}
-					<Link href="/projects" className="font-semibold text-emerald-800 hover:underline">
+					<Link href="/projects" className="font-medium text-emerald-800 underline">
 						making things
 					</Link>{' '}
 					and frequently{' '}
-					<Link href="/blog" className="font-semibold text-emerald-800 hover:underline">
+					<Link href="/blog" className="font-medium text-emerald-800 underline">
 						write
 					</Link>{' '}
 					about it.

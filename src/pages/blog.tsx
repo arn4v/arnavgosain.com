@@ -1,4 +1,4 @@
-import { allPosts, Post } from '.contentlayer/generated';
+import { allPosts, Post } from 'contentlayer/generated';
 import { format } from 'date-fns';
 import { GetStaticProps } from 'next';
 import Link from 'next/link';
