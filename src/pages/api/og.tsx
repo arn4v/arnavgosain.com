@@ -5,26 +5,20 @@ export const config = {
 	runtime: 'experimental-edge'
 };
 
-const interPromises = [
-	fetch(new URL('../../../public/fonts/Inter-Regular.ttf', import.meta.url)).then(res =>
-		res.arrayBuffer()
-	),
-	fetch(new URL('../../../public/fonts/Inter-Medium.ttf', import.meta.url)).then(res =>
-		res.arrayBuffer()
-	),
-	fetch(new URL('../../../public/fonts/Inter-Bold.ttf', import.meta.url)).then(res =>
-		res.arrayBuffer()
-	)
-];
-
 const handler: NextApiHandler = async (req, res) => {
 	const { searchParams } = new URL(req.url!);
 	const title = searchParams?.get('title');
-	const [normal, medium, bold] = (await Promise.all(interPromises)) as [
-		ArrayBuffer,
-		ArrayBuffer,
-		ArrayBuffer
-	];
+	const [normal, medium, bold] = (await Promise.all([
+		fetch(new URL('../../../public/fonts/Inter-Regular.ttf', import.meta.url)).then(res =>
+			res.arrayBuffer()
+		),
+		fetch(new URL('../../../public/fonts/Inter-Medium.ttf', import.meta.url)).then(res =>
+			res.arrayBuffer()
+		),
+		fetch(new URL('../../../public/fonts/Inter-Bold.ttf', import.meta.url)).then(res =>
+			res.arrayBuffer()
+		)
+	])) as [ArrayBuffer, ArrayBuffer, ArrayBuffer];
 
 	try {
 		return new ImageResponse(
