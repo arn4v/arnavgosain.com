@@ -26,9 +26,9 @@ const projects = [
 		tags: ['Remix.run', 'React', 'TypeScript', 'TailwindCSS', 'Prisma', 'SQLite', 'Postmark']
 	},
 	{
-		name: 'Markbox (FKA Bookmarky)',
+		name: 'Markbox',
 		description: 'API-First, Tag Based Bookmarking Tool Inspired by Pinboard.in',
-		duration: 'February 2021 - Present',
+		duration: 'February 2021 - March 2022',
 		links: [
 			{
 				title: 'Live',

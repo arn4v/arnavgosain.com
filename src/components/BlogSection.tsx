@@ -7,23 +7,20 @@ export default function BlogSection({ data }: { data: Post[] }) {
 	return (
 		<div className="flex flex-col w-full space-y-6">
 			<div className="flex items-center justify-between">
-				<span className="text-xl font-mono font-bold dark:text-white">Recent posts</span>
+				<span className="text-xl font-mono font-bold">Recent posts</span>
 			</div>
 			<div className="flex flex-col items-center justify-center gap-4 lg:gap-6">
 				{data.map((data, index) => {
 					const date = new Date(data.publishedOn);
 					return (
 						<div key={index} className="flex items-center justify-between w-full h-full">
+							<time dateTime={date.toISOString()}>{format(date, 'do MMMM yyyy')}</time>
 							<Link
 								href={`/${data.slug}`}
-								className="text-orange-500 hover:text-orange-700 underline font-medium"
+								className="text-radix-slateDark-slate4 hover:text-orange-700 underline font-medium"
 							>
 								{data.title}
 							</Link>
-							<p>
-								Published on{' '}
-								<time dateTime={date.toISOString()}>{format(date, 'do MMMM yyyy')}</time>
-							</p>
 						</div>
 					);
 				})}

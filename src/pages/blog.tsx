@@ -20,18 +20,17 @@ const BlogPage = ({ data }: { data: Post[] }) => {
 					.map(item => {
 						const date = new Date(item.publishedOn);
 						return (
-							<div key={`${item.title}-${item.slug}`} className="flex flex-col items-start w-full">
+							<div key={`${item.title}-${item.slug}`} className="flex flex-col items-start w-full gap-1">
+								<p className="text-sm text-radix-slateDark-slate9 font-medium">
+									<time dateTime={date.toISOString()}>{format(date, 'do MMMM yyyy')}</time>
+								</p>
 								<Link
 									href={`/${item.slug}`}
 									passHref
-									className="font-medium text-orange-500 hover:underline"
+									className="text-emerald-800 hover:underline text-xl font-semibold font-serif leading-6 tracking-wide"
 								>
 									{item.title}
 								</Link>
-								<p className="text-sm text-zinc-600">
-									Published on{' '}
-									<time dateTime={date.toISOString()}>{format(date, 'do MMMM yyyy')}</time>
-								</p>
 							</div>
 						);
 					})}

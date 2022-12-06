@@ -19,7 +19,7 @@ export default function PageLayout(props: Props) {
 	return (
 		<>
 			<Seo {...seo} />
-			<div className="w-full h-auto px-8 py-12 lg:p-12">
+			<div className="w-full h-auto min-h-full px-8 py-12 lg:p-12  bg-[#f6f3ed] text-radix-slateDark-slate1">
 				<header className="w-full mx-auto md:max-w-2xl">
 					<nav className="flex space-x-4">
 						{(
@@ -36,10 +36,8 @@ export default function PageLayout(props: Props) {
 								href={to}
 								passHref
 								className={clsx(
-									'font-medium text-sm md:text-base',
-									isActive.test(router.pathname)
-										? 'text-black underline'
-										: 'text-zinc-600 hover:text-black hover:underline'
+									'font-medium text-xs md:text-sm text-radix-slateDark-slate8 hover:text-black hover:underline',
+									isActive.test(router.pathname) && 'underline'
 								)}
 							>
 								{title}

@@ -2,6 +2,7 @@ import { allPosts, Post } from '.contentlayer/generated';
 import { format } from 'date-fns';
 import { useRouter } from 'next/router';
 import { AiFillGithub, AiFillLinkedin, AiFillMail, AiFillTwitterSquare } from 'react-icons/ai';
+import { HiArrowRight } from 'react-icons/hi';
 import { IconType } from 'react-icons/lib';
 import Link from '~/components/CustomLink';
 import PageLayout from '~/components/PageLayout';
@@ -29,7 +30,7 @@ const IndexPage = ({ posts }: { posts: Post[] }) => {
 						target="_blank"
 						rel="noopener noreferrer"
 						href="https://github.com/arn4v"
-						className="font-semibold text-orange-500 hover:underline"
+						className="font-semibold text-emerald-800 hover:underline"
 					>
 						developer
 					</a>
@@ -38,16 +39,16 @@ const IndexPage = ({ posts }: { posts: Post[] }) => {
 						target="_blank"
 						rel="noopener noreferrer"
 						href="https://remnote.com"
-						className="font-semibold text-orange-500 hover:underline"
+						className="font-semibold text-emerald-800 hover:underline"
 					>
 						RemNote
 					</a>
 					. I like to learn by{' '}
-					<Link href="/projects" className="font-semibold text-orange-500 hover:underline">
+					<Link href="/projects" className="font-semibold text-emerald-800 hover:underline">
 						making things
 					</Link>{' '}
 					and frequently{' '}
-					<Link href="/blog" className="font-semibold text-orange-500 hover:underline">
+					<Link href="/blog" className="font-semibold text-emerald-800 hover:underline">
 						write
 					</Link>{' '}
 					about it.
@@ -70,36 +71,36 @@ const IndexPage = ({ posts }: { posts: Post[] }) => {
 			</section>
 			<section id="recent_posts" className="flex flex-col mt-8 space-y-4">
 				<h2 className="text-xl font-semibold text-zinc-800">Recent posts</h2>
-				<ul className="flex flex-col space-y-2 list-none">
+				<ul className="flex flex-col gap-4 list-none">
 					{posts.map((item, idx) => (
 						<li key={idx} className="flex flex-col">
+							<span className="text-sm text-radix-slateDark-slate9 font-medium">
+								{format(new Date(item.publishedOn), 'do MMMM yyyy')}
+							</span>
 							<Link
 								href={'/' + item.slug}
-								className="font-medium text-orange-500 whitespace-pre-wrap hover:underline"
+								className="font-medium text-emerald-800 whitespace-pre-wrap hover:underline font-serif text-lg"
 							>
 								{item.title}
 							</Link>
-							<span className="text-sm text-zinc-600">
-								Published on {format(new Date(item.publishedOn), 'do MMMM yyyy')}
-							</span>
 						</li>
 					))}
 				</ul>
 			</section>
 			<section id="recent_projects" className="flex flex-col mt-12 space-y-4">
 				<h2 className="text-xl font-semibold text-zinc-800">Recent projects</h2>
-				<ul className="flex flex-col space-y-2 list-none">
+				<div className="grid grid-flow-row lg:grid-cols-3 gap-4 list-none">
 					{projects.slice(0, 3).map((item, idx) => (
-						<li key={idx}>
-							<Link
-								href={item?.links[0]?.url}
-								className="font-medium text-orange-500 whitespace-pre-wrap hover:underline"
-							>
-								{item.name}
-							</Link>
-						</li>
+						<Link
+							key={idx}
+							href={`/projects#${item.name}`}
+							className="font-medium text-radix-slateDark-slate4 hover:text-emerald-800 whitespace-pre-wrap font-serif transition h-full w-full p-4 bg-white rounded-lg shadow flex gap-2 items-center justify-start group hover:-translate-y-2 transform"
+						>
+							{item.name}
+							<HiArrowRight className="group-hover:translate-x-2 transform transition" />
+						</Link>
 					))}
-				</ul>
+				</div>
 			</section>
 		</PageLayout>
 	);
