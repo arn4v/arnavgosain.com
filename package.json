@@ -42,7 +42,6 @@
     "react": "latest",
     "react-dom": "latest",
     "react-icons": "^4.7.1",
-    "react-sensible": "^0.1.0",
     "react-use": "^17.4.0",
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^6.1.1",
