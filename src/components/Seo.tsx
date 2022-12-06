@@ -27,12 +27,16 @@ export default function Seo({
 			<meta property="og:type" content="website" />
 			<meta property="og:url" content={url} />
 			{publishedAt ? <meta property="article:published_time" content={publishedAt} /> : null}
-			<meta name="twitter:card" content="summary_large_image" />
 			<meta name="twitter:site" content="@arn4v" />
 			<meta name="twitter:creator" content="@arn4v" />
 			<meta name="twitter:title" content={title} />
 			<meta name="twitter:description" content={description} />
-			<meta name="twitter:image" content={image} />
+			{image ? (
+				<>
+					<meta name="twitter:card" content="summary_large_image" />
+					<meta name="twitter:image" content={image} />
+				</>
+			) : null}
 			<link rel="canonical" href={url} />
 		</Head>
 	);
