@@ -49,7 +49,8 @@
     "rehype-code-titles": "^1.1.0",
     "rehype-slug": "^5.1.0",
     "remark-external-links": "^9.0.1",
-    "satori": "^0.0.44"
+    "satori": "^0.0.44",
+    "sharp": "^0.31.2"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.8",
@@ -60,6 +61,7 @@
     "@types/prettier": "^2.7.1",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@types/sharp": "^0.31.0",
     "autoprefixer": "10.4.13",
     "eslint": "^8.29.0",
     "eslint-config-next": "canary",
