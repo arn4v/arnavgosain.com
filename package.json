@@ -18,6 +18,7 @@
     "setup": "npx contentlayer build"
   },
   "dependencies": {
+    "@next/font": "^13.0.6",
     "@radix-ui/colors": "^0.1.8",
     "@stitches/react": "^1.2.8",
     "@vercel/og": "^0.0.21",

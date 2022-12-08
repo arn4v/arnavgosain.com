@@ -8,14 +8,6 @@ import PageLayout from '~/components/PageLayout';
 import { SeoProps } from '~/components/Seo';
 import { baseUrl } from '~/constants';
 
-interface Frontmatter {
-	title: string;
-	slug: string;
-	published_on: string;
-	// url of og & banner image
-	banner: string;
-}
-
 const PostLayout = ({ post }: { post: Post }) => {
 	const MDXComponent = useMDXComponent(post.body.code);
 	const publishedOn = new Date(post.publishedOn);
@@ -89,15 +81,13 @@ const PostLayout = ({ post }: { post: Post }) => {
 };
 
 export const getStaticPaths = async () => {
-	// await generateOgImages();
-
 	return {
 		paths: allPosts.map(p => ({ params: { slug: p.slug } })),
 		fallback: false
 	};
 };
 
-export const getStaticProps: GetStaticProps<{ post: Post }> = ({ params }) => {
+export const getStaticProps: GetStaticProps<{ post: Post }> = async ({ params }) => {
 	const post = allPosts.find(post => post.slug === params?.slug);
 
 	return { props: { post } };

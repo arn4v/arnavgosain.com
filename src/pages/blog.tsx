@@ -20,7 +20,10 @@ const BlogPage = ({ data }: { data: Post[] }) => {
 					.map(item => {
 						const date = new Date(item.publishedOn);
 						return (
-							<div key={`${item.title}-${item.slug}`} className="flex flex-col items-start w-full gap-1">
+							<div
+								key={`${item.title}-${item.slug}`}
+								className="flex flex-col items-start w-full gap-1"
+							>
 								<p className="text-sm text-radix-slateDark-slate9 font-medium">
 									<time dateTime={date.toISOString()}>{format(date, 'do MMMM yyyy')}</time>
 								</p>

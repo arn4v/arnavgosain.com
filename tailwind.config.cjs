@@ -13,8 +13,9 @@ module.exports = {
 	theme: {
 		extend: {
 			fontFamily: {
-				sans: ['Inter', ...fontFamily.sans],
-				serif: ['DM Serif Text', ...fontFamily.serif]
+				inter: ['var(--font-inter)', ...fontFamily.sans],
+				sans: ['var(--font-inter)', ...fontFamily.sans],
+				serif: ['var(--font-dm-serif-text)', ...fontFamily.serif]
 			},
 			backgroundColor: {
 				primary: '#F1F0E9'
