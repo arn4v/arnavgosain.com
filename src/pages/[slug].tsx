@@ -22,8 +22,8 @@ const PostLayout = ({ post }: { post: Post }) => {
 	const seoProps: SeoProps = {
 		title: `${post.title} | Arnav Gosain`,
 		url: `${baseUrl}/${post.slug}`,
-		publishedAt: publishedOn.toISOString()
-		// image: post?.banner ?? `${baseUrl}/api/og?title=${encodeURIComponent(post.title)}`
+		publishedAt: publishedOn.toISOString(),
+		image: post?.banner ?? `${baseUrl}/api/og?title=${encodeURIComponent(post.title)}`
 	};
 
 	return (
