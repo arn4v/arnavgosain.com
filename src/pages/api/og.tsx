@@ -1,10 +1,6 @@
 import { ImageResponse } from '@vercel/og';
 import type { NextApiHandler } from 'next';
 
-export const config = {
-	runtime: 'experimental-edge'
-};
-
 const handler: NextApiHandler = async (req, res) => {
 	const { searchParams } = new URL(req.url!);
 	const title = searchParams?.get('title');
