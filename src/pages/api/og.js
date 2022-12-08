@@ -4,8 +4,8 @@ export const config = {
 	runtime: 'experimental-edge'
 };
 
-const interRegular = fetch(
-	new URL('../../../public/fonts/Inter-Regular.ttf', import.meta.url)
+const dmSerifTextRegular = fetch(
+	new URL('../../../public/fonts/DMSerifText-Regular.ttf', import.meta.url)
 ).then(res => res.arrayBuffer());
 
 const interMedium = fetch(new URL('../../../public/fonts/Inter-Medium.ttf', import.meta.url)).then(
@@ -24,19 +24,40 @@ export default async (req, res) => {
 	const { searchParams } = new URL(req.url);
 	const title = searchParams?.get('title');
 
-	const normal = await interRegular;
+	const normal = await dmSerifTextRegular;
 	const medium = await interMedium;
 	const bold = await interBold;
 
 	return new ImageResponse(
 		(
-			<div tw="h-full w-full flex items-start justify-start bg-gray-50">
+			<div tw="h-full w-full flex items-start justify-start bg-[#f6f3ed]">
 				<div tw="flex items-start justify-start h-full">
 					<div tw="flex flex-col justify-between w-full h-full">
-						<h1 tw="text-[80px] p-20 font-bold text-left">{title}</h1>
+						<h1
+							tw="text-8xl p-20 text-emerald-800 text-left"
+							style={{
+								fontFamily: 'DM Serif Text'
+							}}
+						>
+							{title}
+						</h1>
 						<div tw="flex flex-col items-start justify-center pb-10">
-							<div tw="text-3xl px-20 font-bold mb-4">Arnav Gosain</div>
-							<div tw="text-2xl px-20 font-medium">https://arnavgosain.com</div>
+							<div
+								tw="text-3xl px-20 font-bold mb-4"
+								style={{
+									fontFamily: 'Inter'
+								}}
+							>
+								Arnav Gosain
+							</div>
+							<div
+								tw="text-2xl px-20 font-medium"
+								style={{
+									fontFamily: 'Inter'
+								}}
+							>
+								https://arnavgosain.com
+							</div>
 						</div>
 					</div>
 				</div>
@@ -46,7 +67,7 @@ export default async (req, res) => {
 			width: 1200,
 			height: 630,
 			fonts: [
-				{ data: normal, name: 'Inter', weight: 400, style: 'normal' },
+				{ data: normal, name: 'DM Serif Text', weight: 400, style: 'normal' },
 				{ data: medium, name: 'Inter', weight: 500, style: 'normal' },
 				{ data: bold, name: 'Inter', weight: 700, style: 'normal' }
 			]
