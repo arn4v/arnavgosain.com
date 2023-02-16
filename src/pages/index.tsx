@@ -94,7 +94,7 @@ const IndexPage = ({ posts }: { posts: Post[] }) => {
 						<Link
 							key={idx}
 							href={`/projects#${item.name}`}
-							className="font-medium text-radix-slateDark-slate4 hover:text-emerald-800 whitespace-pre-wrap font-serif transition h-full w-full p-4 bg-white rounded-lg shadow flex gap-2 items-center justify-start group hover:-translate-y-2 transform"
+							className="font-medium text-radix-slateDark-slate4 hover:text-emerald-800 whitespace-pre-wrap font-serif transition h-max w-full p-4 bg-white rounded-lg shadow flex gap-2 items-center justify-start group hover:-translate-y-2 transform"
 						>
 							{item.name}
 							<HiArrowRight className="group-hover:translate-x-2 transform transition" />
