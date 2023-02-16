@@ -30,7 +30,7 @@ const BlogPage = ({ data }: { data: Post[] }) => {
 								<Link
 									href={`/${item.slug}`}
 									passHref
-									className="text-emerald-800 hover:underline lg:text-xl font-semibold font-serif leading-6 tracking-wide"
+									className="text-emerald-800 hover:underline lg:text-xl font-semibold font-serif leading-6 tracking-tight"
 								>
 									{item.title}
 								</Link>
