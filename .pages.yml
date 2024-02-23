@@ -1,0 +1,24 @@
+media: public/static
+content:
+  - name: posts
+    label: Posts
+    path: src/content
+    type: collection
+    fields:
+      - name: title
+        label: Title
+        type: string
+        options:
+          minlength: 20
+          maxlength: 160
+      - name: publishedOn
+        label: Creation date
+        type: date
+        options:
+          format: YYYY-MM-DD
+      - name: banner
+        label: banner
+        type: image
+        options:
+          path: public/static
+          extensions: [ jpg, jpeg, png ]
