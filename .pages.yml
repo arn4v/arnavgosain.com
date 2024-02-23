@@ -2,7 +2,7 @@ media: public/static
 content:
   - name: posts
     label: Posts
-    path: src/content
+    path: content
     type: collection
     fields:
       - name: title
