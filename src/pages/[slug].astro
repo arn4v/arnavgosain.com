@@ -1,0 +1,88 @@
+---
+import { getCollection, type CollectionEntry } from "astro:content";
+import { format } from "date-fns";
+import { baseUrl } from "~/constants";
+import Base from "~/layout/Base.astro";
+import type { SeoProps } from "~/types";
+
+export async function getStaticPaths() {
+  const posts = await getCollection("blog");
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: post,
+  }));
+}
+type Props = CollectionEntry<"blog">;
+
+const post = Astro.props;
+const publishedAt = new Date(post.data.publishedAt);
+const seoProps: SeoProps = {
+  title: `${post.data.title} | Arnav Gosain`,
+  url: `${baseUrl}/${post.slug}`,
+  publishedAt: publishedAt.toISOString(),
+  image:
+    post?.data.banner ??
+    `${baseUrl}/api/og?title=${encodeURIComponent(post.data.title)}`,
+};
+
+const { Content } = await post.render();
+---
+
+<Base
+  seo={seoProps}
+  breadcrumb={{
+    Blog: "/blog",
+    [post.data.title]: `/${post.slug}`,
+  }}
+>
+  <article class="flex flex-col mt-4 space-y-6">
+    <div class="flex flex-col items-start justify-center">
+      <time
+        class="text-sm text-radix-slateDark-slate9 font-medium mb-1"
+        datetime={publishedAt.toISOString()}
+      >
+        {format(publishedAt, "do MMMM yyyy")}
+      </time>
+      <h1 class="max-w-3xl text-2xl font-bold lg:text-3xl font-serif mb-4">
+        {post.data.title}
+      </h1>
+      <div
+        class="flex flex-row justify-between w-full max-w-3xl antialiased text-gray-800 mb-4"
+      >
+        <div
+          class="flex items-center justify-center gap-3 text-sm lg:gap-4 lg:text-base"
+        >
+          <span class="hidden lg:block">
+            <img
+              alt="Arnav Gosain"
+              src="/static/display.jpg"
+              draggable={false}
+              height={32}
+              width={32}
+              class="rounded-full"
+            />
+          </span>
+          <span class="block lg:hidden">
+            <img
+              alt="Arnav Gosain"
+              src="/static/display.jpg"
+              draggable={false}
+              height={48}
+              width={48}
+              class="rounded-full"
+            />
+          </span>
+          <span
+            class="flex flex-col items-start justify-center gap-2 text-sm font-medium lg:flex-row lg:items-center lg:justify-start lg:gap-4 lg:text-base whitespace-nowrap"
+          >
+            <h2>Arnav Gosain</h2>
+          </span>
+        </div>
+      </div>
+      <div class="w-full h-px bg-zinc-200 dark:bg-slate-600"></div>
+    </div>
+    <div class="max-w-full prose dark:prose-dark">
+      <Content />
+    </div>
+  </article>
+</Base>

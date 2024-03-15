@@ -1,0 +1,45 @@
+---
+import { getCollection } from "astro:content";
+import { format } from "date-fns";
+import { baseUrl } from "~/constants";
+import Base from "~/layout/Base.astro";
+
+const seoConfig = {
+  title: "Blog | Arnav Gosain",
+  url: baseUrl + "/writing",
+};
+
+const allPosts = (await getCollection("blog")).map((x) => ({
+  ...x.data,
+  slug: x.slug,
+}));
+const data = allPosts.sort(
+  (a, b) =>
+    new Date(b.publishedAt).valueOf() - new Date(a.publishedAt).valueOf()
+);
+---
+
+<Base breadcrumb={{ Projects: "/projects" }} seo={seoConfig}>
+  <div class="flex flex-col items-center justify-center gap-4 lg:gap-6">
+    {
+      data.map((item) => {
+        const date = new Date(item.publishedAt);
+        return (
+          <div class="flex flex-col items-start w-full gap-1">
+            <p class="text-sm text-radix-slateDark-slate9 font-medium">
+              <time datetime={date.toISOString()}>
+                {format(date, "do MMMM yyyy")}
+              </time>
+            </p>
+            <a
+              href={`/${item.slug}`}
+              class="text-emerald-800 hover:underline lg:text-xl font-semibold font-serif leading-6 tracking-tight"
+            >
+              {item.title}
+            </a>
+          </div>
+        );
+      })
+    }
+  </div>
+</Base>

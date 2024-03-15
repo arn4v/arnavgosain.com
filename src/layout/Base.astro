@@ -1,0 +1,107 @@
+---
+import "../global.css";
+import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
+import clsx from "clsx";
+
+interface Props {
+  breadcrumb?: Record<string, string>;
+  className?: string;
+  seo?: {
+    title?: string;
+    description?: string;
+    url?: string;
+    image?: string;
+    publishedAt?: string;
+  };
+}
+
+const NAVBAR_ROUTES = [
+  ["About", "/", /\/$/],
+  ["Writing", "/blog", /\/blog(.*)$/],
+  // ["Projects", "/projects", /\/projects$/],
+  // ["Library", "/library", /\/library$/],
+  // ["Playlists", "/playlists", /\/playlists$/],
+] satisfies [string, string, RegExp][];
+
+const {
+  seo = {
+    title: "Arnav Gosain",
+    url: "https://arnavgosain.com",
+  },
+} = Astro.props;
+
+const pathname = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{seo.title}</title>
+    {
+      seo.description && (
+        <>
+          <meta name="description" content={seo.description} />
+          <meta property="og:description" content={seo.description} />
+          <meta name="twitter:description" content={seo.description} />
+        </>
+      )
+    }
+    <meta name="robots" content="follow, index" />
+    <meta property="og:site_name" content="Arnav Gosain" />
+    <meta property="og:title" content={seo.title} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={seo.url} />
+    {
+      seo.publishedAt ? (
+        <meta property="article:published_time" content={seo.publishedAt} />
+      ) : null
+    }
+    <meta name="twitter:site" content="@arn4v" />
+    <meta name="twitter:creator" content="@arn4v" />
+    <meta name="twitter:title" content={seo.title} />
+    {
+      seo.image ? (
+        <>
+          <meta property="og:image" content={seo.image} />
+          <meta name="twitter:card" content="summary_large_image" />
+          <meta name="twitter:image" content={seo.image} />
+        </>
+      ) : null
+    }
+    <link rel="canonical" href={seo.url} />
+    <GoogleFontsOptimizer
+      url="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Inter:wght@100..900&display=swap"
+    />
+  </head>
+  <body>
+    <div
+      class="w-full h-auto min-h-full px-8 py-12 lg:p-12 bg-[#f6f3ed] text-radix-slateDark-slate1"
+    >
+      <header class="w-full mx-auto md:max-w-2xl">
+        <nav class="flex gap-4">
+          {
+            NAVBAR_ROUTES.map(([title, to, isActive], idx) => (
+              <a
+                href={to}
+                class={clsx(
+                  "font-medium text-xs md:text-sm hover:underline text-radix-slateDark-slate5",
+                  isActive.test(pathname) && "underline"
+                )}
+              >
+                {title}
+              </a>
+            ))
+          }
+        </nav>
+      </header>
+      <main class="w-full mx-auto mt-8 md:max-w-2xl">
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>
