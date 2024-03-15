@@ -1,8 +1,7 @@
 ---
-import "../global.css";
-import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 import clsx from "clsx";
 import type { SeoProps } from "~/types";
+import "../global.css";
 
 interface Props {
   breadcrumb?: Record<string, string>;
@@ -97,7 +96,7 @@ const pathname = Astro.url.pathname;
       <header class="w-full mx-auto md:max-w-2xl">
         <nav class="flex gap-4">
           {
-            NAVBAR_ROUTES.map(([title, href], idx) => (
+            NAVBAR_ROUTES.map(([title, href]) => (
               <a
                 href={href}
                 class={clsx(

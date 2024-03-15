@@ -71,7 +71,7 @@ const posts = allPosts
           [AiFillGithub, "GitHub", "https://github.com/arn4v/"],
           [AiFillLinkedin, "LinkedIn", "https://www.linkedin.com/in/arn4v/"],
         ] as [IconType, string, string][]
-      ).map(([Icon, title, href], idx) => (
+      ).map(([Icon, title, href]) => (
         <a href={href}>
           <Icon className="w-7 h-7" />
           <span class="sr-only">{title}</span>
@@ -83,7 +83,7 @@ const posts = allPosts
     <h2 class="text-xl font-semibold text-zinc-800">Recent posts</h2>
     <ul class="flex flex-col gap-4 list-none">
       {
-        posts.map((item, idx) => (
+        posts.map((item) => (
           <li class="flex flex-col gap-1">
             <span class="text-sm text-radix-slateDark-slate9 font-medium">
               {format(new Date(item.data.publishedAt), "do MMMM yyyy")}
