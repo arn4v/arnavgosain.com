@@ -24,10 +24,14 @@ const NAVBAR_ROUTES = [
   // ["Playlists", "/playlists", /\/playlists$/],
 ] satisfies [string, string, RegExp][];
 
-const seo: SeoProps = Astro.props?.seo ?? {
-  title: "Arnav Gosain",
-  url: "https://arnavgosain.com",
-};
+const seo: SeoProps = Object.assign(
+  {},
+  {
+    title: "Arnav Gosain",
+    url: "https://arnavgosain.com",
+  },
+  Astro.props.seo
+);
 
 const pathname = Astro.url.pathname;
 ---
@@ -39,7 +43,6 @@ const pathname = Astro.url.pathname;
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <meta name="generator" content={Astro.generator} />
     <title>{seo.title}</title>
     {
       seo.description && (
