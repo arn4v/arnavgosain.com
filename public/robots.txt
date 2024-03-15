@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+User-agent: GPTBot
+Disallow: /
+
+Sitemap: https://arnavgosain.com/sitemap-index.xml
