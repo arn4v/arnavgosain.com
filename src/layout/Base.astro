@@ -2,6 +2,7 @@
 import "../global.css";
 import { GoogleFontsOptimizer } from "astro-google-fonts-optimizer";
 import clsx from "clsx";
+import type { SeoProps } from "~/types";
 
 interface Props {
   breadcrumb?: Record<string, string>;
@@ -23,12 +24,10 @@ const NAVBAR_ROUTES = [
   // ["Playlists", "/playlists", /\/playlists$/],
 ] satisfies [string, string, RegExp][];
 
-const {
-  seo = {
-    title: "Arnav Gosain",
-    url: "https://arnavgosain.com",
-  },
-} = Astro.props;
+const seo: SeoProps = Astro.props?.seo ?? {
+  title: "Arnav Gosain",
+  url: "https://arnavgosain.com",
+};
 
 const pathname = Astro.url.pathname;
 ---
