@@ -77,6 +77,12 @@ const pathname = Astro.url.pathname;
       ) : null
     }
     <link rel="canonical" href={seo.url} />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Your Site's Title"
+      href={`${Astro.site}rss.xml`}
+    />
     <GoogleFontsOptimizer
       url="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Inter:wght@100..900&display=swap"
     />
