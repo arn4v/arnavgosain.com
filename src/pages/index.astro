@@ -90,9 +90,9 @@ const posts = allPosts
             </span>
             <a
               href={"/" + item.slug}
-              class="font-medium text-emerald-800 whitespace-pre-wrap hover:underline font-serif text-lg"
+              class="font-medium text-emerald-800 hover:underline font-serif text-lg"
             >
-              {item.data.title}
+              {item.data.title.trim()}
             </a>
           </li>
         ))

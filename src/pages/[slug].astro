@@ -44,7 +44,7 @@ const { Content } = await post.render();
         {format(publishedAt, "do MMMM yyyy")}
       </time>
       <h1 class="max-w-3xl text-2xl font-bold lg:text-3xl font-serif mb-4">
-        {post.data.title}
+        {post.data.title.trim()}
       </h1>
       <div
         class="flex flex-row justify-between w-full max-w-3xl antialiased text-gray-800 mb-4"
