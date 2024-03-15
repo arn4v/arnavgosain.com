@@ -84,13 +84,14 @@ const posts = allPosts
     <ul class="flex flex-col gap-4 list-none">
       {
         posts.map((item, idx) => (
-          <li class="flex flex-col">
+          <li class="flex flex-col gap-1">
             <span class="text-sm text-radix-slateDark-slate9 font-medium">
               {format(new Date(item.data.publishedAt), "do MMMM yyyy")}
             </span>
             <a
               href={"/" + item.slug}
-              class="font-medium text-emerald-800 hover:underline font-serif text-lg"
+              class="font-medium text-emerald-800 font-blog-title hover:underline"
+              style={{ lineHeight: "normal" }}
             >
               {item.data.title.trim()}
             </a>

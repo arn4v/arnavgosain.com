@@ -9,37 +9,58 @@ const seoConfig = {
   url: baseUrl + "/writing",
 };
 
-const allPosts = (await getCollection("blog")).map((x) => ({
-  ...x.data,
-  slug: x.slug,
-}));
-const data = allPosts.sort(
-  (a, b) =>
-    new Date(b.publishedAt).valueOf() - new Date(a.publishedAt).valueOf()
+const allPosts = (await getCollection("blog"))
+  .map((x) => ({
+    ...x.data,
+    slug: x.slug,
+  }))
+  .sort((a, b) => b.publishedAt.getTime() - a.publishedAt.getTime());
+
+const data = allPosts.reduce(
+  (acc, post) => {
+    const year = new Date(post.publishedAt).getFullYear().toString();
+    if (!acc[year]) {
+      acc[year] = [];
+    }
+    acc[year].push(post);
+    return acc;
+  },
+  {} as Record<string, typeof allPosts>
 );
 ---
 
 <Base breadcrumb={{ Projects: "/projects" }} seo={seoConfig}>
-  <div class="flex flex-col items-center justify-center gap-4 lg:gap-6">
+  <div class="flex flex-col gap-6">
     {
-      data.map((item) => {
-        const date = new Date(item.publishedAt);
-        return (
-          <div class="flex flex-col items-start w-full gap-1">
-            <p class="text-sm text-radix-slateDark-slate9 font-medium">
-              <time datetime={date.toISOString()}>
-                {format(date, "do MMMM yyyy")}
-              </time>
-            </p>
-            <a
-              href={`/${item.slug}`}
-              class="text-emerald-800 hover:underline lg:text-xl font-semibold font-serif leading-6 tracking-tight"
-            >
-              {item.title}
-            </a>
-          </div>
-        );
-      })
+      Object.keys(data)
+        .toSorted()
+        .toReversed()
+        .map((year) => {
+          const items = data[year];
+          return (
+            <div class="flex flex-col gap-3">
+              <h3 class="text-lg font-bold">{year}</h3>
+              {items.map((item) => {
+                const date = new Date(item.publishedAt);
+                return (
+                  <div class="flex flex-col items-start w-full gap-1">
+                    <p class="text-sm text-radix-slateDark-slate9 font-medium">
+                      <time datetime={date.toISOString()}>
+                        {format(date, "do MMMM yyyy")}
+                      </time>
+                    </p>
+                    <a
+                      href={`/${item.slug}`}
+                      class="font-medium text-emerald-800 font-blog-title hover:underline"
+                    >
+                      {item.title}
+                    </a>
+                  </div>
+                );
+              })}
+            </div>
+          );
+        })
     }
   </div>
 </Base>

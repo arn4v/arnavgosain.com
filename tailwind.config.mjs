@@ -13,7 +13,7 @@ export default {
       fontFamily: {
         inter: ["Inter", ...fontFamily.sans],
         sans: ["Inter", ...fontFamily.sans],
-        serif: ["DM Serif Text", ...fontFamily.serif],
+        serif: ['"Playfair Display"', ...fontFamily.serif],
       },
       backgroundColor: {
         primary: "#F1F0E9",
