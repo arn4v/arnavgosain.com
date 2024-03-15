@@ -17,7 +17,7 @@ interface Props {
 
 const NAVBAR_ROUTES = [
   ["About", "/", /\/$/],
-  ["Writing", "/blog", /\/blog(.*)$/],
+  ["Writing", "/blog/", /\/blog(.*)$/],
   // ["Projects", "/projects", /\/projects$/],
   // ["Library", "/library", /\/library$/],
   // ["Playlists", "/playlists", /\/playlists$/],
@@ -31,6 +31,7 @@ const {
 } = Astro.props;
 
 const pathname = Astro.url.pathname;
+console.log({ pathname });
 ---
 
 <!doctype html>
@@ -86,12 +87,12 @@ const pathname = Astro.url.pathname;
       <header class="w-full mx-auto md:max-w-2xl">
         <nav class="flex gap-4">
           {
-            NAVBAR_ROUTES.map(([title, to, isActive], idx) => (
+            NAVBAR_ROUTES.map(([title, href], idx) => (
               <a
-                href={to}
+                href={href}
                 class={clsx(
                   "font-medium text-xs md:text-sm hover:underline text-radix-slateDark-slate5",
-                  isActive.test(pathname) && "underline"
+                  pathname === href && "underline"
                 )}
               >
                 {title}
