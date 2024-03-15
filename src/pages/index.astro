@@ -1,16 +1,14 @@
 ---
-import projects from "~/lib/projects";
+import { getCollection } from "astro:content";
+import { format } from "date-fns";
 import {
-  AiFillLinkedin,
-  AiFillTwitterSquare,
   AiFillGithub,
+  AiFillLinkedin,
   AiFillMail,
+  AiFillTwitterSquare,
 } from "react-icons/ai";
 import type { IconType } from "react-icons/lib";
-import { getCollection } from "astro:content";
-import { ArrowRight, MailIcon } from "lucide-react";
 import Base from "~/layout/Base.astro";
-import { format } from "date-fns";
 
 const allPosts = await getCollection("blog");
 const posts = allPosts
