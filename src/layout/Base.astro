@@ -56,6 +56,7 @@ const pathname = Astro.url.pathname;
     <meta name="robots" content="follow, index" />
     <meta property="og:site_name" content="Arnav Gosain" />
     <meta property="og:title" content={seo.title} />
+
     <meta property="og:type" content="website" />
     <meta property="og:url" content={seo.url} />
     <link rel="sitemap" href="/sitemap-index.xml" />
@@ -88,6 +89,15 @@ const pathname = Astro.url.pathname;
     <GoogleFontsOptimizer
       url="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Inter:wght@100..900&display=swap"
     />
+    {
+      import.meta.env.PROD && (
+        <script
+          src="https://beamanalytics.b-cdn.net/beam.min.js"
+          data-token={import.meta.env.BEAM_TOKEN}
+          async
+        />
+      )
+    }
   </head>
   <body>
     <div
